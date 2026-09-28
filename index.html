@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TARIN</title>
+<meta name="description" content="Ghana's consumer price data from GSS, archived at the source, checked by thirteen rules, and published with its provenance.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/tarin.css">
+<style>
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
+.hero .hex { position: absolute; inset: 0; pointer-events: none; opacity: 0.55; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 36px; padding-block: 48px 44px; align-items: center; }
+.hero h1 { font-size: clamp(32px, 4.6vw, 50px); line-height: 1.08; max-width: 15ch; }
+.hero .lede { color: var(--ink-2); font-size: 17px; max-width: 54ch; margin-top: 16px; }
+.hero .cta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--f-body); font-weight: 500; font-size: 15px;
+  padding: 9px 16px; border-radius: 5px; text-decoration: none; border: 1px solid var(--rule); color: var(--ink); background: var(--surface); }
+.btn:hover { border-color: var(--axis); color: var(--ink); }
+.btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
+.btn.primary:hover { filter: brightness(1.08); color: #fff; }
+
+.latest { padding: 18px 18px 14px; display: grid; gap: 10px; }
+.latest .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.latest .big { font-family: var(--f-display); font-weight: 600; font-size: 58px; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.latest .big small { font-size: 0.45em; color: var(--ink-2); margin-left: 2px; }
+.latest .delta { font-family: var(--f-mono); font-size: 13px; color: var(--ink-2); }
+.latest .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: var(--grid); border: 1px solid var(--grid); border-radius: 4px; overflow: hidden; }
+.latest .grid div { background: var(--surface); padding: 8px 10px; display: grid; gap: 1px; }
+.latest .grid b { font-family: var(--f-mono); font-weight: 500; font-size: 15px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.latest .grid span { font-size: 12px; color: var(--muted); }
+.spark { position: relative; }
+.spark svg { display: block; width: 100%; height: auto; overflow: visible; }
+.spark text { font-family: var(--f-mono); font-size: 10.5px; fill: var(--muted); }
+
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.stats div { background: var(--surface); padding: 14px 16px 12px; display: grid; gap: 2px; align-content: start; }
+.stats b { font-family: var(--f-mono); font-weight: 500; font-size: 22px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stats span { font-size: 13px; color: var(--ink-2); line-height: 1.4; }
+
+.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 1080px) { .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.fc-line { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; border-top: 1px solid var(--grid); padding-top: 10px; font-size: 14px; }
+.fc-line b { font-family: var(--f-mono); font-weight: 500; color: var(--ink); }
+.door { display: grid; gap: 8px; align-content: start; padding: 18px 18px 16px; text-decoration: none; color: var(--ink); }
+.door:hover { border-color: var(--brand); color: var(--ink); }
+.door .k { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-ink); }
+.door h3 { font-family: var(--f-display); font-size: 21px; font-weight: 600; }
+.door p { color: var(--ink-2); font-size: 15px; }
+.door .go { font-size: 14px; color: var(--brand-ink); margin-top: 4px; }
+
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 28px; padding-block: 34px 30px; }
+  .doors { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body data-root="" data-page="home">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="TARIN home"><img src="assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="price-record/index.html">Price record</a>
+      <a href="explorer/index.html">Data explorer</a>
+      <a href="forecast/index.html">Forecast</a>
+      <a href="checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="hero">
+  <svg class="hex" aria-hidden="true" width="100%" height="100%">
+    <defs>
+      <pattern id="hexes" width="42" height="72.75" patternUnits="userSpaceOnUse" patternTransform="scale(0.9)">
+        <path d="M21 0 L42 12.125 L42 36.375 L21 48.5 L0 36.375 L0 12.125 Z M21 48.5 L21 72.75" fill="none" stroke="var(--grid)" stroke-width="1"/>
+      </pattern>
+      <linearGradient id="fade" x1="0" x2="1" y1="0" y2="0"><stop offset="0.35" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff" stop-opacity="1"/></linearGradient>
+      <mask id="m"><rect width="100%" height="100%" fill="url(#fade)"/></mask>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#hexes)" mask="url(#m)"/>
+  </svg>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Ghana · consumer prices · 1998 to <span id="h-latest">August 2026</span></span>
+      <h1 style="margin-top:14px">The checked record of Ghana's prices.</h1>
+      <p class="lede">TARIN takes the Ghana Statistical Service's price data from the source, keeps every file it came from, and runs thirteen checks before anything is published. Values that fail stay off the charts, with the reason shown.</p>
+      <div class="cta">
+        <a class="btn primary" href="explorer/index.html">Open the data explorer</a>
+        <a class="btn" href="price-record/index.html">Read the price record</a>
+      </div>
+    </div>
+    <div class="latest card" aria-live="polite">
+      <div class="head">
+        <span class="eyebrow">Year-on-year inflation</span>
+        <span class="mono muted" id="l-month">–</span>
+      </div>
+      <div class="head" style="align-items:flex-end">
+        <div class="big" id="l-yoy">–</div>
+        <div class="delta" id="l-delta"></div>
+      </div>
+      <div class="spark" id="spark"></div>
+      <div class="grid">
+        <div><b id="l-mom">–</b><span>month-on-month</span></div>
+        <div><b id="l-food">–</b><span>food</span></div>
+        <div><b id="l-nonfood">–</b><span>non-food</span></div>
+        <div><b id="l-local">–</b><span>local goods</span></div>
+        <div><b id="l-import">–</b><span>imported goods</span></div>
+        <div><b id="l-index">–</b><span>index, 2021 = 100</span></div>
+      </div>
+      <p class="caption" id="l-src">Source: GSS CPI annex.</p>
+      <div class="fc-line" id="fc-line" hidden><span>TARIN forecast, <span id="fc-p"></span>: <b id="fc-v"></b> <span class="muted mono" style="font-size:12px" id="fc-r"></span></span><a href="forecast/index.html">See the forecast →</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">In the store</span>
+      <h2 style="margin-top:6px">Everything on this site comes from one checked store</h2>
+    </div>
+    <div class="stats" id="stats">
+      <div><b data-k="values">–</b><span>values stored</span></div>
+      <div><b data-k="publishable">–</b><span>cleared to publish</span></div>
+      <div><b data-k="held">–</b><span>held back by a check</span></div>
+      <div><b data-k="series">–</b><span>series</span></div>
+      <div><b data-k="files">–</b><span>source files, fingerprinted</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="doors">
+      <a class="door card" href="price-record/index.html">
+        <span class="k">Data story</span>
+        <h3>Ghana's Price Record</h3>
+        <p>Twenty-seven years of inflation, the 2026 rebound, sixteen regions and imported goods, each chart with its sources.</p>
+        <span class="go">Read it →</span>
+      </a>
+      <a class="door card" href="explorer/index.html">
+        <span class="k">Series</span>
+        <h3>Data explorer</h3>
+        <p>Any series by region, product group or origin. Compare two sources, see what's held and why, download CSV.</p>
+        <span class="go">Explore →</span>
+      </a>
+      <a class="door card" href="forecast/index.html">
+        <span class="k">Forecast</span>
+        <h3>Inflation forecast</h3>
+        <p>Headline inflation to December, with honest ranges. Frozen before GSS publishes, then scored against what it publishes.</p>
+        <span class="go">See the forecast →</span>
+      </a>
+      <a class="door card" href="checks/index.html">
+        <span class="k">Method</span>
+        <h3>How it's checked</h3>
+        <p>The thirteen rules, what they're holding right now, the problems they found in GSS's data, and every source file.</p>
+        <span class="go">See the checks →</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Sources</span>
+      <h2 style="margin-top:6px">Where the numbers come from, and how fresh they are</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table class="data" id="t-src">
+        <thead><tr><th>Source</th><th>Covers</th><th>Status</th><th>Latest file</th><th>SHA-256</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="caption">The two sources overlap from 2021 and are compared month by month. Where they agree, figures come from StatsBank up to January 2026 and from the annex after it.</p>
+  </section>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+  </div>
+</footer>
+
+<script src="assets/tarin.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  T.json("data/home.json").then(function (H) {
+    var h = H.headline;
+    document.getElementById("h-latest").textContent = T.monthLabel(H.latest).replace(/^(\w+)/, function (m) {
+      return ["January","February","March","April","May","June","July","August","September","October","November","December"][T.MONTHS.indexOf(m)];
+    });
+    document.getElementById("l-month").textContent = T.monthLabel(H.latest);
+    document.getElementById("l-yoy").innerHTML = T.fmt(h.yoy, 2) + "<small>%</small>";
+    var d = h.yoy - h.yoy_prev;
+    document.getElementById("l-delta").textContent = (d >= 0 ? "▲ " : "▼ ") + T.fmt(Math.abs(d), 2) + " pts on " + T.monthLabel(T.periodAt(T.monthIndex(H.latest) - 1));
+    [["l-mom", h.mom], ["l-food", h.food], ["l-nonfood", h.nonfood], ["l-local", h.local], ["l-import", h.import]].forEach(function (p) {
+      document.getElementById(p[0]).textContent = T.fmt(p[1], 2, "%");
+    });
+    document.getElementById("l-index").textContent = T.fmt(h.index, 2);
+    var f = H.sources.an.latest_file;
+    document.getElementById("l-src").textContent = "Source: GSS CPI annex, " + T.monthLabel(H.latest) + " workbook. Full precision; GSS rounds to one decimal.";
+    if (H.forecast) {
+      document.getElementById("fc-p").textContent = T.monthLabel(H.forecast.period);
+      document.getElementById("fc-v").textContent = T.fmt(H.forecast.yoy, 2) + "%";
+      document.getElementById("fc-r").textContent = "80%: " + T.fmt(H.forecast.lo80, 1) + "–" + T.fmt(H.forecast.hi80, 1);
+      document.getElementById("fc-line").hidden = false;
+    }
+    Array.prototype.forEach.call(document.querySelectorAll("#stats b"), function (b) { b.textContent = T.int(H.totals[b.getAttribute("data-k")]); });
+
+    // sparkline: last three years, the low point marked
+    var host = document.getElementById("spark");
+    function spark() {
+      var old = host.querySelector("svg"); if (old) old.remove();
+      var oldTip = host.querySelector(".tip"); if (oldTip) oldTip.remove();
+      var W = Math.max(240, Math.floor(host.getBoundingClientRect().width)), Hh = 92, m = { t: 8, r: 6, b: 16, l: 6 };
+      var vals = H.spark.map(function (s) { return s[1]; }), n = vals.length;
+      var hi = Math.max.apply(null, vals), lo = 0;
+      var x = function (i) { return m.l + i * (W - m.l - m.r) / (n - 1); };
+      var y = function (v) { return m.t + (hi - v) / (hi - lo) * (Hh - m.t - m.b); };
+      var svg = T.el("svg", { viewBox: "0 0 " + W + " " + Hh, width: W, height: Hh, role: "img",
+        "aria-label": "Year-on-year inflation, " + T.monthLabel(H.spark[0][0]) + " to " + T.monthLabel(H.latest) });
+      host.appendChild(svg);
+      svg.appendChild(T.el("line", { x1: m.l, x2: W - m.r, y1: y(0), y2: y(0) }, "stroke:var(--axis)"));
+      var d = vals.map(function (v, i) { return (i ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); }).join("");
+      svg.appendChild(T.el("path", { d: d + "L" + x(n - 1) + "," + y(0) + "L" + x(0) + "," + y(0) + "Z" }, "fill:var(--tol);stroke:none"));
+      svg.appendChild(T.el("path", { d: d }, "fill:none;stroke:var(--s1);stroke-width:2;stroke-linejoin:round"));
+      var li = H.spark.findIndex(function (s) { return s[0] === H.spark_low[0]; });
+      svg.appendChild(T.el("circle", { cx: x(li), cy: y(vals[li]), r: 3.5 }, "fill:var(--surface);stroke:var(--s1);stroke-width:2"));
+      svg.appendChild(T.el("circle", { cx: x(n - 1), cy: y(vals[n - 1]), r: 4 }, "fill:var(--s1);stroke:var(--surface);stroke-width:2"));
+      T.text(svg, x(li), y(vals[li]) - 9, "low " + T.fmt(vals[li], 1) + "%", null, "middle");
+      T.text(svg, x(0), Hh - 2, T.monthLabel(H.spark[0][0]), null, "start");
+      T.text(svg, x(n - 1), Hh - 2, T.monthLabel(H.latest), null, "end");
+      var tip = T.tip(host);
+      var hit = T.el("rect", { x: 0, y: 0, width: W, height: Hh, tabindex: 0, "aria-label": "Inflation by month; use arrow keys" }, "fill:transparent;outline:none");
+      svg.appendChild(hit);
+      var dot = T.el("circle", { r: 3.5 }, "fill:var(--s1);display:none"); svg.appendChild(dot);
+      var cur = n - 1;
+      function show(i) {
+        cur = Math.max(0, Math.min(n - 1, i));
+        dot.setAttribute("cx", x(cur)); dot.setAttribute("cy", y(vals[cur])); dot.style.display = "";
+        T.fillTip(tip, T.monthLabel(H.spark[cur][0]), [{ color: "var(--s1)", name: "y/y", value: T.fmt(vals[cur], 2, "%") }]);
+        T.placeTip(host, svg, W, tip, x(cur), y(vals[cur]));
+      }
+      hit.addEventListener("pointermove", function (ev) { var r = svg.getBoundingClientRect(); show(Math.round(((ev.clientX - r.left) * W / r.width - m.l) / (W - m.l - m.r) * (n - 1))); });
+      hit.addEventListener("pointerleave", function () { tip.hidden = true; dot.style.display = "none"; });
+      hit.addEventListener("focus", function () { show(cur); });
+      hit.addEventListener("blur", function () { tip.hidden = true; dot.style.display = "none"; });
+      hit.addEventListener("keydown", function (ev) {
+        if (ev.key === "ArrowLeft") { show(cur - 1); ev.preventDefault(); }
+        if (ev.key === "ArrowRight") { show(cur + 1); ev.preventDefault(); }
+      });
+    }
+    spark(); T.onResize(spark);
+
+    // sources table
+    var tb = document.querySelector("#t-src tbody");
+    [["sb", "Frozen: not updated since " + T.monthLabel((H.sources.sb.latest_file.publisher_updated || "").slice(0, 7) || "2026-02"), "idle"],
+     ["an", "Current: " + T.monthLabel(H.latest) + " release", "ok"]].forEach(function (r) {
+      var s = H.sources[r[0]], f = s.latest_file;
+      var tr = document.createElement("tr");
+      var fname = decodeURIComponent(f.url.split("/").pop());
+      tr.innerHTML = "<td><b style='font-weight:600;color:var(--ink)'></b></td><td class='m'></td><td><span class='pill " + r[2] + "'></span></td><td></td><td class='m'></td>";
+      tr.children[0].firstChild.textContent = s.name;
+      tr.children[1].textContent = T.monthLabel(s.first) + " – " + T.monthLabel(s.last);
+      tr.children[2].firstChild.textContent = r[1];
+      var a = document.createElement("a"); a.href = f.url; a.textContent = fname.length > 42 ? fname.slice(0, 40) + "…" : fname; a.target = "_blank"; a.rel = "noopener";
+      tr.children[3].appendChild(a);
+      tr.children[3].appendChild(document.createTextNode(" · retrieved " + f.retrieved.slice(0, 10)));
+      tr.children[4].textContent = f.sha256.slice(0, 12) + "…";
+      tr.children[4].title = f.sha256;
+      tb.appendChild(tr);
+    });
+  }).catch(function (e) { T.fail(document.getElementById("spark"), e); });
+})();
+</script>
+</body>
+</html>

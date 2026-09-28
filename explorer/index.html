@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Data explorer · TARIN</title>
+<meta name="description" content="Every Ghana CPI series TARIN holds, by source, region, product group and origin, with held values marked and CSV downloads.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/tarin.css">
+<style>
+.x-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; padding-block: 28px 12px; align-items: start; }
+.panel { padding: 16px; display: grid; gap: 16px; position: sticky; top: 12px; }
+.panel h2 { font-family: var(--f-mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.slots { display: grid; gap: 6px; }
+.slot-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 5px; }
+.slot-row.on { border-color: var(--ink-2); background: var(--surface); }
+.slot { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 10px; align-items: center; text-align: left;
+  font: inherit; font-size: 13.5px; line-height: 1.35; color: var(--ink-2); background: none; border: 0;
+  padding: 8px 4px 8px 10px; cursor: pointer; width: 100%; }
+.slot[aria-pressed="true"] { color: var(--ink); }
+.slot .sw { width: 14px; height: 3px; border-radius: 2px; }
+.slot .nm b { display: block; font-weight: 600; color: var(--ink); }
+.slot .nm span { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+.slot-row .x { font: inherit; font-family: var(--f-mono); font-size: 15px; color: var(--muted); background: none; border: 0; padding: 0 10px; cursor: pointer; border-radius: 0 5px 5px 0; }
+.slot-row .x:hover { background: var(--sunk); color: var(--ink); }
+.add { font: inherit; font-size: 13.5px; color: var(--brand-ink); background: none; border: 1px dashed var(--axis); border-radius: 5px; padding: 7px 10px; cursor: pointer; text-align: left; }
+.add:disabled { color: var(--muted); cursor: default; }
+.field { display: grid; gap: 5px; }
+.field label, .field .lab { font-size: 12.5px; color: var(--muted); }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; padding: 7px 8px; width: 100%; }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; background: var(--surface); }
+.seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: none; border: 0; padding: 6px 11px; cursor: pointer; border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.seg button:disabled { color: var(--axis); cursor: default; }
+.toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 16px; align-items: center; margin-bottom: 10px; }
+.toolbar .l { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 14px; }
+.info .card { padding: 12px 14px; display: grid; gap: 4px; font-size: 13.5px; color: var(--ink-2); }
+.info .card .top { display: flex; gap: 8px; align-items: center; }
+.info .card code { font-size: 11.5px; color: var(--ink); word-break: break-all; }
+.info .card .row { display: flex; justify-content: space-between; gap: 10px; font-family: var(--f-mono); font-size: 12px; }
+.info .card .row span:first-child { color: var(--muted); }
+.copy { font: inherit; font-family: var(--f-mono); font-size: 11px; color: var(--brand-ink); background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0 6px; cursor: pointer; }
+.vals { margin-top: 18px; }
+.vals table td.st { white-space: normal; min-width: 180px; }
+.vals .held-cell { color: var(--hold); }
+@media (max-width: 860px) {
+  .x-layout { grid-template-columns: 1fr; }
+  .panel { position: static; }
+}
+</style>
+</head>
+<body data-root="../" data-page="explorer">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="index.html" aria-current="page">Data explorer</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head" style="padding-block:32px 22px">
+    <span class="eyebrow">Data explorer</span>
+    <h1>Every series, with what's held and why</h1>
+    <p class="lede" id="x-lede">Pick up to three series to compare. Values a check holds back show as gaps, marked in red under the axis; hover for the rule.</p>
+  </div>
+
+  <div class="x-layout">
+    <aside class="panel card" aria-label="Choose series">
+      <div>
+        <h2>Series</h2>
+        <div class="slots" id="slots" role="group" aria-label="Series on the chart" style="margin-top:8px"></div>
+        <button class="add" id="add" type="button" style="margin-top:6px;width:100%">+ Add a series to compare</button>
+      </div>
+      <div>
+        <h2 id="edit-h">Edit series 1</h2>
+        <div style="display:grid;gap:10px;margin-top:8px">
+          <div class="field"><span class="lab">Source</span>
+            <div class="seg" id="f-src" role="group" aria-label="Source">
+              <button type="button" data-v="an">GSS annex</button><button type="button" data-v="sb">StatsBank</button>
+            </div>
+          </div>
+          <div class="field"><label for="f-region">Region</label><select id="f-region"></select></div>
+          <div class="field"><label for="f-product">Product group</label><select id="f-product"></select></div>
+          <div class="field"><label for="f-split">Origin of goods</label><select id="f-split"></select></div>
+        </div>
+      </div>
+    </aside>
+
+    <div>
+      <div class="toolbar">
+        <div class="l">
+          <div class="seg" id="f-ind" role="group" aria-label="Measure">
+            <button type="button" data-v="yoy">Year-on-year</button><button type="button" data-v="mom">Month-on-month</button><button type="button" data-v="cpi">Index</button>
+          </div>
+        </div>
+        <div class="seg" id="f-range" role="group" aria-label="Time range">
+          <button type="button" data-v="24">2y</button><button type="button" data-v="60">5y</button><button type="button" data-v="120">10y</button><button type="button" data-v="0">All</button>
+        </div>
+      </div>
+      <div class="chart" id="c-x">
+        <div class="legend" id="x-legend"></div>
+      </div>
+      <p class="caption" style="margin-top:8px" id="x-cap">Hover or tap the chart; arrow keys step through months once it has focus. Where two lines lie on top of each other, the sources agree.</p>
+      <div class="info" id="info"></div>
+      <details class="vals" id="vals">
+        <summary>Values as a table</summary>
+        <div class="tbl-wrap"><table class="data" id="t-vals"></table></div>
+      </details>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  var COLORS = ["var(--s1)", "var(--s2)", "var(--s3)"];
+  var SPLIT_LABEL = { "All sources": "All goods", "Local": "Local goods", "Import": "Imported goods" };
+  var SRC_LABEL = { an: "GSS annex", sb: "StatsBank" };
+  var state = { slots: [], active: 0, ind: "yoy", range: 60 };
+  var C, byKey = {}, byId = {}, bundles = {};
+
+  function key(src, ind, region, product, split) { return [src, ind, region, product, split].join("|"); }
+  function load(file) {
+    if (!bundles[file]) bundles[file] = T.json("data/series/" + file + ".json");
+    return bundles[file];
+  }
+  function regions(src) {
+    var s = {}; C.series.forEach(function (r) { if (r[1] === src) s[r[3]] = 1; });
+    return Object.keys(s).sort(function (a, b) { return (a === "Ghana" ? -1 : b === "Ghana" ? 1 : a.localeCompare(b)); });
+  }
+  function products(src, region) {
+    var s = {}; C.series.forEach(function (r) { if (r[1] === src && r[3] === region) s[r[4]] = 1; });
+    var order = ["All products", "Food", "Non-food"];
+    return Object.keys(s).sort(function (a, b) {
+      var ia = order.indexOf(a), ib = order.indexOf(b);
+      if (ia >= 0 || ib >= 0) return (ia < 0 ? 9 : ia) - (ib < 0 ? 9 : ib);
+      return a.localeCompare(b);
+    });
+  }
+  function splits(src, region, product) {
+    var s = {}; C.series.forEach(function (r) { if (r[1] === src && r[3] === region && r[4] === product) s[r[5]] = 1; });
+    return ["All sources", "Local", "Import"].filter(function (x) { return s[x]; });
+  }
+  function hasInd(slot, ind) { return !!byKey[key(slot.src, ind, slot.region, slot.product, slot.split)]; }
+  function rowFor(slot) { return byKey[key(slot.src, state.ind, slot.region, slot.product, slot.split)]; }
+  function describe(slot) {
+    var bits = [slot.product === "All products" ? "All items" : slot.product];
+    if (slot.split !== "All sources") bits.push(SPLIT_LABEL[slot.split].toLowerCase());
+    return { title: slot.region + " · " + bits.join(", "), sub: SRC_LABEL[slot.src] };
+  }
+
+  /* ---------- controls ---------- */
+  function fill(sel, opts, value, label) {
+    sel.innerHTML = "";
+    opts.forEach(function (o) {
+      var op = document.createElement("option"); op.value = o; op.textContent = label ? label(o) : o;
+      if (o === value) op.selected = true; sel.appendChild(op);
+    });
+  }
+  function segSet(host, v, enabled) {
+    Array.prototype.forEach.call(host.querySelectorAll("button"), function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-v") === String(v) ? "true" : "false");
+      if (enabled) b.disabled = !enabled(b.getAttribute("data-v"));
+    });
+  }
+  function normalise(slot) {
+    var rg = regions(slot.src); if (rg.indexOf(slot.region) < 0) slot.region = "Ghana";
+    var pr = products(slot.src, slot.region); if (pr.indexOf(slot.product) < 0) slot.product = pr.indexOf("All products") >= 0 ? "All products" : pr[0];
+    var sp = splits(slot.src, slot.region, slot.product); if (sp.indexOf(slot.split) < 0) slot.split = sp[0];
+    return slot;
+  }
+  function renderControls() {
+    var slot = state.slots[state.active];
+    document.getElementById("edit-h").textContent = "Edit series " + (state.active + 1);
+    segSet(document.getElementById("f-src"), slot.src);
+    fill(document.getElementById("f-region"), regions(slot.src), slot.region);
+    fill(document.getElementById("f-product"), products(slot.src, slot.region), slot.product);
+    fill(document.getElementById("f-split"), splits(slot.src, slot.region, slot.product), slot.split, function (o) { return SPLIT_LABEL[o]; });
+    document.getElementById("f-split").disabled = splits(slot.src, slot.region, slot.product).length < 2;
+    segSet(document.getElementById("f-ind"), state.ind, function (v) { return state.slots.some(function (s) { return hasInd(s, v); }); });
+    segSet(document.getElementById("f-range"), state.range);
+    var host = document.getElementById("slots"); host.innerHTML = "";
+    state.slots.forEach(function (s, i) {
+      var d = describe(s);
+      var row = document.createElement("div"); row.className = "slot-row" + (i === state.active ? " on" : "");
+      var b = document.createElement("button"); b.type = "button"; b.className = "slot";
+      b.setAttribute("aria-pressed", i === state.active ? "true" : "false");
+      b.innerHTML = '<i class="sw"></i><span class="nm"><b></b><span></span></span>';
+      b.querySelector(".sw").style.background = COLORS[i];
+      b.querySelector("b").textContent = d.title;
+      b.querySelector(".nm span").textContent = d.sub + (rowFor(s) ? "" : " · no " + state.ind + " series");
+      b.setAttribute("aria-label", "Series " + (i + 1) + ": " + d.title + ", " + d.sub + ". Edit");
+      b.addEventListener("click", function () { state.active = i; update(); });
+      row.appendChild(b);
+      if (state.slots.length > 1) {
+        var x = document.createElement("button"); x.type = "button"; x.className = "x"; x.textContent = "×";
+        x.setAttribute("aria-label", "Remove series " + (i + 1));
+        x.addEventListener("click", function () { state.slots.splice(i, 1); state.active = Math.min(state.active, state.slots.length - 1); update(); });
+        row.appendChild(x);
+      }
+      host.appendChild(row);
+    });
+    document.getElementById("add").disabled = state.slots.length >= 3;
+    document.getElementById("add").textContent = state.slots.length >= 3 ? "Three series at most, so the colours stay distinguishable" : "+ Add a series to compare";
+  }
+
+  /* ---------- chart, info, table ---------- */
+  var drawn = null;
+  function draw() {
+    var rows = state.slots.map(rowFor);
+    var live = rows.map(function (r, i) { return r ? { r: r, i: i, slot: state.slots[i] } : null; }).filter(Boolean);
+    var host = document.getElementById("c-x");
+    var legend = document.getElementById("x-legend"); legend.innerHTML = "";
+    if (!live.length) { var o = host.querySelector("svg"); if (o) o.remove(); return; }
+    Promise.all(live.map(function (l) { return load(l.r[10]); })).then(function (bs) {
+      var first = Math.min.apply(null, live.map(function (l) { return T.monthIndex(l.r[6]); }));
+      var last = Math.max.apply(null, live.map(function (l) { return T.monthIndex(l.r[7]); }));
+      if (state.range) first = Math.max(first, last - state.range + 1);
+      var labels = []; for (var k = first; k <= last; k++) labels.push(T.periodAt(k));
+      var anyHeld = false;
+      var series = live.map(function (l, j) {
+        var b = bs[j][l.r[0]], s0 = T.monthIndex(b[0]);
+        var vals = labels.map(function (p) { var i = T.monthIndex(p) - s0; return i >= 0 && i < b[1].length ? b[1][i] : null; });
+        var held = {};
+        Object.keys(b[2]).forEach(function (i) { var idx = s0 + +i - first; if (idx >= 0 && idx < labels.length) { held[idx] = b[2][i]; anyHeld = true; } });
+        var d = describe(l.slot);
+        var sp = document.createElement("span");
+        sp.innerHTML = '<i class="key-line"></i>'; sp.firstChild.style.background = COLORS[l.i];
+        sp.appendChild(document.createTextNode(d.title + " · " + d.sub));
+        legend.appendChild(sp);
+        return { values: vals, color: COLORS[l.i], name: (l.i + 1) + " " + d.sub, held: held, raw: b, s0: s0 };
+      });
+      if (anyHeld) { var hs = document.createElement("span"); hs.innerHTML = '<i class="key-held"></i>Held by a check'; legend.appendChild(hs); }
+      var pct = state.ind !== "cpi";
+      drawn = { labels: labels, series: series };
+      T.lineChart(host, {
+        labels: labels, series: series, height: 360, zero: state.ind === "mom",
+        unit: pct ? "%" : "", rules: C.rules,
+        fmt: function (v) { return T.fmt(v, 2) + (pct ? "%" : ""); },
+        aria: C.indicators[state.ind] + ", " + series.map(function (s) { return s.name; }).join(" and ")
+      });
+      info(live, bs); table(labels, series);
+      location.replace("#" + state.slots.map(function (s) { var r = rowFor(s); return r ? r[0] : ""; }).filter(Boolean).join("~"));
+    }).catch(function (e) { T.fail(host, e); });
+  }
+  function info(live, bs) {
+    var host = document.getElementById("info"); host.innerHTML = "";
+    live.forEach(function (l, j) {
+      var r = l.r, d = describe(l.slot), src = C.sources[r[1]];
+      var c = document.createElement("div"); c.className = "card";
+      c.innerHTML = '<div class="top"><i class="key-line"></i><b style="color:var(--ink);font-weight:600"></b></div>' +
+        '<div><code></code> <button class="copy" type="button">copy id</button></div>' +
+        '<div class="row"><span>span</span><span></span></div>' +
+        '<div class="row"><span>values</span><span></span></div>' +
+        '<div class="row"><span>held by checks</span><span></span></div>' +
+        '<div class="row"><span>source</span><span></span></div>' +
+        '<div class="row"><span>download</span><span><a></a></span></div>';
+      c.querySelector(".key-line").style.background = COLORS[l.i];
+      c.querySelector("b").textContent = d.title;
+      c.querySelector("code").textContent = r[0];
+      var rows = c.querySelectorAll(".row span:last-child");
+      rows[0].textContent = T.monthLabel(r[6]) + " – " + T.monthLabel(r[7]);
+      rows[1].textContent = T.int(r[8]);
+      rows[2].innerHTML = r[9] ? '<span class="pill hold">' + T.int(r[9]) + " held</span>" : '<span class="pill ok">none</span>';
+      rows[3].textContent = src.name;
+      var a = c.querySelector("a"); a.href = T.ROOT + "data/csv/" + r[10] + ".csv"; a.setAttribute("download", ""); a.textContent = r[10] + ".csv";
+      c.querySelector(".copy").addEventListener("click", function (ev) {
+        var btn = ev.currentTarget;
+        (navigator.clipboard ? navigator.clipboard.writeText(r[0]) : Promise.reject()).then(function () { btn.textContent = "copied"; },
+          function () { var rg = document.createRange(); rg.selectNodeContents(c.querySelector("code")); var s = getSelection(); s.removeAllRanges(); s.addRange(rg); });
+      });
+      host.appendChild(c);
+    });
+  }
+  function table(labels, series) {
+    var t = document.getElementById("t-vals"); t.innerHTML = "";
+    var head = "<thead><tr><th>Month</th>" + series.map(function (s, i) { return '<th class="r">' + (i + 1) + "</th>"; }).join("") + "<th>Checks</th></tr></thead>";
+    var body = [];
+    for (var i = labels.length - 1; i >= 0; i--) {
+      var notes = [];
+      var cells = series.map(function (s, j) {
+        var h = s.held[i];
+        if (h) { notes.push((j + 1) + ": held, " + h.map(function (r) { return C.rules[r] || r; }).join("; ").toLowerCase()); return '<td class="r m held-cell">held</td>'; }
+        var raw = s.raw, ri = T.monthIndex(labels[i]) - s.s0;
+        var w = raw[3][ri]; if (w) notes.push((j + 1) + ": flagged, " + w.map(function (r) { return C.rules[r] || r; }).join("; ").toLowerCase());
+        return '<td class="r m">' + (s.values[i] == null ? "–" : String(s.values[i])) + "</td>";
+      });
+      body.push("<tr><td class='m'>" + labels[i] + "</td>" + cells.join("") + "<td class='st'>" + notes.join("<br>") + "</td></tr>");
+    }
+    t.innerHTML = head + "<tbody>" + body.join("") + "</tbody>";
+  }
+  function update() { renderControls(); draw(); }
+
+  /* ---------- wiring ---------- */
+  function wire() {
+    document.getElementById("f-src").addEventListener("click", function (ev) {
+      var v = ev.target.getAttribute && ev.target.getAttribute("data-v"); if (!v) return;
+      var s = state.slots[state.active]; s.src = v; normalise(s); update();
+    });
+    document.getElementById("f-region").addEventListener("change", function (ev) {
+      var s = state.slots[state.active]; s.region = ev.target.value; normalise(s); update();
+    });
+    document.getElementById("f-product").addEventListener("change", function (ev) {
+      var s = state.slots[state.active]; s.product = ev.target.value; normalise(s); update();
+    });
+    document.getElementById("f-split").addEventListener("change", function (ev) {
+      state.slots[state.active].split = ev.target.value; update();
+    });
+    document.getElementById("f-ind").addEventListener("click", function (ev) {
+      var v = ev.target.getAttribute && ev.target.getAttribute("data-v"); if (!v || ev.target.disabled) return;
+      state.ind = v; update();
+    });
+    document.getElementById("f-range").addEventListener("click", function (ev) {
+      var v = ev.target.getAttribute && ev.target.getAttribute("data-v"); if (v == null) return;
+      state.range = +v; update();
+    });
+    document.getElementById("add").addEventListener("click", function () {
+      if (state.slots.length >= 3) return;
+      var cur = state.slots[state.active];
+      state.slots.push(normalise({ src: cur.src, region: cur.region === "Ghana" ? "Greater Accra" : "Ghana", product: cur.product, split: "All sources" }));
+      state.active = state.slots.length - 1; update();
+    });
+    T.onResize(draw);
+  }
+
+  T.json("data/catalog.json").then(function (cat) {
+    C = cat;
+    C.series.forEach(function (r) { byKey[key(r[1], r[2], r[3], r[4], r[5])] = r; byId[r[0]] = r; });
+    var fromHash = (location.hash || "").slice(1).split("~").map(function (id) { return byId[id]; }).filter(Boolean).slice(0, 3);
+    if (fromHash.length) {
+      state.ind = fromHash[0][2];
+      state.slots = fromHash.map(function (r) { return { src: r[1], region: r[3], product: r[4], split: r[5] }; });
+    } else {
+      state.slots = [{ src: "an", region: "Ghana", product: "All products", split: "All sources" },
+                     { src: "sb", region: "Ghana", product: "All products", split: "All sources" }];
+    }
+    var s = C.sources;
+    document.getElementById("x-lede").textContent = T.int(C.series.length) + " series from " + s.sb.name + " (" +
+      T.monthLabel(s.sb.first) + " – " + T.monthLabel(s.sb.last) + ") and the " + s.an.name + " (" + T.monthLabel(s.an.first) + " – " +
+      T.monthLabel(s.an.last) + "). Pick up to three to compare. Values a check holds back show as gaps, marked in red under the axis; hover for the rule.";
+    wire(); update();
+  }).catch(function (e) { T.fail(document.getElementById("c-x"), e); });
+})();
+</script>
+</body>
+</html>

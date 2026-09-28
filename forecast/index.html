@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Forecast · TARIN</title>
+<meta name="description" content="TARIN's forecast of Ghana's headline inflation, frozen and fingerprinted before GSS publishes, and scored against the first figure GSS releases.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/tarin.css">
+<style>
+:root { --fan-95: rgba(39, 90, 235, 0.10); --fan-80: rgba(39, 90, 235, 0.22); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fan-95: rgba(91, 134, 245, 0.14); --fan-80: rgba(91, 134, 245, 0.30); } }
+:root[data-theme="dark"] { --fan-95: rgba(91, 134, 245, 0.14); --fan-80: rgba(91, 134, 245, 0.30); }
+.months { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.months > div { background: var(--surface); padding: 14px 16px 12px; display: grid; gap: 4px; align-content: start; }
+.months .p { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.months .v { font-family: var(--f-display); font-weight: 600; font-size: 34px; line-height: 1.05; font-variant-numeric: tabular-nums; }
+.months .v small { font-size: 0.5em; color: var(--ink-2); }
+.months .r { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); }
+.key-fan { width: 16px; height: 10px; display: inline-block; border-radius: 2px; }
+.frozen { padding: 16px 18px; display: grid; gap: 8px; }
+.frozen .row { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: 12px; font-size: 14px; }
+.frozen .row span:first-child { color: var(--muted); }
+.frozen code { word-break: break-all; font-size: 12.5px; color: var(--ink); }
+.base { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.base .card { padding: 12px 14px; display: grid; gap: 2px; }
+.base .card b { font-family: var(--f-mono); font-weight: 500; font-size: 18px; color: var(--ink); }
+.base .card span { font-size: 13px; color: var(--ink-2); }
+.models { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.models .card { padding: 14px 16px; display: grid; gap: 6px; }
+.models .card h3 { font-size: 15.5px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.models .card p { font-size: 14.5px; color: var(--ink-2); }
+td.best { color: var(--ink); font-weight: 600; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; background: var(--surface); }
+.seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: none; border: 0; padding: 6px 11px; cursor: pointer; border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+@media (max-width: 760px) {
+  .months, .base { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .models { grid-template-columns: 1fr; }
+  .frozen .row { grid-template-columns: 1fr; gap: 0; }
+}
+</style>
+</head>
+<body data-root="../" data-page="forecast">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="index.html" aria-current="page">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow" id="f-eyebrow">Forecast</span>
+    <h1 id="f-h1">Where inflation is heading</h1>
+    <p class="lede" id="f-lede"></p>
+  </div>
+
+  <section class="block">
+    <div class="months" id="months"></div>
+    <div class="chart" id="c-fan">
+      <div class="legend">
+        <span><i class="key-line" style="background:var(--s1)"></i>Published</span>
+        <span><i class="key-line" style="background:repeating-linear-gradient(90deg,var(--s1) 0 5px,transparent 5px 8px)"></i>Forecast</span>
+        <span><i class="key-fan" style="background:var(--fan-80)"></i>80% range</span>
+        <span><i class="key-fan" style="background:var(--fan-95)"></i>95% range</span>
+        <span><i class="key-line" style="background:repeating-linear-gradient(90deg,var(--muted) 0 2px,transparent 2px 5px)"></i>If nothing changed</span>
+      </div>
+    </div>
+    <p class="caption">Year-on-year inflation, national, % — the last year published by GSS, then the forecast. <b>Hover or tap</b> for any month.</p>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Why it moves</span>
+      <h2 style="margin-top:6px">Most of the change is last year dropping out</h2>
+      <p style="margin-top:10px;color:var(--ink-2)" id="base-lede"></p>
+    </div>
+    <div class="base" id="base"></div>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Frozen</span>
+      <h2 style="margin-top:6px">This forecast can't be changed after the fact</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">It was written to a file before GSS published any of these months, and the file's SHA-256 fingerprint was recorded. Download it and run <code>shasum -a 256</code> on it: if the result matches, it is the forecast as made. It will be scored against the first figure GSS publishes for each month, so a later revision can't flatter it.</p>
+    </div>
+    <div class="frozen card" id="frozen"></div>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Scorecard</span>
+      <h2 style="margin-top:6px">Every forecast, against what GSS then published</h2>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="t-score"></table></div>
+    <p class="caption" id="score-cap"></p>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Method</span>
+      <h2 style="margin-top:6px">Four small models, and a rule for picking one</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">Inflation h months ahead is the index then over the index a year before it, and that second number is already published. So the models only forecast the monthly price changes between now and the target; the year-on-year rate follows by arithmetic. The models were fixed, and so was the rule that picks one: <span id="rule"></span>.</p>
+    </div>
+    <div class="models" id="models"></div>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Back-test</span>
+      <h2 style="margin-top:6px">How each model would have done since 2010</h2>
+      <p style="margin-top:10px;color:var(--ink-2)" id="bt-lede"></p>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="t-bt"></table></div>
+    <p class="caption">Root mean squared error of the year-on-year forecast, percentage points; in brackets, origins from January 2023 only. Lower is better; the best in each column is in bold.</p>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:8px">
+      <h3 style="font-size:16px">Past forecasts against the outcome, since 2022</h3>
+      <div class="seg" id="hsel" role="group" aria-label="Months ahead"><button type="button" data-h="1" aria-pressed="true">1 month ahead</button><button type="button" data-h="3" aria-pressed="false">3 months ahead</button></div>
+    </div>
+    <div class="chart" id="c-track">
+      <div class="legend">
+        <span><i class="key-line" style="background:var(--ink-2)"></i>Published</span>
+        <span><i class="key-line" style="background:var(--s1)"></i>Chosen model</span>
+        <span><i class="key-line" style="background:var(--s2)"></i>No change</span>
+      </div>
+    </div>
+    <p class="caption" id="cal-cap"></p>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Ghana Statistical Service. Forecasts: TARIN, not GSS.</span>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  var FULL = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  function month(p) { return FULL[+p.slice(5, 7) - 1]; }
+  function monthY(p) { return month(p) + " " + p.slice(0, 4); }
+  var DESC = {
+    no_change: "Year-on-year inflation stays where it is. The benchmark every forecast has to beat.",
+    seasonal: "Prices keep rising at their recent underlying pace (last six months, seasonally adjusted), plus each calendar month's typical deviation, half-weighted because the 2021 basket has only a few years of history.",
+    reverting: "As the seasonal model, but the underlying pace drifts back toward its five-year average, at a speed estimated from the data.",
+    ensemble: "The average of the other three."
+  };
+
+  T.json("data/forecast.json").then(function (F) {
+    var L = F.latest, pts = L.points, first = pts[0], last = pts[pts.length - 1];
+    var made = L.made_at.slice(0, 10);
+    document.getElementById("f-eyebrow").textContent = "Forecast · made " + made + " from data through " + monthY(L.data_through);
+    document.getElementById("f-h1").textContent = "Where inflation is heading, " + month(first.period) + " to " + monthY(last.period);
+    document.getElementById("f-lede").textContent = "TARIN expects year-on-year inflation to ease from " + T.fmt(L.last_actual.yoy, 1) + "% in " +
+      month(L.data_through) + " to about " + T.fmt(first.yoy, 1) + "% in " + month(first.period) + ", and to end the year near " +
+      T.fmt(last.yoy, 1) + "%, with an 80% range of " + T.fmt(last.lo80, 1) + " to " + T.fmt(last.hi80, 1) + "%. It was frozen before GSS published any of these months and will be scored against what GSS publishes.";
+
+    // month tiles, with the actual once it's in
+    var byP = {}; F.scorecard.forEach(function (s) { if (s.data_through === L.data_through) byP[s.period] = s; });
+    document.getElementById("months").innerHTML = pts.map(function (p) {
+      var s = byP[p.period] || {};
+      var status = s.actual != null
+        ? '<span class="pill ' + (s.in80 ? "ok" : "warn") + '">GSS: ' + T.fmt(s.actual, 1) + "% · " + (s.in80 ? "inside" : "outside") + " 80%</span>"
+        : '<span class="pill idle">awaiting GSS</span>';
+      return "<div><span class='p'>" + monthY(p.period) + "</span><span class='v'>" + T.fmt(p.yoy, 2) + "<small>%</small></span>" +
+        "<span class='r'>80%: " + T.fmt(p.lo80, 1) + "–" + T.fmt(p.hi80, 1) + "</span><span class='r'>95%: " + T.fmt(p.lo95, 1) + "–" + T.fmt(p.hi95, 1) + "</span>" + status + "</div>";
+    }).join("");
+
+    // fan chart
+    var hist = F.history.slice(-13), labels = hist.map(function (h) { return h[0]; }).concat(pts.map(function (p) { return p.period; }));
+    var nH = hist.length;
+    var actual = hist.map(function (h) { return h[1]; }).concat(pts.map(function () { return null; }));
+    var fc = labels.map(function (_, i) { return i === nH - 1 ? hist[nH - 1][1] : i >= nH ? pts[i - nH].yoy : null; });
+    var nc = labels.map(function (_, i) { return i >= nH - 1 ? L.last_actual.yoy : null; });
+    function band(lo, hi) {
+      return { lo: labels.map(function (_, i) { return i === nH - 1 ? hist[nH - 1][1] : i >= nH ? pts[i - nH][lo] : null; }),
+               hi: labels.map(function (_, i) { return i === nH - 1 ? hist[nH - 1][1] : i >= nH ? pts[i - nH][hi] : null; }) };
+    }
+    var b95 = band("lo95", "hi95"); b95.fill = "var(--fan-95)";
+    var b80 = band("lo80", "hi80"); b80.fill = "var(--fan-80)";
+    function fan() {
+      T.lineChart(document.getElementById("c-fan"), {
+        labels: labels, height: 340, zero: true, unit: "%", bands: [b95, b80],
+        series: [
+          { values: nc, color: "var(--muted)", dash: "2 3", width: 1.5, quiet: true },
+          { values: actual, color: "var(--s1)", name: "Published" },
+          { values: fc, color: "var(--s1)", dash: "5 3", name: "Forecast" }
+        ],
+        fmt: function (v) { return T.fmt(v, 2) + "%"; },
+        aria: "Year-on-year inflation, published and forecast, " + T.monthLabel(labels[0]) + " to " + T.monthLabel(labels[labels.length - 1]),
+        tipRows: function (i) {
+          if (i < nH) return [{ color: "var(--s1)", name: "Published", value: T.fmt(actual[i], 2) + "%" }];
+          var p = pts[i - nH], s = byP[p.period];
+          var rows = [{ color: "var(--s1)", name: "Forecast", value: T.fmt(p.yoy, 2) + "%" },
+                      { name: "80% range", value: T.fmt(p.lo80, 1) + "–" + T.fmt(p.hi80, 1) },
+                      { name: "95% range", value: T.fmt(p.lo95, 1) + "–" + T.fmt(p.hi95, 1) },
+                      { color: "var(--muted)", name: "If nothing changed", value: T.fmt(L.last_actual.yoy, 2) + "%" }];
+          if (s && s.actual != null) rows.push({ name: "GSS published", value: T.fmt(s.actual, 2) + "%" });
+          return rows;
+        }
+      });
+    }
+    fan(); T.onResize(fan);
+
+    // base effects
+    var bm = F.base_months;
+    var dir = pts.map(function (p, i) { var prev = i ? pts[i - 1].yoy : L.last_actual.yoy; return p.yoy < prev - 0.05 ? "eases" : p.yoy > prev + 0.05 ? "rises" : "holds"; });
+    document.getElementById("base-lede").textContent = "Year-on-year inflation changes by roughly the gap between this month's price rise and the same month's a year ago. " +
+      "These are the months that drop out. In the forecast the rate " + pts.map(function (p, i) { return dir[i] + " in " + month(p.period); }).join(", ").replace(/, ([^,]*)$/, " and $1") + ".";
+    document.getElementById("base").innerHTML = bm.map(function (b) {
+      return "<div class='card'><b>" + (b[2] >= 0 ? "+" : "") + T.fmt(b[2], 2) + "%</b><span>prices, " + monthY(b[1]) + ", month on month</span><span class='muted' style='font-size:12px'>drops out of " + month(b[0]) + "'s rate</span></div>";
+    }).join("");
+
+    // frozen record
+    var f = F.file;
+    var rows = [
+      ["File", "<a href='" + T.ROOT + f.file + "' download>" + f.file.split("/").pop() + "</a>"],
+      ["SHA-256", "<code>" + f.sha256 + "</code>"],
+      ["Made", L.made_at.replace("T", " ").slice(0, 16) + " UTC"],
+      ["Data through", monthY(L.data_through) + " (GSS CPI annex, index " + T.fmt(L.last_actual.index, 2) + ")"],
+      ["Model", F.labels[L.model] + " <span class='muted mono' style='font-size:12px'>(" + L.model + ", method v" + L.method_version + ")</span>"],
+      ["Code", "<code>" + L.code_sha256 + "</code>"],
+      ["Input data", "<code>" + L.input_sha256 + "</code>"]
+    ];
+    document.getElementById("frozen").innerHTML = rows.map(function (r) { return "<div class='row'><span>" + r[0] + "</span><span>" + r[1] + "</span></div>"; }).join("");
+
+    // scorecard
+    var sc = F.scorecard;
+    document.getElementById("t-score").innerHTML = "<thead><tr><th>Made</th><th>From data through</th><th>Month</th><th class='r'>Ahead</th><th class='r'>Forecast</th><th class='r'>80% range</th><th class='r'>GSS published</th><th class='r'>Error</th><th>In range</th></tr></thead><tbody>" +
+      sc.map(function (s) {
+        var got = s.actual != null;
+        return "<tr><td class='m'>" + s.made_at.slice(0, 10) + "</td><td class='m'>" + s.data_through + "</td><td class='m'>" + s.period + "</td><td class='r m'>" + s.horizon +
+          "</td><td class='r m'>" + T.fmt(s.yoy, 2) + "</td><td class='r m'>" + T.fmt(s.lo80, 1) + "–" + T.fmt(s.hi80, 1) + "</td><td class='r m'>" + (got ? T.fmt(s.actual, 2) : "–") +
+          "</td><td class='r m'>" + (got ? (s.error >= 0 ? "+" : "") + T.fmt(s.error, 2) : "–") + "</td><td>" +
+          (got ? "<span class='pill " + (s.in80 ? "ok" : "warn") + "'>" + (s.in80 ? "inside 80%" : s.in95 ? "inside 95%" : "outside") + "</span>" : "<span class='pill idle'>awaiting GSS</span>") + "</td></tr>";
+      }).join("") + "</tbody>";
+    var scored = sc.filter(function (s) { return s.actual != null; });
+    document.getElementById("score-cap").textContent = scored.length
+      ? scored.length + " scored so far. Mean absolute error " + T.fmt(scored.reduce(function (a, s) { return a + Math.abs(s.error); }, 0) / scored.length, 2) + " points; " +
+        scored.filter(function (s) { return s.in80; }).length + " of " + scored.length + " inside the 80% range."
+      : "Nothing scored yet. The first score comes when GSS publishes " + monthY(first.period) + ", usually in the middle of the following month.";
+
+    // models + back-test
+    document.getElementById("rule").textContent = "the lowest back-test error averaged over one to four months ahead, since 2010";
+    var order = ["no_change", "seasonal", "reverting", "ensemble"];
+    document.getElementById("models").innerHTML = order.map(function (m) {
+      var chosen = m === L.model;
+      var path = L.all_models[m].map(function (v) { return T.fmt(v, 1); }).join(" → ");
+      return "<div class='card'" + (chosen ? " style='border-color:var(--brand)'" : "") + "><h3>" + F.labels[m] + (chosen ? " <span class='pill ok'>chosen</span>" : "") +
+        "</h3><p>" + DESC[m] + "</p><p class='mono' style='font-size:12.5px'>" + path + "%</p></div>";
+    }).join("");
+    var bt = L.backtest, H = [1, 2, 3, 4];
+    var best = {}; H.forEach(function (h) { best[h] = order.reduce(function (a, m) { return bt[m][h].rmse < bt[a][h].rmse ? m : a; }, order[0]); });
+    document.getElementById("t-bt").innerHTML = "<thead><tr><th>Model</th>" + H.map(function (h) { return "<th class='r'>" + h + " month" + (h > 1 ? "s" : "") + " ahead</th>"; }).join("") + "</tr></thead><tbody>" +
+      order.map(function (m) {
+        return "<tr><td>" + F.labels[m] + (m === L.model ? " <span class='pill ok'>chosen</span>" : "") + "</td>" + H.map(function (h) {
+          var s = bt[m][h];
+          return "<td class='r m" + (best[h] === m ? " best" : "") + "'>" + T.fmt(s.rmse, 2) + " <span class='muted'>(" + T.fmt(s.rmse_since_2023, 2) + ")</span></td>";
+        }).join("") + "</tr>";
+      }).join("") + "</tbody>";
+    var gain1 = 1 - bt[L.model][1].rmse / bt.no_change[1].rmse, gain4 = 1 - bt[L.model][4].rmse / bt.no_change[4].rmse;
+    document.getElementById("bt-lede").textContent = "Each model was run from every month since January 2010 using only the data available then, and its forecasts compared with what followed: " +
+      bt[L.model][1].n + " forecasts one month ahead, " + bt[L.model][4].n + " four months ahead. The chosen model's errors are " + Math.round(gain1 * 100) + "% smaller than " +
+      "'no change' one month ahead and " + Math.round(gain4 * 100) + "% smaller four months ahead. None of them anticipated the 2022 surge.";
+    var cal = L.calibration_since_2021;
+    document.getElementById("cal-cap").textContent = "The ranges come from the same back-test: the spread of the chosen model's past errors at each horizon, scaled to how jumpy prices are now. " +
+      "Checked out of sample, ranges built only from errors before 2021 contained " + Math.round(cal["1"].in80 * 100) + "–" + Math.round(Math.max(cal["2"].in80, cal["3"].in80, cal["4"].in80) * 100) +
+      "% of 2021–2026 outcomes in the 80% band and " + Math.round(Math.min(cal["2"].in95, cal["3"].in95, cal["4"].in95) * 100) + "–" + Math.round(cal["1"].in95 * 100) +
+      "% in the 95% band. So they run a little narrow in a shock: read the 95% range as nearer 80–90%.";
+
+    // track chart
+    var hSel = 1;
+    function track() {
+      var a = F.track[L.model + "_h" + hSel], b = F.track["no_change_h" + hSel];
+      var lab = a.map(function (r) { return r[0]; });
+      var bmap = {}; b.forEach(function (r) { bmap[r[0]] = r[1]; });
+      T.lineChart(document.getElementById("c-track"), {
+        labels: lab, height: 300, zero: true, unit: "%",
+        series: [
+          { values: a.map(function (r) { return r[2]; }), color: "var(--ink-2)", name: "Published" },
+          { values: lab.map(function (p) { return bmap[p] != null ? bmap[p] : null; }), color: "var(--s2)", name: "No change" },
+          { values: a.map(function (r) { return r[1]; }), color: "var(--s1)", name: F.labels[L.model] }
+        ],
+        fmt: function (v) { return T.fmt(v, 2) + "%"; },
+        aria: "Past " + hSel + "-month-ahead forecasts against published inflation since 2022"
+      });
+    }
+    track(); T.onResize(track);
+    document.getElementById("hsel").addEventListener("click", function (ev) {
+      var h = ev.target.getAttribute && ev.target.getAttribute("data-h"); if (!h) return;
+      hSel = +h;
+      Array.prototype.forEach.call(this.querySelectorAll("button"), function (b) { b.setAttribute("aria-pressed", b === ev.target ? "true" : "false"); });
+      track();
+    });
+  }).catch(function (e) { T.fail(document.getElementById("c-fan"), e); });
+})();
+</script>
+</body>
+</html>

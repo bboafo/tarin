@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>How it's checked · TARIN</title>
+<meta name="description" content="The thirteen rules every TARIN value passes, what they are holding back now, the problems they found in GSS's data, and every source file.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/tarin.css">
+<style>
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; counter-reset: step; }
+.step { position: relative; display: grid; gap: 6px; align-content: start; padding: 14px; }
+.step::before { counter-increment: step; content: counter(step); font-family: var(--f-mono); font-size: 12px; color: var(--brand-ink); }
+.step:not(:last-child)::after { content: "→"; position: absolute; right: -17px; top: 14px; color: var(--muted); font-family: var(--f-mono); }
+.step b { font-weight: 600; font-size: 15px; }
+.step span { font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
+@media (max-width: 860px) {
+  .flow { grid-template-columns: 1fr; gap: 24px; }
+  .step:not(:last-child)::after { content: "↓"; right: auto; left: 16px; top: auto; bottom: -22px; }
+}
+.finds { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.find { padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.find .meta { display: flex; gap: 8px; align-items: center; font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+.find h3 { font-size: 16px; line-height: 1.3; }
+.find p { font-size: 14.5px; color: var(--ink-2); line-height: 1.5; }
+.find a { font-size: 13.5px; }
+.bars { position: relative; }
+.bars svg { display: block; width: 100%; height: auto; overflow: visible; }
+.bars text { font-family: var(--f-mono); font-size: 11px; fill: var(--muted); }
+.bars .rl { fill: var(--ink-2); font-size: 12px; }
+.bars .vl { fill: var(--ink); font-size: 11.5px; }
+</style>
+</head>
+<body data-root="../" data-page="checks">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="index.html" aria-current="page">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow">Method</span>
+    <h1>How every number is checked</h1>
+    <p class="lede">TARIN reproduces what the Ghana Statistical Service publishes; it doesn't adjust it. What it adds is proof: every value keeps the file it came from, and thirteen rules test it before it reaches a chart. <span id="c-totals"></span></p>
+  </div>
+
+  <section class="block">
+    <div class="read"><span class="eyebrow">The path</span><h2 style="margin-top:6px">From a GSS file to a published value</h2></div>
+    <div class="flow">
+      <div class="step card"><b>Fetch</b><span>StatsBank through its public API; the monthly annex workbook downloaded from statsghana.gov.gh.</span></div>
+      <div class="step card"><b>Archive</b><span>The response or workbook is kept byte for byte and named by its SHA-256 fingerprint.</span></div>
+      <div class="step card"><b>Load</b><span>Values are appended, never overwritten. A revised value supersedes the old one; both are kept.</span></div>
+      <div class="step card"><b>Check</b><span>Thirteen rules. A hold keeps a value off the site until the rule stops firing on a later run.</span></div>
+      <div class="step card"><b>Publish</b><span>The site reads only values with no open hold, each with its source file and retrieval date.</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">The rules</span>
+      <h2 style="margin-top:6px">Thirteen rules, and what each is holding right now</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">Most need no second source. GSS publishes both the index and the rates, so every rate can be recomputed from the index. With the basket weights stored, the parts of an index can be added up and compared with the published total. Counts are values per month, from the latest run.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="data" id="t-rules">
+        <thead><tr><th>Rule</th><th>What it catches</th><th class="r">StatsBank</th><th class="r">GSS annex</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="caption" id="c-run"></p>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Where the holds are</span>
+      <h2 style="margin-top:6px">Two regions account for most of what's held</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">Oti and Bono East product groups don't add up to their own regional totals in StatsBank for most months since 2022, so the aggregation rule holds them. Elsewhere, holds are scattered.</p>
+    </div>
+    <div class="chart bars" id="c-held">
+      <div class="legend"><span><i class="key-dot" style="background:var(--s1)"></i>StatsBank</span><span><i class="key-dot" style="background:var(--s2)"></i>GSS annex</span></div>
+    </div>
+    <p class="caption">Values held, by region and source, largest ten regions. <b>Hover or tap</b> a bar.</p>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">What the checks found</span>
+      <h2 style="margin-top:6px">Five problems in GSS's own data</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">None of these were looked for. Each surfaced because a rule fired. The affected values stay off the site, or carry a warning, until GSS corrects them.</p>
+    </div>
+    <div class="finds">
+      <article class="find card"><div class="meta"><span class="pill hold">held</span><span>StatsBank</span></div>
+        <h3>National Non-food is a copy of Food</h3>
+        <p>Since the 2021 rebase, StatsBank's national Non-food index repeats Food's, value for value, and its regional Non-food rates include a 46% fall in one month. The genuine series comes from the annex, where it matches GSS's press releases (9.5% for July 2025).</p>
+        <a href="../explorer/index.html#sb.cpi.ghana.non-food.all~sb.cpi.ghana.food.all~an.cpi.ghana.non-food.all">See both in the explorer →</a></article>
+      <article class="find card"><div class="meta"><span class="pill hold">held</span><span>StatsBank</span></div>
+        <h3>Regional Non-food off in July and October 2025</h3>
+        <p>Rebuilt from the annex's product groups, a region's Non-food index normally lands within 0.1 to 0.6% of StatsBank's. In July and October 2025 most regions are off by 2 to 12%.</p></article>
+      <article class="find card"><div class="meta"><span class="pill hold">held</span><span>Both sources</span></div>
+        <h3>Oti and Bono East product groups are misfiled</h3>
+        <p>Their groups don't add up to their own regional totals: in StatsBank from 2022, in the annex from July 2025 to January 2026. In Oti in January 2026, Food carries Transport's exact value.</p>
+        <a href="../explorer/index.html#sb.cpi.oti.education-services.all~an.cpi.oti.education-services.all">Oti's education index in both →</a></article>
+      <article class="find card"><div class="meta"><span class="pill hold">held</span><span>GSS annex</span></div>
+        <h3>Two sheets of one workbook disagree</h3>
+        <p>In 162 of 768 region-months, the annex's region-by-group sheet (Annex 3) gives a regional total that differs from the regional sheet (Annex 4). Annex 4 matches StatsBank, so it is trusted and Annex 3's groups are held there.</p></article>
+      <article class="find card"><div class="meta"><span class="pill warn">warn</span><span>GSS annex</span></div>
+        <h3>The September 2022 seam</h3>
+        <p>The block GSS added for January 2021 to August 2022 doesn't join cleanly to September 2022, and September 2022 to April 2023 were typed at one decimal place. In May and June 2022 the national total disagrees with both the regions and the local/imported split.</p></article>
+      <article class="find card"><div class="meta"><span class="pill idle">not a check</span><span>StatsBank</span></div>
+        <h3>StatsBank stopped updating</h3>
+        <p>The database was last updated on 5 February 2026 and ends at January 2026. Everything since comes from the monthly annex workbooks, which GSS still publishes with each bulletin.</p></article>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Revisions</span>
+      <h2 style="margin-top:6px">When GSS changes a number, both versions are kept</h2>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="t-rev"></table></div>
+  </section>
+
+  <section class="block">
+    <div class="read">
+      <span class="eyebrow">Source files</span>
+      <h2 style="margin-top:6px">Every file behind the data</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">Each file is archived exactly as received. Its SHA-256 fingerprint means anyone holding the same file can confirm it is the one TARIN read.</p>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="t-files"></table></div>
+    <details id="more-files"><summary>All files</summary><div class="tbl-wrap"><table class="data" id="t-files-all"></table></div></details>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  var WHEN = {
+    mom_consistency: "warn past rounding; hold at ≥1 pt and ≥6× the tolerance",
+    yoy_consistency: "same as month-on-month",
+    mom_band: "hold on the headline, warn on a component",
+    yoy_band: "hold on the headline, warn on a component",
+    index_positive: "hold", rebase_discontinuity: "warn", period_gap: "warn", unconfirmed_break: "warn",
+    duplicate_series: "hold at 24+ shared distinct values",
+    aggregation: "warn at 2.5%, hold at 4%; product groups hold at 2%",
+    regional_nonfood: "hold at 2% (StatsBank only)",
+    same_month_copy: "hold (3+ decimals only)",
+    annex3_vs_annex4: "hold at 0.5 index points (annex only)"
+  };
+  function cell(c, na) {
+    if (na) return '<td class="r"><span class="muted mono" style="font-size:12px">n/a</span></td>';
+    var out = [];
+    if (c.hold) out.push('<span class="pill hold">' + T.int(c.hold) + " hold</span>");
+    if (c.warn) out.push('<span class="pill warn">' + T.int(c.warn) + " warn</span>");
+    return '<td class="r">' + (out.length ? out.join(" ") : '<span class="pill ok">clear</span>') + "</td>";
+  }
+  function esc(s) { var d = document.createElement("div"); d.textContent = s; return d.innerHTML; }
+
+  T.json("data/checks.json").then(function (K) {
+    var tot = K.totals;
+    document.getElementById("c-totals").textContent = "Right now " + T.int(tot.publishable) + " of " + T.int(tot.values) +
+      " stored values are cleared, and " + T.int(tot.held) + " are held back.";
+    document.querySelector("#t-rules tbody").innerHTML = K.rules.map(function (r) {
+      return "<tr><td class='m'><code>" + r.rule + "</code></td><td>" + esc(r.text) + "<br><span class='mono muted' style='font-size:11.5px'>" +
+        esc(WHEN[r.rule] || "") + "</span></td>" + cell(r.sb, r.rule === "annex3_vs_annex4") + cell(r.an, r.rule === "regional_nonfood") + "</tr>";
+    }).join("");
+    document.getElementById("c-run").textContent = "Latest runs: " + K.validated.map(function (v) {
+      return (v.source_key === "gss.cpi" ? "StatsBank " : "GSS annex ") + v.finished.slice(0, 16).replace("T", " ") + " UTC";
+    }).join(" · ") + ". A value can be flagged by more than one rule.";
+
+    // held by region
+    var by = {};
+    K.held_by_region.forEach(function (h) {
+      var r = by[h.region] = by[h.region] || { region: h.region, sb: 0, an: 0 };
+      r[h.source_key === "gss.cpi" ? "sb" : "an"] += h.held;
+    });
+    var rows = Object.keys(by).map(function (k) { return by[k]; }).sort(function (a, b) { return (b.sb + b.an) - (a.sb + a.an); }).slice(0, 10);
+    var host = document.getElementById("c-held");
+    function bars() {
+      var old = host.querySelector("svg"); if (old) old.remove();
+      var oldTip = host.querySelector(".tip"); if (oldTip) oldTip.remove();
+      var W = T.plotWidth(host), narrow = W < 560, labelW = narrow ? 0 : 120, rowH = narrow ? 44 : 30, top = 4, axisH = 22;
+      var H = top + rows.length * rowH + axisH;
+      var maxV = Math.max.apply(null, rows.map(function (r) { return Math.max(r.sb, r.an); }));
+      var nt = T.niceTicks(0, maxV, 4);
+      var m = { l: labelW + 6, r: 44 }, iw = W - m.l - m.r;
+      var x = function (v) { return m.l + v / nt.hi * iw; };
+      var svg = T.el("svg", { viewBox: "0 0 " + W + " " + H, width: W, height: H, role: "img", "aria-label": "Held values by region and source" });
+      host.appendChild(svg);
+      nt.ticks.forEach(function (t) {
+        svg.appendChild(T.el("line", { x1: x(t), x2: x(t), y1: top, y2: H - axisH }, "stroke:" + (t === 0 ? "var(--axis)" : "var(--grid)")));
+        T.text(svg, x(t), H - 6, T.int(t), null, "middle");
+      });
+      var tip = T.tip(host);
+      rows.forEach(function (r, i) {
+        var y0 = top + i * rowH, by0 = narrow ? y0 + 18 : y0 + 4;
+        T.text(svg, narrow ? m.l : labelW, narrow ? y0 + 13 : y0 + 17, r.region, "rl", narrow ? "start" : "end");
+        [["sb", "var(--s1)"], ["an", "var(--s2)"]].forEach(function (s, j) {
+          var v = r[s[0]], by = by0 + j * 11;
+          if (v > 0) {
+            var w = Math.max(3, x(v) - x(0));
+            svg.appendChild(T.el("path", { d: "M" + x(0) + "," + by + "h" + (w - 3) + "a3,3 0 0 1 3,3v3a3,3 0 0 1 -3,3h" + (-(w - 3)) + "z" }, "fill:" + s[1]));
+          }
+          T.text(svg, x(v) + 6, by + 8, T.int(v), "vl");
+        });
+        var hit = T.el("rect", { x: 0, y: y0, width: W, height: rowH, tabindex: 0, "aria-label": r.region + ": " + r.sb + " held in StatsBank, " + r.an + " in the annex" }, "fill:transparent;outline:none");
+        function on() {
+          T.fillTip(tip, r.region, [{ color: "var(--s1)", name: "StatsBank", value: T.int(r.sb) }, { color: "var(--s2)", name: "GSS annex", value: T.int(r.an) }]);
+          T.placeTip(host, svg, W, tip, x(Math.max(r.sb, r.an)), y0 + rowH / 2);
+          hit.style.fill = "var(--grid)"; hit.style.opacity = "0.5";
+        }
+        function off() { tip.hidden = true; hit.style.fill = "transparent"; }
+        hit.addEventListener("pointerenter", on); hit.addEventListener("pointerdown", on);
+        hit.addEventListener("pointerleave", off); hit.addEventListener("focus", on); hit.addEventListener("blur", off);
+        svg.insertBefore(hit, svg.firstChild);
+      });
+    }
+    bars(); T.onResize(bars);
+
+    // revisions
+    var rv = K.revisions;
+    document.getElementById("t-rev").innerHTML = "<thead><tr><th>Series</th><th>Month</th><th class='r'>Value</th><th>State</th><th>First seen</th></tr></thead><tbody>" +
+      (rv.length ? rv.map(function (r) {
+        return "<tr><td>" + esc(r.region + " · " + r.product + " · " + (r.indicator === "Consumer Price Index" ? "index" : r.indicator)) + "<br><span class='mono muted' style='font-size:11.5px'>" +
+          (r.source_key === "gss.cpi" ? "StatsBank" : "GSS annex") + "</span></td><td class='m'>" + r.period + "</td><td class='r m'>" + r.value +
+          "</td><td>" + (r.state === "current" ? "<span class='pill ok'>current</span>" : "<span class='pill idle'>superseded</span>") + "</td><td class='m'>" + r.first_seen_at.slice(0, 10) + "</td></tr>";
+      }).join("") : "<tr><td colspan='5'>No revisions recorded yet.</td></tr>") + "</tbody>";
+    var note = document.createElement("p"); note.className = "caption";
+    note.textContent = "The November 2024 Non-food index read 224.3 in seven annex workbooks (December 2025 to July 2026) and 223.90 in August's.";
+    document.getElementById("t-rev").parentNode.after(note);
+
+    // files
+    function fileRows(list) {
+      return "<thead><tr><th>Source</th><th>File</th><th class='r'>Size</th><th>Retrieved</th><th>SHA-256</th></tr></thead><tbody>" + list.map(function (f) {
+        var name = decodeURIComponent(f.url.split("/").pop().split("?")[0]);
+        var kind = /\.xlsx$/i.test(name) && f.bytes < 50000 ? name + " (extraction)" : name;
+        return "<tr><td>" + (f.source_key === "gss.cpi" ? "StatsBank" : "GSS annex") + "</td><td><a href='" + esc(f.url) + "' target='_blank' rel='noopener'>" +
+          esc(kind.length > 48 ? kind.slice(0, 46) + "…" : kind) + "</a></td><td class='r m'>" + T.int(Math.round(f.bytes / 1024)) + " KB</td><td class='m'>" +
+          f.retrieved.slice(0, 10) + "</td><td class='m' title='" + f.sha256 + "'>" + f.sha256.slice(0, 16) + "…</td></tr>";
+      }).join("") + "</tbody>";
+    }
+    document.getElementById("t-files").innerHTML = fileRows(K.files.slice(0, 8));
+    document.getElementById("t-files-all").innerHTML = fileRows(K.files);
+    document.querySelector("#more-files summary").textContent = "All " + K.files.length + " files";
+  }).catch(function (e) { T.fail(document.getElementById("c-held"), e); });
+})();
+</script>
+</body>
+</html>

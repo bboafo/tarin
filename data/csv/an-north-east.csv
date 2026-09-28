@@ -1,0 +1,793 @@
+source,indicator,region,product,split,period,value,status,rules
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2022-09,118.4372,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-03,135.3878,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-04,141.5589,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-05,164.4205,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-06,182.8278,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-07,202.4389,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-05,242.6641,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-06,250.1004,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-07,254.0258,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-08,258.0751,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-09,291.8338,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-10,316.5309,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-11,326.2184,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2024-12,330.6386,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-01,333.5223,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-02,329.0626,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-03,326.7571,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-04,325.8371,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-05,330.0658,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-06,314.5454,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-07,326.792,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-08,327.6563,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-09,329.536,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-10,332.737,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-11,333.6937,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2025-12,333.8437,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-01,334.5454,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-02,334.5231,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-03,337.0229,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-04,339.5544,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-05,342.8808,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-06,343.5176,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-07,342.5489,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Alcoholic beverages, tobacco and narcotics",All sources,2026-08,343.3458,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-01,110.2723,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-02,111.5997,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-03,114.0718,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-04,114.9303,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-05,122.1987,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-06,123.6341,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-07,127.579,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-08,130.2852,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-09,133.6854,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-10,138.9152,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-11,153.9727,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2022-12,161.8756,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-01,164.2138,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-02,168.5875,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-03,163.0442,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-04,170.7114,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-05,184.6708,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-06,196.0254,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-07,209.35,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-08,209.5992,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-09,208.4994,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-10,202.9468,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-11,207.5824,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2023-12,207.1288,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-01,213.2637,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-02,214.3983,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-03,216.0191,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-04,219.0557,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-05,220.6149,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-06,230.5135,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-07,231.5536,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-08,230.8472,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-09,243.2399,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-10,247.1481,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-11,254.4578,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2024-12,260.4781,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-01,263.3886,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-02,265.0482,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-03,266.1679,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-04,267.7928,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-05,270.4557,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-06,270.4112,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-07,269.5403,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-08,265.663,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-09,292.2248,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-10,289.8155,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-11,285.5666,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2025-12,285.9092,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-01,292.8565,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-02,288.7513,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-03,288.952,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-04,293.3169,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-05,297.794,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-06,298.0391,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-07,298.7509,ok,
+gss.cpi.annex,Consumer Price Index,North East,All products,All sources,2026-08,288.2598,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2022-09,171.9729,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-03,216.3681,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-04,216.3734,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-05,225.826,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-06,237.5939,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-07,254.072,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-05,256.8548,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-06,259.0746,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-07,262.7723,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-08,264.1553,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-09,267.6659,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-10,270.3801,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-11,272.7188,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2024-12,276.7826,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-01,277.0516,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-02,278.3977,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-03,279.4428,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-04,281.5095,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-05,287.9908,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-06,284.3375,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-07,284.8391,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-08,284.5877,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-09,284.5216,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-10,285.8203,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-11,285.8042,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2025-12,285.5536,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-01,285.7323,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-02,283.3707,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-03,283.1771,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-04,281.8112,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-05,282.1038,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-06,283.5048,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-07,283.4596,ok,
+gss.cpi.annex,Consumer Price Index,North East,Clothing and footwear,All sources,2026-08,282.8348,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2022-09,96.3104,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-03,112.9519,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-04,112.9519,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-05,114.3063,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-06,115.5022,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-07,117.5489,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-05,137.4117,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-06,137.4117,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-07,137.4117,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-08,137.4117,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-09,137.4117,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-10,137.8904,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-11,137.8904,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2024-12,141.3507,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-01,147.0519,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-02,147.0519,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-03,147.1417,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-04,148.4507,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-05,148.5829,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-06,148.5829,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-07,151.1623,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-08,151.1623,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-09,151.1623,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-10,151.1623,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-11,151.1623,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2025-12,151.1623,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-01,151.1623,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-02,146.4458,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-03,146.4458,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-04,146.4458,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-05,146.4458,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-06,146.4458,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-07,146.4458,ok,
+gss.cpi.annex,Consumer Price Index,North East,Education services,All sources,2026-08,144.626,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2022-09,137.7895,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-03,172.307,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-04,186.3406,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-05,207.7566,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-06,225.5222,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-07,244.3533,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-05,247.9867,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-06,270.4018,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-07,268.0966,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-08,259.6531,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-09,280.5198,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-10,282.5982,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-11,296.0419,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2024-12,305.5594,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-01,309.1512,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-02,310.3354,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-03,311.9407,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-04,316.153,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-05,319.7029,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-06,328.9713,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-07,328.1548,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-08,314.4393,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-09,392.003,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-10,382.8795,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-11,370.9796,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2025-12,366.8148,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-01,384.6808,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-02,378.6107,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-03,382.234,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-04,385.0286,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-05,396.0255,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-06,394.6114,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-07,396.0378,ok,
+gss.cpi.annex,Consumer Price Index,North East,Food and non-alcoholic beverages,All sources,2026-08,364.23,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2022-09,134.7308,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-03,170.9089,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-04,174.8147,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-05,186.6474,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-06,196.6331,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-07,207.216,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-05,214.3692,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-06,215.3634,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-07,217.3034,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-08,211.7481,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-09,211.6195,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-10,214.1154,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-11,217.4579,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2024-12,219.6758,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-01,220.7523,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-02,225.3643,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-03,226.0844,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-04,229.0932,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-05,229.8458,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-06,225.5542,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-07,227.0539,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-08,227.9084,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-09,229.1455,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-10,228.7156,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-11,228.7883,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2025-12,229.9385,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-01,230.1034,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-02,229.6593,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-03,228.8453,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-04,228.4612,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-05,229.0949,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-06,229.4701,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-07,228.8298,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Furnishings, household equipment and routine household maintenance",All sources,2026-08,226.4406,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2022-09,115.3586,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-03,134.8953,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-04,138.3391,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-05,148.1313,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-06,156.6287,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-07,170.2481,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-05,182.3364,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-06,185.1746,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-07,182.5752,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-08,181.5737,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-09,184.9954,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-10,188.5469,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-11,189.2066,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2024-12,190.3158,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-01,190.2402,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-02,190.2019,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-03,190.3128,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-04,191.3633,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-05,190.8571,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-06,187.8484,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-07,189.3251,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-08,191.7936,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-09,195.2411,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-10,196.9639,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-11,199.9442,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2025-12,199.0406,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-01,199.0347,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-02,197.5142,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-03,199.1028,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-04,199.713,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-05,199.9284,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-06,200.0755,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-07,202.0998,ok,
+gss.cpi.annex,Consumer Price Index,North East,Health,All sources,2026-08,195.8475,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2022-09,122.7757,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-03,169.3063,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-04,192.2554,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-05,188.6901,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-06,188.115,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-07,189.9542,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-05,187.811,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-06,188.1318,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-07,191.9223,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-08,212.8735,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-09,214.702,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-10,222.7016,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-11,225.7417,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2024-12,229.6726,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-01,230.995,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-02,230.3578,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-03,225.7826,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-04,218.5657,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-05,215.486,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-06,239.4563,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-07,215.523,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-08,219.8401,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-09,194.2388,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-10,193.1,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-11,191.8054,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2025-12,227.2662,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-01,226.9743,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-02,225.6562,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-03,227.86,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-04,231.4426,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-05,231.7659,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-06,244.6677,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-07,244.0238,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Housing, water, electricity, gas and other fuels",All sources,2026-08,246.4928,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2022-09,129.7178,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-03,148.2911,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-04,153.599,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-05,164.4617,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-06,172.7929,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-07,186.3795,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-05,219.8596,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-06,220.6132,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-07,234.1402,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-08,236.8275,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-09,255.9542,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-10,259.7353,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-11,260.2246,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2024-12,286.1461,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-01,295.4436,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-02,303.1296,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-03,324.5594,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-04,334.1786,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-05,336.9281,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-06,336.3981,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-07,332.6793,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-08,331.1008,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-09,329.6108,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-10,328.7481,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-11,327.8353,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2025-12,327.8353,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-01,327.8353,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-02,326.6047,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-03,326.6047,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-04,321.2176,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-05,321.7212,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-06,321.8044,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-07,321.8044,ok,
+gss.cpi.annex,Consumer Price Index,North East,Information and communication,All sources,2026-08,321.2797,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2022-09,100.1435,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-03,81.6169,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-04,83.6161,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-05,86.703,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-06,88.2979,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-07,88.2979,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-05,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-06,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-07,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-08,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-09,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-10,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-11,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2024-12,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-01,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-02,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-03,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-04,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-05,94.7361,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-06,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-07,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-08,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-09,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-10,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-11,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2025-12,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-01,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-02,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-03,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-04,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-05,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-06,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-07,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,Insurance and financial services,All sources,2026-08,94.7362,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2022-09,147.6747,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-03,188.7531,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-04,191.6366,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-05,205.0845,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-06,217.1,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-07,233.01,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-05,238.1768,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-06,243.0997,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-07,245.8179,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-08,245.3094,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-09,248.8726,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-10,251.0512,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-11,255.8048,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2024-12,258.2137,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-01,261.14,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-02,263.2604,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-03,269.559,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-04,270.2004,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-05,272.2216,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-06,255.5213,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-07,263.463,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-08,265.6477,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-09,269.3374,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-10,268.7178,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-11,267.4169,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2025-12,270.7998,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-01,270.9658,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-02,271.7327,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-03,270.104,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-04,270.3071,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-05,270.3219,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-06,270.4939,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-07,271.8161,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Personal care, social protection and miscellaneous goods and services",All sources,2026-08,272.0071,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2022-09,114.9322,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-03,114.4728,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-04,114.8604,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-05,123.0706,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-06,127.7555,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-07,128.2475,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-05,148.3501,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-06,151.8425,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-07,151.6597,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-08,151.9798,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-09,152.3121,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-10,152.0737,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-11,151.8967,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2024-12,151.8967,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-01,152.14,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-02,165.4036,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-03,165.4671,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-04,165.6606,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-05,165.6606,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-06,165.6606,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-07,165.5773,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-08,165.5773,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-09,165.5773,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-10,166.0057,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-11,165.6148,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2025-12,165.6148,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-01,165.6148,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-02,150.4676,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-03,150.4676,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-04,149.7899,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-05,149.6139,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-06,149.6687,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-07,149.6687,ok,
+gss.cpi.annex,Consumer Price Index,North East,"Recreation, sport and culture",All sources,2026-08,148.9228,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2022-09,107.1315,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-03,124.8387,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-04,124.8387,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-05,124.8387,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-06,124.8387,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-07,118.534,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-05,122.2027,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-06,125.5548,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-07,141.5226,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-08,148.8352,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-09,151.4915,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-10,152.9008,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-11,154.0681,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2024-12,160.6618,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-01,161.7569,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-02,166.2619,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-03,178.8713,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-04,186.6799,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-05,190.1561,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-06,189.4942,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-07,197.7914,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-08,198.6223,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-09,198.6223,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-10,201.241,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-11,201.241,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2025-12,205.9049,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-01,205.9049,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-02,205.9049,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-03,205.9049,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-04,210.695,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-05,210.695,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-06,204.8009,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-07,209.597,ok,
+gss.cpi.annex,Consumer Price Index,North East,Restaurants and accommodation services,All sources,2026-08,209.597,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2022-09,135.0846,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2022-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2022-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2022-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-03,153.4753,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-04,152.9628,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-05,160.7589,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-06,161.1334,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-07,164.2179,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-08,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-09,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-10,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-11,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2023-12,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-01,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-02,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-03,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-04,,held,annex3_vs_annex4
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-05,180.2378,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-06,182.213,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-07,184.4044,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-08,190.9284,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-09,190.8305,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-10,185.0061,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-11,190.9299,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2024-12,192.2363,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-01,195.9237,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-02,198.2103,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-03,197.9594,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-04,196.2268,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-05,198.1918,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-06,187.8534,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-07,180.1759,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-08,185.2161,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-09,189.4219,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-10,193.5324,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-11,193.5324,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2025-12,187.4263,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-01,192.6899,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-02,191.2512,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-03,195.2838,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-04,207.383,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-05,208.8051,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-06,209.3216,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-07,208.4969,ok,
+gss.cpi.annex,Consumer Price Index,North East,Transport,All sources,2026-08,217.4891,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-01,0.6737,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-02,1.2038,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-03,2.2151,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-04,0.7526,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-05,6.3242,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-06,1.1746,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-07,3.1908,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-08,2.1212,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-09,2.6098,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-10,3.912,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-11,10.8394,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2022-12,5.1326,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-01,1.4444,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-02,2.6634,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-03,-3.2881,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-04,4.7025,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-05,8.1772,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-06,6.1486,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-07,6.7974,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-08,0.119,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-09,-0.5247,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-10,-2.6631,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-11,2.2841,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2023-12,-0.2185,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-01,2.9619,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-02,0.532,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-03,0.756,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-04,1.4057,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-05,0.7118,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-06,4.4868,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-07,0.4512,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-08,-0.305,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-09,5.3684,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-10,1.6067,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-11,2.9576,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2024-12,2.3659,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-01,1.1174,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-02,0.6301,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-03,0.4225,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-04,0.6104,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-05,0.9944,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-06,-0.0164,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-07,-0.3221,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-08,-1.4385,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-09,9.9983,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-10,-0.8245,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-11,-1.4661,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2025-12,0.12,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-01,2.4299,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-02,-1.4018,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-03,0.0695,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-04,1.5106,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-05,1.5264,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-06,0.0823,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-07,0.2388,ok,
+gss.cpi.annex,Month-on-month inflation (%),North East,All products,All sources,2026-08,-3.5116,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-01,19.7339,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-02,16.4276,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-03,18.5588,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-04,19.3499,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-05,26.4589,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-06,26.1058,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-07,29.4014,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-08,29.8891,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-09,29.9261,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-10,32.4691,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-11,41.6819,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2022-12,47.7853,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-01,48.9167,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-02,51.0644,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-03,42.9312,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-04,48.5347,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-05,51.1233,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-06,58.5529,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-07,64.0944,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-08,60.8772,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-09,55.9628,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-10,46.094,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-11,34.8176,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2023-12,27.9555,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-01,29.8695,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-02,27.1733,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-03,32.4911,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-04,28.3193,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-05,19.4639,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-06,17.5937,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-07,10.606,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-08,10.1375,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-09,16.6622,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-10,21.7798,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-11,22.5816,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2024-12,25.7566,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-01,23.5037,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-02,23.6242,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-03,23.215,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-04,22.2487,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-05,22.5918,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-06,17.3082,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-07,16.4051,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-08,15.0817,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-09,20.1385,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-10,17.2639,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-11,12.2255,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2025-12,9.7632,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-01,11.188,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-02,8.943,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-03,8.56,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-04,9.5313,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-05,10.1082,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-06,10.217,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-07,10.8372,ok,
+gss.cpi.annex,Year-on-year inflation (%),North East,All products,All sources,2026-08,8.5058,ok,

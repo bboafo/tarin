@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ghana's Price Record · TARIN</title>
+<meta name="description" content="Ghana's consumer price inflation from 1998 to the latest GSS release, with every figure checked against its source.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="../assets/tarin.css">
+<style>
+.story main { font-family: var(--f-display); font-size: 18px; line-height: 1.6; }
+
+.story h1, .story h2 { font-weight: 600; }
+.story .notes p, .story .lede { font-family: var(--f-display); }
+.read { max-width: 660px; }
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-ink);
+}
+
+
+/* hero */
+.hero { display: grid; gap: 18px; padding-block: 56px 48px; border-bottom: 1px solid var(--rule); }
+.hero .figure {
+  font-family: var(--f-display); font-weight: 600;
+  font-size: clamp(88px, 18vw, 168px); line-height: 0.9; letter-spacing: -0.03em;
+}
+.hero .figure small { font-size: 0.42em; letter-spacing: 0; margin-left: 4px; color: var(--ink-2); }
+.hero h1 { font-size: clamp(24px, 3.6vw, 34px); font-weight: 700; line-height: 1.2; max-width: 22ch; }
+.hero .lede { color: var(--ink-2); max-width: 60ch; }
+.fresh {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-family: var(--f-mono); font-size: 13px; line-height: 1.5; color: var(--ink-2);
+  border-left: 2px solid var(--warn); padding: 2px 0 2px 12px; max-width: 64ch;
+}
+
+/* sections */
+section { display: grid; gap: 18px; padding-block: 52px; border-bottom: 1px solid var(--rule); }
+section h2 { font-size: clamp(24px, 3.2vw, 30px); font-weight: 700; line-height: 1.2; }
+section .read p + p { margin-top: 14px; }
+.caption { font-family: var(--f-mono); font-size: 12px; color: var(--muted); line-height: 1.5; }
+.caption b { color: var(--ink-2); font-weight: 500; }
+
+/* chart frame */
+.chart { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 12px 10px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { font-family: var(--f-mono); font-size: 11px; fill: var(--muted); }
+.chart .lbl { fill: var(--ink-2); font-size: 12px; }
+.chart .lbl-strong { fill: var(--ink); font-size: 12px; font-weight: 500; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); padding: 0 6px 10px; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.key-line { width: 16px; height: 2px; border-radius: 1px; display: inline-block; }
+.key-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.key-band { width: 16px; height: 10px; display: inline-block; background: var(--tol); border-radius: 2px; }
+
+.tip {
+  position: absolute; pointer-events: none; z-index: 5;
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 6px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+  padding: 8px 10px; font-family: var(--f-mono); font-size: 12px; line-height: 1.45; color: var(--ink-2);
+  min-width: 150px;
+}
+.tip .t-date { color: var(--muted); margin-bottom: 4px; }
+.tip .t-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
+.tip .t-row .k { display: inline-flex; align-items: center; gap: 6px; }
+.tip .t-row strong { color: var(--ink); font-weight: 500; }
+
+/* stat tiles */
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+.tile { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 16px 14px; display: grid; gap: 4px; align-content: start; }
+.tile .v { font-family: var(--f-display); font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; }
+.tile .l { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); line-height: 1.45; }
+
+/* region chips */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips button {
+  font-family: var(--f-mono); font-size: 12px; color: var(--ink-2);
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 999px;
+  padding: 5px 11px; cursor: pointer;
+}
+.chips button:hover { border-color: var(--axis); color: var(--ink); }
+.chips button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+/* tables */
+details { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); }
+summary { cursor: pointer; color: var(--muted); padding-block: 4px; }
+.tbl-wrap { overflow-x: auto; margin-top: 8px; }
+table { border-collapse: collapse; font-variant-numeric: tabular-nums; min-width: 360px; }
+th, td { text-align: right; padding: 4px 12px 4px 0; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--muted); font-weight: 400; }
+
+/* notes */
+.notes { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.notes h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.notes p { font-size: 15px; color: var(--ink-2); line-height: 1.55; }
+.notes p + p { margin-top: 8px; }
+.flag { border-left: 2px solid var(--warn); padding-left: 12px; }
+
+
+@media (max-width: 560px) {
+  .hero { padding-block: 36px 36px; }
+  section { padding-block: 40px; }
+  .chart { padding: 12px 6px 8px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .chips button { transition: background .12s, color .12s, border-color .12s; }
+}
+
+</style>
+</head>
+<body data-root="../" data-page="record" class="story">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="index.html" aria-current="page">Price record</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap story-wrap">
+
+<div class="hero">
+  <span class="eyebrow" data-text="hero-eyebrow">Year-on-year inflation, August 2026</span>
+  <div class="figure" data-text="hero-figure">5.0<small>%</small></div>
+  <h1 data-text="hero-h1">Back up from the lowest rate since 1999.</h1>
+  <p class="lede" data-text="hero-lede">Prices rose 5.0% in the year to August 2026. In March the rate had fallen to 3.2%, the lowest since August 1999 in the series the Ghana Statistical Service publishes today, three years after it passed 54%. Since then it has turned back up, and the rise is coming from non-food prices.</p>
+  <p class="fresh"><span data-text="hero-fresh">Figures to January 2026 come from GSS's StatsBank database, which hasn't been updated since 5 February 2026. February to August 2026 come from the CPI annex workbooks GSS publishes with each monthly bulletin. Where the two sources overlap, they agree to within rounding.</span></p>
+</div>
+
+<section id="record">
+  <div class="read">
+    <span class="eyebrow">27 years</span>
+    <h2>Two great inflations</h2>
+    <p style="margin-top:12px" data-text="record-p1">Ghana has lived through two runaway price surges in this record. The first peaked at <b>63.0% in March 2001</b>, during the cedi's collapse at the turn of the century. The second peaked at <b>54.1% in December 2022</b>, after the pandemic, the fuel shock and a debt crisis. In between, annual averages mostly ran between 7% and 20%.</p>
+    <p>The early years need a caution. GSS now expresses the whole history on its 2021 basket of goods, and other sources quote quite different figures for 1999 to 2001. This page follows GSS's current series.</p>
+  </div>
+  <div class="chart" id="c-record">
+    <div class="legend">
+      <span><i class="key-line" style="background:var(--s1)"></i>Year-on-year inflation</span>
+      <span><i class="key-band"></i>How precisely it can be checked</span>
+    </div>
+  </div>
+  <p class="caption">The shaded band is the verification tolerance: how closely the published rate can be checked against the index. It is wide in the early years because the index was small and GSS rounds it to one decimal place. <b>Hover or tap</b> for any month.</p>
+  <details>
+    <summary>Annual averages as a table</summary>
+    <div class="tbl-wrap"><table id="t-annual"></table></div>
+  </details>
+</section>
+
+<section id="turn">
+  <div class="read">
+    <span class="eyebrow">2026</span>
+    <h2 data-text="turn-h2">Food prices calmed; everything else didn't</h2>
+    <p style="margin-top:12px" data-text="turn-p1">Through 2025, food drove inflation down: food prices went from rising 28% a year to under 5%. In 2026 the two halves of the basket split. Food inflation stayed between 2% and 4%, and in August food prices fell 2.6% in a single month. Non-food inflation went the other way, from 3.9% in March to 6.8% in August, and pulled the headline rate back up with it.</p>
+  </div>
+  <div class="chart" id="c-turn">
+    <div class="legend">
+      <span><i class="key-line" style="background:var(--s2)"></i>Food</span>
+      <span><i class="key-line" style="background:var(--s1)"></i>Non-food</span>
+    </div>
+  </div>
+  <p class="caption" data-text="turn-cap">Year-on-year inflation, national, January 2025 to August 2026. Food carries 42.7% of the basket's weight and non-food 57.3%. Source: GSS CPI annex, August 2026. This chart needs GSS's annex because StatsBank's own non-food series is broken; see the notes.</p>
+</section>
+
+<section id="basket">
+  <div class="read">
+    <span class="eyebrow">What a cedi buys</span>
+    <h2>The same shopping, then and now</h2>
+    <p style="margin-top:12px">The index behind these rates tracks a fixed basket of goods and services. Follow it through time and the compounding becomes concrete.</p>
+  </div>
+  <div class="tiles" id="tiles"></div>
+  <p class="caption" data-text="basket-cap">Ratio of the national consumer price index in August 2026 (268.5) to the January of each start year. Index base: 2021 = 100.</p>
+</section>
+
+<section id="drivers">
+  <div class="read">
+    <span class="eyebrow">By product group</span>
+    <h2>What drove the 2022 surge, and what's left of it</h2>
+    <p style="margin-top:12px" data-text="drivers-p1">At the December 2022 peak, housing and utilities prices were up 82% on a year earlier, with furnishings and transport both above 71%. Three years on, transport is the only group where prices are falling, and recreation and housing are rising fastest.</p>
+  </div>
+  <div class="chart" id="c-drivers">
+    <div class="legend">
+      <span><i class="key-dot" style="background:var(--s2)"></i>December 2022</span>
+      <span><i class="key-dot" style="background:var(--s1)"></i>December 2025</span>
+    </div>
+  </div>
+  <p class="caption">Year-on-year inflation by group, national. Non-food is an aggregate of the other groups rather than a group itself, so it isn't plotted here. From GSS's annex it was 49.9% in December 2022 and 5.8% in December 2025.</p>
+  <details>
+    <summary>Product groups as a table</summary>
+    <div class="tbl-wrap"><table id="t-groups"></table></div>
+  </details>
+</section>
+
+<section id="regions">
+  <div class="read">
+    <span class="eyebrow">16 regions, since 2022</span>
+    <h2>Sixteen regions, sixteen inflations</h2>
+    <p style="margin-top:12px" data-text="regions-p1">The national rate hides a wide spread. In December 2022, prices in Greater Accra were up 66.7% while Volta's rose 35.6%. Six months later the order had flipped: Greater Accra had the lowest rate of all sixteen regions.</p>
+    <p data-text="regions-p2">The 2026 rebound is uneven too. Central Region had the lowest rate in the country in July 2025, at 7.7%. By August 2026 it had the highest, 11.1%, up from 2.4% in February. Ashanti, the second-largest region in the basket, climbed from 3.7% to 8.7% over the same months. Western went the other way: from 5.1% in January to −2.2% in August, after prices there fell 2.8% in a single month. In Bono East, prices in August were 3.3% lower than a year earlier; in Savannah they were flat.</p>
+  </div>
+  <div class="chips" id="chips" role="group" aria-label="Highlight a region"></div>
+  <div class="chart" id="c-regions">
+    <div class="legend">
+      <span><i class="key-line" style="background:var(--s1)"></i>Ghana</span>
+      <span><i class="key-line" style="background:var(--s2)"></i><span id="reg-name">Greater Accra</span></span>
+      <span><i class="key-line" style="background:var(--quiet-line)"></i>Other regions</span>
+    </div>
+  </div>
+  <p class="caption" data-text="regions-cap">Year-on-year inflation, all products. Regional series begin with the 2021 rebase, so the first year-on-year figures are for January 2022. <b>Choose a region</b> to highlight it. January 2022 to January 2026 from StatsBank; February to August 2026 from GSS's annex. Where the two overlap, all 784 regional values agree.</p>
+  <details>
+    <summary>Regions as a table</summary>
+    <div class="tbl-wrap"><table id="t-regions"></table></div>
+  </details>
+</section>
+
+<section id="imports">
+  <div class="read">
+    <span class="eyebrow">Where goods come from</span>
+    <h2 data-text="imports-h2">Imported goods rose faster, and have fallen further</h2>
+    <p style="margin-top:12px" data-text="imports-p1">Goods Ghana imports are exposed to the exchange rate. When the cedi fell in 2022, imported-goods inflation climbed to a peak of 62.4% in January 2023, eleven points above locally produced goods. As the cedi recovered, it kept falling. In March 2026 imported goods cost 0.6% less than a year earlier, the only time in this record that either group has fallen. By August imported-goods inflation was 2.2%, against 6.1% for local goods.</p>
+  </div>
+  <div class="chart" id="c-imports">
+    <div class="legend">
+      <span><i class="key-line" style="background:var(--s1)"></i>Local goods</span>
+      <span><i class="key-line" style="background:var(--s2)"></i>Imported goods</span>
+    </div>
+  </div>
+  <p class="caption" data-text="imports-cap">Year-on-year inflation, national, by source of goods, January 2022 to August 2026. Imported items carry 31.5% of the basket's weight and local items 68.5%. Source: GSS CPI annex, August 2026.</p>
+</section>
+
+<section id="assurance">
+  <div class="read">
+    <span class="eyebrow">How sure each number is</span>
+    <h2>Recent figures check to a tenth of a point; the oldest to three</h2>
+    <p style="margin-top:12px" data-text="assurance-p1">Every rate on this page was checked by recomputing it from the price index and comparing the two. How finely that check can see depends on the index's size. GSS rounds the index to one decimal place, so when it stood at 4 in 1999 the rounding alone hides nearly three percentage points. At 262 today it hides under a tenth of one.</p>
+    <p>The older figures are not wrong. They simply can't be verified as tightly, and this page says so rather than presenting 1999 and 2025 as equally certain.</p>
+  </div>
+  <div class="chart" id="c-assurance"></div>
+  <p class="caption">Average verification tolerance of the year-on-year rate, by year, in percentage points. Smaller is more precise.</p>
+</section>
+
+<section id="notes">
+  <div class="read"><span class="eyebrow">About the data</span><h2 style="margin-top:6px">How this was made</h2></div>
+  <div class="notes">
+    <div>
+      <h3>Source</h3>
+      <p data-text="notes-source">Every figure comes from the <a href="https://statsbank.statsghana.gov.gh/" target="_blank" rel="noopener">Ghana Statistical Service StatsBank</a>, table <span class="mono">cpi.px</span>, retrieved through its public API in September 2026, and from the <a href="https://statsghana.gov.gh/highlights/inflation-rate" target="_blank" rel="noopener">monthly CPI annex workbooks</a> for February to August 2026. Each value is stored with the file it came from, a fingerprint of that file and the date it was fetched.</p>
+    </div>
+    <div>
+      <h3>Checks</h3>
+      <p>For the national series, 336 month-on-month and 325 year-on-year figures were recomputed from the index; all agree within rounding. The twelve monthly rates for 2025 average 14.58%, matching the 14.6% in GSS's separate <a href="https://www.statsghana.gov.gh/highlights/annual-inflation-report-2025" target="_blank" rel="noopener">2025 annual inflation report</a>. Across the 61 months both sources cover, StatsBank and the annex agree on the headline index to within rounding.</p>
+    </div>
+    <div class="flag">
+      <h3>One series replaced</h3>
+      <p>Since the 2021 rebase, StatsBank's national Non-food index is a copy of the Food index, and its regional Non-food rates include impossible values such as a 46% fall in one month. GSS's annex workbooks carry a genuine Non-food series that matches its press releases (9.5% for July 2025), so this page uses that one. It looks like an error in the online database rather than in the statistics.</p>
+    </div>
+    <div>
+      <h3>Early years</h3>
+      <p>The series before 2021 is GSS's back-cast onto the 2021 basket. It matches what data services such as YCharts carry today, but older compilations give different rates for 1999–2001: for example, <a href="https://www.indexmundi.com/g/g.aspx?c=gh&amp;v=71" target="_blank" rel="noopener">IndexMundi</a> lists 12.8% for 1999 where this series averages 5.0%.</p>
+    </div>
+    <div>
+      <h3>What isn't here</h3>
+      <p>Regional and local-versus-imported figures only exist from the 2021 rebase. The older ten-region data is not in this table. In January to August 2022, the sixteen regional indices, weighted together, sit up to 3.9 points above GSS's national index; from September 2022 they agree to within 0.4. The regional rates on this page are unaffected, since each is checked against its own index. In one stretch, September 2022 to April 2023, GSS's annex was typed in at one decimal place, and September 2022 doesn't join cleanly to the months before it; those values are held back.</p>
+    </div>
+  </div>
+</section>
+
+<div class="story-foot caption" style="padding-top:24px">
+  <span>TARIN · a personal project by Kwadwo Boafo</span>
+  <span data-text="story-foot">Data: Ghana Statistical Service · StatsBank to Jan 2026 · CPI annexes to Aug 2026</span>
+</div>
+
+</div>
+<div class="tip" id="tip" hidden></div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js"></script>
+<script>
+window.TARIN.json("data/price-record.json").then(function (D) {
+  "use strict";
+  // words first: every time-sensitive sentence comes from the build, over the static fallback
+  if (D.text) Array.prototype.forEach.call(document.querySelectorAll("[data-text]"), function (el) {
+    var t = D.text[el.getAttribute("data-text")];
+    if (t) el.innerHTML = t;
+  });
+  var X = D.extras || {};
+  var NS = "http://www.w3.org/2000/svg";
+  var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+  function svgEl(tag, attrs, style) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (style) e.setAttribute("style", style);
+    return e;
+  }
+  function txt(parent, x, y, s, cls, anchor) {
+    var t = svgEl("text", { x: x, y: y, "text-anchor": anchor || "start" });
+    if (cls) t.setAttribute("class", cls);
+    t.textContent = s;
+    parent.appendChild(t);
+    return t;
+  }
+  function monthLabel(p) { return MONTHS[+p.slice(5, 7) - 1] + " " + p.slice(0, 4); }
+  function pct(v, d) { return v == null ? "–" : (v > 0 && d === "signed" ? "+" : "") + v.toFixed(1) + "%"; }
+  function plotWidth(host) { return Math.max(280, Math.floor(host.getBoundingClientRect().width - 24)); }
+
+  /* ---------- tooltip (one per chart) ---------- */
+  function makeTip(host) {
+    var t = document.createElement("div");
+    t.className = "tip"; t.hidden = true; host.appendChild(t);
+    return t;
+  }
+  function fillTip(tip, title, rows) {
+    tip.textContent = "";
+    var h = document.createElement("div"); h.className = "t-date"; h.textContent = title; tip.appendChild(h);
+    rows.forEach(function (r) {
+      var row = document.createElement("div"); row.className = "t-row";
+      var k = document.createElement("span"); k.className = "k";
+      if (r.color) { var sw = document.createElement("i"); sw.className = "key-line"; sw.style.background = r.color; k.appendChild(sw); }
+      k.appendChild(document.createTextNode(r.name));
+      var v = document.createElement("strong"); v.textContent = r.value;
+      row.appendChild(k); row.appendChild(v); tip.appendChild(row);
+    });
+  }
+  function toHost(host, svg, W, sx, sy) {
+    var hr = host.getBoundingClientRect(), sr = svg.getBoundingClientRect(), k = sr.width / W;
+    return [sr.left - hr.left + sx * k, sr.top - hr.top + sy * k];
+  }
+  function placeTip(host, tip, px, py) {
+    tip.hidden = false;
+    var hw = host.clientWidth, tw = tip.offsetWidth, th = tip.offsetHeight;
+    var left = px + 16; if (left + tw > hw - 4) left = px - tw - 16; if (left < 4) left = 4;
+    var top = Math.max(4, py - th / 2);
+    tip.style.left = left + "px"; tip.style.top = top + "px";
+  }
+
+  /* ---------- generic line chart ---------- */
+  function lineChart(host, cfg) {
+    var old = host.querySelector("svg"); if (old) old.remove();
+    var oldTip = host.querySelector(".tip"); if (oldTip) oldTip.remove();
+    var W = plotWidth(host), H = cfg.height || 300;
+    var m = { t: 16, r: cfg.rightPad || 18, b: 28, l: 44 };
+    if (cfg.endLabels) {
+      var longest = 0;
+      cfg.series.forEach(function (s) { if (!s.quiet && s.endName) longest = Math.max(longest, (s.endName + " -00.0%").length); });
+      m.r = 20 + longest * 7.3;
+    }
+    var iw = W - m.l - m.r, ih = H - m.t - m.b, n = cfg.labels.length;
+    var x = function (i) { return m.l + (n === 1 ? 0 : i * iw / (n - 1)); };
+    var y = function (v) { return m.t + (cfg.yMax - v) / (cfg.yMax - cfg.yMin) * ih; };
+    var svg = svgEl("svg", { viewBox: "0 0 " + W + " " + H, width: W, height: H, role: "img", "aria-label": cfg.aria });
+    host.appendChild(svg);
+
+    // grid + y ticks
+    for (var v = cfg.yMin; v <= cfg.yMax + 1e-9; v += cfg.yStep) {
+      var gy = y(v);
+      svg.appendChild(svgEl("line", { x1: m.l, x2: m.l + iw, y1: gy, y2: gy }, "stroke:" + (v === 0 ? "var(--axis)" : "var(--grid)") + ";stroke-width:1"));
+      txt(svg, m.l - 8, gy + 4, v + "%", null, "end");
+    }
+    // x ticks: January of every k-th year
+    var years = cfg.labels.filter(function (p) { return p.slice(5) === "01"; }).length;
+    var step = 1; while (years / step * 44 > iw) step++;
+    var quarterly = years <= 3 && iw / n > 12;   // short spans get quarter ticks too
+    cfg.labels.forEach(function (p, i) {
+      var mo = p.slice(5);
+      if (mo === "01") {
+        if ((+p.slice(0, 4)) % step !== 0 && step > 1) return;
+        svg.appendChild(svgEl("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 4 }, "stroke:var(--axis)"));
+        txt(svg, x(i), m.t + ih + 18, p.slice(0, 4), null, "middle");
+      } else if (quarterly && (mo === "04" || mo === "07" || mo === "10")) {
+        svg.appendChild(svgEl("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 3 }, "stroke:var(--axis)"));
+        txt(svg, x(i), m.t + ih + 18, MONTHS[+mo - 1], null, "middle");
+      }
+    });
+
+    // uncertainty band
+    if (cfg.band) {
+      var top = [], bot = [];
+      cfg.band.hi.forEach(function (hv, i) { if (hv != null) top.push([x(i), y(Math.min(hv, cfg.yMax))]); });
+      cfg.band.lo.forEach(function (lv, i) { if (lv != null) bot.push([x(i), y(Math.max(lv, cfg.yMin))]); });
+      var d = "M" + top.map(function (p) { return p.join(","); }).join("L") + "L" + bot.reverse().map(function (p) { return p.join(","); }).join("L") + "Z";
+      svg.appendChild(svgEl("path", { d: d }, "fill:var(--tol);stroke:none"));
+    }
+
+    function pathFor(vals) {
+      var d = "", pen = false;
+      vals.forEach(function (v, i) {
+        if (v == null) { pen = false; return; }
+        d += (pen ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); pen = true;
+      });
+      return d;
+    }
+    // quiet series first, then emphasised
+    cfg.series.slice().sort(function (a, b) { return (a.quiet ? 0 : 1) - (b.quiet ? 0 : 1); }).forEach(function (s) {
+      svg.appendChild(svgEl("path", { d: pathFor(s.values) },
+        "fill:none;stroke:" + s.color + ";stroke-width:" + (s.quiet ? 1.25 : 2) + ";stroke-linejoin:round;stroke-linecap:round" + (s.quiet ? ";opacity:0.9" : "")));
+    });
+
+    // end labels (emphasised series only), nudged apart if they collide
+    if (cfg.endLabels) {
+      var ends = cfg.series.filter(function (s) { return !s.quiet; }).map(function (s) {
+        var i = s.values.length - 1; while (i > 0 && s.values[i] == null) i--;
+        return { s: s, i: i, yy: y(s.values[i]) };
+      }).sort(function (a, b) { return a.yy - b.yy; });
+      for (var k = 1; k < ends.length; k++) if (ends[k].yy - ends[k - 1].yy < 16) ends[k].yy = ends[k - 1].yy + 16;
+      ends.forEach(function (e) {
+        svg.appendChild(svgEl("circle", { cx: x(e.i), cy: y(e.s.values[e.i]), r: 4 }, "fill:" + e.s.color + ";stroke:var(--surface);stroke-width:2"));
+        txt(svg, x(e.i) + 10, e.yy + 4, e.s.endName + " " + pct(e.s.values[e.i]), "lbl");
+      });
+    }
+
+    // annotations
+    (cfg.annotations || []).forEach(function (a) {
+      var ax = x(a.i), ay = y(a.v);
+      svg.appendChild(svgEl("circle", { cx: ax, cy: ay, r: 4 }, "fill:var(--s1);stroke:var(--surface);stroke-width:2"));
+      var tx = ax + (a.dx || 0), ty = ay + (a.dy || -12);
+      var anchor = a.anchor || "middle";
+      if (anchor === "middle" && tx < m.l + 60) anchor = "start";
+      if (anchor === "middle" && tx > m.l + iw - 40) anchor = "end";
+      txt(svg, tx, ty, a.text, "lbl-strong", anchor);
+    });
+
+    // interaction layer
+    var tip = makeTip(host);
+    var cross = svgEl("line", { y1: m.t, y2: m.t + ih }, "stroke:var(--axis);stroke-width:1;display:none");
+    svg.appendChild(cross);
+    var dots = cfg.series.filter(function (s) { return !s.quiet; }).map(function (s) {
+      var c = svgEl("circle", { r: 4 }, "fill:" + s.color + ";stroke:var(--surface);stroke-width:2;display:none");
+      svg.appendChild(c); return { s: s, c: c };
+    });
+    var hit = svgEl("rect", { x: m.l, y: m.t, width: iw, height: ih, tabindex: 0, "aria-label": cfg.aria + ". Use arrow keys to step through months." }, "fill:transparent;cursor:crosshair;outline:none");
+    svg.appendChild(hit);
+    var cur = n - 1;
+    function show(i) {
+      cur = Math.max(0, Math.min(n - 1, i));
+      var cx = x(cur);
+      cross.setAttribute("x1", cx); cross.setAttribute("x2", cx); cross.style.display = "";
+      var yTop = m.t + ih;
+      dots.forEach(function (d) {
+        var v = d.s.values[cur];
+        if (v == null) { d.c.style.display = "none"; return; }
+        d.c.setAttribute("cx", cx); d.c.setAttribute("cy", y(v)); d.c.style.display = ""; yTop = Math.min(yTop, y(v));
+      });
+      fillTip(tip, monthLabel(cfg.labels[cur]), cfg.tipRows(cur));
+      var pt = toHost(host, svg, W, cx, yTop);
+      placeTip(host, tip, pt[0], pt[1]);
+    }
+    function hide() { cross.style.display = "none"; dots.forEach(function (d) { d.c.style.display = "none"; }); tip.hidden = true; }
+    function fromEvent(ev) {
+      var r = svg.getBoundingClientRect();
+      var px = (ev.clientX - r.left) * W / r.width;
+      return Math.round((px - m.l) / iw * (n - 1));
+    }
+    hit.addEventListener("pointermove", function (ev) { show(fromEvent(ev)); });
+    hit.addEventListener("pointerdown", function (ev) { show(fromEvent(ev)); });
+    hit.addEventListener("pointerleave", hide);
+    hit.addEventListener("focus", function () { show(cur); });
+    hit.addEventListener("blur", hide);
+    hit.addEventListener("keydown", function (ev) {
+      if (ev.key === "ArrowLeft") { show(cur - (ev.shiftKey ? 12 : 1)); ev.preventDefault(); }
+      if (ev.key === "ArrowRight") { show(cur + (ev.shiftKey ? 12 : 1)); ev.preventDefault(); }
+    });
+  }
+
+  /* ---------- 1. the long record ---------- */
+  var HL = D.H.map(function (r) { return r[0]; });
+  var HY = D.H.map(function (r) { return r[1]; });
+  var HT = D.H.map(function (r) { return r[2]; });
+  function drawRecord() {
+    var PK = X.peaks || [["2001-03"], ["2022-12"]];
+    var iMax = HL.indexOf(PK[0][0]), iPeak2 = HL.indexOf(PK[1][0]), iLast = HL.length - 1;
+    lineChart(document.getElementById("c-record"), {
+      aria: "Ghana year-on-year inflation, January 1999 to " + MONTHS[+HL[HL.length - 1].slice(5) - 1] + " " + HL[HL.length - 1].slice(0, 4),
+      labels: HL, yMin: 0, yMax: 70, yStep: 10, height: 330, rightPad: 52,
+      band: { lo: HY.map(function (v, i) { return HT[i] == null ? null : v - HT[i]; }), hi: HY.map(function (v, i) { return HT[i] == null ? null : v + HT[i]; }) },
+      series: [{ values: HY, color: "var(--s1)" }],
+      annotations: [
+        { i: iMax, v: HY[iMax], text: HY[iMax].toFixed(1) + "% · " + MONTHS[+HL[iMax].slice(5) - 1] + " " + HL[iMax].slice(0, 4), dy: -12 },
+        { i: iPeak2, v: HY[iPeak2], text: HY[iPeak2].toFixed(1) + "% · " + MONTHS[+HL[iPeak2].slice(5) - 1] + " " + HL[iPeak2].slice(0, 4), dy: -12 },
+        { i: iLast, v: HY[iLast], text: HY[iLast].toFixed(1) + "%", dx: 9, dy: 4, anchor: "start" }
+      ],
+      tipRows: function (i) {
+        var rows = [{ color: "var(--s1)", name: "Inflation", value: pct(HY[i]) }];
+        if (HT[i] != null) rows.push({ name: "Checked to within", value: "±" + HT[i].toFixed(2) + " pts" });
+        rows.push({ name: "Source", value: HL[i] >= D.annex_from ? "GSS annex" : "StatsBank" });
+        return rows;
+      }
+    });
+  }
+
+  /* ---------- 1b. food vs non-food, 2025-26 ---------- */
+  function drawTurn() {
+    var start = Math.max(0, D.FN.months.indexOf(X.turn_from || "2025-01"));
+    var months = D.FN.months.slice(start), food = D.FN.food.slice(start), non = D.FN.nonfood.slice(start);
+    lineChart(document.getElementById("c-turn"), {
+      aria: "Year-on-year inflation for food and non-food, " + months[0] + " to " + months[months.length - 1],
+      labels: months, yMin: 0, yMax: 30, yStep: 5, height: 300, endLabels: true,
+      series: [{ values: food, color: "var(--s2)", endName: "Food" }, { values: non, color: "var(--s1)", endName: "Non-food" }],
+      tipRows: function (i) { return [{ color: "var(--s2)", name: "Food", value: pct(food[i]) }, { color: "var(--s1)", name: "Non-food", value: pct(non[i]) }]; }
+    });
+  }
+
+  /* ---------- 2. basket tiles ---------- */
+  (function tiles() {
+    var host = document.getElementById("tiles");
+    (X.tiles || []).forEach(function (t) {
+      var d = document.createElement("div"); d.className = "tile";
+      var v = document.createElement("div"); v.className = "v"; v.textContent = t[0];
+      var l = document.createElement("div"); l.className = "l"; l.textContent = t[1];
+      d.appendChild(v); d.appendChild(l); host.appendChild(d);
+    });
+  })();
+
+  /* ---------- 3. product groups (dot plot) ---------- */
+  var G = D.G.slice().sort(function (a, b) { return b[2] - a[2]; });
+  function drawDrivers() {
+    var host = document.getElementById("c-drivers");
+    var old = host.querySelector("svg"); if (old) old.remove();
+    var oldTip = host.querySelector(".tip"); if (oldTip) oldTip.remove();
+    var W = plotWidth(host), narrow = W < 600;
+    var labelW = narrow ? 0 : 190, valW = narrow ? 0 : 96;
+    var rowH = narrow ? 46 : 30;
+    var m = { t: 8, r: 16 + valW, b: 28, l: 12 + labelW };
+    var iw = W - m.l - m.r, H = m.t + G.length * rowH + m.b;
+    var lo = -10, hi = 90;
+    var x = function (v) { return m.l + (v - lo) / (hi - lo) * iw; };
+    var svg = svgEl("svg", { viewBox: "0 0 " + W + " " + H, width: W, height: H, role: "img", "aria-label": "Year-on-year inflation by product group, December 2022 and December 2025" });
+    host.appendChild(svg);
+    for (var v = lo; v <= hi; v += 10) {
+      svg.appendChild(svgEl("line", { x1: x(v), x2: x(v), y1: m.t, y2: H - m.b }, "stroke:" + (v === 0 ? "var(--axis)" : "var(--grid)") + ";stroke-width:1"));
+      if (!narrow || v % 20 === 0) txt(svg, x(v), H - m.b + 18, v + "%", null, "middle");
+    }
+    var tip = makeTip(host);
+    G.forEach(function (g, i) {
+      var cy = m.t + i * rowH + (narrow ? 32 : rowH / 2);
+      if (narrow) txt(svg, m.l, cy - 14, g[0], "lbl");
+      else txt(svg, m.l - 12, cy + 4, g[0], "lbl", "end");
+      svg.appendChild(svgEl("line", { x1: x(g[3]), x2: x(g[2]), y1: cy, y2: cy }, "stroke:var(--axis);stroke-width:2;stroke-linecap:round"));
+      svg.appendChild(svgEl("circle", { cx: x(g[3]), cy: cy, r: 5 }, "fill:var(--s1);stroke:var(--surface);stroke-width:2"));
+      svg.appendChild(svgEl("circle", { cx: x(g[2]), cy: cy, r: 5 }, "fill:var(--s2);stroke:var(--surface);stroke-width:2"));
+      if (!narrow) txt(svg, W - 8, cy + 4, g[2].toFixed(1) + " → " + g[3].toFixed(1), null, "end");
+      var hit = svgEl("rect", { x: 0, y: cy - rowH / 2, width: W, height: rowH, tabindex: 0, "aria-label": g[0] + ": " + pct(g[2]) + " in December 2022, " + pct(g[3]) + " in December 2025" }, "fill:transparent;outline:none");
+      function on() {
+        fillTip(tip, g[0], [{ color: "var(--s2)", name: "Dec 2022", value: pct(g[2]) }, { color: "var(--s1)", name: "Dec 2025", value: pct(g[3]) }]);
+        var pt = toHost(host, svg, W, x(Math.max(g[2], g[3])), cy);
+        placeTip(host, tip, pt[0], pt[1]);
+        hit.style.fill = "var(--grid)"; hit.style.opacity = "0.5";
+      }
+      function off() { tip.hidden = true; hit.style.fill = "transparent"; }
+      hit.addEventListener("pointerenter", on); hit.addEventListener("pointerdown", on);
+      hit.addEventListener("pointerleave", off); hit.addEventListener("focus", on); hit.addEventListener("blur", off);
+      svg.insertBefore(hit, svg.firstChild);
+    });
+  }
+
+  /* ---------- 4. regions ---------- */
+  var REG = Object.keys(D.R).sort();
+  var selected = "Greater Accra";
+  function drawRegions() {
+    var series = REG.filter(function (r) { return r !== selected; }).map(function (r) {
+      return { values: D.R[r], color: "var(--quiet-line)", quiet: true };
+    });
+    series.push({ values: D.N, color: "var(--s1)", endName: "Ghana" });
+    series.push({ values: D.R[selected], color: "var(--s2)", endName: selected });
+    lineChart(document.getElementById("c-regions"), {
+      aria: "Year-on-year inflation for Ghana's 16 regions, January 2022 to " + D.months[D.months.length - 1] + ", " + selected + " highlighted",
+      labels: D.months, yMin: -10, yMax: 70, yStep: 10, height: 340, endLabels: true, series: series,
+      tipRows: function (i) {
+        var vals = REG.map(function (r) { return [r, D.R[r][i]]; }).filter(function (p) { return p[1] != null; }).sort(function (a, b) { return b[1] - a[1]; });
+        var rows = [{ color: "var(--s2)", name: selected, value: pct(D.R[selected][i]) }, { color: "var(--s1)", name: "Ghana", value: pct(D.N[i]) }];
+        if (vals.length) {
+          rows.push({ name: "Highest: " + vals[0][0], value: pct(vals[0][1]) });
+          rows.push({ name: "Lowest: " + vals[vals.length - 1][0], value: pct(vals[vals.length - 1][1]) });
+        }
+        return rows;
+      }
+    });
+    document.getElementById("reg-name").textContent = selected;
+  }
+  (function chips() {
+    var host = document.getElementById("chips");
+    REG.forEach(function (r) {
+      var b = document.createElement("button");
+      b.type = "button"; b.id = "chip-" + r.replace(/\W+/g, "-").toLowerCase();
+      b.textContent = r; b.setAttribute("aria-pressed", r === selected ? "true" : "false");
+      b.addEventListener("click", function () {
+        selected = r;
+        Array.prototype.forEach.call(host.children, function (c) { c.setAttribute("aria-pressed", c === b ? "true" : "false"); });
+        drawRegions();
+      });
+      host.appendChild(b);
+    });
+  })();
+
+  /* ---------- 5. local vs imported ---------- */
+  function drawImports() {
+    lineChart(document.getElementById("c-imports"), {
+      aria: "Year-on-year inflation for local and imported goods, January 2022 to " + D.LI.months[D.LI.months.length - 1],
+      labels: D.LI.months, yMin: -10, yMax: 70, yStep: 10, height: 320, endLabels: true,
+      series: [{ values: D.LI.local, color: "var(--s1)", endName: "Local" }, { values: D.LI.import, color: "var(--s2)", endName: "Imported" }],
+      tipRows: function (i) { return [{ color: "var(--s2)", name: "Imported", value: pct(D.LI.import[i]) }, { color: "var(--s1)", name: "Local", value: pct(D.LI.local[i]) }]; }
+    });
+  }
+
+  /* ---------- 6. assurance by year ---------- */
+  var byYear = {};
+  D.H.forEach(function (r) { if (r[2] == null) return; var y = r[0].slice(0, 4); (byYear[y] = byYear[y] || []).push(r[2]); });
+  var AY = Object.keys(byYear).sort().map(function (y) { var a = byYear[y]; return [y, a.reduce(function (s, v) { return s + v; }, 0) / a.length]; });
+  function drawAssurance() {
+    var host = document.getElementById("c-assurance");
+    var old = host.querySelector("svg"); if (old) old.remove();
+    var oldTip = host.querySelector(".tip"); if (oldTip) oldTip.remove();
+    var W = plotWidth(host), H = 220, m = { t: 22, r: 12, b: 28, l: 44 };
+    var iw = W - m.l - m.r, ih = H - m.t - m.b, n = AY.length, band = iw / n;
+    var bw = Math.min(24, band - 2), yMax = 3.5;
+    var iTop = 0; AY.forEach(function (a, i) { if (a[1] > AY[iTop][1]) iTop = i; });
+    var y = function (v) { return m.t + (1 - v / yMax) * ih; };
+    var svg = svgEl("svg", { viewBox: "0 0 " + W + " " + H, width: W, height: H, role: "img", "aria-label": "Average verification tolerance by year, 1999 to 2026" });
+    host.appendChild(svg);
+    for (var v = 0; v <= 3; v += 1) {
+      svg.appendChild(svgEl("line", { x1: m.l, x2: m.l + iw, y1: y(v), y2: y(v) }, "stroke:" + (v === 0 ? "var(--axis)" : "var(--grid)")));
+      txt(svg, m.l - 8, y(v) + 4, "±" + v, null, "end");
+    }
+    var tip = makeTip(host);
+    var every = 1; while (n / every * 40 > iw) every++;
+    AY.forEach(function (a, i) {
+      var cx = m.l + band * i + band / 2, top = y(a[1]), h = m.t + ih - top, r = Math.min(4, bw / 2, h);
+      var d = "M" + (cx - bw / 2) + "," + (m.t + ih) + "V" + (top + r) + "Q" + (cx - bw / 2) + "," + top + " " + (cx - bw / 2 + r) + "," + top +
+              "H" + (cx + bw / 2 - r) + "Q" + (cx + bw / 2) + "," + top + " " + (cx + bw / 2) + "," + (top + r) + "V" + (m.t + ih) + "Z";
+      var bar = svgEl("path", { d: d }, "fill:var(--s1)");
+      svg.appendChild(bar);
+      if (i % every === 0 || i === n - 1) {
+        txt(svg, cx, H - m.b + 18, (every > 1 || W < 700) ? "'" + a[0].slice(2) : a[0], null, "middle");
+      }
+      if (i === iTop || i === n - 1) txt(svg, cx, top - 7, "±" + a[1].toFixed(2), "lbl-strong", i === n - 1 ? "end" : "middle");
+      var hit = svgEl("rect", { x: cx - band / 2, y: m.t, width: band, height: ih, tabindex: 0, "aria-label": a[0] + ": plus or minus " + a[1].toFixed(2) + " percentage points" }, "fill:transparent;outline:none");
+      function on() {
+        fillTip(tip, a[0], [{ color: "var(--s1)", name: "Checked to within", value: "±" + a[1].toFixed(2) + " pts" }]);
+        var pt = toHost(host, svg, W, cx, top);
+        placeTip(host, tip, pt[0], pt[1]); bar.style.opacity = "0.75";
+      }
+      function off() { tip.hidden = true; bar.style.opacity = "1"; }
+      hit.addEventListener("pointerenter", on); hit.addEventListener("pointerdown", on);
+      hit.addEventListener("pointerleave", off); hit.addEventListener("focus", on); hit.addEventListener("blur", off);
+      svg.appendChild(hit);
+    });
+  }
+
+  /* ---------- tables ---------- */
+  function table(id, head, rows) {
+    var t = document.getElementById(id);
+    var tr = document.createElement("tr");
+    head.forEach(function (h) { var th = document.createElement("th"); th.textContent = h; tr.appendChild(th); });
+    var thead = document.createElement("thead"); thead.appendChild(tr); t.appendChild(thead);
+    var tb = document.createElement("tbody");
+    rows.forEach(function (r) {
+      var row = document.createElement("tr");
+      r.forEach(function (c) { var td = document.createElement("td"); td.textContent = c; row.appendChild(td); });
+      tb.appendChild(row);
+    });
+    t.appendChild(tb);
+  }
+  var ann = {};
+  D.H.forEach(function (r) { var y = r[0].slice(0, 4); (ann[y] = ann[y] || []).push(r); });
+  table("t-annual", ["Year", "Average y/y", "Checked to within"], Object.keys(ann).sort().map(function (y) {
+    var a = ann[y], avg = a.reduce(function (s, r) { return s + r[1]; }, 0) / a.length;
+    var ts = a.filter(function (r) { return r[2] != null; }), tol = ts.reduce(function (s, r) { return s + r[2]; }, 0) / (ts.length || 1);
+    var part = a.length < 12 ? " (" + MONTHS[+a[0][0].slice(5) - 1] + "–" + MONTHS[+a[a.length - 1][0].slice(5) - 1] + ")" : "";
+    return [y + part, avg.toFixed(1) + "%", "±" + tol.toFixed(2)];
+  }));
+  table("t-groups", ["Group", "Dec 2022", "Dec 2025"], G.map(function (g) { return [g[0], pct(g[2]), pct(g[3])]; }));
+  var RCm = X.region_cols || ["2022-12", "2023-06", D.months[D.months.length - 1]];
+  var RC = RCm.map(function (m) { return D.months.indexOf(m); });
+  table("t-regions", ["Region"].concat(RCm.map(function (p) { return MONTHS[+p.slice(5) - 1] + " " + p.slice(0, 4); })),
+    [["Ghana"].concat(RC.map(function (i) { return pct(D.N[i]); }))].concat(REG.map(function (r) { return [r].concat(RC.map(function (i) { return pct(D.R[r][i]); })); })));
+
+  /* ---------- render + keep sized ---------- */
+  function all() { drawRecord(); drawTurn(); drawDrivers(); drawRegions(); drawImports(); drawAssurance(); }
+  all();
+  var lastW = window.innerWidth, pending = false;
+  window.addEventListener("resize", function () {
+    if (pending || Math.abs(window.innerWidth - lastW) < 8) return;
+    pending = true;
+    requestAnimationFrame(function () { pending = false; lastW = window.innerWidth; all(); });
+  });
+}).catch(function (e) { window.TARIN.fail(document.getElementById("c-record"), e); });
+
+</script>
+</body>
+</html>

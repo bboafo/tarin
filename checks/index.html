@@ -43,6 +43,7 @@
       <a href="../index.html">Home</a>
       <a href="../price-record/index.html">Price record</a>
       <a href="../explorer/index.html">Data explorer</a>
+      <a href="../catalogue/index.html">Catalogue</a>
       <a href="../forecast/index.html">Forecast</a>
       <a href="index.html" aria-current="page">How it's checked</a>
     </nav>
@@ -53,7 +54,7 @@
   <div class="page-head">
     <span class="eyebrow">Method</span>
     <h1>How every number is checked</h1>
-    <p class="lede">TARIN reproduces what the Ghana Statistical Service publishes; it doesn't adjust it. What it adds is proof: every value keeps the file it came from, and thirteen rules test it before it reaches a chart. <span id="c-totals"></span></p>
+    <p class="lede">TARIN reproduces what the Ghana Statistical Service publishes; it doesn't adjust it. What it adds is proof: every value keeps the file it came from, and thirteen rules test it before it reaches a chart, with <a href="#tables-checks">eight more</a> for the other StatsBank tables. <span id="c-totals"></span></p>
   </div>
 
   <section class="block">
@@ -122,6 +123,26 @@
         <h3>StatsBank stopped updating</h3>
         <p>The database was last updated on 5 February 2026 and ends at January 2026. Everything since comes from the monthly annex workbooks, which GSS still publishes with each bulletin.</p></article>
     </div>
+  </section>
+
+  <section class="block" id="tables-checks">
+    <div class="read">
+      <span class="eyebrow">The other tables</span>
+      <h2 style="margin-top:6px">Eight more rules for GDP, trade, money and government</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">The CPI rules lean on the index and its rates. The other StatsBank tables are tested by how their numbers must relate: a growth rate to its level, the parts to their total, a year to its quarters and months, one figure to the same figure in another table. A value is held only when the evidence points at it: it is the one number common to two failing checks, or a pattern names it. Otherwise the published total is flagged and nothing is withheld on a guess.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="data" id="t-trules">
+        <thead><tr><th>Rule</th><th>What it catches</th><th class="r">Comparisons</th><th class="r">Now</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="caption" id="c-trun"></p>
+    <div class="read" style="margin-top:10px">
+      <h3 style="font-family:var(--f-display);font-size:21px">What they found</h3>
+      <p style="margin-top:6px;color:var(--ink-2)">Grouped by table and rule, with the most recent case in the check's own words. Each links to the series in the catalogue.</p>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="t-tfind"></table></div>
   </section>
 
   <section class="block">
@@ -263,6 +284,43 @@
     document.getElementById("t-files").innerHTML = fileRows(K.files.slice(0, 8));
     document.getElementById("t-files-all").innerHTML = fileRows(K.files);
     document.querySelector("#more-files summary").textContent = "All " + K.files.length + " files";
+
+    // the other StatsBank tables
+    var TK = K.tables;
+    if (TK) {
+      function now(h, w, i) {
+        var out = [];
+        if (h) out.push('<span class="pill hold">' + T.int(h) + " held</span>");
+        if (w) out.push('<span class="pill warn">' + T.int(w) + " flagged</span>");
+        if (i) out.push('<span class="pill idle">' + T.int(i) + " to read</span>");
+        return out.length ? out.join(" ") : '<span class="pill ok">clear</span>';
+      }
+      document.querySelector("#t-trules tbody").innerHTML = TK.rules.map(function (r) {
+        return "<tr><td class='m'><code>" + esc(r[0]) + "</code></td><td>" + esc(r[1]) + "<br><span class='mono muted' style='font-size:11.5px'>" +
+          esc(r[2]) + "</span></td><td class='r m'>" + (r[3] ? T.int(r[3]) : "–") + "</td><td class='r'>" + now(r[4], r[5], r[6]) + "</td></tr>";
+      }).join("");
+      document.getElementById("c-trun").textContent = (TK.validated ? "Latest run " + TK.validated.slice(0, 16).replace("T", " ") + " UTC. " : "") +
+        "Comparisons are the times a rule could actually be tested; G2 and G3 look at whole series.";
+      var tf = document.getElementById("t-tfind");
+      tf.innerHTML = "<thead><tr><th>Table</th><th>Rule</th><th>How many</th><th>The latest case</th></tr></thead>";
+      var tb2 = document.createElement("tbody");
+      TK.findings.forEach(function (f) {
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td></td><td class='m'><code></code></td><td></td><td style='min-width:280px'></td>";
+        tr.children[0].textContent = f.name;
+        tr.children[1].firstChild.textContent = f.rule.split("_")[0];
+        tr.children[1].title = f.rule;
+        tr.children[2].innerHTML = '<span class="pill ' + f.severity + '">' + T.int(f.values) + (f.severity === "hold" ? " held" : " flagged") + "</span>" +
+          "<br><span class='mono muted' style='font-size:11.5px'>in " + f.series + " series</span>";
+        tr.children[3].textContent = f.detail + " ";
+        if (f.link) {
+          var a = document.createElement("a"); a.href = "../catalogue/index.html#" + f.link; a.textContent = "See it →";
+          tr.children[3].appendChild(a);
+        }
+        tb2.appendChild(tr);
+      });
+      tf.appendChild(tb2);
+    }
   }).catch(function (e) { T.fail(document.getElementById("c-held"), e); });
 })();
 </script>

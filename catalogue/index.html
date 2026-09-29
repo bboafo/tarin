@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catalogue · TARIN</title>
+<meta name="description" content="Every table TARIN holds from Ghana Statistical Service: prices, GDP, money and rates, government and trade. Each with its source file, freshness and checks, and any series comparable with any other.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/tarin.css">
+<style>
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; margin-top: 8px; }
+.stats div { background: var(--surface); padding: 12px 14px 10px; display: grid; gap: 2px; align-content: start; }
+.stats b { font-family: var(--f-mono); font-weight: 500; font-size: 21px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stats span { font-size: 13px; color: var(--ink-2); line-height: 1.4; }
+
+.x-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; align-items: start; }
+.panel { padding: 16px; display: grid; gap: 16px; position: sticky; top: 12px; }
+.panel h3 { font-family: var(--f-mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.slots { display: grid; gap: 6px; }
+.slot-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: stretch; background: var(--paper);
+  border: 1px solid var(--rule); border-radius: 5px; }
+.slot-row.on { border-color: var(--ink-2); background: var(--surface); }
+.slot { display: grid; grid-template-columns: 14px minmax(0, 1fr); gap: 10px; align-items: center; text-align: left;
+  font: inherit; font-size: 13.5px; line-height: 1.35; color: var(--ink-2); background: none; border: 0;
+  padding: 8px 4px 8px 10px; cursor: pointer; width: 100%; }
+.slot[aria-pressed="true"] { color: var(--ink); }
+.slot .sw { width: 14px; height: 3px; border-radius: 2px; }
+.slot .nm b { display: block; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.slot .nm span { font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+.slot-row .x { font: inherit; font-family: var(--f-mono); font-size: 15px; color: var(--muted); background: none; border: 0; padding: 0 10px; cursor: pointer; border-radius: 0 5px 5px 0; }
+.slot-row .x:hover { background: var(--sunk); color: var(--ink); }
+.add { font: inherit; font-size: 13.5px; color: var(--brand-ink); background: none; border: 1px dashed var(--axis); border-radius: 5px; padding: 7px 10px; cursor: pointer; text-align: left; width: 100%; margin-top: 6px; }
+.add:disabled { color: var(--muted); cursor: default; }
+.field { display: grid; gap: 5px; }
+.field label, .field .lab { font-size: 12.5px; color: var(--muted); }
+select { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; padding: 7px 8px; width: 100%; }
+select:disabled { color: var(--ink-2); background: var(--sunk); }
+.seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; background: var(--surface); }
+.seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: none; border: 0; padding: 6px 11px; cursor: pointer; border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.seg button:disabled { color: var(--axis); cursor: default; }
+.toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 16px; align-items: center; margin-bottom: 10px; }
+.toolbar .note { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.info { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; margin-top: 14px; }
+.info .card { padding: 12px 14px; display: grid; gap: 4px; font-size: 13.5px; color: var(--ink-2); align-content: start; }
+.info .card .top { display: flex; gap: 8px; align-items: center; }
+.info .card .top b { color: var(--ink); font-weight: 600; }
+.info .card .what { color: var(--ink-2); line-height: 1.4; }
+.info .card code { font-size: 11.5px; color: var(--ink); word-break: break-all; }
+.info .card .row { display: flex; justify-content: space-between; gap: 10px; font-family: var(--f-mono); font-size: 12px; }
+.info .card .row span:first-child { color: var(--muted); white-space: nowrap; }
+.info .card .row span:last-child { text-align: right; overflow-wrap: anywhere; }
+.copy { font: inherit; font-family: var(--f-mono); font-size: 11px; color: var(--brand-ink); background: none; border: 1px solid var(--rule); border-radius: 3px; padding: 0 6px; cursor: pointer; }
+.vals { margin-top: 16px; }
+.vals td.st { white-space: normal; min-width: 200px; font-size: 13px; }
+.vals .held-cell { color: var(--hold); }
+.warn-note { margin-top: 8px; font-size: 13.5px; color: var(--warn); background: var(--warn-bg); border-radius: 5px; padding: 8px 12px; }
+.found { margin-top: 18px; display: grid; gap: 8px; }
+.found h3 { font-size: 15px; }
+.found td.why { white-space: normal; min-width: 260px; font-size: 13px; line-height: 1.45; }
+.more { font: inherit; font-size: 13.5px; color: var(--brand-ink); background: none; border: 0; padding: 4px 0; cursor: pointer; text-align: left; }
+
+.group { display: grid; gap: 10px; }
+.group + .group { margin-top: 26px; }
+.group > h3 { font-family: var(--f-display); font-size: 21px; font-weight: 600; }
+.tlist { display: grid; gap: 8px; }
+.trow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 22px; padding: 14px 16px; align-items: start; }
+.trow .nm { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.trow .nm b { font-size: 16px; font-weight: 600; color: var(--ink); }
+.trow .nm code { font-size: 11.5px; color: var(--muted); }
+.trow .about { color: var(--ink-2); font-size: 14.5px; line-height: 1.45; margin-top: 3px; max-width: 72ch; }
+.trow .meta { font-family: var(--f-mono); font-size: 12px; color: var(--muted); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.trow .meta b { color: var(--ink-2); font-weight: 500; }
+.trow .side { display: grid; gap: 8px; justify-items: end; align-content: start; }
+.trow .acts { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
+.btn-s { font: inherit; font-size: 13.5px; font-weight: 500; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; padding: 5px 11px; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.btn-s:hover { border-color: var(--axis); color: var(--ink); }
+.btn-s.primary { color: var(--brand-ink); border-color: var(--brand); }
+.checks-line { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; }
+
+@media (max-width: 600px) {
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats div:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  /* the checks list as stacked rows: period, series, figure and verdict, then the words */
+  #t-found thead { display: none; }
+  #t-found tr { display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 4px 12px; align-items: center;
+    padding: 10px 0; border-bottom: 1px solid var(--grid); }
+  #t-found td { border: 0; padding: 0; }
+  #t-found td.why { grid-column: 1 / -1; min-width: 0; }
+}
+@media (max-width: 860px) {
+  .x-layout { grid-template-columns: 1fr; }
+  .panel { position: static; }
+  .trow { grid-template-columns: 1fr; }
+  .trow .side { justify-items: start; }
+  .trow .acts, .checks-line { justify-content: flex-start; }
+}
+</style>
+</head>
+<body data-root="../" data-page="catalogue">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="index.html" aria-current="page">Catalogue</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head" style="padding-block:32px 24px">
+    <span class="eyebrow">Catalogue</span>
+    <h1>Every table TARIN holds</h1>
+    <p class="lede" id="c-lede">Prices, output, money and rates, government and trade, from the Ghana Statistical Service's StatsBank. Every table keeps the file it came from, says how fresh it is, and goes through the same checks. Any series can be charted against any other.</p>
+    <div class="stats" id="c-stats">
+      <div><b data-k="tables">–</b><span>tables besides the CPI</span></div>
+      <div><b data-k="series">–</b><span>series</span></div>
+      <div><b data-k="values">–</b><span>values</span></div>
+      <div><b data-k="held">–</b><span>held back by a check</span></div>
+      <div><b data-k="files">–</b><span>source files, fingerprinted</span></div>
+    </div>
+  </div>
+
+  <section class="block" id="compare" aria-labelledby="h-compare">
+    <div class="read">
+      <span class="eyebrow">Compare</span>
+      <h2 id="h-compare" style="margin-top:6px">Any series, from any table, on one chart</h2>
+      <p class="muted" style="margin-top:8px">Pick up to three series. Monthly, quarterly and yearly figures share one time axis. Values a check holds back show as gaps, marked in red under the axis.</p>
+    </div>
+    <div class="x-layout">
+      <aside class="panel card" aria-label="Choose series">
+        <div>
+          <h3>Series</h3>
+          <div class="slots" id="slots" role="group" aria-label="Series on the chart" style="margin-top:8px"></div>
+          <button class="add" id="add" type="button">+ Add a series to compare</button>
+        </div>
+        <div>
+          <h3 id="edit-h">Edit series 1</h3>
+          <div style="display:grid;gap:10px;margin-top:8px">
+            <div class="field"><label for="f-table">Table</label><select id="f-table"></select></div>
+            <div id="f-dims" style="display:grid;gap:10px"></div>
+            <div class="field" id="f-freq-w"><span class="lab">Frequency</span>
+              <div class="seg" id="f-freq" role="group" aria-label="Frequency">
+                <button type="button" data-v="m">Monthly</button><button type="button" data-v="q">Quarterly</button><button type="button" data-v="a">Annual</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div>
+        <div class="toolbar">
+          <span class="note" id="c-grid"></span>
+          <div class="seg" id="f-range" role="group" aria-label="Time range">
+            <button type="button" data-v="5">5y</button><button type="button" data-v="10">10y</button><button type="button" data-v="20">20y</button><button type="button" data-v="0">All</button>
+          </div>
+        </div>
+        <div class="chart" id="c-x">
+          <div class="legend" id="x-legend"></div>
+        </div>
+        <div class="warn-note" id="c-units" hidden></div>
+        <p class="caption" style="margin-top:8px" id="x-cap">Hover or tap the chart; arrow keys step through time once it has focus. Large numbers are shortened (bn, m); the table below has them in full.</p>
+        <div class="info" id="info"></div>
+        <div class="found" id="found" hidden>
+          <h3>What the checks say about these series</h3>
+          <div class="tbl-wrap"><table class="data" id="t-found"></table></div>
+          <button class="more" id="found-more" type="button" hidden></button>
+        </div>
+        <details class="vals" id="vals">
+          <summary>Values as a table</summary>
+          <div class="tbl-wrap"><table class="data" id="t-vals"></table></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tables" aria-labelledby="h-tables">
+    <div class="read">
+      <span class="eyebrow">Tables</span>
+      <h2 id="h-tables" style="margin-top:6px">What's in the store, and how fresh it is</h2>
+      <p class="muted" style="margin-top:8px"><b style="color:var(--ink-2);font-weight:600">Current</b>: GSS updated the table in the last four months. <b style="color:var(--ink-2);font-weight:600">Lagging</b>: in the last year. <b style="color:var(--ink-2);font-weight:600">Frozen</b>: not since. Frozen tables are still worth having: their history is complete to the month shown, and nothing newer exists on StatsBank.</p>
+    </div>
+    <div id="groups"></div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  var COLORS = ["var(--s1)", "var(--s2)", "var(--s3)"];
+  var FREQ_NAME = { m: "monthly", q: "quarterly", a: "annual" };
+  var FREQ_ORDER = "mqa";
+  var C, byId = {}, lookup = {}, files = {};
+  var state = { slots: [], active: 0, range: 10 };
+
+  /* ---------- catalogue model ---------- */
+  function tbl(k) { return C.tables[k]; }
+  function rowKey(t, dims, f) { return t + "|" + dims.join(",") + "|" + f; }
+  function seriesOf(slot) { return lookup[rowKey(slot.t, slot.dims, slot.f)]; }
+  function load(t) {
+    if (!files[t]) files[t] = T.json("data/tables/" + t + ".json");
+    return files[t];
+  }
+  function dimValue(t, j, idx) { return tbl(t).dims[j][1][idx]; }
+  // cascading options: values of dimension j that exist with the choices made above it
+  function options(slot, j) {
+    var seen = {}, out = [];
+    tbl(slot.t).series.forEach(function (r) {
+      for (var i = 0; i < j; i++) if (r[2][i] !== slot.dims[i]) return;
+      if (!seen[r[2][j]]) { seen[r[2][j]] = 1; out.push(r[2][j]); }
+    });
+    return out.sort(function (a, b) { return a - b; });
+  }
+  function freqOptions(slot) {
+    var seen = {};
+    tbl(slot.t).series.forEach(function (r) { if (r[2].join(",") === slot.dims.join(",")) seen[r[1]] = 1; });
+    return FREQ_ORDER.split("").filter(function (f) { return seen[f]; });
+  }
+  function normalise(slot) {
+    var D = tbl(slot.t).dims;
+    for (var j = 0; j < D.length; j++) {
+      var o = options(slot, j);
+      if (o.indexOf(slot.dims[j]) < 0) slot.dims[j] = o[0];
+    }
+    var fo = freqOptions(slot);
+    if (fo.indexOf(slot.f) < 0) slot.f = fo[0];
+    return slot;
+  }
+  function slotFor(id) { var r = byId[id]; return r ? { t: r.t, dims: r.row[2].slice(), f: r.row[1] } : null; }
+  function firstSlot(t) { var r = tbl(t).series[0]; return { t: t, dims: r[2].slice(), f: r[1] }; }
+  function findSlot(t, want) {
+    // a slot from dimension values by name; null if the table lacks them
+    var D = tbl(t).dims, dims = [];
+    for (var j = 0; j < D.length; j++) {
+      var i = D[j][1].indexOf(want[D[j][0]]);
+      if (i < 0) return null;
+      dims.push(i);
+    }
+    var s = normalise({ t: t, dims: dims, f: "m" });
+    return seriesOf(s) ? s : null;
+  }
+  function describe(slot) {
+    var D = tbl(slot.t).dims;
+    var bits = slot.dims.map(function (v, j) { return D[j][1][v]; });
+    if (D.length > 1 && D[0][0] === "Unit") bits.push(bits.shift());
+    return { title: bits.join(" · "), sub: tbl(slot.t).name + " · " + FREQ_NAME[slot.f] };
+  }
+  function kind(slot) {
+    var s = describe(slot).title;
+    return /%|\(p\.p\.\)|ratio|return on|share|(lending|deposits?|reference|policy|weighted average) rate|bill rate/i.test(s)
+      ? "a percentage or rate" : "a level";
+  }
+
+  /* ---------- controls ---------- */
+  function segSet(host, v, enabled) {
+    Array.prototype.forEach.call(host.querySelectorAll("button"), function (b) {
+      var bv = b.getAttribute("data-v");
+      b.setAttribute("aria-pressed", bv === String(v) ? "true" : "false");
+      if (enabled) b.disabled = !enabled(bv);
+    });
+  }
+  function fillTables(sel, value) {
+    sel.innerHTML = "";
+    C.groups.forEach(function (g) {
+      var og = document.createElement("optgroup"); og.label = g[1];
+      g[2].forEach(function (k) {
+        var op = document.createElement("option"); op.value = k; op.textContent = tbl(k).name;
+        if (k === value) op.selected = true; og.appendChild(op);
+      });
+      sel.appendChild(og);
+    });
+  }
+  function renderControls() {
+    var slot = state.slots[state.active];
+    document.getElementById("edit-h").textContent = "Edit series " + (state.active + 1);
+    fillTables(document.getElementById("f-table"), slot.t);
+    var host = document.getElementById("f-dims"); host.innerHTML = "";
+    tbl(slot.t).dims.forEach(function (d, j) {
+      var w = document.createElement("div"); w.className = "field";
+      var id = "f-dim-" + j;
+      w.innerHTML = '<label></label><select></select>';
+      w.firstChild.textContent = d[0]; w.firstChild.setAttribute("for", id);
+      var sel = w.lastChild; sel.id = id;
+      var opts = options(slot, j);
+      opts.forEach(function (v) {
+        var op = document.createElement("option"); op.value = v; op.textContent = d[1][v];
+        if (v === slot.dims[j]) op.selected = true; sel.appendChild(op);
+      });
+      sel.disabled = opts.length < 2;
+      sel.addEventListener("change", function () {
+        slot.dims[j] = +sel.value; normalise(slot); update();
+      });
+      host.appendChild(w);
+    });
+    var fo = freqOptions(slot);
+    segSet(document.getElementById("f-freq"), slot.f, function (v) { return fo.indexOf(v) >= 0; });
+    document.getElementById("f-freq-w").hidden = tbl(slot.t).freqs.length < 2;
+    segSet(document.getElementById("f-range"), state.range);
+    var sh = document.getElementById("slots"); sh.innerHTML = "";
+    state.slots.forEach(function (s, i) {
+      var d = describe(s);
+      var row = document.createElement("div"); row.className = "slot-row" + (i === state.active ? " on" : "");
+      var b = document.createElement("button"); b.type = "button"; b.className = "slot";
+      b.setAttribute("aria-pressed", i === state.active ? "true" : "false");
+      b.innerHTML = '<i class="sw"></i><span class="nm"><b></b><span></span></span>';
+      b.querySelector(".sw").style.background = COLORS[i];
+      b.querySelector("b").textContent = d.title;
+      b.querySelector(".nm span").textContent = d.sub;
+      b.setAttribute("aria-label", "Series " + (i + 1) + ": " + d.title + ", " + d.sub + ". Edit");
+      b.addEventListener("click", function () { state.active = i; update(); });
+      row.appendChild(b);
+      if (state.slots.length > 1) {
+        var x = document.createElement("button"); x.type = "button"; x.className = "x"; x.textContent = "×";
+        x.setAttribute("aria-label", "Remove series " + (i + 1));
+        x.addEventListener("click", function () { state.slots.splice(i, 1); state.active = Math.min(state.active, state.slots.length - 1); update(); });
+        row.appendChild(x);
+      }
+      sh.appendChild(row);
+    });
+    var add = document.getElementById("add");
+    add.disabled = state.slots.length >= 3;
+    add.textContent = state.slots.length >= 3 ? "Three series at most, so the colours stay distinguishable" : "+ Add a series to compare";
+  }
+
+  /* ---------- time helpers ---------- */
+  // where a period sits on a finer axis: the middle of its span (a quarter at its middle month, a year at July)
+  function onGrid(p, g) {
+    var f = T.freqOf(p), y = +p.slice(0, 4);
+    if (f === g) return T.pIndex(p);
+    if (g === "m") return f === "q" ? y * 12 + (+p.slice(6) - 1) * 3 + 1 : y * 12 + 6;
+    return y * 4 + 2;                                    // a year on a quarterly axis
+  }
+  // the period of frequency f that contains grid period gp
+  function containing(gp, f) {
+    var g = T.freqOf(gp);
+    if (f === g) return gp;
+    if (f === "a") return gp.slice(0, 4);
+    return gp.slice(0, 4) + "-Q" + (Math.floor((+gp.slice(5, 7) - 1) / 3) + 1);   // a month's quarter
+  }
+  function when(p) {   // a sortable position in time, in years
+    var f = T.freqOf(p), y = +p.slice(0, 4);
+    return f === "m" ? y + (+p.slice(5, 7) - 0.5) / 12 : f === "q" ? y + (+p.slice(6) - 0.5) / 4 : y + 0.5;
+  }
+
+  /* ---------- chart, info, checks, table ---------- */
+  var FMT = function (v) { return T.compact(v); };
+  function draw() {
+    var live = state.slots.map(function (s, i) { var r = seriesOf(s); return r ? { r: r, i: i, slot: s } : null; }).filter(Boolean);
+    var host = document.getElementById("c-x");
+    var legend = document.getElementById("x-legend"); legend.innerHTML = "";
+    if (!live.length) { var o = host.querySelector("svg"); if (o) o.remove(); return; }
+    Promise.all(live.map(function (l) { return load(l.slot.t); })).then(function (fs) {
+      var g = live.map(function (l) { return l.slot.f; }).sort(function (a, b) { return FREQ_ORDER.indexOf(a) - FREQ_ORDER.indexOf(b); })[0];
+      var per = T.perYear[g];
+      var S = live.map(function (l, j) {
+        var b = fs[j].s[l.r.id], k0 = T.pIndex(b[0]);
+        var periods = b[1].map(function (_, i) { return T.pAt(l.slot.f, k0 + i); });
+        return { l: l, b: b, why: fs[j].why[l.r.id] || {}, periods: periods };
+      });
+      var first = Math.min.apply(null, S.map(function (s) { return onGrid(s.periods[0], g); }));
+      var last = Math.max.apply(null, S.map(function (s) { return onGrid(s.periods[s.periods.length - 1], g); }));
+      if (state.range) first = Math.max(first, last - state.range * per + 1);
+      var labels = []; for (var k = first; k <= last; k++) labels.push(T.pAt(g, k));
+      var anyHeld = false;
+      var series = S.map(function (s) {
+        var vals = labels.map(function () { return null; }), held = {}, breaks = {};
+        s.periods.forEach(function (p, i) {
+          var gi = onGrid(p, g) - first;
+          if (gi < 0 || gi >= labels.length) return;
+          vals[gi] = s.b[1][i];
+          if (s.b[2][i]) { held[gi] = s.b[2][i]; anyHeld = true; }
+          if (s.b[1][i] == null) breaks[gi] = true;
+        });
+        var coarse = s.l.slot.f !== g;
+        var d = describe(s.l.slot);
+        var sp = document.createElement("span");
+        sp.innerHTML = '<i class="key-line"></i>'; sp.firstChild.style.background = COLORS[s.l.i];
+        sp.appendChild(document.createTextNode((s.l.i + 1) + " · " + d.title + (coarse ? " (" + FREQ_NAME[s.l.slot.f] + ")" : "")));
+        legend.appendChild(sp);
+        return { values: vals, color: COLORS[s.l.i], name: String(s.l.i + 1), held: held, connect: coarse,
+                 breaks: breaks, dots: coarse || s.l.slot.f === "a", src: s };
+      });
+      if (anyHeld) { var hs = document.createElement("span"); hs.innerHTML = '<i class="key-held"></i>Held by a check'; legend.appendChild(hs); }
+      document.getElementById("c-grid").textContent = live.length > 1 && series.some(function (s) { return s.connect; })
+        ? "Shown on a " + FREQ_NAME[g] + " axis; coarser series are dots joined by lines" : "";
+      T.lineChart(host, {
+        labels: labels, series: series, height: 360, rules: C.rules,
+        yFmt: function (v) {
+          if (Math.abs(v) >= 1e6) return T.compact(v).replace(/\.(\d*?)0+(?=bn|m)/, function (m0, d) { return d ? "." + d : ""; });
+          return T.fmt(v, Math.abs(v) % 1 ? (Math.abs(v * 10) % 1 ? 2 : 1) : 0);
+        },
+        fmt: FMT,
+        aria: series.map(function (s) { return describe(s.src.l.slot).title; }).join(", and "),
+        tipRows: function (i) {
+          return series.map(function (s) {
+            var p = containing(labels[i], s.src.l.slot.f), idx = s.src.periods.indexOf(p);
+            var v = idx >= 0 ? s.src.b[1][idx] : null, h = idx >= 0 ? s.src.b[2][idx] : null;
+            var tag = p !== labels[i] ? " (" + T.periodLabel(p) + ")" : "";
+            return { color: s.color, name: s.name + tag, value: h ? "held" : T.compact(v),
+                     note: h ? h.map(function (r) { return C.rules[r] || r; }).join("; ") : null };
+          });
+        }
+      });
+      var kinds = {}; live.forEach(function (l) { kinds[kind(l.slot)] = 1; });
+      var un = document.getElementById("c-units");
+      un.hidden = Object.keys(kinds).length < 2;
+      un.textContent = "These series measure different kinds of thing (levels and rates) on one axis: compare their timing and shape, not their heights.";
+      info(live); found(S, labels); table(S, labels);
+      location.replace("#" + live.map(function (l) { return l.r.id; }).join("~"));
+    }).catch(function (e) { T.fail(host, e); });
+  }
+
+  function statusPill(t) {
+    var x = tbl(t), s = x.source.updated;
+    if (t === "cpi") return '<span class="pill ok">Current</span>';
+    var when = s ? T.monthLabel(s.slice(0, 7)) : "unknown";
+    if (x.status === "current") return '<span class="pill ok">Current · GSS updated ' + when + "</span>";
+    if (x.status === "lagging") return '<span class="pill warn">Lagging · GSS updated ' + when + "</span>";
+    return '<span class="pill idle">Frozen since ' + when + "</span>";
+  }
+  function spanText(a, b) { return T.periodLabel(a) + " – " + T.periodLabel(b); }
+
+  function info(live) {
+    var host = document.getElementById("info"); host.innerHTML = "";
+    live.forEach(function (l) {
+      var r = l.r.row, x = tbl(l.slot.t), d = describe(l.slot), src = x.source;
+      var c = document.createElement("div"); c.className = "card";
+      c.innerHTML = '<div class="top"><i class="key-line"></i><b></b></div><div class="what"></div><div class="st"></div>' +
+        '<div><code></code> <button class="copy" type="button">copy id</button></div>' +
+        '<div class="row"><span>span</span><span></span></div>' +
+        '<div class="row"><span>values</span><span></span></div>' +
+        '<div class="row"><span>checks</span><span></span></div>' +
+        '<div class="row"><span>source</span><span></span></div>' +
+        '<div class="row"><span>download</span><span><a></a></span></div>';
+      c.querySelector(".key-line").style.background = COLORS[l.i];
+      c.querySelector("b").textContent = (l.i + 1) + " · " + x.name;
+      c.querySelector(".what").textContent = d.title + " · " + FREQ_NAME[l.slot.f];
+      c.querySelector(".st").innerHTML = statusPill(l.slot.t);
+      c.querySelector("code").textContent = l.r.id;
+      var rows = c.querySelectorAll(".row span:last-child");
+      rows[0].textContent = spanText(r[4], r[5]);
+      rows[1].textContent = T.int(r[6]);
+      rows[2].innerHTML = r[7] ? '<span class="pill hold">' + T.int(r[7]) + " held</span>" + (r[8] ? ' <span class="pill warn">' + T.int(r[8]) + " flagged</span>" : "")
+        : r[8] ? '<span class="pill warn">' + T.int(r[8]) + " flagged</span>" : '<span class="pill ok">none</span>';
+      if (l.slot.t === "cpi") {
+        rows[3].innerHTML = '<a href="../explorer/index.html">GSS StatsBank and annex →</a>';
+      } else if (src.api) {
+        var a = document.createElement("a"); a.href = src.api; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = (src.path || "").split("/").pop();
+        rows[3].appendChild(a);
+        rows[3].appendChild(document.createTextNode(" · retrieved " + (src.retrieved || "").slice(0, 10)));
+        rows[3].title = "SHA-256 of the latest response: " + src.sha256;
+      }
+      var dl = c.querySelector(".row:last-child a"); dl.href = T.ROOT + "data/csv/tables/" + l.slot.t + ".csv";
+      dl.setAttribute("download", ""); dl.textContent = l.slot.t + ".csv";
+      c.querySelector(".copy").addEventListener("click", function (ev) {
+        var btn = ev.currentTarget;
+        (navigator.clipboard ? navigator.clipboard.writeText(l.r.id) : Promise.reject()).then(function () { btn.textContent = "copied"; },
+          function () { var rg = document.createRange(); rg.selectNodeContents(c.querySelector("code")); var s = getSelection(); s.removeAllRanges(); s.addRange(rg); });
+      });
+      host.appendChild(c);
+    });
+  }
+
+  var FOUND_LIMIT = 12, foundAll = false;
+  function found(S, labels) {
+    var t0 = when(labels[0]) - 0.5, rows = [];
+    S.forEach(function (s) {
+      Object.keys(s.why).forEach(function (i) {
+        var p = s.periods[+i];
+        if (!p || when(p) < t0) return;
+        s.why[i].forEach(function (w) { rows.push({ s: s, p: p, w: w }); });
+      });
+    });
+    rows.sort(function (a, b) { return when(b.p) - when(a.p) || (a.w[1] === "hold" ? -1 : 1); });
+    if (!foundAll) {
+      // many values caught by the same check in one series: one row, with the latest case in full
+      var groups = {}, order = [];
+      rows.forEach(function (x) {
+        var k = x.s.l.i + "|" + x.w[0] + "|" + x.w[1];
+        if (!groups[k]) { groups[k] = []; order.push(k); }
+        groups[k].push(x);
+      });
+      rows = order.map(function (k) {
+        var g = groups[k];
+        if (g.length < 4) return g;
+        var x = Object.assign({}, g[0]);
+        x.many = g.length; x.from = g[g.length - 1].p;
+        return [x];
+      }).reduce(function (a, b) { return a.concat(b); }, []);
+      rows.sort(function (a, b) { return when(b.p) - when(a.p) || (a.w[1] === "hold" ? -1 : 1); });
+    }
+    var box = document.getElementById("found"), t = document.getElementById("t-found"), more = document.getElementById("found-more");
+    box.hidden = !rows.length;
+    if (!rows.length) return;
+    var shown = foundAll ? rows : rows.slice(0, FOUND_LIMIT);
+    t.innerHTML = "<thead><tr><th>Period</th><th>Series</th><th class='r'>GSS figure</th><th>Check</th><th>What it found</th></tr></thead>";
+    var tb = document.createElement("tbody");
+    shown.forEach(function (x) {
+      var tr = document.createElement("tr");
+      tr.innerHTML = "<td class='m'></td><td class='m'></td><td class='r m'></td><td></td><td class='why'></td>";
+      tr.children[0].textContent = x.many ? T.periodLabel(x.from) + " – " + T.periodLabel(x.p) : T.periodLabel(x.p);
+      tr.children[1].innerHTML = '<i class="key-line" style="background:' + COLORS[x.s.l.i] + ';margin-right:6px;vertical-align:middle"></i>' + (x.s.l.i + 1);
+      tr.children[2].textContent = T.compact(x.w[3]);
+      tr.children[3].innerHTML = '<span class="pill ' + x.w[1] + '">' + (x.many ? x.many + " " : "") + (x.w[1] === "hold" ? "held" : "flagged") + "</span>";
+      tr.children[3].title = x.w[0];
+      tr.children[4].textContent = (C.rules[x.w[0]] || x.w[0]) + ". " + (x.many ? "The latest, in full: " : "") + x.w[2];
+      tb.appendChild(tr);
+    });
+    t.appendChild(tb);
+    var total = S.reduce(function (n, s) {
+      return n + Object.keys(s.why).reduce(function (m, i) { var p = s.periods[+i]; return m + (p && when(p) >= t0 ? s.why[i].length : 0); }, 0);
+    }, 0);
+    more.hidden = !foundAll && total <= shown.length;
+    more.textContent = foundAll ? "Group them again" : "Show each of the " + total + " one by one";
+  }
+
+  function table(S, labels) {
+    var t0 = when(labels[0]) - 0.5, all = {};
+    S.forEach(function (s) { s.periods.forEach(function (p) { if (when(p) >= t0) all[p] = 1; }); });
+    var ps = Object.keys(all).sort(function (a, b) { return when(b) - when(a); });
+    var head = "<thead><tr><th>Period</th>" + S.map(function (s) { return '<th class="r">' + (s.l.i + 1) + "</th>"; }).join("") + "</tr></thead>";
+    var body = ps.map(function (p) {
+      return "<tr><td class='m'>" + T.periodLabel(p) + "</td>" + S.map(function (s) {
+        var i = s.periods.indexOf(p);
+        if (i < 0) return "<td class='r m'></td>";
+        if (s.b[2][i]) return "<td class='r m held-cell' title='" + s.b[2][i].join(", ") + "'>held</td>";
+        var v = s.b[1][i];
+        return "<td class='r m'>" + (v == null ? "–" : v.toLocaleString("en-GB", { maximumFractionDigits: 6 })) + "</td>";
+      }).join("") + "</tr>";
+    });
+    document.getElementById("t-vals").innerHTML = head + "<tbody>" + body.join("") + "</tbody>";
+  }
+  function update() { renderControls(); draw(); }
+
+  /* ---------- the catalogue list ---------- */
+  function renderList() {
+    var host = document.getElementById("groups");
+    C.groups.forEach(function (g) {
+      var sec = document.createElement("div"); sec.className = "group";
+      var h = document.createElement("h3"); h.textContent = g[1]; sec.appendChild(h);
+      var list = document.createElement("div"); list.className = "tlist"; sec.appendChild(list);
+      g[2].forEach(function (k) {
+        var x = tbl(k);
+        var row = document.createElement("div"); row.className = "trow card"; row.id = "t-" + k;
+        row.innerHTML = '<div><div class="nm"><b></b><code></code></div><p class="about"></p><div class="meta"></div></div>' +
+          '<div class="side"><div class="st"></div><div class="checks-line"></div><div class="acts"></div></div>';
+        row.querySelector(".nm b").textContent = x.name;
+        row.querySelector(".nm code").textContent = k === "cpi" ? "CPI" : (x.source.path || "").split("/").pop();
+        row.querySelector(".about").textContent = x.about;
+        var last = Object.keys(x.last).map(function (f) { return x.last[f]; })
+          .sort(function (a, b) { return when(b) - when(a); })[0];
+        var meta = [x.freqs.map(function (f) { return FREQ_NAME[f]; }).join(", "),
+                    "<b>" + x.first + "</b> to <b>" + T.periodLabel(last) + "</b>",
+                    "<b>" + T.int(x.n_series) + "</b> series", "<b>" + T.int(x.values) + "</b> values"];
+        row.querySelector(".meta").innerHTML = meta.map(function (m) { return "<span>" + m + "</span>"; }).join("");
+        row.querySelector(".st").innerHTML = statusPill(k);
+        var cl = row.querySelector(".checks-line");
+        var info = 0; Object.keys(x.rules || {}).forEach(function (r) { info += x.rules[r].info || 0; });
+        cl.innerHTML = (x.held ? '<span class="pill hold">' + T.int(x.held) + " held</span>" : "") +
+          (x.warned ? '<span class="pill warn">' + T.int(x.warned) + " flagged</span>" : "") +
+          (!x.held && !x.warned ? '<span class="pill ok">nothing held</span>' : "");
+        cl.title = Object.keys(x.rules || {}).map(function (r) {
+          var c = x.rules[r]; return r + ": " + [c.hold && c.hold + " held", c.warn && c.warn + " flagged", c.info && c.info + " to read"].filter(Boolean).join(", ");
+        }).join("\n");
+        var acts = row.querySelector(".acts");
+        var b = document.createElement("button"); b.type = "button"; b.className = "btn-s primary"; b.textContent = "Chart it";
+        b.setAttribute("aria-label", "Chart " + x.name);
+        b.addEventListener("click", function () {
+          state.slots[state.active] = firstSlot(k); update();
+          document.getElementById("compare").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        acts.appendChild(b);
+        var a = document.createElement("a"); a.className = "btn-s"; a.href = T.ROOT + "data/csv/tables/" + k + ".csv";
+        a.setAttribute("download", ""); a.textContent = "CSV";
+        a.setAttribute("aria-label", "Download " + x.name + " as CSV");
+        acts.appendChild(a);
+        if (k === "cpi") {
+          var e = document.createElement("a"); e.className = "btn-s"; e.href = "../explorer/index.html"; e.textContent = "All CPI series →";
+          acts.appendChild(e);
+        }
+        list.appendChild(row);
+      });
+      host.appendChild(sec);
+    });
+  }
+
+  /* ---------- wiring ---------- */
+  function wire() {
+    document.getElementById("f-table").addEventListener("change", function (ev) {
+      state.slots[state.active] = firstSlot(ev.target.value); update();
+    });
+    document.getElementById("f-freq").addEventListener("click", function (ev) {
+      var v = ev.target.getAttribute && ev.target.getAttribute("data-v"); if (!v || ev.target.disabled) return;
+      state.slots[state.active].f = v; update();
+    });
+    document.getElementById("f-range").addEventListener("click", function (ev) {
+      var v = ev.target.getAttribute && ev.target.getAttribute("data-v"); if (v == null) return;
+      state.range = +v; update();
+    });
+    document.getElementById("add").addEventListener("click", function () {
+      if (state.slots.length >= 3) return;
+      var cur = state.slots[state.active];
+      state.slots.push(normalise({ t: cur.t, dims: cur.dims.slice(), f: cur.f }));
+      state.active = state.slots.length - 1; update();
+    });
+    document.getElementById("found-more").addEventListener("click", function () { foundAll = !foundAll; draw(); });
+    T.onResize(draw);
+  }
+
+  T.json("data/tables.json").then(function (cat) {
+    C = cat;
+    Object.keys(C.tables).forEach(function (t) {
+      C.tables[t].series.forEach(function (r) {
+        byId[r[0]] = { t: t, row: r, id: r[0] };
+        lookup[rowKey(t, r[2], r[1])] = { id: r[0], row: r };
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("#c-stats b"), function (b) { b.textContent = T.int(C.totals[b.getAttribute("data-k")]); });
+    var fromHash = (location.hash || "").slice(1).split("~").map(slotFor).filter(Boolean).slice(0, 3);
+    state.slots = fromHash.length ? fromHash : [
+      findSlot("cpi", { Measure: "Year-on-year inflation (%)", Group: "All items", Source: "StatsBank, then annex" }),
+      findSlot("ppi", { Measure: "Year-on-year PPI change (%)", Industry: "All industries" }),
+      findSlot("interest", { Rate: "Monetary policy rate" })
+    ].filter(Boolean);
+    if (!state.slots.length) state.slots = [firstSlot(C.groups[0][2][0])];
+    renderList(); wire(); update();
+  }).catch(function (e) { T.fail(document.getElementById("c-x"), e); });
+})();
+</script>
+</body>
+</html>

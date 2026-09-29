@@ -16,6 +16,22 @@
     });
   };
   T.monthLabel = function (p) { return MONTHS[+p.slice(5, 7) - 1] + " " + p.slice(0, 4); };
+  /* any period: "2026-04" (month), "2026-Q1" (quarter) or "2025" (year) */
+  T.freqOf = function (p) { return p.length === 4 ? "a" : p.charAt(5) === "Q" ? "q" : "m"; };
+  T.periodLabel = function (p) {
+    var f = T.freqOf(p);
+    return f === "m" ? T.monthLabel(p) : f === "q" ? p.slice(5) + " " + p.slice(0, 4) : p;
+  };
+  T.perYear = { m: 12, q: 4, a: 1 };
+  T.pIndex = function (p) {
+    var f = T.freqOf(p), y = +p.slice(0, 4);
+    return f === "m" ? y * 12 + +p.slice(5, 7) - 1 : f === "q" ? y * 4 + +p.slice(6) - 1 : y;
+  };
+  T.pAt = function (f, k) {
+    if (f === "m") return T.periodAt(k);
+    if (f === "q") return Math.floor(k / 4) + "-Q" + (k % 4 + 1);
+    return String(k);
+  };
   T.monthIndex = function (p) { return +p.slice(0, 4) * 12 + +p.slice(5, 7) - 1; };
   T.periodAt = function (k) { return Math.floor(k / 12) + "-" + String(k % 12 + 1).padStart(2, "0"); };
   T.months = function (a, b) {
@@ -30,6 +46,14 @@
     return s + (unit || "");
   };
   T.int = function (v) { return Number(v).toLocaleString("en-GB"); };
+  /* big numbers made readable: 1,138.5bn, 29.3m; small ones as they are */
+  T.compact = function (v, d) {
+    if (v == null || isNaN(v)) return "–";
+    var a = Math.abs(v);
+    if (a >= 1e9) return T.fmt(v / 1e9, a >= 1e11 ? 0 : a >= 1e10 ? 1 : 2) + "bn";
+    if (a >= 1e6) return T.fmt(v / 1e6, a >= 1e8 ? 0 : a >= 1e7 ? 1 : 2) + "m";
+    return T.fmt(v, d != null ? d : a >= 1e4 ? 0 : a >= 100 ? 1 : 2);
+  };
   T.el = function (tag, attrs, style) {
     var e = document.createElementNS(NS, tag);
     for (var k in attrs) e.setAttribute(k, attrs[k]);
@@ -130,21 +154,22 @@
     });
     // x ticks: years, thinned to fit; quarters on short spans
     var janIdx = [];
-    cfg.labels.forEach(function (p, i) { if (p.slice(5) === "01") janIdx.push(i); });
+    var yearStart = function (p) { return p.length === 4 || p.slice(5) === "01" || p.slice(5) === "Q1"; };
+    cfg.labels.forEach(function (p, i) { if (yearStart(p)) janIdx.push(i); });
     var step = 1; while (janIdx.length / step * 46 > iw) step++;
     var short = janIdx.length <= 3 && iw / n > 10;
     cfg.labels.forEach(function (p, i) {
       var mo = p.slice(5);
-      var isJan = mo === "01";
+      var isJan = yearStart(p);
       if (isJan && ((+p.slice(0, 4)) % step === 0 || step === 1)) {
         svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 4 }, "stroke:var(--axis)"));
         T.text(svg, x(i), m.t + ih + 18, p.slice(0, 4), null, "middle");
-      } else if (short && (mo === "04" || mo === "07" || mo === "10")) {
+      } else if (short && (mo === "04" || mo === "07" || mo === "10" || mo === "Q2" || mo === "Q3" || mo === "Q4")) {
         svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 3 }, "stroke:var(--axis)"));
-        T.text(svg, x(i), m.t + ih + 18, MONTHS[+mo - 1], null, "middle");
+        T.text(svg, x(i), m.t + ih + 18, mo.charAt(0) === "Q" ? mo : MONTHS[+mo - 1], null, "middle");
       }
     });
-    if (!janIdx.length && n) T.text(svg, x(0), m.t + ih + 18, T.monthLabel(cfg.labels[0]), null, "start");
+    if (!janIdx.length && n) T.text(svg, x(0), m.t + ih + 18, T.periodLabel(cfg.labels[0]), null, "start");
 
     (cfg.bands || (cfg.band ? [cfg.band] : [])).forEach(function (band) {
       var top = [], bot = [];
@@ -155,22 +180,24 @@
         svg.appendChild(T.el("path", { d: d }, "fill:" + (band.fill || "var(--tol)") + ";stroke:none"));
       }
     });
-    function pathFor(vals) {
+    function pathFor(vals, s) {
       var d = "", pen = false;
       vals.forEach(function (v, i) {
-        if (v == null) { pen = false; return; }
+        // s.connect: the series is coarser than the axis, so bridge the empty slots between its
+        // own periods; s.breaks marks where one of its periods is missing or held
+        if (v == null) { if (!s || !s.connect || (s.breaks && s.breaks[i])) pen = false; return; }
         d += (pen ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); pen = true;
       });
       return d;
     }
     cfg.series.slice().sort(function (a, b) { return (a.quiet ? 0 : 1) - (b.quiet ? 0 : 1); }).forEach(function (s) {
-      svg.appendChild(T.el("path", { d: pathFor(s.values) },
+      svg.appendChild(T.el("path", { d: pathFor(s.values, s) },
         "fill:none;stroke:" + s.color + ";stroke-width:" + (s.width || (s.quiet ? 1.25 : 2)) + ";stroke-linejoin:round;stroke-linecap:round" +
         (s.dash ? ";stroke-dasharray:" + s.dash : "")));
       // isolated points (a value with no neighbours) would otherwise be invisible
       if (!s.quiet) s.values.forEach(function (v, i) {
-        if (v != null && s.values[i - 1] == null && s.values[i + 1] == null)
-          svg.appendChild(T.el("circle", { cx: x(i), cy: y(v), r: 2.5 }, "fill:" + s.color));
+        if (v != null && (s.dots || (!s.connect && s.values[i - 1] == null && s.values[i + 1] == null)))
+          svg.appendChild(T.el("circle", { cx: x(i), cy: y(v), r: s.dots ? 2.25 : 2.5 }, "fill:" + s.color));
       });
       if (s.held && !s.quiet) {
         Object.keys(s.held).forEach(function (k) {
@@ -210,8 +237,10 @@
       var c = T.el("circle", { r: 4 }, "fill:" + s.color + ";stroke:var(--surface);stroke-width:2;display:none");
       svg.appendChild(c); return { s: s, c: c };
     });
+    var perYear = T.perYear[T.freqOf(cfg.labels[0] || "2000-01")];
     var hit = T.el("rect", { x: m.l, y: m.t, width: iw, height: ih + (hasHeld ? 30 : 0), tabindex: 0,
-      "aria-label": (cfg.aria || "Chart") + ". Use the arrow keys to step through months." },
+      "aria-label": (cfg.aria || "Chart") + ". Use the arrow keys to step through " +
+        (perYear === 12 ? "months." : perYear === 4 ? "quarters." : "years.") },
       "fill:transparent;cursor:crosshair;outline:none");
     svg.appendChild(hit);
     var cur = n - 1;
@@ -232,7 +261,7 @@
         if (v == null) { d.c.style.display = "none"; return; }
         d.c.setAttribute("cx", cx); d.c.setAttribute("cy", y(v)); d.c.style.display = ""; yTop = Math.min(yTop, y(v));
       });
-      T.fillTip(tip, T.monthLabel(cfg.labels[cur]), (cfg.tipRows || defaultRows)(cur));
+      T.fillTip(tip, (cfg.titleFmt || T.periodLabel)(cfg.labels[cur]), (cfg.tipRows || defaultRows)(cur));
       T.placeTip(host, svg, W, tip, cx, yTop);
     }
     function hide() { cross.style.display = "none"; dots.forEach(function (d) { d.c.style.display = "none"; }); tip.hidden = true; }
@@ -246,8 +275,8 @@
     hit.addEventListener("focus", function () { show(cur); });
     hit.addEventListener("blur", hide);
     hit.addEventListener("keydown", function (ev) {
-      if (ev.key === "ArrowLeft") { show(cur - (ev.shiftKey ? 12 : 1)); ev.preventDefault(); }
-      if (ev.key === "ArrowRight") { show(cur + (ev.shiftKey ? 12 : 1)); ev.preventDefault(); }
+      if (ev.key === "ArrowLeft") { show(cur - (ev.shiftKey ? perYear : 1)); ev.preventDefault(); }
+      if (ev.key === "ArrowRight") { show(cur + (ev.shiftKey ? perYear : 1)); ev.preventDefault(); }
     });
     return { x: x, y: y, svg: svg };
   };

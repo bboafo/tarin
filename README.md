@@ -8,7 +8,8 @@ or a plain web server).
 www/
   index.html               Home
   price-record/index.html  Ghana's Price Record (the data story)
-  explorer/index.html      Data explorer
+  explorer/index.html      Data explorer (the CPI, every region and product group)
+  catalogue/index.html     Catalogue: every other StatsBank table, and any series against any other
   forecast/index.html      Forecast (frozen, fingerprinted, scored)
   checks/index.html        How it's checked
   assets/                  tarin.css, tarin.js, logo.svg, favicon.svg
@@ -24,8 +25,12 @@ python3 tarin_annex.py pull          # from the tarin folder
 python3 tarin_forecast.py score      # score earlier forecasts against the new month
 python3 tarin_forecast.py make       # freeze the next forecast (once per data month)
 python3 site/build_site.py           # optional: see which story figures moved
-python3 site/build_www.py            # rewrite site/www/data from tarin.db
+python3 site/build_www.py            # rewrite site/www/data from tarin.db (the catalogue too)
 ```
+
+The other StatsBank tables load with `python3 tarin_statsbank.py sync`, which also runs
+their checks. `build_www.py` calls `build_tables.py`, which writes `data/tables.json`,
+`data/tables/<table>.json` and `data/csv/tables/<table>.csv`.
 
 Run `make` straight after `pull`, before anything else is published, so the forecast
 file's timestamp and fingerprint predate GSS's next release.

@@ -41,7 +41,7 @@
 .stats b { font-family: var(--f-mono); font-weight: 500; font-size: 22px; color: var(--ink); font-variant-numeric: tabular-nums; }
 .stats span { font-size: 13px; color: var(--ink-2); line-height: 1.4; }
 
-.doors { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.doors { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
 @media (max-width: 1080px) { .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .fc-line { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; border-top: 1px solid var(--grid); padding-top: 10px; font-size: 14px; }
 .fc-line b { font-family: var(--f-mono); font-weight: 500; color: var(--ink); }
@@ -67,6 +67,7 @@
       <a href="index.html" aria-current="page">Home</a>
       <a href="price-record/index.html">Price record</a>
       <a href="explorer/index.html">Data explorer</a>
+      <a href="catalogue/index.html">Catalogue</a>
       <a href="forecast/index.html">Forecast</a>
       <a href="checks/index.html">How it's checked</a>
     </nav>
@@ -124,12 +125,14 @@
     <div class="read">
       <span class="eyebrow">In the store</span>
       <h2 style="margin-top:6px">Everything on this site comes from one checked store</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">The CPI, and <span id="n-tables">19</span> more tables from GSS's StatsBank: GDP, trade, money and interest rates, government finance and debt. <a href="catalogue/index.html">Browse them in the catalogue</a>.</p>
     </div>
     <div class="stats" id="stats">
       <div><b data-k="values">–</b><span>values stored</span></div>
       <div><b data-k="publishable">–</b><span>cleared to publish</span></div>
       <div><b data-k="held">–</b><span>held back by a check</span></div>
       <div><b data-k="series">–</b><span>series</span></div>
+      <div><b data-k="sources">–</b><span>tables from GSS</span></div>
       <div><b data-k="files">–</b><span>source files, fingerprinted</span></div>
     </div>
   </section>
@@ -147,6 +150,12 @@
         <h3>Data explorer</h3>
         <p>Any series by region, product group or origin. Compare two sources, see what's held and why, download CSV.</p>
         <span class="go">Explore →</span>
+      </a>
+      <a class="door card" href="catalogue/index.html">
+        <span class="k">Tables</span>
+        <h3>Catalogue</h3>
+        <p>GDP, trade, money, rates, government finance: every other table, how fresh it is, and any series charted against any other.</p>
+        <span class="go">Browse →</span>
       </a>
       <a class="door card" href="forecast/index.html">
         <span class="k">Forecast</span>
@@ -174,7 +183,7 @@
         <tbody></tbody>
       </table>
     </div>
-    <p class="caption">The two sources overlap from 2021 and are compared month by month. Where they agree, figures come from StatsBank up to January 2026 and from the annex after it.</p>
+    <p class="caption">The two CPI sources overlap from 2021 and are compared month by month. Where they agree, figures come from StatsBank up to January 2026 and from the annex after it. The other StatsBank tables are listed, with their dates, in the <a href="catalogue/index.html">catalogue</a>.</p>
   </section>
 </div>
 </main>
@@ -213,7 +222,12 @@
       document.getElementById("fc-r").textContent = "80%: " + T.fmt(H.forecast.lo80, 1) + "–" + T.fmt(H.forecast.hi80, 1);
       document.getElementById("fc-line").hidden = false;
     }
-    Array.prototype.forEach.call(document.querySelectorAll("#stats b"), function (b) { b.textContent = T.int(H.totals[b.getAttribute("data-k")]); });
+    Array.prototype.forEach.call(document.querySelectorAll("#stats b"), function (b) {
+      var v = H.totals[b.getAttribute("data-k")];
+      if (v == null) { b.parentNode.remove(); return; }
+      b.textContent = T.int(v);
+    });
+    if (H.tables) document.getElementById("n-tables").textContent = H.tables.tables;
 
     // sparkline: last three years, the low point marked
     var host = document.getElementById("spark");
@@ -278,6 +292,19 @@
       tr.children[4].title = f.sha256;
       tb.appendChild(tr);
     });
+    // the other StatsBank tables, in one row
+    if (H.tables) {
+      var t = H.tables, st = t.status || {};
+      var tr2 = document.createElement("tr");
+      tr2.innerHTML = "<td><b style='font-weight:600;color:var(--ink)'></b></td><td class='m'></td><td></td><td></td><td class='m'>–</td>";
+      tr2.children[0].firstChild.textContent = "GSS StatsBank, " + t.tables + " more tables";
+      tr2.children[1].textContent = (t.first || "") + " – " + (t.last ? T.periodLabel(t.last) : "");
+      tr2.children[2].innerHTML = [["current", "ok"], ["lagging", "warn"], ["frozen", "idle"]].filter(function (x) { return st[x[0]]; })
+        .map(function (x) { return "<span class='pill " + x[1] + "'>" + st[x[0]] + " " + x[0] + "</span>"; }).join(" ");
+      var a2 = document.createElement("a"); a2.href = "catalogue/index.html#tables"; a2.textContent = T.int(t.files) + " files, listed by table";
+      tr2.children[3].appendChild(a2);
+      tb.appendChild(tr2);
+    }
   }).catch(function (e) { T.fail(document.getElementById("spark"), e); });
 })();
 </script>

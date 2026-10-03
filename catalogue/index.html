@@ -40,7 +40,8 @@ select { font: inherit; font-size: 14px; color: var(--ink); background: var(--su
 select:disabled { color: var(--ink-2); background: var(--sunk); }
 .seg { display: inline-flex; flex-wrap: wrap; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; background: var(--surface); }
 .seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: none; border: 0; padding: 6px 11px; cursor: pointer; border-right: 1px solid var(--rule); }
-.seg button:last-child { border-right: 0; }
+.seg button:last-child, .seg button.end { border-right: 0; }
+.field .seg { justify-self: start; }
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
 .seg button:disabled { color: var(--axis); cursor: default; }
 .toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 16px; align-items: center; margin-bottom: 10px; }
@@ -75,6 +76,8 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
 .trow .about { color: var(--ink-2); font-size: 14.5px; line-height: 1.45; margin-top: 3px; max-width: 72ch; }
 .trow .meta { font-family: var(--f-mono); font-size: 12px; color: var(--muted); margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px 14px; }
 .trow .meta b { color: var(--ink-2); font-weight: 500; }
+.trow .years { margin-top: 8px; font-family: var(--f-mono); font-size: 12px; line-height: 1.9; max-width: 72ch; }
+.trow .years a { white-space: nowrap; }
 .trow .side { display: grid; gap: 8px; justify-items: end; align-content: start; }
 .trow .acts { display: flex; gap: 8px; flex-wrap: wrap; justify-content: flex-end; }
 .btn-s { font: inherit; font-size: 13.5px; font-weight: 500; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 5px; padding: 5px 11px; cursor: pointer; text-decoration: none; white-space: nowrap; }
@@ -121,9 +124,9 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
   <div class="page-head" style="padding-block:32px 24px">
     <span class="eyebrow">Catalogue</span>
     <h1>Every table TARIN holds</h1>
-    <p class="lede" id="c-lede">Prices, output, money and rates, government and trade, from the Ghana Statistical Service's StatsBank. Every table keeps the file it came from, says how fresh it is, and goes through the same checks. Any series can be charted against any other.</p>
+    <p class="lede" id="c-lede">Prices, output, money and rates, government and trade, from the Ghana Statistical Service's StatsBank, and the Bank of Ghana's daily exchange rates. Every table keeps the file it came from, says how fresh it is, and goes through the same checks. Any series can be charted against any other.</p>
     <div class="stats" id="c-stats">
-      <div><b data-k="tables">–</b><span>tables besides the CPI</span></div>
+      <div><b data-k="all_tables">–</b><span>tables besides the CPI</span></div>
       <div><b data-k="series">–</b><span>series</span></div>
       <div><b data-k="values">–</b><span>values</span></div>
       <div><b data-k="held">–</b><span>held back by a check</span></div>
@@ -151,7 +154,7 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
             <div id="f-dims" style="display:grid;gap:10px"></div>
             <div class="field" id="f-freq-w"><span class="lab">Frequency</span>
               <div class="seg" id="f-freq" role="group" aria-label="Frequency">
-                <button type="button" data-v="m">Monthly</button><button type="button" data-v="q">Quarterly</button><button type="button" data-v="a">Annual</button>
+                <button type="button" data-v="d">Daily</button><button type="button" data-v="m">Monthly</button><button type="button" data-v="q">Quarterly</button><button type="button" data-v="a">Annual</button>
               </div>
             </div>
           </div>
@@ -188,7 +191,7 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
     <div class="read">
       <span class="eyebrow">Tables</span>
       <h2 id="h-tables" style="margin-top:6px">What's in the store, and how fresh it is</h2>
-      <p class="muted" style="margin-top:8px"><b style="color:var(--ink-2);font-weight:600">Current</b>: GSS updated the table in the last four months. <b style="color:var(--ink-2);font-weight:600">Lagging</b>: in the last year. <b style="color:var(--ink-2);font-weight:600">Frozen</b>: not since. Frozen tables are still worth having: their history is complete to the month shown, and nothing newer exists on StatsBank.</p>
+      <p class="muted" style="margin-top:8px"><b style="color:var(--ink-2);font-weight:600">Current</b>: GSS updated the table in the last four months. <b style="color:var(--ink-2);font-weight:600">Lagging</b>: in the last year. <b style="color:var(--ink-2);font-weight:600">Frozen</b>: not since. Frozen tables are still worth having: their history is complete to the month shown, and nothing newer exists on StatsBank. The Bank of Ghana's exchange rates are read every day and are current while they reach the past week.</p>
     </div>
     <div id="groups"></div>
   </section>
@@ -198,18 +201,18 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
   <div class="wrap">
     <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
     <span id="site-status" hidden></span>
-    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+    <span>Data: Ghana Statistical Service and Bank of Ghana. Republished with their provenance.</span>
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=c097749a44"></script>
+<script src="../assets/tarin.js?v=42d41a707d"></script>
 <script>
 (function () {
   "use strict";
   var T = window.TARIN;
   var COLORS = ["var(--s1)", "var(--s2)", "var(--s3)"];
-  var FREQ_NAME = { m: "monthly", q: "quarterly", a: "annual" };
-  var FREQ_ORDER = "mqa";
+  var FREQ_NAME = { d: "daily", m: "monthly", q: "quarterly", a: "annual" };
+  var FREQ_ORDER = "dmqa";
   var C, byId = {}, lookup = {}, files = {};
   var state = { slots: [], active: 0, range: 10 };
 
@@ -272,12 +275,15 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
   }
 
   /* ---------- controls ---------- */
-  function segSet(host, v, enabled) {
+  function segSet(host, v, enabled, offered) {
     Array.prototype.forEach.call(host.querySelectorAll("button"), function (b) {
       var bv = b.getAttribute("data-v");
       b.setAttribute("aria-pressed", bv === String(v) ? "true" : "false");
       if (enabled) b.disabled = !enabled(bv);
+      if (offered) b.hidden = offered.indexOf(bv) < 0;      // only the frequencies this table has
     });
+    var shown = Array.prototype.filter.call(host.querySelectorAll("button"), function (b) { return !b.hidden; });
+    shown.forEach(function (b, i) { b.classList.toggle("end", i === shown.length - 1); });
   }
   function fillTables(sel, value) {
     sel.innerHTML = "";
@@ -313,7 +319,7 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
       host.appendChild(w);
     });
     var fo = freqOptions(slot);
-    segSet(document.getElementById("f-freq"), slot.f, function (v) { return fo.indexOf(v) >= 0; });
+    segSet(document.getElementById("f-freq"), slot.f, function (v) { return fo.indexOf(v) >= 0; }, tbl(slot.t).freqs);
     document.getElementById("f-freq-w").hidden = tbl(slot.t).freqs.length < 2;
     segSet(document.getElementById("f-range"), state.range);
     var sh = document.getElementById("slots"); sh.innerHTML = "";
@@ -343,10 +349,15 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
   }
 
   /* ---------- time helpers ---------- */
-  // where a period sits on a finer axis: the middle of its span (a quarter at its middle month, a year at July)
+  // where a period sits on a finer axis: the middle of its span (a quarter at its middle month, a year at July;
+  // on a daily axis, a month at its 15th)
   function onGrid(p, g) {
     var f = T.freqOf(p), y = +p.slice(0, 4);
     if (f === g) return T.pIndex(p);
+    if (g === "d") {
+      var mo = f === "m" ? +p.slice(5, 7) : f === "q" ? (+p.slice(6) - 1) * 3 + 2 : 7;
+      return T.pIndex(y + "-" + String(mo).padStart(2, "0") + (f === "a" ? "-01" : "-15"));
+    }
     if (g === "m") return f === "q" ? y * 12 + (+p.slice(6) - 1) * 3 + 1 : y * 12 + 6;
     return y * 4 + 2;                                    // a year on a quarterly axis
   }
@@ -355,10 +366,12 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
     var g = T.freqOf(gp);
     if (f === g) return gp;
     if (f === "a") return gp.slice(0, 4);
-    return gp.slice(0, 4) + "-Q" + (Math.floor((+gp.slice(5, 7) - 1) / 3) + 1);   // a month's quarter
+    if (f === "m") return gp.slice(0, 7);                // a day's month
+    return gp.slice(0, 4) + "-Q" + (Math.floor((+gp.slice(5, 7) - 1) / 3) + 1);   // a month's (or day's) quarter
   }
   function when(p) {   // a sortable position in time, in years
     var f = T.freqOf(p), y = +p.slice(0, 4);
+    if (f === "d") return y + (T.pIndex(p) - T.pIndex(y + "-01-01") + 0.5) / 365.25;
     return f === "m" ? y + (+p.slice(5, 7) - 0.5) / 12 : f === "q" ? y + (+p.slice(6) - 0.5) / 4 : y + 0.5;
   }
 
@@ -375,7 +388,8 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
       var S = live.map(function (l, j) {
         var b = fs[j].s[l.r.id], k0 = T.pIndex(b[0]);
         var periods = b[1].map(function (_, i) { return T.pAt(l.slot.f, k0 + i); });
-        return { l: l, b: b, why: fs[j].why[l.r.id] || {}, periods: periods };
+        var at = {}; periods.forEach(function (p, i) { at[p] = i; });
+        return { l: l, b: b, why: fs[j].why[l.r.id] || {}, periods: periods, at: at };
       });
       var first = Math.min.apply(null, S.map(function (s) { return onGrid(s.periods[0], g); }));
       var last = Math.max.apply(null, S.map(function (s) { return onGrid(s.periods[s.periods.length - 1], g); }));
@@ -389,7 +403,7 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
           if (gi < 0 || gi >= labels.length) return;
           vals[gi] = s.b[1][i];
           if (s.b[2][i]) { held[gi] = s.b[2][i]; anyHeld = true; }
-          if (s.b[1][i] == null) breaks[gi] = true;
+          if (s.b[1][i] == null && (s.l.slot.f !== "d" || s.b[2][i])) breaks[gi] = true;
         });
         var coarse = s.l.slot.f !== g;
         var d = describe(s.l.slot);
@@ -397,7 +411,7 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
         sp.innerHTML = '<i class="key-line"></i>'; sp.firstChild.style.background = COLORS[s.l.i];
         sp.appendChild(document.createTextNode((s.l.i + 1) + " · " + d.title + (coarse ? " (" + FREQ_NAME[s.l.slot.f] + ")" : "")));
         legend.appendChild(sp);
-        return { values: vals, color: COLORS[s.l.i], name: String(s.l.i + 1), held: held, connect: coarse,
+        return { values: vals, color: COLORS[s.l.i], name: String(s.l.i + 1), held: held, connect: coarse || s.l.slot.f === "d",
                  breaks: breaks, dots: coarse || s.l.slot.f === "a", src: s };
       });
       if (anyHeld) { var hs = document.createElement("span"); hs.innerHTML = '<i class="key-held"></i>Held by a check'; legend.appendChild(hs); }
@@ -407,13 +421,14 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
         labels: labels, series: series, height: 360, rules: C.rules,
         yFmt: function (v) {
           if (Math.abs(v) >= 1e6) return T.compact(v).replace(/\.(\d*?)0+(?=bn|m)/, function (m0, d) { return d ? "." + d : ""; });
-          return T.fmt(v, Math.abs(v) % 1 ? (Math.abs(v * 10) % 1 ? 2 : 1) : 0);
+          var d = 0; while (d < 6 && Math.abs(v * Math.pow(10, d) - Math.round(v * Math.pow(10, d))) > 1e-7) d++;
+          return T.fmt(v, d);          // as many decimals as the tick needs (0.005 on a yen chart)
         },
         fmt: FMT,
         aria: series.map(function (s) { return describe(s.src.l.slot).title; }).join(", and "),
         tipRows: function (i) {
           return series.map(function (s) {
-            var p = containing(labels[i], s.src.l.slot.f), idx = s.src.periods.indexOf(p);
+            var p = containing(labels[i], s.src.l.slot.f), idx = p in s.src.at ? s.src.at[p] : -1;
             var v = idx >= 0 ? s.src.b[1][idx] : null, h = idx >= 0 ? s.src.b[2][idx] : null;
             var tag = p !== labels[i] ? " (" + T.periodLabel(p) + ")" : "";
             return { color: s.color, name: s.name + tag, value: h ? "held" : T.compact(v),
@@ -433,6 +448,11 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
   function statusPill(t) {
     var x = tbl(t), s = x.source.updated;
     if (t === "cpi") return '<span class="pill ok">Current</span>';
+    if (x.source.publisher === "BoG") {
+      var to = s ? T.dayLabel(s) : "unknown";
+      return x.status === "current" ? '<span class="pill ok">Current · rates to ' + to + "</span>"
+        : '<span class="pill warn">Behind · rates to ' + to + "</span>";
+    }
     var when = s ? T.monthLabel(s.slice(0, 7)) : "unknown";
     if (x.status === "current") return '<span class="pill ok">Current · GSS updated ' + when + "</span>";
     if (x.status === "lagging") return '<span class="pill warn">Lagging · GSS updated ' + when + "</span>";
@@ -473,6 +493,12 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
       }
       var dl = c.querySelector(".row:last-child a"); dl.href = T.ROOT + "data/csv/tables/" + l.slot.t + ".csv";
       dl.setAttribute("download", ""); dl.textContent = l.slot.t + ".csv";
+      (x.daily_csv || []).slice(-3).reverse().forEach(function (y) {      // every day, buying and selling too
+        var ya = document.createElement("a"); ya.href = T.ROOT + y[1]; ya.setAttribute("download", ""); ya.textContent = y[0];
+        dl.parentNode.appendChild(document.createTextNode(" · ")); dl.parentNode.appendChild(ya);
+      });
+      if (x.daily_csv) { var all = document.createElement("a"); all.href = "#t-" + l.slot.t; all.textContent = "all years";
+        dl.parentNode.appendChild(document.createTextNode(" · ")); dl.parentNode.appendChild(all); }
       c.querySelector(".copy").addEventListener("click", function (ev) {
         var btn = ev.currentTarget;
         (navigator.clipboard ? navigator.clipboard.writeText(l.r.id) : Promise.reject()).then(function () { btn.textContent = "copied"; },
@@ -514,7 +540,7 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
     box.hidden = !rows.length;
     if (!rows.length) return;
     var shown = foundAll ? rows : rows.slice(0, FOUND_LIMIT);
-    t.innerHTML = "<thead><tr><th>Period</th><th>Series</th><th class='r'>GSS figure</th><th>Check</th><th>What it found</th></tr></thead>";
+    t.innerHTML = "<thead><tr><th>Period</th><th>Series</th><th class='r'>Figure</th><th>Check</th><th>What it found</th></tr></thead>";
     var tb = document.createElement("tbody");
     shown.forEach(function (x) {
       var tr = document.createElement("tr");
@@ -540,9 +566,13 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
     S.forEach(function (s) { s.periods.forEach(function (p) { if (when(p) >= t0) all[p] = 1; }); });
     var ps = Object.keys(all).sort(function (a, b) { return when(b) - when(a); });
     var head = "<thead><tr><th>Period</th>" + S.map(function (s) { return '<th class="r">' + (s.l.i + 1) + "</th>"; }).join("") + "</tr></thead>";
+    // days nobody traded (weekends, holidays) are left out
+    ps = ps.filter(function (p) {
+      return T.freqOf(p) !== "d" || S.some(function (s) { var i = s.at[p]; return i != null && (s.b[1][i] != null || s.b[2][i]); });
+    });
     var body = ps.map(function (p) {
       return "<tr><td class='m'>" + T.periodLabel(p) + "</td>" + S.map(function (s) {
-        var i = s.periods.indexOf(p);
+        var i = p in s.at ? s.at[p] : -1;
         if (i < 0) return "<td class='r m'></td>";
         if (s.b[2][i]) return "<td class='r m held-cell' title='" + s.b[2][i].join(", ") + "'>held</td>";
         var v = s.b[1][i];
@@ -598,6 +628,17 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
         if (k === "cpi") {
           var e = document.createElement("a"); e.className = "btn-s"; e.href = "../explorer/index.html"; e.textContent = "All CPI series →";
           acts.appendChild(e);
+        }
+        if (x.daily_csv) {                       // the daily record, a file per year
+          var yl = document.createElement("p"); yl.className = "years caption";
+          yl.appendChild(document.createTextNode("Every day, as published (buying, selling, mid), by year: "));
+          x.daily_csv.forEach(function (y, i) {
+            var ya = document.createElement("a"); ya.href = T.ROOT + y[1]; ya.setAttribute("download", ""); ya.textContent = y[0];
+            ya.title = T.int(y[2]) + " rows";
+            if (i) yl.appendChild(document.createTextNode(" "));
+            yl.appendChild(ya);
+          });
+          row.firstChild.appendChild(yl);
         }
         list.appendChild(row);
       });

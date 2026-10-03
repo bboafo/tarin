@@ -116,6 +116,7 @@
       </div>
       <p class="caption" id="l-src">Source: GSS CPI annex.</p>
       <div class="fc-line" id="fc-line" hidden><span>TARIN forecast, <span id="fc-p"></span>: <b id="fc-v"></b> <span class="muted mono" style="font-size:12px" id="fc-r"></span></span><a href="forecast/index.html">See the forecast →</a></div>
+      <div class="fc-line" id="fx-line" hidden><span>US dollar, <span id="fx-d"></span>: <b id="fx-v"></b> <span class="muted mono" style="font-size:12px" id="fx-c"></span></span><a id="fx-a" href="catalogue/index.html">Exchange rates →</a></div>
     </div>
   </div>
 </div>
@@ -125,14 +126,14 @@
     <div class="read">
       <span class="eyebrow">In the store</span>
       <h2 style="margin-top:6px">Everything on this site comes from one checked store</h2>
-      <p style="margin-top:10px;color:var(--ink-2)">The CPI, and <span id="n-tables">19</span> more tables from GSS's StatsBank: GDP, trade, money and interest rates, government finance and debt. <a href="catalogue/index.html">Browse them in the catalogue</a>.</p>
+      <p style="margin-top:10px;color:var(--ink-2)">The CPI, <span id="n-tables">19</span> more tables from GSS's StatsBank (GDP, trade, money and interest rates, government finance and debt), and the Bank of Ghana's exchange rate for every trading day since 1996. <a href="catalogue/index.html">Browse them in the catalogue</a>.</p>
     </div>
     <div class="stats" id="stats">
       <div><b data-k="values">–</b><span>values stored</span></div>
       <div><b data-k="publishable">–</b><span>cleared to publish</span></div>
       <div><b data-k="held">–</b><span>held back by a check</span></div>
       <div><b data-k="series">–</b><span>series</span></div>
-      <div><b data-k="sources">–</b><span>tables from GSS</span></div>
+      <div><b data-k="sources">–</b><span>tables, from GSS and the Bank of Ghana</span></div>
       <div><b data-k="files">–</b><span>source files, fingerprinted</span></div>
     </div>
   </section>
@@ -183,7 +184,7 @@
         <tbody></tbody>
       </table>
     </div>
-    <p class="caption">The two CPI sources overlap from 2021 and are compared month by month. Where they agree, figures come from StatsBank up to January 2026 and from the annex after it. The other StatsBank tables are listed, with their dates, in the <a href="catalogue/index.html">catalogue</a>.</p>
+    <p class="caption">The two CPI sources overlap from 2021 and are compared month by month. Where they agree, figures come from StatsBank up to January 2026 and from the annex after it. The other StatsBank tables are listed, with their dates, in the <a href="catalogue/index.html">catalogue</a>. The Bank of Ghana's rates are read twice a day; their monthly averages are compared with StatsBank's exchange-rate table.</p>
   </section>
 </div>
 </main>
@@ -192,11 +193,11 @@
   <div class="wrap">
     <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
     <span id="site-status" hidden></span>
-    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+    <span>Data: Ghana Statistical Service and Bank of Ghana. Republished with their provenance.</span>
   </div>
 </footer>
 
-<script src="assets/tarin.js?v=c097749a44"></script>
+<script src="assets/tarin.js?v=42d41a707d"></script>
 <script>
 (function () {
   "use strict";
@@ -221,6 +222,18 @@
       document.getElementById("fc-v").textContent = T.fmt(H.forecast.yoy, 2) + "%";
       document.getElementById("fc-r").textContent = "80%: " + T.fmt(H.forecast.lo80, 1) + "–" + T.fmt(H.forecast.hi80, 1);
       document.getElementById("fc-line").hidden = false;
+    }
+    var usd = H.fx && H.fx.USDGHS;
+    if (usd) {
+      document.getElementById("fx-d").textContent = T.dayLabel(usd.date);
+      var fv = document.getElementById("fx-v");
+      fv.textContent = "GH¢" + T.fmt(usd.rate, 2); fv.title = "Bank of Ghana interbank mid-rate: " + T.fmt(usd.rate, 4);
+      if (usd.year) {       // the cedi's own change: dollars per cedi, now against a year ago
+        var ch = 100 * (usd.year[1] / usd.rate - 1);
+        document.getElementById("fx-c").textContent = "cedi " + T.fmt(Math.abs(ch), 1) + "% " + (ch < 0 ? "down" : "up") + " on a year";
+      }
+      if (usd.tid) document.getElementById("fx-a").href = "catalogue/index.html#" + usd.tid;
+      document.getElementById("fx-line").hidden = false;
     }
     Array.prototype.forEach.call(document.querySelectorAll("#stats b"), function (b) {
       var v = H.totals[b.getAttribute("data-k")];
@@ -292,6 +305,24 @@
       tr.children[4].title = f.sha256;
       tb.appendChild(tr);
     });
+    // the Bank of Ghana's exchange rates
+    var bx = H.tables && H.tables.bogfx;
+    if (bx) {
+      var tr3 = document.createElement("tr");
+      tr3.innerHTML = "<td><b style='font-weight:600;color:var(--ink)'></b></td><td class='m'></td><td><span class='pill'></span></td><td></td><td class='m'></td>";
+      tr3.children[0].firstChild.textContent = "Bank of Ghana, interbank exchange rates";
+      tr3.children[1].textContent = T.dayLabel(bx.first) + " – " + T.dayLabel(bx.last);
+      var pl = tr3.children[2].firstChild;
+      pl.className = "pill " + (bx.status === "current" ? "ok" : "warn");
+      pl.textContent = (bx.status === "current" ? "Current: " : "Behind: ") + bx.currencies + " currencies to " + T.dayLabel(bx.last);
+      var a3 = document.createElement("a"); a3.href = bx.url; a3.target = "_blank"; a3.rel = "noopener";
+      a3.textContent = "Historical Interbank FX Rates";
+      tr3.children[3].appendChild(a3);
+      if (bx.retrieved) tr3.children[3].appendChild(document.createTextNode(" · retrieved " + bx.retrieved.slice(0, 10)));
+      tr3.children[4].textContent = bx.sha256 ? bx.sha256.slice(0, 12) + "…" : "–";
+      if (bx.sha256) tr3.children[4].title = bx.sha256;
+      tb.appendChild(tr3);
+    }
     // the other StatsBank tables, in one row
     if (H.tables) {
       var t = H.tables, st = t.status || {};
@@ -301,7 +332,7 @@
       tr2.children[1].textContent = (t.first || "") + " – " + (t.last ? T.periodLabel(t.last) : "");
       tr2.children[2].innerHTML = [["current", "ok"], ["lagging", "warn"], ["frozen", "idle"]].filter(function (x) { return st[x[0]]; })
         .map(function (x) { return "<span class='pill " + x[1] + "'>" + st[x[0]] + " " + x[0] + "</span>"; }).join(" ");
-      var a2 = document.createElement("a"); a2.href = "catalogue/index.html#tables"; a2.textContent = T.int(t.files) + " files, listed by table";
+      var a2 = document.createElement("a"); a2.href = "catalogue/index.html#tables"; a2.textContent = T.int(t.sb_files != null ? t.sb_files : t.files) + " files, listed by table";
       tr2.children[3].appendChild(a2);
       tb.appendChild(tr2);
     }

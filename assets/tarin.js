@@ -16,18 +16,22 @@
     });
   };
   T.monthLabel = function (p) { return MONTHS[+p.slice(5, 7) - 1] + " " + p.slice(0, 4); };
-  /* any period: "2026-04" (month), "2026-Q1" (quarter) or "2025" (year) */
-  T.freqOf = function (p) { return p.length === 4 ? "a" : p.charAt(5) === "Q" ? "q" : "m"; };
+  T.dayLabel = function (p) { return +p.slice(8, 10) + " " + T.monthLabel(p); };
+  /* any period: "2026-10-02" (day), "2026-04" (month), "2026-Q1" (quarter) or "2025" (year) */
+  T.freqOf = function (p) { return p.length === 10 ? "d" : p.length === 4 ? "a" : p.charAt(5) === "Q" ? "q" : "m"; };
   T.periodLabel = function (p) {
     var f = T.freqOf(p);
-    return f === "m" ? T.monthLabel(p) : f === "q" ? p.slice(5) + " " + p.slice(0, 4) : p;
+    return f === "d" ? T.dayLabel(p) : f === "m" ? T.monthLabel(p) : f === "q" ? p.slice(5) + " " + p.slice(0, 4) : p;
   };
-  T.perYear = { m: 12, q: 4, a: 1 };
+  T.perYear = { d: 365, m: 12, q: 4, a: 1 };
+  var DAY = 864e5;
   T.pIndex = function (p) {
     var f = T.freqOf(p), y = +p.slice(0, 4);
+    if (f === "d") return Math.round(Date.UTC(y, +p.slice(5, 7) - 1, +p.slice(8, 10)) / DAY);
     return f === "m" ? y * 12 + +p.slice(5, 7) - 1 : f === "q" ? y * 4 + +p.slice(6) - 1 : y;
   };
   T.pAt = function (f, k) {
+    if (f === "d") return new Date(k * DAY).toISOString().slice(0, 10);
     if (f === "m") return T.periodAt(k);
     if (f === "q") return Math.floor(k / 4) + "-Q" + (k % 4 + 1);
     return String(k);
@@ -52,6 +56,11 @@
     var a = Math.abs(v);
     if (a >= 1e9) return T.fmt(v / 1e9, a >= 1e11 ? 0 : a >= 1e10 ? 1 : 2) + "bn";
     if (a >= 1e6) return T.fmt(v / 1e6, a >= 1e8 ? 0 : a >= 1e7 ? 1 : 2) + "m";
+    if (d == null && a > 0 && a < 1) {     // small numbers (yen, CFA francs per cedi): three significant digits
+      var s = Number(v).toLocaleString("en-GB", { minimumFractionDigits: 2,
+        maximumFractionDigits: Math.min(8, 2 - Math.floor(Math.log10(a))) });
+      return v < 0 ? "−" + s.replace("-", "") : s;
+    }
     return T.fmt(v, d != null ? d : a >= 1e4 ? 0 : a >= 100 ? 1 : 2);
   };
   T.el = function (tag, attrs, style) {
@@ -152,19 +161,22 @@
         "stroke:" + (tv === 0 ? "var(--axis)" : "var(--grid)") + ";stroke-width:1"));
       T.text(svg, m.l - 8, gy + 4, yLabel(tv), null, "end");
     });
-    // x ticks: years, thinned to fit; quarters on short spans
+    // x ticks: years, thinned to fit; quarters on short spans (months, for days)
     var janIdx = [];
-    var yearStart = function (p) { return p.length === 4 || p.slice(5) === "01" || p.slice(5) === "Q1"; };
+    var yearStart = function (p) { return p.length === 4 || p.slice(5) === "01" || p.slice(5) === "Q1" || p.slice(5) === "01-01"; };
     cfg.labels.forEach(function (p, i) { if (yearStart(p)) janIdx.push(i); });
     var step = 1; while (janIdx.length / step * 46 > iw) step++;
-    var short = janIdx.length <= 3 && iw / n > 10;
+    var daily = n && cfg.labels[0].length === 10;
+    var short = janIdx.length <= 3 && (daily || iw / n > 10);
+    var mStep = daily ? (iw / (n / 30.4) >= 46 ? 1 : 3) : 3;
     cfg.labels.forEach(function (p, i) {
-      var mo = p.slice(5);
+      var mo = daily ? (p.slice(8) === "01" ? p.slice(5, 7) : "") : p.slice(5);
       var isJan = yearStart(p);
       if (isJan && ((+p.slice(0, 4)) % step === 0 || step === 1)) {
         svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 4 }, "stroke:var(--axis)"));
         T.text(svg, x(i), m.t + ih + 18, p.slice(0, 4), null, "middle");
-      } else if (short && (mo === "04" || mo === "07" || mo === "10" || mo === "Q2" || mo === "Q3" || mo === "Q4")) {
+      } else if (short && (daily ? mo && (+mo - 1) % mStep === 0 :
+                 (mo === "04" || mo === "07" || mo === "10" || mo === "Q2" || mo === "Q3" || mo === "Q4"))) {
         svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 3 }, "stroke:var(--axis)"));
         T.text(svg, x(i), m.t + ih + 18, mo.charAt(0) === "Q" ? mo : MONTHS[+mo - 1], null, "middle");
       }
@@ -240,7 +252,7 @@
     var perYear = T.perYear[T.freqOf(cfg.labels[0] || "2000-01")];
     var hit = T.el("rect", { x: m.l, y: m.t, width: iw, height: ih + (hasHeld ? 30 : 0), tabindex: 0,
       "aria-label": (cfg.aria || "Chart") + ". Use the arrow keys to step through " +
-        (perYear === 12 ? "months." : perYear === 4 ? "quarters." : "years.") },
+        (perYear === 365 ? "days." : perYear === 12 ? "months." : perYear === 4 ? "quarters." : "years.") },
       "fill:transparent;cursor:crosshair;outline:none");
     svg.appendChild(hit);
     var cur = n - 1;
@@ -304,7 +316,9 @@
       var when = (s.checked_at || "").slice(0, 10);
       var latest = s.latest && s.latest.annex ? T.monthLabel(s.latest.annex) : null;
       if (!when) return;
+      var fx = s.latest && s.latest.bogfx ? T.dayLabel(s.latest.bogfx) : null;
       el.textContent = "GSS checked for new data " + when + (latest ? " · latest release " + latest : "") +
+        (fx ? " · BoG rates to " + fx : "") +
         (s.result === "error" ? " · last update stopped, figures unchanged" : "");
       el.hidden = false;
     }).catch(function () { /* no status file yet: say nothing */ });

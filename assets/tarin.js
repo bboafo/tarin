@@ -121,7 +121,10 @@
      cfg.yMin/yMax/yStep optional; computed from data if absent
      cfg.band     {lo:[], hi:[]} optional shaded band
      cfg.tipRows(i) optional; default lists each non-quiet series
-     cfg.fmt(v)   value formatter for tips and end labels */
+     cfg.fmt(v)   value formatter for tips and end labels
+     cfg.xLabel(p, i) optional: label positions yourself (an axis that isn't time, e.g. "months
+                  after"); return null to leave a position unlabelled. cfg.xTitle names that axis.
+                  Give such charts a cfg.titleFmt too, for the tooltip's heading. */
   T.lineChart = function (host, cfg) {
     var old = host.querySelector("svg"); if (old) old.remove();
     var oldTip = host.querySelector(".tip"); if (oldTip) oldTip.remove();
@@ -149,6 +152,7 @@
     }
     var hasHeld = cfg.series.some(function (s) { return s.held && Object.keys(s.held).length; });
     if (hasHeld) m.b += 8;
+    if (cfg.xTitle) m.b += 16;
     var iw = W - m.l - m.r, ih = H - m.t - m.b;
     var x = function (i) { return m.l + (n === 1 ? iw / 2 : i * iw / (n - 1)); };
     var y = function (v) { return m.t + (yMax - v) / (yMax - yMin) * ih; };
@@ -161,27 +165,37 @@
         "stroke:" + (tv === 0 ? "var(--axis)" : "var(--grid)") + ";stroke-width:1"));
       T.text(svg, m.l - 8, gy + 4, yLabel(tv), null, "end");
     });
-    // x ticks: years, thinned to fit; quarters on short spans (months, for days)
-    var janIdx = [];
-    var yearStart = function (p) { return p.length === 4 || p.slice(5) === "01" || p.slice(5) === "Q1" || p.slice(5) === "01-01"; };
-    cfg.labels.forEach(function (p, i) { if (yearStart(p)) janIdx.push(i); });
-    var step = 1; while (janIdx.length / step * 46 > iw) step++;
-    var daily = n && cfg.labels[0].length === 10;
-    var short = janIdx.length <= 3 && (daily || iw / n > 10);
-    var mStep = daily ? (iw / (n / 30.4) >= 46 ? 1 : 3) : 3;
-    cfg.labels.forEach(function (p, i) {
-      var mo = daily ? (p.slice(8) === "01" ? p.slice(5, 7) : "") : p.slice(5);
-      var isJan = yearStart(p);
-      if (isJan && ((+p.slice(0, 4)) % step === 0 || step === 1)) {
+    // x ticks: the caller's own labels; or years, thinned to fit, with quarters on short spans (months, for days)
+    if (cfg.xLabel) {
+      cfg.labels.forEach(function (p, i) {
+        var s = cfg.xLabel(p, i);
+        if (s == null || s === "") return;
         svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 4 }, "stroke:var(--axis)"));
-        T.text(svg, x(i), m.t + ih + 18, p.slice(0, 4), null, "middle");
-      } else if (short && (daily ? mo && (+mo - 1) % mStep === 0 :
-                 (mo === "04" || mo === "07" || mo === "10" || mo === "Q2" || mo === "Q3" || mo === "Q4"))) {
-        svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 3 }, "stroke:var(--axis)"));
-        T.text(svg, x(i), m.t + ih + 18, mo.charAt(0) === "Q" ? mo : MONTHS[+mo - 1], null, "middle");
-      }
-    });
-    if (!janIdx.length && n) T.text(svg, x(0), m.t + ih + 18, T.periodLabel(cfg.labels[0]), null, "start");
+        T.text(svg, x(i), m.t + ih + 18, s, null, "middle");
+      });
+    } else {
+      var janIdx = [];
+      var yearStart = function (p) { return p.length === 4 || p.slice(5) === "01" || p.slice(5) === "Q1" || p.slice(5) === "01-01"; };
+      cfg.labels.forEach(function (p, i) { if (yearStart(p)) janIdx.push(i); });
+      var step = 1; while (janIdx.length / step * 46 > iw) step++;
+      var daily = n && cfg.labels[0].length === 10;
+      var short = janIdx.length <= 3 && (daily || iw / n > 10);
+      var mStep = daily ? (iw / (n / 30.4) >= 46 ? 1 : 3) : 3;
+      cfg.labels.forEach(function (p, i) {
+        var mo = daily ? (p.slice(8) === "01" ? p.slice(5, 7) : "") : p.slice(5);
+        var isJan = yearStart(p);
+        if (isJan && ((+p.slice(0, 4)) % step === 0 || step === 1)) {
+          svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 4 }, "stroke:var(--axis)"));
+          T.text(svg, x(i), m.t + ih + 18, p.slice(0, 4), null, "middle");
+        } else if (short && (daily ? mo && (+mo - 1) % mStep === 0 :
+                   (mo === "04" || mo === "07" || mo === "10" || mo === "Q2" || mo === "Q3" || mo === "Q4"))) {
+          svg.appendChild(T.el("line", { x1: x(i), x2: x(i), y1: m.t + ih, y2: m.t + ih + 3 }, "stroke:var(--axis)"));
+          T.text(svg, x(i), m.t + ih + 18, mo.charAt(0) === "Q" ? mo : MONTHS[+mo - 1], null, "middle");
+        }
+      });
+      if (!janIdx.length && n) T.text(svg, x(0), m.t + ih + 18, T.periodLabel(cfg.labels[0]), null, "start");
+    }
+    if (cfg.xTitle) T.text(svg, m.l + iw, m.t + ih + 36, cfg.xTitle, null, "end");
 
     (cfg.bands || (cfg.band ? [cfg.band] : [])).forEach(function (band) {
       var top = [], bot = [];

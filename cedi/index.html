@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The cedi and prices · TARIN</title>
+<meta name="description" content="How much of a fall in the cedi reaches the prices of imported and local goods in Ghana, and how many months it takes. Recomputed from Bank of Ghana and GSS data with each release.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/tarin.css?v=d83ae6c8ff">
+<style>
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.tiles > div { background: var(--surface); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.tiles .v { font-family: var(--f-display); font-weight: 600; font-size: 34px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ink); }
+.tiles .l { font-size: 13.5px; line-height: 1.4; color: var(--ink-2); }
+.ctl { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.ctl h3, h3.sub { font-size: 16px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 5px; overflow: hidden; background: var(--surface); }
+.seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: none; border: 0; padding: 6px 11px; cursor: pointer; border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.checks { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.checks .card { padding: 16px 18px; display: grid; gap: 4px; align-content: start; }
+.checks .k { font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brand-ink); }
+.checks .big { font-family: var(--f-display); font-weight: 600; font-size: 28px; line-height: 1.15; font-variant-numeric: tabular-nums; color: var(--ink); margin-top: 4px; }
+.checks .sub { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.checks p { font-size: 14.5px; color: var(--ink-2); margin-top: 6px; }
+.prose p { color: var(--ink-2); }
+.prose p + p { margin-top: 12px; }
+.prose b { color: var(--ink); font-weight: 600; }
+table.data td .when { display: block; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+table.data td.pred { color: var(--muted); }
+@media (max-width: 760px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tiles .v { font-size: 28px; }
+  .checks { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {     /* the episodes table stacks: one card per episode */
+  #t-ep thead { display: none; }
+  #t-ep tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; padding: 12px 0; border-bottom: 1px solid var(--grid); }
+  #t-ep td { border: 0; padding: 0; text-align: left; white-space: normal; }
+  #t-ep td:first-child { grid-column: 1 / -1; font-weight: 600; color: var(--ink); }
+  #t-ep td:first-child .when { display: inline; margin-left: 8px; font-weight: 400; }
+  #t-ep td[data-l]::before { content: attr(data-l); display: block; font-family: var(--f-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+}
+</style>
+</head>
+<body data-root="../" data-page="cedi">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="index.html" aria-current="page">Cedi &amp; prices</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../catalogue/index.html">Catalogue</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow" data-text="eyebrow">The cedi and prices · to August 2026</span>
+    <h1>When the cedi falls, how fast do prices follow?</h1>
+    <p class="lede" data-text="lede">When a dollar costs 10% more cedis, imported goods cost about 3% more within three months and about 5% more within a year. Local goods follow almost as much, about 4% within a year, so a weaker cedi raises prices well beyond imports. GSS's split between imported and local goods starts in 2021, so this runs from February 2021 to August 2026, and it is recomputed with each release.</p>
+  </div>
+
+  <section class="block" aria-label="The answer in four numbers">
+    <div class="tiles">
+      <div><span class="v" data-text="tile-0-v">32%</span><span class="l" data-text="tile-0-l">of a fall in the cedi has reached imported-goods prices after three months</span></div>
+      <div><span class="v" data-text="tile-1-v">51%</span><span class="l" data-text="tile-1-l">after a year · 90% range 39–63%</span></div>
+      <div><span class="v" data-text="tile-2-v">44%</span><span class="l" data-text="tile-2-l">for local goods after a year</span></div>
+      <div><span class="v" data-text="tile-3-v">2 months</span><span class="l" data-text="tile-3-l">between the cedi's moves and import inflation, at the closest fit (1–3 months fit almost as well)</span></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="read prose">
+      <span class="eyebrow">How many months later</span>
+      <h2 style="margin:6px 0 10px" data-text="s1-h2">Import inflation follows the cedi, about two months behind</h2>
+      <p data-text="s1-p1">Over a year, import inflation moves most closely with the cedi's change over the year ending two months earlier (a correlation of 0.87; one to three months fit almost as well). Each 10% rise in cedis per dollar goes with about 4.5 more points of import inflation two months later. The cedi's fall peaked in November 2022, when a dollar cost 121% more cedis than a year before. Import inflation peaked two months later, at 62.4% in January 2023. After the cedi's strongest month in the 2025 recovery, June 2025, import inflation kept falling for nine months, to −0.6% in March 2026: the only month in this record when imported goods cost less than a year before.</p>
+      <p data-text="s1-p2">In August 2026 a dollar cost 5.1% more cedis than a year earlier. Imported goods cost 2.2% more than a year earlier, and local goods 6.2% more.</p>
+    </div>
+    <div class="ctl">
+      <h3>Change on a year earlier</h3>
+      <div class="seg" id="shift" role="group" aria-label="Where to draw the cedi's line" hidden><button type="button" data-s="0" aria-pressed="true">As it happened</button><button type="button" data-s="1" aria-pressed="false">Cedi moved later</button></div>
+    </div>
+    <div class="chart" id="c-yoy">
+      <div class="legend">
+        <span><i class="key-line" style="background:var(--s1)"></i>Imported goods</span>
+        <span><i class="key-line" style="background:var(--s3)"></i>Local goods</span>
+        <span><i class="key-line" style="background:var(--s2)"></i>Cedis per US dollar</span>
+      </div>
+    </div>
+    <p class="caption" data-text="c1-cap">Change on a year earlier, %, January 2022 to August 2026. Cedis per US dollar: the Bank of Ghana's interbank mid-rate, averaged over each month; a rise means the cedi fell. Imported and local goods: GSS's consumer price index by origin. <b>Hover or tap</b> for any month; <b>Cedi moved two months later</b> slides the cedi's line along to show the lag.</p>
+    <h3 class="sub" style="margin-top:10px">Which lag fits best</h3>
+    <div class="chart" id="c-lag">
+      <div class="legend">
+        <span><i class="key-line" style="background:var(--s1)"></i>Imported goods</span>
+        <span><i class="key-line" style="background:var(--s3)"></i>Local goods</span>
+      </div>
+    </div>
+    <p class="caption" data-text="c2-cap">Correlation between prices' change over a year and the cedi's change over the year ending 0 to 15 months earlier, January 2022 to August 2026. Highest at two months for both imported and local goods.</p>
+  </section>
+
+  <section class="block">
+    <div class="read prose">
+      <span class="eyebrow">How much, how fast</span>
+      <h2 style="margin:6px 0 10px" data-text="s2-h2">About half of a fall reaches import prices within a year</h2>
+      <p data-text="s2-p1">Set each month's change in import prices against the cedi's change in that month and in each of the twelve before, and the share passed on builds up like this: 7% in the same month, 20% after one month, 32% after three. Then it slows: 36% after six months and 51% after a year. Local goods follow a similar path, to 44%, and all items to 46%. With five and a half years of data the range is wide: 39–63% after a year for imported goods.</p>
+    </div>
+    <div class="chart" id="c-path">
+      <div class="legend">
+        <span><i class="key-line" style="background:var(--s1)"></i>Imported goods</span>
+        <span><i class="key-band"></i>90% range</span>
+        <span><i class="key-line" style="background:var(--s3)"></i>Local goods</span>
+      </div>
+    </div>
+    <p class="caption" data-text="c3-cap">Share of a change in cedis per US dollar that has reached prices, by months since the change, %. Shaded: the 90% range for imported goods. Monthly changes, February 2021 to August 2026 (67 months), with each calendar month's usual change taken out.</p>
+  </section>
+
+  <section class="block">
+    <div class="read prose">
+      <span class="eyebrow">Episodes</span>
+      <h2 style="margin:6px 0 10px" data-text="s3-h2">The cedi's three big moves since 2022</h2>
+      <p data-text="s3-p1">In the 2022 crash a dollar went from 6.01 to 13.07 cedis, and over the year from January 2022 imported goods rose 62.4%, more than the 40.4% rise the model above predicts. World prices of fuel and food also surged in 2022, and this analysis doesn't separate them from the cedi. In the 2024 slide (11.65 to 15.99 cedis), imported goods rose 18.0%, less than the 27.9% rise the model predicts. In the 2025 recovery (15.53 back down to 10.28 cedis), they fell 0.6%, close to the 2.6% fall the model predicts.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="data" id="t-ep">
+        <thead><tr><th>Episode</th><th>Cedis per dollar</th><th class="r">Imported goods</th><th class="r">Predicted</th><th class="r">Local goods</th><th class="r">All items</th></tr></thead>
+        <tbody data-text="t-ep-rows"><tr><td>2022 crash<span class='when'>year from Jan 2022</span></td><td class='m' data-l='Cedis per dollar'>6.01 → 13.07<span class='when'>+118% by Nov 2022</span></td><td class='r m' data-l='Imported goods'>+62.4%</td><td class='r m pred' data-l='Predicted'>+40.4%</td><td class='r m' data-l='Local goods'>+51.3%</td><td class='r m' data-l='All items'>+53.6%</td></tr><tr><td>2024 slide<span class='when'>year from Dec 2023</span></td><td class='m' data-l='Cedis per dollar'>11.65 → 15.99<span class='when'>+37% by Oct 2024</span></td><td class='r m' data-l='Imported goods'>+18.0%</td><td class='r m pred' data-l='Predicted'>+27.9%</td><td class='r m' data-l='Local goods'>+26.4%</td><td class='r m' data-l='All items'>+23.8%</td></tr><tr><td>2025 recovery<span class='when'>year from Mar 2025</span></td><td class='m' data-l='Cedis per dollar'>15.53 → 10.28<span class='when'>−34% by Jun 2025</span></td><td class='r m' data-l='Imported goods'>−0.6%</td><td class='r m pred' data-l='Predicted'>−2.6%</td><td class='r m' data-l='Local goods'>+4.9%</td><td class='r m' data-l='All items'>+3.2%</td></tr></tbody>
+      </table>
+    </div>
+    <p class="caption" data-text="t-ep-cap">Prices: change over the twelve months from the start month. Cedis per dollar: monthly averages, at the start and at the cedi's turning point. Predicted: what the model behind the chart above gives for imported goods over the same twelve months, from the cedi's moves plus the usual rise in prices that has nothing to do with the cedi.</p>
+  </section>
+
+  <section class="block">
+    <div class="read prose">
+      <span class="eyebrow">Checks on the answer</span>
+      <h2 style="margin:6px 0 10px">Does it hold up?</h2>
+      <p>The same measure, done four other ways. Imported goods after a year, unless a card says otherwise.</p>
+    </div>
+    <div class="checks">
+      <div class="card"><span class="k">Other currencies</span><span class="big" data-text="k-cur-big">50–58%</span><span class="sub" data-text="k-cur-sub">euro, yuan and a basket, after a year</span><p data-text="k-cur">Measured against the euro, 50% of a fall reaches import prices within a year; against the Chinese yuan, 58%; against a basket of the three (half dollar, a quarter each euro and yuan), 54%. The answer barely depends on the currency.</p></div>
+      <div class="card"><span class="k">Without the 2022 crash</span><span class="big" data-text="k-w22-big">34%</span><span class="sub" data-text="k-w22-sub">after a year, from March 2023</span><p data-text="k-w22">From March 2023, once the crash had passed through (42 months), the share after a year is 34%, and it builds more slowly: 16% after three months. The 2022 crash pulls the average up.</p></div>
+      <div class="card"><span class="k">Falls and rises of the cedi</span><span class="big" data-text="k-asym-big">38% / 17%</span><span class="sub" data-text="k-asym-sub">of a fall / of a rise, after three months</span><p data-text="k-asym">After three months, 38% of a fall in the cedi has reached import prices, but only 17% of a rise. After a year the two are close: 46% and 44%. Prices go up faster than they come down. Only 17 of the 67 months saw a stronger cedi, so this is the least certain result here.</p></div>
+      <div class="card"><span class="k" data-text="k-long-h">28 years of all items</span><span class="big" data-text="k-long-big">43%</span><span class="sub" data-text="k-long-sub">all items after a year, 1998 to 2026</span><p data-text="k-long">All-items prices go back to 1998. Over 1998 to 2026 (328 months), 43% of a fall in the cedi reaches them within a year; over 1998 to 2020, 42%; since 2021, 46%. The recent years aren't unusual.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="read prose">
+      <span class="eyebrow">Method</span>
+      <h2 style="margin:6px 0 10px">How it's measured, and what it leaves out</h2>
+      <p data-text="m-data"><b>The cedi.</b> The Bank of Ghana's interbank mid-rate for the US dollar, averaged over each month, in today's cedis. Months with fewer than 10 published rates, and the month in progress, are left out. <b>Prices.</b> GSS's consumer price index for imported goods, local goods and all items: StatsBank before January 2022 for imported and local goods (January 2021 for all items), then the monthly CPI annex, which agrees with StatsBank to its rounding where both exist. Only values that pass TARIN's checks are used.</p>
+      <p data-text="m-how"><b>How much, how fast.</b> Each month's change in prices (in logs) is regressed on the change in cedis per dollar in the same month and in each of the twelve before, with a dummy for each calendar month. The running sum of the cedi's coefficients is the share passed on after that many months. Standard errors are Newey–West with four lags; the shaded range is 1.645 of them either side, a 90% range. <b>How many months later.</b> The correlation between prices' change over a year and the cedi's change over the year ending k months earlier, for k from 0 to 15.</p>
+      <p><b>What it leaves out.</b> World prices of fuel, food and freight, and policy (the Bank of Ghana's rate, fuel taxes) are not controlled for, so part of any episode can be the world rather than the cedi. GSS's imported goods are a basket of consumer goods priced in shops, not prices at the border. And the shares are averages over the sample, not a forecast.</p>
+      <p><b>Downloads.</b> <a href="../data/csv/cedi.csv" download>cedi.csv</a> (the monthly series), <a href="../data/csv/cedi-passthrough.csv" download>cedi-passthrough.csv</a> (the shares with their standard errors) and <a href="../data/cedi.json" download>cedi.json</a> (everything on this page). The series behind it: the cedi's daily rate in the <a href="../catalogue/index.html#bog_fx.us-dollar-usd-mid-rate.d">catalogue</a>, and imported and local goods in the <a href="../explorer/index.html#an.yoy.ghana.all-products.import~an.yoy.ghana.all-products.local">data explorer</a>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Bank of Ghana and Ghana Statistical Service. Analysis: TARIN, not BoG or GSS.</span>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js?v=1829f2cf33"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  function pc(v, d) { return v == null ? "–" : T.fmt(v, d == null ? 1 : d) + "%"; }
+  function after(p) { return p === "0" ? "Same month" : p + (p === "1" ? " month" : " months") + " later"; }
+
+  T.json("data/cedi.json").then(function (C) {
+    // the words: already in the page as built; applied again in case the page is older than the data
+    if (C.text) Array.prototype.forEach.call(document.querySelectorAll("[data-text]"), function (el) {
+      var t = C.text[el.getAttribute("data-text")];
+      if (t) el.innerHTML = t;
+    });
+    var X = C.extras || {};
+    var S = C.series, months = S.map(function (r) { return r[0]; });
+    var imp = S.map(function (r) { return r[3]; }), loc = S.map(function (r) { return r[4]; });
+    var cy = {}; C.cedi_yoy.forEach(function (r) { cy[r[0]] = r[1]; });
+    var k = X.best_lag || 0, lag = 0;
+
+    // 1. the yearly rates, with the cedi's line where it happened or moved by the lag
+    var host1 = document.getElementById("c-yoy");
+    function yoyChart() {
+      var cedi = months.map(function (p) { var q = T.periodAt(T.monthIndex(p) - lag); return cy[q] != null ? cy[q] : null; });
+      T.lineChart(host1, {
+        labels: months, height: 340, zero: true, unit: "%", endLabels: T.plotWidth(host1) >= 560,
+        series: [
+          { values: cedi, color: "var(--s2)", name: "Cedis per US dollar", endName: "Cedis per $" },
+          { values: loc, color: "var(--s3)", name: "Local goods", endName: "Local" },
+          { values: imp, color: "var(--s1)", name: "Imported goods", endName: "Imported" }
+        ],
+        fmt: function (v) { return pc(v, 1); },
+        aria: "Change on a year earlier in imported goods prices, local goods prices and cedis per US dollar, " +
+          T.monthLabel(months[0]) + " to " + T.monthLabel(months[months.length - 1]) + (lag ? ", the cedi drawn " + lag + " months later" : ""),
+        tipRows: function (i) {
+          var q = T.periodAt(T.monthIndex(months[i]) - lag);
+          return [
+            { color: "var(--s1)", name: "Imported goods", value: pc(imp[i], 1) },
+            { color: "var(--s3)", name: "Local goods", value: pc(loc[i], 1) },
+            { color: "var(--s2)", name: "Cedis per $" + (lag ? ", year to " + T.monthLabel(q) : ""), value: cedi[i] == null ? "–" : pc(cedi[i], 1) }
+          ];
+        }
+      });
+    }
+    var seg = document.getElementById("shift");
+    if (k > 0) {
+      seg.querySelector("[data-s='1']").textContent = X.shift_label || ("Cedi moved " + k + " months later");
+      seg.hidden = false;
+      seg.addEventListener("click", function (ev) {
+        var b = ev.target.closest ? ev.target.closest("button") : null;
+        if (!b) return;
+        lag = b.getAttribute("data-s") === "1" ? k : 0;
+        Array.prototype.forEach.call(seg.querySelectorAll("button"), function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+        yoyChart();
+      });
+    }
+
+    // the correlation at each lag
+    var LL = C.lead_lag, lagLabels = LL["import"].map(function (x) { return String(x.lag); });
+    var host2 = document.getElementById("c-lag");
+    function lagChart() {
+      var every = T.plotWidth(host2) / lagLabels.length < 30 ? 3 : 1;
+      T.lineChart(host2, {
+        labels: lagLabels, height: 230, zero: true, tickCount: 4,
+        series: [
+          { values: LL.local.map(function (x) { return x.r; }), color: "var(--s3)", name: "Local goods", dots: true },
+          { values: LL["import"].map(function (x) { return x.r; }), color: "var(--s1)", name: "Imported goods", dots: true }
+        ],
+        fmt: function (v) { return T.fmt(v, 2); },
+        yFmt: function (v) { return T.fmt(v, 1); },
+        xLabel: function (p, i) { return i % every === 0 ? p : null; },
+        xTitle: "months prices lag the cedi",
+        titleFmt: function (p) { return p === "0" ? "Same twelve months" : "The cedi's year ending " + p + (p === "1" ? " month" : " months") + " earlier"; },
+        tipRows: function (i) {
+          return [{ color: "var(--s1)", name: "Imported goods", value: "r = " + T.fmt(LL["import"][i].r, 2) },
+                  { color: "var(--s3)", name: "Local goods", value: "r = " + T.fmt(LL.local[i].r, 2) }];
+        },
+        aria: "Correlation between prices' change over a year and the cedi's change over the year ending 0 to " + (lagLabels.length - 1) + " months earlier"
+      });
+    }
+
+    // 2. the share passed on, month by month
+    var PI = C.pass_through["import"].path, PL = C.pass_through.local.path;
+    var hLabels = PI.map(function (x) { return String(x.h); });
+    var host3 = document.getElementById("c-path");
+    function lo(x) { return x.share - 1.645 * x.se; }
+    function hi(x) { return x.share + 1.645 * x.se; }
+    function pathChart() {
+      var every = T.plotWidth(host3) / hLabels.length < 30 ? 3 : 1;
+      T.lineChart(host3, {
+        labels: hLabels, height: 300, zero: true, unit: "%", endLabels: T.plotWidth(host3) >= 560,
+        bands: [{ lo: PI.map(lo), hi: PI.map(hi), fill: "var(--tol)" }],
+        series: [
+          { values: PL.map(function (x) { return x.share; }), color: "var(--s3)", name: "Local goods", endName: "Local", dots: true },
+          { values: PI.map(function (x) { return x.share; }), color: "var(--s1)", name: "Imported goods", endName: "Imported", dots: true }
+        ],
+        fmt: function (v) { return pc(v, 0); },
+        xLabel: function (p, i) { return i % every === 0 ? p : null; },
+        xTitle: "months after the cedi moves",
+        titleFmt: after,
+        tipRows: function (i) {
+          return [{ color: "var(--s1)", name: "Imported goods", value: pc(PI[i].share, 0) },
+                  { name: "90% range", value: T.fmt(lo(PI[i]), 0) + "–" + pc(hi(PI[i]), 0) },
+                  { color: "var(--s3)", name: "Local goods", value: pc(PL[i].share, 0) }];
+        },
+        aria: "Share of a change in cedis per US dollar that has reached imported and local goods prices, 0 to " + (hLabels.length - 1) + " months after it"
+      });
+    }
+
+    function draw() { yoyChart(); lagChart(); pathChart(); }
+    draw(); T.onResize(draw);
+  }).catch(function (e) { T.fail(document.getElementById("c-yoy"), e); });
+})();
+</script>
+</body>
+</html>

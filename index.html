@@ -41,7 +41,7 @@
 .stats b { font-family: var(--f-mono); font-weight: 500; font-size: 22px; color: var(--ink); font-variant-numeric: tabular-nums; }
 .stats span { font-size: 13px; color: var(--ink-2); line-height: 1.4; }
 
-.doors { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+.doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 @media (max-width: 1080px) { .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .fc-line { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; border-top: 1px solid var(--grid); padding-top: 10px; font-size: 14px; }
 .fc-line b { font-family: var(--f-mono); font-weight: 500; color: var(--ink); }
@@ -66,6 +66,7 @@
     <nav class="main" aria-label="Main">
       <a href="index.html" aria-current="page">Home</a>
       <a href="price-record/index.html">Price record</a>
+      <a href="cedi/index.html">Cedi &amp; prices</a>
       <a href="explorer/index.html">Data explorer</a>
       <a href="catalogue/index.html">Catalogue</a>
       <a href="forecast/index.html">Forecast</a>
@@ -146,6 +147,12 @@
         <p>Twenty-seven years of inflation, the 2026 rebound, sixteen regions and imported goods, each chart with its sources.</p>
         <span class="go">Read it →</span>
       </a>
+      <a class="door card" href="cedi/index.html">
+        <span class="k">Analysis</span>
+        <h3>The cedi and prices</h3>
+        <p>How much of a fall in the cedi reaches the prices of imported and local goods, and how many months it takes. Recomputed with each release.</p>
+        <span class="go">Read it →</span>
+      </a>
       <a class="door card" href="explorer/index.html">
         <span class="k">Series</span>
         <h3>Data explorer</h3>
@@ -197,7 +204,7 @@
   </div>
 </footer>
 
-<script src="assets/tarin.js?v=42d41a707d"></script>
+<script src="assets/tarin.js?v=1829f2cf33"></script>
 <script>
 (function () {
   "use strict";

@@ -8,6 +8,7 @@ or a plain web server).
 www/
   index.html               Home
   price-record/index.html  Ghana's Price Record (the data story)
+  cedi/index.html          The cedi and prices: how much of a fall reaches prices, and how fast
   explorer/index.html      Data explorer (the CPI, every region and product group)
   catalogue/index.html     Catalogue: every other StatsBank table, and any series against any other
   forecast/index.html      Forecast (frozen, fingerprinted, scored)
@@ -38,8 +39,13 @@ file's timestamp and fingerprint predate GSS's next release.
 `build_www.py` publishes only values with no open hold. A held value is written as a
 gap, with the rule that holds it, so the charts show the gap and say why.
 
-The data story's prose is written by hand. When `build_site.py` lists changed
-figures, check any sentence in price-record/index.html that quotes one.
+The words on the price record and the cedi page are written from the data
+(`site/story_text.py`, `site/cedi_text.py`), and each claim is tested. When one
+stops holding, the sentence falls back to neutral wording and the passage is listed
+in `data/story-review.json` (cedi passages start with `cedi:`), so the update run can
+say which ones need a read. The cedi page's analysis is `tarin_passthrough.py`;
+`build_www.py` writes `data/cedi.json`, `data/csv/cedi.csv` and
+`data/csv/cedi-passthrough.csv`, and writes the words into `cedi/index.html` itself.
 
 ## Look at it locally
 

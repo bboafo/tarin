@@ -172,6 +172,26 @@
     <button class="more" id="fx-more" type="button" hidden></button>
   </section>
 
+  <section class="block" id="w-checks" hidden>
+    <div class="read">
+      <span class="eyebrow">World prices</span>
+      <h2 style="margin-top:6px" id="w-h2">Rules for the World Bank's commodity prices</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">The World Bank's monthly workbook of world commodity prices (the Pink Sheet) is read at the start of each month and every version is kept. A price of zero or less is held. A price that doubles or halves in a month is flagged; such moves are rare but real. An Excel error left in a cell where a price should be is flagged, and nothing is published for that month. The World Bank's Brent crude price is also compared with the IMF's for the same month.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="data" id="t-wrules">
+        <thead><tr><th>Rule</th><th>What it catches</th><th class="r">Comparisons</th><th class="r">Now</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="caption" id="c-wrun"></p>
+    <div class="read" style="margin-top:10px">
+      <h3 style="font-family:var(--f-display);font-size:21px">What they found</h3>
+      <p style="margin-top:6px;color:var(--ink-2)">By commodity and rule, with the most recent case in the check's own words. Each links to the series in the catalogue.</p>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="t-wfind"></table></div>
+  </section>
+
   <section class="block">
     <div class="read">
       <span class="eyebrow">Revisions</span>
@@ -396,6 +416,45 @@
         Array.prototype.forEach.call(tb3.children, function (tr, i) { tr.hidden = !fxAll && i >= FXN; });
         more.textContent = fxAll ? "Show fewer" : "Show all " + FX.findings.length;
       });
+    }
+    // the World Bank's world commodity prices
+    var WC = K.world;
+    if (WC) {
+      var nowW = function (h, w, i) {
+        var out = [];
+        if (h) out.push('<span class="pill hold">' + T.int(h) + " held</span>");
+        if (w) out.push('<span class="pill warn">' + T.int(w) + " flagged</span>");
+        if (i) out.push('<span class="pill idle">' + T.int(i) + " to read</span>");
+        return out.length ? out.join(" ") : '<span class="pill ok">clear</span>';
+      };
+      var words = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+      document.getElementById("w-h2").textContent = (words[WC.rules.length] || WC.rules.length) + " rules for the World Bank's commodity prices";
+      document.getElementById("w-checks").hidden = false;
+      document.querySelector("#t-wrules tbody").innerHTML = WC.rules.map(function (r) {
+        return "<tr><td class='m'><code>" + esc(r[0]) + "</code></td><td>" + esc(r[1]) + "<br><span class='mono muted' style='font-size:11.5px'>" +
+          esc(r[2]) + "</span></td><td class='r m'>" + (r[3] ? T.int(r[3]) : "–") + "</td><td class='r'>" + nowW(r[4], r[5], r[6]) + "</td></tr>";
+      }).join("");
+      document.getElementById("c-wrun").textContent = (WC.validated ? "Latest run " + WC.validated.slice(0, 16).replace("T", " ") + " UTC. " : "") +
+        "Comparisons are the values or months each rule could test. The IMF comparison needs the IMF's figures, read from FRED, the St. Louis Fed's copy; when it can't be reached, the rule compares what was last read.";
+      var wf = document.getElementById("t-wfind");
+      wf.innerHTML = "<thead><tr><th>Commodity</th><th>Rule</th><th>How many</th><th>The latest case</th></tr></thead>";
+      var tb4 = document.createElement("tbody");
+      if (!WC.findings.length) tb4.innerHTML = "<tr><td colspan='4' class='muted'>Nothing found.</td></tr>";
+      WC.findings.forEach(function (f) {
+        var tr = document.createElement("tr");
+        tr.innerHTML = "<td></td><td class='m'><code></code></td><td></td><td style='min-width:280px'></td>";
+        tr.children[0].textContent = f.name;
+        tr.children[1].firstChild.textContent = f.rule.split("_")[0];
+        tr.children[1].title = f.rule;
+        tr.children[2].innerHTML = '<span class="pill ' + f.severity + '">' + T.int(f.values) + (f.severity === "hold" ? " held" : " flagged") + "</span>";
+        tr.children[3].textContent = f.detail + " ";
+        if (f.link) {
+          var a = document.createElement("a"); a.href = "../catalogue/index.html#" + f.link; a.textContent = "See it →";
+          tr.children[3].appendChild(a);
+        }
+        tb4.appendChild(tr);
+      });
+      wf.appendChild(tb4);
     }
   }).catch(function (e) { T.fail(document.getElementById("c-held"), e); });
 })();

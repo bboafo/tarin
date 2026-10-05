@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The cedi and prices · TARIN</title>
-<meta name="description" content="How much of a fall in the cedi reaches the prices of imported and local goods in Ghana, and how many months it takes. Recomputed from Bank of Ghana and GSS data with each release.">
+<meta name="description" content="How much of a fall in the cedi reaches the prices of imported and local goods in Ghana, how many months it takes, and how much of it was world fuel and food prices. Recomputed from Bank of Ghana, GSS and World Bank data with each release.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,19 +31,22 @@
 .prose p + p { margin-top: 12px; }
 .prose b { color: var(--ink); font-weight: 600; }
 table.data td .when { display: block; font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.key-sq { width: 11px; height: 11px; display: inline-block; border-radius: 2px; box-sizing: border-box; }
+#c-world .lbl-in { font-size: 11px; fill: var(--surface); font-weight: 500; }
+#c-world .lbl-in.dark { fill: var(--ink); }
 table.data td.pred { color: var(--muted); }
 @media (max-width: 760px) {
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .tiles .v { font-size: 28px; }
   .checks { grid-template-columns: 1fr; }
 }
-@media (max-width: 600px) {     /* the episodes table stacks: one card per episode */
-  #t-ep thead { display: none; }
-  #t-ep tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; padding: 12px 0; border-bottom: 1px solid var(--grid); }
-  #t-ep td { border: 0; padding: 0; text-align: left; white-space: normal; }
-  #t-ep td:first-child { grid-column: 1 / -1; font-weight: 600; color: var(--ink); }
-  #t-ep td:first-child .when { display: inline; margin-left: 8px; font-weight: 400; }
-  #t-ep td[data-l]::before { content: attr(data-l); display: block; font-family: var(--f-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+@media (max-width: 600px) {     /* the episode tables stack: one card per episode */
+  table.data.stack thead { display: none; }
+  table.data.stack tr { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; padding: 12px 0; border-bottom: 1px solid var(--grid); }
+  table.data.stack td { border: 0; padding: 0; text-align: left; white-space: normal; }
+  table.data.stack td:first-child { grid-column: 1 / -1; font-weight: 600; color: var(--ink); }
+  table.data.stack td:first-child .when { display: inline; margin-left: 8px; font-weight: 400; }
+  table.data.stack td[data-l]::before { content: attr(data-l); display: block; font-family: var(--f-mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
 }
 </style>
 </head>
@@ -68,7 +71,7 @@ table.data td.pred { color: var(--muted); }
   <div class="page-head">
     <span class="eyebrow" data-text="eyebrow">The cedi and prices · to August 2026</span>
     <h1>When the cedi falls, how fast do prices follow?</h1>
-    <p class="lede" data-text="lede">When a dollar costs 10% more cedis, imported goods cost about 3% more within three months and about 5% more within a year. Local goods follow almost as much, about 4% within a year, so a weaker cedi raises prices well beyond imports. GSS's split between imported and local goods starts in 2021, so this runs from February 2021 to August 2026, and it is recomputed with each release.</p>
+    <p class="lede" data-text="lede">When a dollar costs 10% more cedis, imported goods cost about 3% more within three months and about 5% more within a year. Local goods follow almost as much, about 4% within a year, so a weaker cedi raises prices well beyond imports. World fuel and food prices explain only a few points of the 2022 surge. GSS's split between imported and local goods starts in 2021, so this runs from February 2021 to August 2026, and it is recomputed with each release.</p>
   </div>
 
   <section class="block" aria-label="The answer in four numbers">
@@ -129,15 +132,40 @@ table.data td.pred { color: var(--muted); }
     <div class="read prose">
       <span class="eyebrow">Episodes</span>
       <h2 style="margin:6px 0 10px" data-text="s3-h2">The cedi's three big moves since 2022</h2>
-      <p data-text="s3-p1">In the 2022 crash a dollar went from 6.01 to 13.07 cedis, and over the year from January 2022 imported goods rose 62.4%, more than the 40.4% rise the model above predicts. World prices of fuel and food also surged in 2022, and this analysis doesn't separate them from the cedi. In the 2024 slide (11.65 to 15.99 cedis), imported goods rose 18.0%, less than the 27.9% rise the model predicts. In the 2025 recovery (15.53 back down to 10.28 cedis), they fell 0.6%, close to the 2.6% fall the model predicts.</p>
+      <p data-text="s3-p1">In the 2022 crash a dollar went from 6.01 to 13.07 cedis, and over the year from January 2022 imported goods rose 62.4%, more than the 40.4% rise the model above predicts. World oil had risen 57% in the year before, but the section below finds world prices explain only a few points of 2022. In the 2024 slide (11.65 to 15.99 cedis), imported goods rose 18.0%, less than the 27.9% rise the model predicts. In the 2025 recovery (15.53 back down to 10.28 cedis), they fell 0.6%, close to the 2.6% fall the model predicts.</p>
     </div>
     <div class="tbl-wrap">
-      <table class="data" id="t-ep">
+      <table class="data stack" id="t-ep">
         <thead><tr><th>Episode</th><th>Cedis per dollar</th><th class="r">Imported goods</th><th class="r">Predicted</th><th class="r">Local goods</th><th class="r">All items</th></tr></thead>
         <tbody data-text="t-ep-rows"><tr><td>2022 crash<span class='when'>year from Jan 2022</span></td><td class='m' data-l='Cedis per dollar'>6.01 → 13.07<span class='when'>+118% by Nov 2022</span></td><td class='r m' data-l='Imported goods'>+62.4%</td><td class='r m pred' data-l='Predicted'>+40.4%</td><td class='r m' data-l='Local goods'>+51.3%</td><td class='r m' data-l='All items'>+53.6%</td></tr><tr><td>2024 slide<span class='when'>year from Dec 2023</span></td><td class='m' data-l='Cedis per dollar'>11.65 → 15.99<span class='when'>+37% by Oct 2024</span></td><td class='r m' data-l='Imported goods'>+18.0%</td><td class='r m pred' data-l='Predicted'>+27.9%</td><td class='r m' data-l='Local goods'>+26.4%</td><td class='r m' data-l='All items'>+23.8%</td></tr><tr><td>2025 recovery<span class='when'>year from Mar 2025</span></td><td class='m' data-l='Cedis per dollar'>15.53 → 10.28<span class='when'>−34% by Jun 2025</span></td><td class='r m' data-l='Imported goods'>−0.6%</td><td class='r m pred' data-l='Predicted'>−2.6%</td><td class='r m' data-l='Local goods'>+4.9%</td><td class='r m' data-l='All items'>+3.2%</td></tr></tbody>
       </table>
     </div>
     <p class="caption" data-text="t-ep-cap">Prices: change over the twelve months from the start month. Cedis per dollar: monthly averages, at the start and at the cedi's turning point. Predicted: what the model behind the chart above gives for imported goods over the same twelve months, from the cedi's moves plus the usual rise in prices that has nothing to do with the cedi.</p>
+  </section>
+
+  <section class="block">
+    <div class="read prose">
+      <span class="eyebrow">The cedi or the world?</span>
+      <h2 style="margin:6px 0 10px" data-text="w-h2">World fuel and food prices explain little of the 2022 surge</h2>
+      <p data-text="w-p1">GSS's split between imported and local goods starts in 2021: too short to separate the two (see below). Prices as a whole go back to 1998, so the question is asked there. Each month's change in all prices is set against the cedi's change and against world prices of Brent crude oil and of food (in dollars, from the World Bank), in the same month and each of the twelve before. Over these 28 years, a 10% rise in world oil adds about 0.5% to Ghana's prices within a year, and a 10% rise in world food about 0.8%, a figure too uncertain to tell from zero. The cedi's own share hardly moves: 42% within a year, against 43% without world prices.</p>
+      <p data-text="w-p2">In the 2022 crash year all prices rose 53.6%. By this measure the cedi accounts for about 22 points of that, and world fuel and food together for about 4 (3 to 5, whichever world prices are used), though world oil had risen 57% in the year before. About 11 points is the usual rise in prices, in a year when neither moves. That leaves about 17 points that neither the cedi nor world prices explain. In the 2024 slide world prices played almost no part (under a point). In the 2025 recovery the cedi's strengthening would have cut prices by about 14 points; they still rose 3.2%, with about 9 points explained by neither.</p>
+    </div>
+    <div class="chart" id="c-world">
+      <div class="legend">
+        <span><i class="key-sq" style="background:var(--quiet-line)"></i>Usual rise</span>
+        <span><i class="key-sq" style="background:var(--s2)"></i>The cedi</span>
+        <span><i class="key-sq" style="background:var(--ink-2)"></i>World fuel and food</span>
+        <span><i class="key-sq" style="border:1.5px dashed var(--axis)"></i>Neither</span>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table class="data stack" id="t-world">
+        <thead><tr><th>Episode</th><th class="r">All prices</th><th class="r">Usual rise</th><th class="r">The cedi</th><th class="r">World fuel</th><th class="r">World food</th><th class="r">Neither</th></tr></thead>
+        <tbody data-text="w-rows"><tr><td>2022 crash<span class='when'>year from Jan 2022</span></td><td class='r m' data-l='All prices'>+53.6%</td><td class='r m' data-l='Usual rise'>+10.9</td><td class='r m' data-l='The cedi'>+21.9</td><td class='r m' data-l='World fuel'>+3.9</td><td class='r m' data-l='World food'>−0.2</td><td class='r m' data-l='Neither'>+17.0</td></tr><tr><td>2024 slide<span class='when'>year from Dec 2023</span></td><td class='r m' data-l='All prices'>+23.8%</td><td class='r m' data-l='Usual rise'>+9.8</td><td class='r m' data-l='The cedi'>+12.0</td><td class='r m' data-l='World fuel'>+0.6</td><td class='r m' data-l='World food'>−0.3</td><td class='r m' data-l='Neither'>+1.8</td></tr><tr><td>2025 recovery<span class='when'>year from Mar 2025</span></td><td class='r m' data-l='All prices'>+3.2%</td><td class='r m' data-l='Usual rise'>+8.9</td><td class='r m' data-l='The cedi'>−13.6</td><td class='r m' data-l='World fuel'>−1.4</td><td class='r m' data-l='World food'>+0.3</td><td class='r m' data-l='Neither'>+9.1</td></tr></tbody>
+      </table>
+    </div>
+    <p class="caption" data-text="w-cap">All items: the change in prices over the twelve months from each episode's start, split into parts that add up to it, in percentage points (rounding can leave them a tenth apart). Usual rise: what prices do in a year when neither the cedi nor world prices move. The cedi, world fuel, world food: their moves in that year and the twelve months before, at their average effect from 1998 to 2026. Neither: what's left. World prices: World Bank, Brent crude ($ a barrel) and the food price index, in US dollars.</p>
+    <div class="read prose"><p data-text="w-p3">For imported goods alone, adding world prices leaves the cedi's share at 50–53% within a year, whichever way they are entered. But five and a half years can't pin down world prices' own effect on them: Brent comes out negative (−12 to −9%), which can't be right, and food's 90% range runs from −15% to 101%.</p></div>
   </section>
 
   <section class="block">
@@ -158,10 +186,10 @@ table.data td.pred { color: var(--muted); }
     <div class="read prose">
       <span class="eyebrow">Method</span>
       <h2 style="margin:6px 0 10px">How it's measured, and what it leaves out</h2>
-      <p data-text="m-data"><b>The cedi.</b> The Bank of Ghana's interbank mid-rate for the US dollar, averaged over each month, in today's cedis. Months with fewer than 10 published rates, and the month in progress, are left out. <b>Prices.</b> GSS's consumer price index for imported goods, local goods and all items: StatsBank before January 2022 for imported and local goods (January 2021 for all items), then the monthly CPI annex, which agrees with StatsBank to its rounding where both exist. Only values that pass TARIN's checks are used.</p>
-      <p data-text="m-how"><b>How much, how fast.</b> Each month's change in prices (in logs) is regressed on the change in cedis per dollar in the same month and in each of the twelve before, with a dummy for each calendar month. The running sum of the cedi's coefficients is the share passed on after that many months. Standard errors are Newey–West with four lags; the shaded range is 1.645 of them either side, a 90% range. <b>How many months later.</b> The correlation between prices' change over a year and the cedi's change over the year ending k months earlier, for k from 0 to 15.</p>
-      <p><b>What it leaves out.</b> World prices of fuel, food and freight, and policy (the Bank of Ghana's rate, fuel taxes) are not controlled for, so part of any episode can be the world rather than the cedi. GSS's imported goods are a basket of consumer goods priced in shops, not prices at the border. And the shares are averages over the sample, not a forecast.</p>
-      <p><b>Downloads.</b> <a href="../data/csv/cedi.csv" download>cedi.csv</a> (the monthly series), <a href="../data/csv/cedi-passthrough.csv" download>cedi-passthrough.csv</a> (the shares with their standard errors) and <a href="../data/cedi.json" download>cedi.json</a> (everything on this page). The series behind it: the cedi's daily rate in the <a href="../catalogue/index.html#bog_fx.us-dollar-usd-mid-rate.d">catalogue</a>, and imported and local goods in the <a href="../explorer/index.html#an.yoy.ghana.all-products.import~an.yoy.ghana.all-products.local">data explorer</a>.</p>
+      <p data-text="m-data"><b>The cedi.</b> The Bank of Ghana's interbank mid-rate for the US dollar, averaged over each month, in today's cedis. Months with fewer than 10 published rates, and the month in progress, are left out. <b>Prices.</b> GSS's consumer price index for imported goods, local goods and all items: StatsBank before January 2022 for imported and local goods (January 2021 for all items), then the monthly CPI annex, which agrees with StatsBank to its rounding where both exist. Only values that pass TARIN's checks are used. <b>World prices.</b> The World Bank's Commodity Price Data (the Pink Sheet), monthly, in US dollars: Brent crude and its food price index (2010 = 100), from the workbook of 2 October 2026, with data to September 2026.</p>
+      <p data-text="m-how"><b>How much, how fast.</b> Each month's change in prices (in logs) is regressed on the change in cedis per dollar in the same month and in each of the twelve before, with a dummy for each calendar month. The running sum of the cedi's coefficients is the share passed on after that many months. Standard errors are Newey–West with four lags; the shaded range is 1.645 of them either side, a 90% range. <b>How many months later.</b> The correlation between prices' change over a year and the cedi's change over the year ending k months earlier, for k from 0 to 15. <b>The cedi or the world.</b> All items, February 1998 to August 2026: the same regression with Brent and the food index added, each also in the same month and the twelve before. An episode's parts are each one's coefficients applied to its moves, scaled so the parts add up to the change in prices.</p>
+      <p data-text="m-limits"><b>What it leaves out.</b> Freight costs and policy (the Bank of Ghana's rate, fuel taxes and levies, utility tariffs) aren't measured, so part of any episode can be them. World fuel and food prices are measured for all items only: GSS's import split is too short. GSS's imported goods are a basket of consumer goods priced in shops, not prices at the border. And every share here is an average over the years measured, not a forecast.</p>
+      <p><b>Downloads.</b> <a href="../data/csv/cedi.csv" download>cedi.csv</a> (the monthly series), <a href="../data/csv/cedi-passthrough.csv" download>cedi-passthrough.csv</a> (the shares with their standard errors), <a href="../data/csv/cedi-world.csv" download>cedi-world.csv</a> (each episode split into its parts) and <a href="../data/cedi.json" download>cedi.json</a> (everything on this page). The series behind it: the cedi's <a href="../catalogue/index.html#bog_fx.us-dollar-usd-mid-rate.d">daily rate</a> and the World Bank's <a href="../catalogue/index.html#wb_cmo.price-energy-crude-oil-brent.m~wb_cmo.index-indices-food.m">Brent and food prices</a> in the catalogue, and imported and local goods in the <a href="../explorer/index.html#an.yoy.ghana.all-products.import~an.yoy.ghana.all-products.local">data explorer</a>.</p>
     </div>
   </section>
 </main>
@@ -170,7 +198,7 @@ table.data td.pred { color: var(--muted); }
   <div class="wrap">
     <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
     <span id="site-status" hidden></span>
-    <span>Data: Bank of Ghana and Ghana Statistical Service. Analysis: TARIN, not BoG or GSS.</span>
+    <span>Data: Bank of Ghana, Ghana Statistical Service and the World Bank. Analysis: TARIN, not them.</span>
   </div>
 </footer>
 
@@ -283,7 +311,86 @@ table.data td.pred { color: var(--muted); }
       });
     }
 
-    function draw() { yoyChart(); lagChart(); pathChart(); }
+    // 4. the cedi or the world: each episode's rise in all prices, split into its parts
+    var WD = C.world, hostW = document.getElementById("c-world");
+    var PARTS = [["usual", "Usual rise", "var(--quiet-line)", true], ["cedi", "The cedi", "var(--s2)", false],
+                 ["world", "World fuel and food", "var(--ink-2)", false], ["left", "Neither", null, true]];
+    function pts(v) { return (v > 0.05 ? "+" : "") + T.fmt(v, 1); }
+    function worldChart() {
+      if (!WD || !WD.episodes || !WD.episodes.length) {       // no world prices in this build: no section
+        var sec = hostW.closest ? hostW.closest("section") : null;
+        if (sec) sec.hidden = true; else hostW.hidden = true;
+        return;
+      }
+      var old = hostW.querySelector("svg"); if (old) old.remove();
+      var oldTip = hostW.querySelector(".tip"); if (oldTip) oldTip.remove();
+      var rows = WD.episodes.map(function (e) {
+        var p = e.pct;
+        return { e: e, v: { usual: p.usual, cedi: p.cedi, world: p.oil + p.food, left: p.left } };
+      });
+      var lo = 0, hi = 0;
+      rows.forEach(function (r) {
+        var pos = 0, neg = 0;
+        PARTS.forEach(function (k) { var v = r.v[k[0]]; if (v > 0) pos += v; else neg += v; });
+        hi = Math.max(hi, pos); lo = Math.min(lo, neg);
+      });
+      var nt = T.niceTicks(lo, hi, 6);
+      var W = T.plotWidth(hostW), narrow = W < 520, rowH = 30, gap = narrow ? 34 : 16;
+      var m = { t: narrow ? 18 : 6, r: 14, b: 26, l: narrow ? 10 : 132 };
+      var H = m.t + rows.length * (rowH + gap) - gap + m.b;
+      var x = function (v) { return m.l + (v - nt.lo) / (nt.hi - nt.lo) * (W - m.l - m.r); };
+      var svg = T.el("svg", { viewBox: "0 0 " + W + " " + H, width: W, height: H, role: "img",
+        "aria-label": "Each episode's change in all prices split into the usual rise, the cedi, world fuel and food, and what neither explains" });
+      hostW.appendChild(svg);
+      nt.ticks.forEach(function (tv) {
+        svg.appendChild(T.el("line", { x1: x(tv), x2: x(tv), y1: m.t - 4, y2: H - m.b + 4 },
+          "stroke:" + (tv === 0 ? "var(--axis)" : "var(--grid)") + ";stroke-width:1"));
+        T.text(svg, x(tv), H - 8, (tv > 0 ? "+" : "") + T.fmt(tv, 0), null, "middle");
+      });
+      var tip = T.tip(hostW);
+      rows.forEach(function (r, i) {
+        var y0 = m.t + i * (rowH + gap);
+        var total = r.e.actual_pct;
+        if (narrow) {
+          T.text(svg, m.l, y0 - 6, r.e.name + "  " + pts(total) + "%", "lbl-strong", "start");
+        } else {
+          T.text(svg, m.l - 12, y0 + rowH / 2 - 2, r.e.name, "lbl-strong", "end");
+          T.text(svg, m.l - 12, y0 + rowH / 2 + 12, "prices " + pts(total) + "%", null, "end");
+        }
+        var pos = 0, neg = 0;
+        PARTS.forEach(function (k) {
+          var v = r.v[k[0]];
+          if (Math.abs(v) < 0.05) return;
+          var a = v > 0 ? pos : neg + v, b = v > 0 ? pos + v : neg;
+          if (v > 0) pos += v; else neg += v;
+          var x0 = x(a), w = Math.max(1, x(b) - x0 - 2);
+          svg.appendChild(T.el("rect", { x: x0 + 1, y: y0, width: w, height: rowH, rx: 3 },
+            k[2] ? "fill:" + k[2] : "fill:transparent;stroke:var(--axis);stroke-width:1.5;stroke-dasharray:4 3"));
+          if (w >= 34) T.text(svg, x0 + 1 + w / 2, y0 + rowH / 2 + 4, pts(v), "lbl-in" + (k[3] ? " dark" : ""), "middle");
+        });
+        var hit = T.el("rect", { x: 0, y: y0 - 4, width: W, height: rowH + 8, tabindex: 0,
+          "aria-label": r.e.name + ": prices " + pts(total) + "%, " + PARTS.map(function (k) { return k[1] + " " + pts(r.v[k[0]]); }).join(", ") },
+          "fill:transparent;outline:none");
+        function show() {
+          var p = r.e.pct;
+          T.fillTip(tip, r.e.name + ", year from " + T.monthLabel(r.e.from), [
+            { name: "All prices", value: pts(total) + "%" },
+            { color: "var(--quiet-line)", name: "Usual rise", value: pts(p.usual) },
+            { color: "var(--s2)", name: "The cedi", value: pts(p.cedi) },
+            { color: "var(--ink-2)", name: "World fuel", value: pts(p.oil) },
+            { color: "var(--ink-2)", name: "World food", value: pts(p.food) },
+            { name: "Neither", value: pts(p.left) }]);
+          T.placeTip(hostW, svg, W, tip, x(Math.max(pos, 0)), y0);
+        }
+        hit.addEventListener("pointerenter", show); hit.addEventListener("pointermove", show);
+        hit.addEventListener("pointerdown", show); hit.addEventListener("focus", show);
+        hit.addEventListener("pointerleave", function () { tip.hidden = true; });
+        hit.addEventListener("blur", function () { tip.hidden = true; });
+        svg.appendChild(hit);
+      });
+    }
+
+    function draw() { yoyChart(); lagChart(); pathChart(); worldChart(); }
     draw(); T.onResize(draw);
   }).catch(function (e) { T.fail(document.getElementById("c-yoy"), e); });
 })();

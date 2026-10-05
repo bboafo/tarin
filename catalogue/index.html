@@ -125,7 +125,7 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
   <div class="page-head" style="padding-block:32px 24px">
     <span class="eyebrow">Catalogue</span>
     <h1>Every table TARIN holds</h1>
-    <p class="lede" id="c-lede">Prices, output, money and rates, government and trade, from the Ghana Statistical Service's StatsBank, and the Bank of Ghana's daily exchange rates. Every table keeps the file it came from, says how fresh it is, and goes through the same checks. Any series can be charted against any other.</p>
+    <p class="lede" id="c-lede">Prices, output, money and rates, government and trade, from the Ghana Statistical Service's StatsBank, the Bank of Ghana's daily exchange rates, and the World Bank's world commodity prices. Every table keeps the file it came from, says how fresh it is, and goes through the same checks. Any series can be charted against any other.</p>
     <div class="stats" id="c-stats">
       <div><b data-k="all_tables">–</b><span>tables besides the CPI</span></div>
       <div><b data-k="series">–</b><span>series</span></div>
@@ -449,6 +449,11 @@ select:disabled { color: var(--ink-2); background: var(--sunk); }
   function statusPill(t) {
     var x = tbl(t), s = x.source.updated;
     if (t === "cpi") return '<span class="pill ok">Current</span>';
+    if (x.source.publisher === "World Bank") {
+      var wd = s ? T.dayLabel(s.slice(0, 10)) : "unknown";
+      return x.status === "current" ? '<span class="pill ok">Current · World Bank updated ' + wd + "</span>"
+        : '<span class="pill warn">Behind · World Bank updated ' + wd + "</span>";
+    }
     if (x.source.publisher === "BoG") {
       var to = s ? T.dayLabel(s) : "unknown";
       return x.status === "current" ? '<span class="pill ok">Current · rates to ' + to + "</span>"

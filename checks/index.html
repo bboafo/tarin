@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>How it's checked · TARIN</title>
-<meta name="description" content="The thirteen rules every TARIN value passes, what they are holding back now, the problems they found in GSS's data, and every source file.">
+<meta name="description" content="The fourteen rules every TARIN value passes, what they are holding back now, the problems they found in GSS's data, and every source file.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,7 +56,7 @@
   <div class="page-head">
     <span class="eyebrow">Method</span>
     <h1>How every number is checked</h1>
-    <p class="lede">TARIN reproduces what the Ghana Statistical Service publishes; it doesn't adjust it. What it adds is proof: every value keeps the file it came from, and thirteen rules test it before it reaches a chart, with <a href="#tables-checks">eight more</a> for the other StatsBank tables and <a href="#fx-checks">five</a> for the Bank of Ghana's exchange rates. <span id="c-totals"></span></p>
+    <p class="lede">TARIN reproduces what the Ghana Statistical Service publishes; it doesn't adjust it. What it adds is proof: every value keeps the file it came from, and fourteen rules test it before it reaches a chart, with <a href="#tables-checks">eight more</a> for the other StatsBank tables, <a href="#fx-checks">five</a> for the Bank of Ghana's exchange rates and <a href="#w-checks">five</a> for world prices. <span id="c-totals"></span></p>
   </div>
 
   <section class="block">
@@ -65,7 +65,7 @@
       <div class="step card"><b>Fetch</b><span>StatsBank through its public API; the monthly annex workbook downloaded from statsghana.gov.gh.</span></div>
       <div class="step card"><b>Archive</b><span>The response or workbook is kept byte for byte and named by its SHA-256 fingerprint.</span></div>
       <div class="step card"><b>Load</b><span>Values are appended, never overwritten. A revised value supersedes the old one; both are kept.</span></div>
-      <div class="step card"><b>Check</b><span>Thirteen rules. A hold keeps a value off the site until the rule stops firing on a later run.</span></div>
+      <div class="step card"><b>Check</b><span>Fourteen rules. A hold keeps a value off the site until the rule stops firing on a later run.</span></div>
       <div class="step card"><b>Publish</b><span>The site reads only values with no open hold, each with its source file and retrieval date.</span></div>
     </div>
   </section>
@@ -73,7 +73,7 @@
   <section class="block">
     <div class="read">
       <span class="eyebrow">The rules</span>
-      <h2 style="margin-top:6px">Thirteen rules, and what each is holding right now</h2>
+      <h2 style="margin-top:6px">Fourteen rules, and what each is holding right now</h2>
       <p style="margin-top:10px;color:var(--ink-2)">Most need no second source. GSS publishes both the index and the rates, so every rate can be recomputed from the index. With the basket weights stored, the parts of an index can be added up and compared with the published total. Counts are values per month, from the latest run.</p>
     </div>
     <div class="tbl-wrap">
@@ -175,8 +175,8 @@
   <section class="block" id="w-checks" hidden>
     <div class="read">
       <span class="eyebrow">World prices</span>
-      <h2 style="margin-top:6px" id="w-h2">Rules for the World Bank's commodity prices</h2>
-      <p style="margin-top:10px;color:var(--ink-2)">The World Bank's monthly workbook of world commodity prices (the Pink Sheet) is read at the start of each month and every version is kept. A price of zero or less is held. A price that doubles or halves in a month is flagged; such moves are rare but real. An Excel error left in a cell where a price should be is flagged, and nothing is published for that month. The World Bank's Brent crude price is also compared with the IMF's for the same month.</p>
+      <h2 style="margin-top:6px" id="w-h2">Rules for world prices</h2>
+      <p style="margin-top:10px;color:var(--ink-2)">The World Bank's monthly workbook of world commodity prices (the Pink Sheet) is read at the start of each month and every version is kept. A price of zero or less is held. A price that doubles or halves in a month is flagged; such moves are rare but real. An Excel error left in a cell where a price should be is flagged, and nothing is published for that month. The World Bank's Brent crude price is also compared with the IMF's for the same month. World diesel prices (the US Energy Information Administration's, through FRED) get the first two rules too, and FRED's two New York Harbor diesel series are compared with each other.</p>
     </div>
     <div class="tbl-wrap">
       <table class="data" id="t-wrules">
@@ -215,7 +215,7 @@
   <div class="wrap">
     <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
     <span id="site-status" hidden></span>
-    <span>Data: Ghana Statistical Service, Bank of Ghana and the World Bank (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Republished with their provenance.</span>
+    <span>Data: Ghana Statistical Service, Bank of Ghana, the World Bank (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) and the US EIA (via <a href="https://fred.stlouisfed.org/">FRED</a>). Republished with their provenance.</span>
   </div>
 </footer>
 
@@ -234,7 +234,8 @@
     aggregation: "warn at 2.5%, hold at 4%; product groups hold at 2%",
     regional_nonfood: "hold at 2% (StatsBank only)",
     same_month_copy: "hold (3+ decimals only)",
-    annex3_vs_annex4: "hold at 0.5 index points (annex only)"
+    annex3_vs_annex4: "hold at 0.5 index points (annex only)",
+    regional_groups: "warn at 2.5%, never hold (StatsBank only)"
   };
   function cell(c, na) {
     if (na) return '<td class="r"><span class="muted mono" style="font-size:12px">n/a</span></td>';
@@ -428,14 +429,14 @@
         return out.length ? out.join(" ") : '<span class="pill ok">clear</span>';
       };
       var words = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
-      document.getElementById("w-h2").textContent = (words[WC.rules.length] || WC.rules.length) + " rules for the World Bank's commodity prices";
+      document.getElementById("w-h2").textContent = (words[WC.rules.length] || WC.rules.length) + " rules for world prices";
       document.getElementById("w-checks").hidden = false;
       document.querySelector("#t-wrules tbody").innerHTML = WC.rules.map(function (r) {
         return "<tr><td class='m'><code>" + esc(r[0]) + "</code></td><td>" + esc(r[1]) + "<br><span class='mono muted' style='font-size:11.5px'>" +
           esc(r[2]) + "</span></td><td class='r m'>" + (r[3] ? T.int(r[3]) : "–") + "</td><td class='r'>" + nowW(r[4], r[5], r[6]) + "</td></tr>";
       }).join("");
       document.getElementById("c-wrun").textContent = (WC.validated ? "Latest run " + WC.validated.slice(0, 16).replace("T", " ") + " UTC. " : "") +
-        "Comparisons are the values or months each rule could test. The IMF comparison needs the IMF's figures, read from FRED, the St. Louis Fed's copy; when it can't be reached, the rule compares what was last read.";
+        "Comparisons are the values or months each rule could test. The IMF and diesel figures are read from FRED, the St. Louis Fed's copy, once a day; when it can't be reached, the rules compare what was last read.";
       var wf = document.getElementById("t-wfind");
       wf.innerHTML = "<thead><tr><th>Commodity</th><th>Rule</th><th>How many</th><th>The latest case</th></tr></thead>";
       var tb4 = document.createElement("tbody");

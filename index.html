@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TARIN</title>
-<meta name="description" content="Ghana's consumer price data from GSS, archived at the source, checked by thirteen rules, and published with its provenance.">
+<meta name="description" content="Ghana's consumer price data from GSS, archived at the source, checked by fourteen rules, and published with its provenance.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,7 +91,7 @@
     <div>
       <span class="eyebrow">Ghana · consumer prices · 1998 to <span id="h-latest">August 2026</span></span>
       <h1 style="margin-top:14px">The checked record of Ghana's prices.</h1>
-      <p class="lede">TARIN takes the Ghana Statistical Service's price data from the source, keeps every file it came from, and runs thirteen checks before anything is published. Values that fail stay off the charts, with the reason shown.</p>
+      <p class="lede">TARIN takes the Ghana Statistical Service's price data from the source, keeps every file it came from, and runs fourteen checks before anything is published. Values that fail stay off the charts, with the reason shown.</p>
       <div class="cta">
         <a class="btn primary" href="explorer/index.html">Open the data explorer</a>
         <a class="btn" href="price-record/index.html">Read the price record</a>
@@ -127,14 +127,14 @@
     <div class="read">
       <span class="eyebrow">In the store</span>
       <h2 style="margin-top:6px">Everything on this site comes from one checked store</h2>
-      <p style="margin-top:10px;color:var(--ink-2)">The CPI, <span id="n-tables">19</span> more tables from GSS's StatsBank (GDP, trade, money and interest rates, government finance and debt), the Bank of Ghana's exchange rate for every trading day since 1996, and the World Bank's monthly world commodity prices since 1960. <a href="catalogue/index.html">Browse them in the catalogue</a>.</p>
+      <p style="margin-top:10px;color:var(--ink-2)">The CPI, <span id="n-tables">19</span> more tables from GSS's StatsBank (GDP, trade, money and interest rates, government finance and debt), the Bank of Ghana's exchange rate for every trading day since 1996, the World Bank's monthly world commodity prices since 1960, and world diesel prices from the US Energy Information Administration. <a href="catalogue/index.html">Browse them in the catalogue</a>.</p>
     </div>
     <div class="stats" id="stats">
       <div><b data-k="values">–</b><span>values stored</span></div>
       <div><b data-k="publishable">–</b><span>cleared to publish</span></div>
       <div><b data-k="held">–</b><span>held back by a check</span></div>
       <div><b data-k="series">–</b><span>series</span></div>
-      <div><b data-k="sources">–</b><span>tables, from GSS, the Bank of Ghana and the World Bank</span></div>
+      <div><b data-k="sources">–</b><span>tables, from GSS, the Bank of Ghana, the World Bank and the US EIA</span></div>
       <div><b data-k="files">–</b><span>source files, fingerprinted</span></div>
     </div>
   </section>
@@ -174,7 +174,7 @@
       <a class="door card" href="checks/index.html">
         <span class="k">Method</span>
         <h3>How it's checked</h3>
-        <p>The thirteen rules, what they're holding right now, the problems they found in GSS's data, and every source file.</p>
+        <p>The fourteen rules, what they're holding right now, the problems they found in GSS's data, and every source file.</p>
         <span class="go">See the checks →</span>
       </a>
     </div>
@@ -191,7 +191,7 @@
         <tbody></tbody>
       </table>
     </div>
-    <p class="caption">The two CPI sources overlap from 2021 and are compared month by month. Where they agree, figures come from StatsBank up to January 2026 and from the annex after it. The other StatsBank tables are listed, with their dates, in the <a href="catalogue/index.html">catalogue</a>. The Bank of Ghana's rates are read twice a day; their monthly averages are compared with StatsBank's exchange-rate table. The World Bank's workbook is read at the start of each month; its Brent price is compared with the IMF's.</p>
+    <p class="caption">The two CPI sources overlap from 2021 and are compared month by month. Where they agree, figures come from StatsBank up to January 2026 and from the annex after it. The other StatsBank tables are listed, with their dates, in the <a href="catalogue/index.html">catalogue</a>. The Bank of Ghana's rates are read twice a day; their monthly averages are compared with StatsBank's exchange-rate table. The World Bank's workbook is read at the start of each month; its Brent price is compared with the IMF's. World diesel prices come from the US Energy Information Administration through FRED and are read once a day.</p>
   </section>
 </div>
 </main>
@@ -200,7 +200,7 @@
   <div class="wrap">
     <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
     <span id="site-status" hidden></span>
-    <span>Data: Ghana Statistical Service, Bank of Ghana and the World Bank (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Republished with their provenance.</span>
+    <span>Data: Ghana Statistical Service, Bank of Ghana, the World Bank (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) and the US EIA (via <a href="https://fred.stlouisfed.org/">FRED</a>). Republished with their provenance.</span>
   </div>
 </footer>
 
@@ -347,6 +347,24 @@
       tr4.children[4].textContent = wb.sha256 ? wb.sha256.slice(0, 12) + "…" : "–";
       if (wb.sha256) tr4.children[4].title = wb.sha256;
       tb.appendChild(tr4);
+    }
+    // world diesel prices: the EIA's, through FRED
+    var fu = H.tables && H.tables.fuel;
+    if (fu) {
+      var tr5 = document.createElement("tr");
+      tr5.innerHTML = "<td><b style='font-weight:600;color:var(--ink)'></b></td><td class='m'></td><td><span class='pill'></span></td><td></td><td class='m'></td>";
+      tr5.children[0].firstChild.textContent = "US Energy Information Administration, world diesel prices";
+      tr5.children[1].textContent = (fu.first || "") + " – " + (fu.last ? T.monthLabel(fu.last) : "");
+      var pf = tr5.children[2].firstChild;
+      pf.className = "pill " + (fu.status === "current" ? "ok" : "warn");
+      pf.textContent = (fu.status === "current" ? "Current: " : "Behind: ") + fu.series + " series to " + (fu.last ? T.monthLabel(fu.last) : "?");
+      var a5 = document.createElement("a"); a5.href = fu.url; a5.target = "_blank"; a5.rel = "noopener";
+      a5.textContent = "FRED, New York Harbor spot prices";
+      tr5.children[3].appendChild(a5);
+      if (fu.retrieved) tr5.children[3].appendChild(document.createTextNode(" · retrieved " + fu.retrieved.slice(0, 10)));
+      tr5.children[4].textContent = fu.sha256 ? fu.sha256.slice(0, 12) + "…" : "–";
+      if (fu.sha256) tr5.children[4].title = fu.sha256;
+      tb.appendChild(tr5);
     }
     // the other StatsBank tables, in one row
     if (H.tables) {

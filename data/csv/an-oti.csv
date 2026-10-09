@@ -35,7 +35,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcoti
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-06,281.2765,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2025-12,,held,aggregation
@@ -47,6 +47,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcoti
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2026-06,302.4229,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2026-07,302.7782,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2026-08,302.3138,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2026-09,303.836,ok,
 gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2022-01,107.3421,ok,
 gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2022-02,109.4256,ok,
 gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2022-03,114.9497,ok,
@@ -103,6 +104,7 @@ gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2026-05,236.7319
 gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2026-06,239.3262,ok,
 gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2026-07,238.6172,ok,
 gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2026-08,236.2582,ok,
+gss.cpi.annex,Consumer Price Index,Oti,All products,All sources,2026-09,237.9785,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2022-09,120.8414,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2022-10,120.9373,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2022-11,135.9123,ok,
@@ -139,7 +141,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-05
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-06,205.1276,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2025-12,,held,aggregation
@@ -151,6 +153,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2026-05
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2026-06,214.1175,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2026-07,214.1498,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2026-08,214.7456,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2026-09,214.4922,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2022-09,110.6336,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2022-10,114.1557,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2022-11,114.1557,ok,
@@ -187,7 +190,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-05,12
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-06,123.1519,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2025-12,,held,aggregation
@@ -199,6 +202,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2026-05,13
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2026-06,134.2921,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2026-07,134.2921,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2026-08,134.2921,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2026-09,134.2921,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2022-09,144.2818,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2022-10,148.0604,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2022-11,162.3862,ok,
@@ -235,7 +239,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sour
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-06,271.9441,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-07,231.6411,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-08,231.5327,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-09,230.5732,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-10,230.5398,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-11,230.1743,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2025-12,231.7303,ok,
@@ -247,6 +251,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sour
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2026-06,263.2483,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2026-07,261.4929,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2026-08,254.4468,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2026-09,259.3177,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2022-09,149.3036,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2022-10,150.7957,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2022-11,167.9257,ok,
@@ -283,7 +288,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and rou
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-06,224.1671,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2025-12,,held,aggregation
@@ -295,6 +300,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and rou
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2026-06,232.3633,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2026-07,232.4773,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2026-08,232.4787,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2026-09,232.7308,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2022-09,118.7721,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2022-10,128.0862,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2022-11,144.3559,ok,
@@ -331,7 +337,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-05,208.1751,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-06,205.6466,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2025-12,,held,aggregation
@@ -343,6 +349,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2026-05,210.9866,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2026-06,210.8728,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2026-07,211.0657,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2026-08,211.0811,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2026-09,211.1108,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2022-09,135.9974,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2022-10,134.4996,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2022-11,151.9174,ok,
@@ -379,7 +386,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and oth
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-06,219.092,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2025-12,,held,aggregation
@@ -391,6 +398,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and oth
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2026-06,227.6915,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2026-07,227.8232,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2026-08,230.3603,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2026-09,231.0634,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2022-09,106.0365,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2022-10,106.4804,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2022-11,112.0367,ok,
@@ -427,7 +435,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-06,141.4467,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2025-12,,held,aggregation
@@ -439,6 +447,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2026-06,142.1639,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2026-07,142.1639,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2026-08,142.1639,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2026-09,142.1639,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2022-09,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2022-10,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2022-11,132.1583,ok,
@@ -475,7 +484,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sour
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-06,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2025-12,,held,aggregation
@@ -487,6 +496,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sour
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2026-06,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2026-07,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2026-08,132.1583,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2026-09,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2022-09,145.3248,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2022-10,145.6407,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2022-11,161.3741,ok,
@@ -523,7 +533,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and mis
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-06,243.771,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2025-12,,held,aggregation
@@ -535,6 +545,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and mis
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2026-06,248.7192,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2026-07,248.8803,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2026-08,248.252,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2026-09,248.435,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2022-09,134.6292,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2022-10,134.6401,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2022-11,149.8693,ok,
@@ -571,7 +582,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sourc
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-06,218.6235,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2025-12,,held,aggregation
@@ -583,6 +594,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sourc
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2026-06,224.9856,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2026-07,224.9856,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2026-08,225.0483,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2026-09,225.1676,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2022-09,121.7592,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2022-10,122.8792,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2022-11,130.7359,ok,
@@ -619,7 +631,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,Al
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-06,160.8544,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2025-12,,held,aggregation
@@ -631,6 +643,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,Al
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2026-06,180.6488,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2026-07,180.6488,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2026-08,180.6488,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2026-09,180.6488,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2022-09,165.6075,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2022-10,164.7603,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2022-11,192.1254,ok,
@@ -667,7 +680,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-05,254.1892,ok
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-06,238.3353,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-07,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-08,,held,aggregation
-gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-09,,held,aggregation
+gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-09,,held,same_month_copy
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-10,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-11,,held,aggregation
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2025-12,,held,aggregation
@@ -679,6 +692,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2026-05,244.3456,ok
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2026-06,269.0335,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2026-07,268.7852,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2026-08,272.6405,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2026-09,267.8866,ok,
 gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2022-01,1.7933,ok,
 gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2022-02,1.9409,ok,
 gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2022-03,5.0482,ok,
@@ -735,6 +749,7 @@ gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2026-05,
 gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2026-06,1.0959,ok,
 gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2026-07,-0.2963,ok,
 gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2026-08,-0.9886,ok,
+gss.cpi.annex,Month-on-month inflation (%),Oti,All products,All sources,2026-09,0.7281,ok,
 gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2022-01,13.7242,ok,
 gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2022-02,15.8824,ok,
 gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2022-03,20.9692,ok,
@@ -791,3 +806,4 @@ gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2026-05,-0
 gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2026-06,2.0713,ok,
 gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2026-07,1.7206,ok,
 gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2026-08,1.5272,ok,
+gss.cpi.annex,Year-on-year inflation (%),Oti,All products,All sources,2026-09,2.7527,ok,

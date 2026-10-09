@@ -366,7 +366,7 @@ bog_fx.us-dollar-usd-monthly-average.m,monthly,US Dollar (USD),Monthly average,2
 bog_fx.us-dollar-usd-monthly-average.m,monthly,US Dollar (USD),Monthly average,2026-07,11.5422909091,11.5422909091,ok,,
 bog_fx.us-dollar-usd-monthly-average.m,monthly,US Dollar (USD),Monthly average,2026-08,11.3348619048,11.3348619048,ok,,
 bog_fx.us-dollar-usd-monthly-average.m,monthly,US Dollar (USD),Monthly average,2026-09,11.5011952381,11.5011952381,ok,,
-bog_fx.us-dollar-usd-monthly-average.m,monthly,US Dollar (USD),Monthly average,2026-10,11.764,11.764,ok,,provisional (month to date)
+bog_fx.us-dollar-usd-monthly-average.m,monthly,US Dollar (USD),Monthly average,2026-10,11.7666666667,11.7666666667,ok,,provisional (month to date)
 bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,1996-01,0.14975,0.14975,ok,,
 bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,1996-02,0.1542365,0.1542365,ok,,
 bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,1996-03,0.1581865,0.1581865,ok,,
@@ -734,7 +734,7 @@ bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,2026-06
 bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,2026-07,11.69,11.69,ok,,
 bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,2026-08,11.25,11.25,ok,,
 bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,2026-09,11.71,11.71,ok,,
-bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,2026-10,11.83,11.83,ok,,provisional (month to date)
+bog_fx.us-dollar-usd-end-of-month.m,monthly,US Dollar (USD),End of month,2026-10,11.78,11.78,ok,,provisional (month to date)
 bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,1996-01,0.2241460455,0.2241460455,ok,,
 bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,1996-02,0.2331819,0.2331819,ok,,
 bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,1996-03,0.2384947,0.2384947,ok,,
@@ -1102,7 +1102,7 @@ bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly
 bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,2026-07,15.4474227273,15.4474227273,ok,,
 bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,2026-08,15.3492142857,15.3492142857,ok,,
 bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,2026-09,15.4264047619,15.4264047619,ok,,
-bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,2026-10,15.55606,15.55606,ok,,provisional (month to date)
+bog_fx.pound-sterling-gbp-monthly-average.m,monthly,Pound Sterling (GBP),Monthly average,2026-10,15.5564666667,15.5564666667,ok,,provisional (month to date)
 bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,1996-01,0.2255615,0.2255615,ok,,
 bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,1996-02,0.236221,0.236221,ok,,
 bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,1996-03,0.241425,0.241425,ok,,
@@ -1470,7 +1470,7 @@ bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of mon
 bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,2026-07,15.7412,15.7412,ok,,
 bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,2026-08,15.2432,15.2432,ok,,
 bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,2026-09,15.5298,15.5298,ok,,
-bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,2026-10,15.6268,15.6268,ok,,provisional (month to date)
+bog_fx.pound-sterling-gbp-end-of-month.m,monthly,Pound Sterling (GBP),End of month,2026-10,15.5585,15.5585,ok,,provisional (month to date)
 bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2006-08,1.1789349118,1.1789349118,ok,,
 bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2006-09,1.1758116905,1.1758116905,warn,FX5_statsbank,
 bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2006-10,1.1651340238,1.1651340238,warn,FX5_statsbank,
@@ -1713,7 +1713,7 @@ bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2026-06,13.
 bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2026-07,13.1835,13.1835,ok,,
 bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2026-08,13.1381904762,13.1381904762,ok,,
 bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2026-09,13.2396619048,13.2396619048,ok,,
-bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2026-10,13.20846,13.20846,ok,,provisional (month to date)
+bog_fx.euro-eur-monthly-average.m,monthly,Euro (EUR),Monthly average,2026-10,13.2041166667,13.2041166667,ok,,provisional (month to date)
 bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2006-08,1.18169,1.18169,ok,,
 bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2006-09,1.1732715,1.1732715,ok,,
 bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2006-10,1.168011,1.168011,ok,,
@@ -1956,7 +1956,7 @@ bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2026-06,12.9535,1
 bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2026-07,13.4609,13.4609,ok,,
 bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2026-08,13.0681,13.0681,ok,,
 bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2026-09,13.2785,13.2785,ok,,
-bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2026-10,13.2375,13.2375,ok,,provisional (month to date)
+bog_fx.euro-eur-end-of-month.m,monthly,Euro (EUR),End of month,2026-10,13.1824,13.1824,ok,,provisional (month to date)
 bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,1996-01,0.0620506591,0.0620506591,ok,,
 bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,1996-02,0.0651821,0.0651821,ok,,
 bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,1996-03,0.068214375,0.068214375,ok,,
@@ -2324,7 +2324,7 @@ bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),M
 bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,2026-07,8.0447772727,8.0447772727,ok,,
 bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,2026-08,8.0492333333,8.0492333333,ok,,
 bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,2026-09,8.1864571429,8.1864571429,ok,,
-bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,2026-10,8.18088,8.18088,ok,,provisional (month to date)
+bog_fx.australian-dollar-aud-monthly-average.m,monthly,Australian Dollar (AUD),Monthly average,2026-10,8.18135,8.18135,ok,,provisional (month to date)
 bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,1996-01,0.0633175,0.0633175,ok,,
 bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,1996-02,0.066753,0.066753,ok,,
 bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,1996-03,0.069789,0.069789,ok,,
@@ -2692,7 +2692,7 @@ bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End 
 bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,2026-07,8.2114,8.2114,ok,,
 bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,2026-08,8.0614,8.0614,ok,,
 bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,2026-09,8.1369,8.1369,ok,,
-bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,2026-10,8.2346,8.2346,ok,,provisional (month to date)
+bog_fx.australian-dollar-aud-end-of-month.m,monthly,Australian Dollar (AUD),End of month,2026-10,8.1837,8.1837,ok,,provisional (month to date)
 bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2007-07,0.0019417017,0.0019417017,ok,,
 bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2007-08,0.001927234,0.001927234,ok,,
 bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2007-09,0.0019770489,0.0019770489,ok,,
@@ -2924,7 +2924,7 @@ bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2
 bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2026-07,0.0200980714,0.0200980714,ok,,
 bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2026-08,0.0200289881,0.0200289881,ok,,
 bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2026-09,0.0201836687,0.0201836687,ok,,
-bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2026-10,0.0201361316,0.0201361316,ok,,provisional (month to date)
+bog_fx.cfa-franc-xof-monthly-average.m,monthly,CFA Franc (XOF),Monthly average,2026-10,0.0201295,0.0201295,ok,,provisional (month to date)
 bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2007-07,0.0019409373,0.0019409373,ok,,
 bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2007-08,0.0019368772,0.0019368772,ok,,
 bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2007-09,0.0020264656,0.0020264656,ok,,
@@ -3156,7 +3156,7 @@ bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2026-06
 bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2026-07,0.0205209868,0.0205209868,ok,,
 bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2026-08,0.0199221046,0.0199221046,ok,,
 bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2026-09,0.020242874,0.020242874,ok,,
-bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2026-10,0.0201804129,0.0201804129,ok,,provisional (month to date)
+bog_fx.cfa-franc-xof-end-of-month.m,monthly,CFA Franc (XOF),End of month,2026-10,0.0200963419,0.0200963419,ok,,provisional (month to date)
 bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,1996-01,0.1075255227,0.1075255227,ok,,
 bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,1996-02,0.11043915,0.11043915,ok,,
 bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,1996-03,0.114363925,0.114363925,ok,,
@@ -3524,7 +3524,7 @@ bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Month
 bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,2026-07,8.1833454545,8.1833454545,ok,,
 bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,2026-08,8.151647619,8.151647619,ok,,
 bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,2026-09,8.236252381,8.236252381,ok,,
-bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,2026-10,8.25786,8.25786,ok,,provisional (month to date)
+bog_fx.canadian-dollar-cad-monthly-average.m,monthly,Canadian Dollar (CAD),Monthly average,2026-10,8.2597833333,8.2597833333,ok,,provisional (month to date)
 bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,1996-01,0.1084895,0.1084895,ok,,
 bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,1996-02,0.112341,0.112341,ok,,
 bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,1996-03,0.115999,0.115999,ok,,
@@ -3892,7 +3892,7 @@ bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of m
 bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,2026-07,8.3333,8.3333,ok,,
 bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,2026-08,8.1172,8.1172,ok,,
 bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,2026-09,8.2371,8.2371,ok,,
-bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,2026-10,8.2958,8.2958,ok,,provisional (month to date)
+bog_fx.canadian-dollar-cad-end-of-month.m,monthly,Canadian Dollar (CAD),End of month,2026-10,8.2694,8.2694,ok,,provisional (month to date)
 bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2013-10,0.3285954545,0.3285954545,ok,,
 bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2013-11,0.338055,0.338055,ok,,
 bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2013-12,0.3470736842,0.3470736842,ok,,
@@ -4049,7 +4049,7 @@ bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly ave
 bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2026-07,1.7034681818,1.7034681818,ok,,
 bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2026-08,1.6827095238,1.6827095238,ok,,
 bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2026-09,1.7141761905,1.7141761905,ok,,
-bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2026-10,1.74894,1.74894,ok,,provisional (month to date)
+bog_fx.chinese-yuan-cny-monthly-average.m,monthly,Chinese Yuan (CNY),Monthly average,2026-10,1.7502666667,1.7502666667,ok,,provisional (month to date)
 bog_fx.chinese-yuan-cny-end-of-month.m,monthly,Chinese Yuan (CNY),End of month,2013-10,0.3324,0.3324,ok,,
 bog_fx.chinese-yuan-cny-end-of-month.m,monthly,Chinese Yuan (CNY),End of month,2013-11,0.3417,0.3417,ok,,
 bog_fx.chinese-yuan-cny-end-of-month.m,monthly,Chinese Yuan (CNY),End of month,2013-12,0.3566,0.3566,ok,,
@@ -4574,7 +4574,7 @@ bog_fx.danish-krone-dkk-monthly-average.m,monthly,Danish Krone (DKK),Monthly ave
 bog_fx.danish-krone-dkk-monthly-average.m,monthly,Danish Krone (DKK),Monthly average,2026-07,1.7636454545,1.7636454545,ok,,
 bog_fx.danish-krone-dkk-monthly-average.m,monthly,Danish Krone (DKK),Monthly average,2026-08,1.7575095238,1.7575095238,ok,,
 bog_fx.danish-krone-dkk-monthly-average.m,monthly,Danish Krone (DKK),Monthly average,2026-09,1.7711666667,1.7711666667,ok,,
-bog_fx.danish-krone-dkk-monthly-average.m,monthly,Danish Krone (DKK),Monthly average,2026-10,1.76706,1.76706,ok,,provisional (month to date)
+bog_fx.danish-krone-dkk-monthly-average.m,monthly,Danish Krone (DKK),Monthly average,2026-10,1.7664833333,1.7664833333,ok,,provisional (month to date)
 bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,1996-01,0.0259715,0.0259715,ok,,
 bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,1996-02,0.0271645,0.0271645,ok,,
 bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,1996-03,0.0277685,0.0277685,ok,,
@@ -4942,7 +4942,7 @@ bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,2
 bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,2026-07,1.8009,1.8009,ok,,
 bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,2026-08,1.7482,1.7482,ok,,
 bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,2026-09,1.7762,1.7762,ok,,
-bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,2026-10,1.7709,1.7709,ok,,provisional (month to date)
+bog_fx.danish-krone-dkk-end-of-month.m,monthly,Danish Krone (DKK),End of month,2026-10,1.7636,1.7636,ok,,provisional (month to date)
 bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2007-07,0.0322075055,0.0322075055,ok,,
 bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2007-08,0.0322281276,0.0322281276,ok,,
 bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2007-09,0.0322494093,0.0322494093,ok,,
@@ -5174,7 +5174,7 @@ bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly
 bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2026-07,0.1576865045,0.1576865045,ok,,
 bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2026-08,0.1540525035,0.1540525035,ok,,
 bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2026-09,0.1568805729,0.1568805729,ok,,
-bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2026-10,0.1598047346,0.1598047346,ok,,provisional (month to date)
+bog_fx.gambian-dalasi-gmd-monthly-average.m,monthly,Gambian Dalasi (GMD),Monthly average,2026-10,0.1597670642,0.1597670642,ok,,provisional (month to date)
 bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2007-07,0.0322268772,0.0322268772,ok,,
 bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2007-08,0.0322320709,0.0322320709,ok,,
 bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2007-09,0.0322580645,0.0322580645,ok,,
@@ -5406,7 +5406,7 @@ bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of mon
 bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2026-07,0.1588410954,0.1588410954,ok,,
 bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2026-08,0.1522116351,0.1522116351,ok,,
 bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2026-09,0.1600435318,0.1600435318,ok,,
-bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2026-10,0.1600384092,0.1600384092,ok,,provisional (month to date)
+bog_fx.gambian-dalasi-gmd-end-of-month.m,monthly,Gambian Dalasi (GMD),End of month,2026-10,0.1595787122,0.1595787122,ok,,provisional (month to date)
 bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,1996-01,0.0013913636,0.0013913636,ok,,
 bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,1996-02,0.0014356,0.0014356,ok,,
 bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,1996-03,0.0014747,0.0014747,ok,,
@@ -5774,7 +5774,7 @@ bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly ave
 bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,2026-07,0.0711409091,0.0711409091,ok,,
 bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,2026-08,0.0713904762,0.0713904762,ok,,
 bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,2026-09,0.073647619,0.073647619,ok,,
-bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,2026-10,0.07454,0.07454,ok,,provisional (month to date)
+bog_fx.japanese-yen-jpy-monthly-average.m,monthly,Japanese Yen (JPY),Monthly average,2026-10,0.0745333333,0.0745333333,ok,,provisional (month to date)
 bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,1996-01,0.0013985,0.0013985,ok,,
 bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,1996-02,0.001474,0.001474,ok,,
 bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,1996-03,0.0014865,0.0014865,ok,,
@@ -6142,7 +6142,7 @@ bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,2
 bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,2026-07,0.0734,0.0734,ok,,
 bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,2026-08,0.0705,0.0705,ok,,
 bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,2026-09,0.0745,0.0745,ok,,
-bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,2026-10,0.0749,0.0749,ok,,provisional (month to date)
+bog_fx.japanese-yen-jpy-end-of-month.m,monthly,Japanese Yen (JPY),End of month,2026-10,0.0745,0.0745,ok,,provisional (month to date)
 bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2007-07,0.0041721883,0.0041721883,ok,,
 bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2007-08,0.0041747605,0.0041747605,ok,,
 bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2007-09,0.0041774893,0.0041774893,ok,,
@@ -6374,7 +6374,7 @@ bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MR
 bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2026-07,0.0322861038,0.0322861038,ok,,
 bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2026-08,0.0317058711,0.0317058711,ok,,
 bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2026-09,0.0321711492,0.0321711492,ok,,
-bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2026-10,0.0329062776,0.0329062776,ok,,provisional (month to date)
+bog_fx.mauritanian-ouguiya-mro-monthly-average.m,monthly,Mauritanian Ouguiya (MRO),Monthly average,2026-10,0.03291373,0.03291373,ok,,provisional (month to date)
 bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2007-07,0.0041748424,0.0041748424,ok,,
 bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2007-08,0.0041752782,0.0041752782,ok,,
 bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2007-09,0.0041786804,0.0041786804,ok,,
@@ -6606,7 +6606,7 @@ bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),
 bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2026-07,0.032699294,0.032699294,ok,,
 bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2026-08,0.0314685095,0.0314685095,ok,,
 bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2026-09,0.032755204,0.032755204,ok,,
-bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2026-10,0.0330908874,0.0330908874,ok,,provisional (month to date)
+bog_fx.mauritanian-ouguiya-mro-end-of-month.m,monthly,Mauritanian Ouguiya (MRO),End of month,2026-10,0.032950992,0.032950992,ok,,provisional (month to date)
 bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,1996-01,0.0971548409,0.0971548409,ok,,
 bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,1996-02,0.102533675,0.102533675,ok,,
 bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,1996-03,0.10636875,0.10636875,ok,,
@@ -6937,7 +6937,7 @@ bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD)
 bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,2026-07,6.6747318182,6.6747318182,ok,,
 bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,2026-08,6.6953285714,6.6953285714,ok,,
 bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,2026-09,6.6321857143,6.6321857143,ok,,
-bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,2026-10,6.59328,6.59328,ok,,provisional (month to date)
+bog_fx.new-zealand-dollar-nzd-monthly-average.m,monthly,New Zealand Dollar (NZD),Monthly average,2026-10,6.5927,6.5927,ok,,provisional (month to date)
 bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,1996-01,0.1003865,0.1003865,ok,,
 bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,1996-02,0.10382,0.10382,ok,,
 bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,1996-03,0.107495,0.107495,ok,,
@@ -7268,7 +7268,7 @@ bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),En
 bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,2026-07,6.8703,6.8703,ok,,
 bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,2026-08,6.656,6.656,ok,,
 bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,2026-09,6.6002,6.6002,ok,,
-bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,2026-10,6.6188,6.6188,ok,,provisional (month to date)
+bog_fx.new-zealand-dollar-nzd-end-of-month.m,monthly,New Zealand Dollar (NZD),End of month,2026-10,6.5898,6.5898,ok,,provisional (month to date)
 bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2007-07,0.0071203305,0.0071203305,ok,,
 bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2007-08,0.0071241689,0.0071241689,ok,,
 bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2007-09,0.0071300013,0.0071300013,ok,,
@@ -7500,7 +7500,7 @@ bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly
 bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2026-07,0.0084036869,0.0084036869,ok,,
 bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2026-08,0.0083715999,0.0083715999,ok,,
 bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2026-09,0.008665032,0.008665032,ok,,
-bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2026-10,0.0088453918,0.0088453918,ok,,provisional (month to date)
+bog_fx.nigerian-naira-ngn-monthly-average.m,monthly,Nigerian Naira (NGN),Monthly average,2026-10,0.0088453047,0.0088453047,ok,,provisional (month to date)
 bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2007-07,0.0071247907,0.0071247907,ok,,
 bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2007-08,0.0071252984,0.0071252984,ok,,
 bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2007-09,0.0071364853,0.0071364853,ok,,
@@ -7732,7 +7732,7 @@ bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of mon
 bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2026-07,0.0085516352,0.0085516352,ok,,
 bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2026-08,0.0084107119,0.0084107119,ok,,
 bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2026-09,0.0088042119,0.0088042119,ok,,
-bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2026-10,0.0088902244,0.0088902244,ok,,provisional (month to date)
+bog_fx.nigerian-naira-ngn-end-of-month.m,monthly,Nigerian Naira (NGN),End of month,2026-10,0.008844869,0.008844869,ok,,provisional (month to date)
 bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,1996-01,0.0228971591,0.0228971591,ok,,
 bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,1996-02,0.023693195,0.023693195,ok,,
 bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,1996-03,0.0242988,0.0242988,ok,,
@@ -8100,7 +8100,7 @@ bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Month
 bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,2026-07,1.1908454545,1.1908454545,ok,,
 bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,2026-08,1.2026619048,1.2026619048,ok,,
 bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,2026-09,1.2255857143,1.2255857143,ok,,
-bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,2026-10,1.22536,1.22536,ok,,provisional (month to date)
+bog_fx.norwegian-krone-nok-monthly-average.m,monthly,Norwegian Krone (NOK),Monthly average,2026-10,1.2260333333,1.2260333333,ok,,provisional (month to date)
 bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,1996-01,0.0229515,0.0229515,ok,,
 bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,1996-02,0.024106,0.024106,ok,,
 bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,1996-03,0.024688,0.024688,ok,,
@@ -8468,7 +8468,7 @@ bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of m
 bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,2026-07,1.2315,1.2315,ok,,
 bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,2026-08,1.2038,1.2038,ok,,
 bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,2026-09,1.2184,1.2184,ok,,
-bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,2026-10,1.2348,1.2348,ok,,provisional (month to date)
+bog_fx.norwegian-krone-nok-end-of-month.m,monthly,Norwegian Krone (NOK),End of month,2026-10,1.2294,1.2294,ok,,provisional (month to date)
 bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2007-07,0.3119868466,0.3119868466,ok,,
 bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2007-08,0.3121202251,0.3121202251,ok,,
 bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2007-09,0.3123908003,0.3123908003,ok,,
@@ -8700,7 +8700,7 @@ bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (
 bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2026-07,0.4794718382,0.4794718382,ok,,
 bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2026-08,0.4707382845,0.4707382845,ok,,
 bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2026-09,0.4765197393,0.4765197393,ok,,
-bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2026-10,0.4888199878,0.4888199878,ok,,provisional (month to date)
+bog_fx.sierra-leonean-leone-sle-monthly-average.m,monthly,Sierra Leonean Leone (SLE),Monthly average,2026-10,0.4889333599,0.4889333599,ok,,provisional (month to date)
 bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2007-07,0.3119871711,0.3119871711,ok,,
 bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2007-08,0.312223877,0.312223877,ok,,
 bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2007-09,0.3124780289,0.3124780289,ok,,
@@ -8932,7 +8932,7 @@ bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE
 bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2026-07,0.4858263325,0.4858263325,ok,,
 bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2026-08,0.4658547781,0.4658547781,ok,,
 bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2026-09,0.485271995,0.485271995,ok,,
-bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2026-10,0.4917387884,0.4917387884,ok,,provisional (month to date)
+bog_fx.sierra-leonean-leone-sle-end-of-month.m,monthly,Sierra Leonean Leone (SLE),End of month,2026-10,0.4895002203,0.4895002203,ok,,provisional (month to date)
 bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2006-08,0.1317579474,0.1317579474,ok,,
 bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2006-09,0.1243145,0.1243145,ok,,
 bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2006-10,0.1203683333,0.1203683333,ok,,
@@ -9175,7 +9175,7 @@ bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR)
 bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2026-07,0.7005954545,0.7005954545,ok,,
 bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2026-08,0.7010095238,0.7010095238,ok,,
 bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2026-09,0.7095666667,0.7095666667,ok,,
-bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2026-10,0.70694,0.70694,ok,,provisional (month to date)
+bog_fx.south-african-rand-zar-monthly-average.m,monthly,South African Rand (ZAR),Monthly average,2026-10,0.7069166667,0.7069166667,ok,,provisional (month to date)
 bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2006-08,0.1296225,0.1296225,ok,,
 bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2006-09,0.120098,0.120098,ok,,
 bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2006-10,0.121375,0.121375,ok,,
@@ -9418,7 +9418,7 @@ bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),En
 bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2026-07,0.7066,0.7066,ok,,
 bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2026-08,0.6982,0.6982,ok,,
 bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2026-09,0.7124,0.7124,ok,,
-bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2026-10,0.7117,0.7117,ok,,provisional (month to date)
+bog_fx.south-african-rand-zar-end-of-month.m,monthly,South African Rand (ZAR),End of month,2026-10,0.7068,0.7068,ok,,provisional (month to date)
 bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,1996-01,0.0218640227,0.0218640227,ok,,
 bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,1996-02,0.022065875,0.022065875,ok,,
 bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,1996-03,0.023210525,0.023210525,ok,,
@@ -9786,7 +9786,7 @@ bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly a
 bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,2026-07,1.1936772727,1.1936772727,ok,,
 bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,2026-08,1.191052381,1.191052381,ok,,
 bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,2026-09,1.1781428571,1.1781428571,ok,,
-bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,2026-10,1.17264,1.17264,ok,,provisional (month to date)
+bog_fx.swedish-krona-sek-monthly-average.m,monthly,Swedish Krona (SEK),Monthly average,2026-10,1.1733666667,1.1733666667,ok,,provisional (month to date)
 bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,1996-01,0.02155,0.02155,ok,,
 bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,1996-02,0.0229075,0.0229075,ok,,
 bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,1996-03,0.023704,0.023704,ok,,
@@ -10154,7 +10154,7 @@ bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month
 bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,2026-07,1.2266,1.2266,ok,,
 bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,2026-08,1.1745,1.1745,ok,,
 bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,2026-09,1.1707,1.1707,ok,,
-bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,2026-10,1.1811,1.1811,ok,,provisional (month to date)
+bog_fx.swedish-krona-sek-end-of-month.m,monthly,Swedish Krona (SEK),End of month,2026-10,1.177,1.177,ok,,provisional (month to date)
 bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,1996-01,0.1235354773,0.1235354773,ok,,
 bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,1996-02,0.12698185,0.12698185,ok,,
 bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,1996-03,0.13057975,0.13057975,ok,,
@@ -10522,7 +10522,7 @@ bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly avera
 bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,2026-07,14.2412636364,14.2412636364,ok,,
 bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,2026-08,14.035252381,14.035252381,ok,,
 bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,2026-09,14.0362428571,14.0362428571,ok,,
-bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,2026-10,14.15222,14.15222,ok,,provisional (month to date)
+bog_fx.swiss-franc-chf-monthly-average.m,monthly,Swiss Franc (CHF),Monthly average,2026-10,14.14925,14.14925,ok,,provisional (month to date)
 bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,1996-01,0.1231995,0.1231995,ok,,
 bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,1996-02,0.1288535,0.1288535,ok,,
 bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,1996-03,0.13299,0.13299,ok,,
@@ -10890,7 +10890,7 @@ bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,202
 bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,2026-07,14.458,14.458,ok,,
 bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,2026-08,13.9176,13.9176,ok,,
 bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,2026-09,14.0199,14.0199,ok,,
-bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,2026-10,14.1888,14.1888,ok,,provisional (month to date)
+bog_fx.swiss-franc-chf-end-of-month.m,monthly,Swiss Franc (CHF),End of month,2026-10,14.1344,14.1344,ok,,provisional (month to date)
 bog_fx.ecowas-unit-wau-monthly-average.m,monthly,Ecowas Unit (WAU),Monthly average,2006-08,0.6522322632,0.6522322632,ok,,
 bog_fx.ecowas-unit-wau-monthly-average.m,monthly,Ecowas Unit (WAU),Monthly average,2006-09,0.6527360714,0.6527360714,ok,,
 bog_fx.ecowas-unit-wau-monthly-average.m,monthly,Ecowas Unit (WAU),Monthly average,2006-10,0.652721119,0.652721119,ok,,
@@ -11376,4 +11376,4 @@ bog_fx.ecowas-unit-wau-end-of-month.m,monthly,Ecowas Unit (WAU),End of month,202
 bog_fx.ecowas-unit-wau-end-of-month.m,monthly,Ecowas Unit (WAU),End of month,2026-07,0.0125,0.0125,ok,,
 bog_fx.ecowas-unit-wau-end-of-month.m,monthly,Ecowas Unit (WAU),End of month,2026-08,0.0135,0.0135,ok,,
 bog_fx.ecowas-unit-wau-end-of-month.m,monthly,Ecowas Unit (WAU),End of month,2026-09,0.0124,0.0124,ok,,
-bog_fx.ecowas-unit-wau-end-of-month.m,monthly,Ecowas Unit (WAU),End of month,2026-10,0.0122,0.0122,ok,,provisional (month to date)
+bog_fx.ecowas-unit-wau-end-of-month.m,monthly,Ecowas Unit (WAU),End of month,2026-10,0.0123,0.0123,ok,,provisional (month to date)

@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>TARIN</title>
 <meta name="description" content="Ghana's consumer price data from GSS, archived at the source, checked by fourteen rules, and published with its provenance.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TARIN">
+<meta property="og:title" content="TARIN · The checked record of Ghana&#x27;s prices">
+<meta property="og:description" content="Ghana's consumer price data from GSS, archived at the source, checked by fourteen rules, and published with its provenance.">
+<meta property="og:url" content="https://bboafo.github.io/tarin/">
+<meta property="og:image" content="https://bboafo.github.io/tarin/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<link rel="stylesheet" href="assets/tarin.css?v=d83ae6c8ff">
+<link rel="stylesheet" href="assets/tarin.css?v=130c99661e">
 <style>
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
 .hero .hex { position: absolute; inset: 0; pointer-events: none; opacity: 0.55; }
@@ -168,7 +178,7 @@
       <a class="door card" href="forecast/index.html">
         <span class="k">Forecast</span>
         <h3>Inflation forecast</h3>
-        <p>Headline inflation to December, with honest ranges. Frozen before GSS publishes, then scored against what it publishes.</p>
+        <p>Headline inflation four months ahead, with honest ranges, and a second forecast that adds the cedi. Frozen before GSS publishes, then scored against what it publishes.</p>
         <span class="go">See the forecast →</span>
       </a>
       <a class="door card" href="checks/index.html">
@@ -186,7 +196,7 @@
       <h2 style="margin-top:6px">Where the numbers come from, and how fresh they are</h2>
     </div>
     <div class="tbl-wrap">
-      <table class="data" id="t-src">
+      <table class="data stack" id="t-src">
         <thead><tr><th>Source</th><th>Covers</th><th>Status</th><th>Latest file</th><th>SHA-256</th></tr></thead>
         <tbody></tbody>
       </table>
@@ -204,7 +214,7 @@
   </div>
 </footer>
 
-<script src="assets/tarin.js?v=1829f2cf33"></script>
+<script src="assets/tarin.js?v=9756a9e725"></script>
 <script>
 (function () {
   "use strict";
@@ -379,6 +389,8 @@
       tr2.children[3].appendChild(a2);
       tb.appendChild(tr2);
     }
+    T.stackLabels(document.getElementById("t-src"));
+    Array.prototype.forEach.call(document.querySelectorAll("#t-src tbody tr"), function (tr) { if (tr.children[3]) tr.children[3].classList.add("wide"); });
   }).catch(function (e) { T.fail(document.getElementById("spark"), e); });
 })();
 </script>

@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>How it's checked · TARIN</title>
 <meta name="description" content="The fourteen rules every TARIN value passes, what they are holding back now, the problems they found in GSS's data, and every source file.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TARIN">
+<meta property="og:title" content="How it&#x27;s checked · TARIN">
+<meta property="og:description" content="The fourteen rules every TARIN value passes, what they are holding back now, the problems they found in GSS's data, and every source file.">
+<meta property="og:url" content="https://bboafo.github.io/tarin/checks/">
+<meta property="og:image" content="https://bboafo.github.io/tarin/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<link rel="stylesheet" href="../assets/tarin.css?v=d83ae6c8ff">
+<link rel="stylesheet" href="../assets/tarin.css?v=130c99661e">
 <style>
 .flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 22px; counter-reset: step; }
 .step { position: relative; display: grid; gap: 6px; align-content: start; padding: 14px; }
@@ -58,8 +68,10 @@
     <h1>How every number is checked</h1>
     <p class="lede">TARIN reproduces what the Ghana Statistical Service publishes; it doesn't adjust it. What it adds is proof: every value keeps the file it came from, and fourteen rules test it before it reaches a chart, with <a href="#tables-checks">eight more</a> for the other StatsBank tables, <a href="#fx-checks">five</a> for the Bank of Ghana's exchange rates and <a href="#w-checks">five</a> for world prices. <span id="c-totals"></span></p>
   </div>
+  <nav class="toc" aria-label="On this page"><span>On this page</span><a href="#path">The path</a><a href="#rules">CPI rules</a><a href="#regions">Held by region</a><a href="#problems">Problems found</a><a href="#tables-checks">Other tables</a><a href="#fx-checks">Exchange rates</a><a href="#w-checks">World prices</a><a href="#revisions">Revisions</a><a href="#files">Source files</a></nav>
 
-  <section class="block">
+
+  <section class="block" id="path">
     <div class="read"><span class="eyebrow">The path</span><h2 style="margin-top:6px">From a GSS file to a published value</h2></div>
     <div class="flow">
       <div class="step card"><b>Fetch</b><span>StatsBank through its public API; the monthly annex workbook downloaded from statsghana.gov.gh.</span></div>
@@ -70,7 +82,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="rules">
     <div class="read">
       <span class="eyebrow">The rules</span>
       <h2 style="margin-top:6px">Fourteen rules, and what each is holding right now</h2>
@@ -85,7 +97,7 @@
     <p class="caption" id="c-run"></p>
   </section>
 
-  <section class="block">
+  <section class="block" id="regions">
     <div class="read">
       <span class="eyebrow">Where the holds are</span>
       <h2 style="margin-top:6px">Two regions account for most of what's held</h2>
@@ -97,7 +109,7 @@
     <p class="caption">Values held, by region and source, largest ten regions. <b>Hover or tap</b> a bar.</p>
   </section>
 
-  <section class="block">
+  <section class="block" id="problems">
     <div class="read">
       <span class="eyebrow">What the checks found</span>
       <h2 style="margin-top:6px">Five problems in GSS's own data</h2>
@@ -192,15 +204,16 @@
     <div class="tbl-wrap"><table class="data" id="t-wfind"></table></div>
   </section>
 
-  <section class="block">
+  <section class="block" id="revisions">
     <div class="read">
       <span class="eyebrow">Revisions</span>
       <h2 style="margin-top:6px">When GSS changes a number, both versions are kept</h2>
     </div>
     <div class="tbl-wrap"><table class="data" id="t-rev"></table></div>
+    <button type="button" class="more-btn" id="rev-more" hidden></button>
   </section>
 
-  <section class="block">
+  <section class="block" id="files">
     <div class="read">
       <span class="eyebrow">Source files</span>
       <h2 style="margin-top:6px">Every file behind the data</h2>
@@ -219,7 +232,7 @@
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=1829f2cf33"></script>
+<script src="../assets/tarin.js?v=9756a9e725"></script>
 <script>
 (function () {
   "use strict";
@@ -308,13 +321,37 @@
     bars(); T.onResize(bars);
 
     // revisions
-    var rv = K.revisions;
+    var rvAll = K.revisions, REV_GROUPS = 6, revOpen = false;
+    // the latest revisions first: each value GSS changed, with its versions side by side
+    var groups = {}, gOrder = [];
+    rvAll.forEach(function (r) {
+      var k = [r.source_key, r.indicator, r.region, r.product, r.source_split, r.period].join("|");
+      if (!groups[k]) { groups[k] = []; gOrder.push(k); }
+      groups[k].push(r);
+    });
+    var latestSeen = function (k) { return groups[k].reduce(function (m, r) { return r.first_seen_at > m ? r.first_seen_at : m; }, ""); };
+    gOrder.sort(function (a, b) { var x = latestSeen(a), y = latestSeen(b); return x < y ? 1 : x > y ? -1 : 0; });
+    var REV_SHOWN = gOrder.slice(0, REV_GROUPS).reduce(function (n, k) { return n + groups[k].length; }, 0);
+    function revRows() {
+    var rv = revOpen ? rvAll : [].concat.apply([], gOrder.slice(0, REV_GROUPS).map(function (k) { return groups[k]; }));
     document.getElementById("t-rev").innerHTML = "<thead><tr><th>Series</th><th>Month</th><th class='r'>Value</th><th>State</th><th>First seen</th></tr></thead><tbody>" +
       (rv.length ? rv.map(function (r) {
         return "<tr><td>" + esc(r.region + " · " + r.product + " · " + (r.indicator === "Consumer Price Index" ? "index" : r.indicator)) + "<br><span class='mono muted' style='font-size:11.5px'>" +
           (r.source_key === "gss.cpi" ? "StatsBank" : "GSS annex") + "</span></td><td class='m'>" + r.period + "</td><td class='r m'>" + r.value +
           "</td><td>" + (r.state === "current" ? "<span class='pill ok'>current</span>" : "<span class='pill idle'>superseded</span>") + "</td><td class='m'>" + r.first_seen_at.slice(0, 10) + "</td></tr>";
       }).join("") : "<tr><td colspan='5'>No revisions recorded yet.</td></tr>") + "</tbody>";
+    }
+    revRows();
+    var rb = document.getElementById("rev-more");
+    if (rvAll.length > REV_SHOWN) {
+      rb.hidden = false;
+      rb.textContent = "Show all " + T.int(rvAll.length) + " (oldest first)";
+      rb.addEventListener("click", function () {
+        revOpen = !revOpen; revRows();
+        rb.textContent = revOpen ? "Show only the latest" : "Show all " + T.int(rvAll.length) + " (oldest first)";
+        if (!revOpen) document.getElementById("revisions").scrollIntoView({ block: "start" });
+      });
+    }
     var note = document.createElement("p"); note.className = "caption";
     note.textContent = "The November 2024 Non-food index read 224.3 in seven annex workbooks (December 2025 to July 2026) and 223.90 in August's.";
     document.getElementById("t-rev").parentNode.after(note);

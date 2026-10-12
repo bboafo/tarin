@@ -338,5 +338,18 @@
     }).catch(function () { /* no status file yet: say nothing */ });
   })();
 
+  // phones: the nav scrolls sideways; start it with the current page in view
+  (function () {
+    var nav = document.querySelector("nav.main"), cur = nav && nav.querySelector("[aria-current]");
+    if (nav && cur && nav.scrollWidth > nav.clientWidth) nav.scrollLeft = Math.max(0, cur.offsetLeft - 24);
+  })();
+  // give each cell of a .stack table its column name (shown above the value on phones)
+  T.stackLabels = function (table) {
+    var heads = Array.prototype.map.call(table.querySelectorAll("thead th"), function (th) { return th.textContent.trim(); });
+    Array.prototype.forEach.call(table.querySelectorAll("tbody tr"), function (tr) {
+      Array.prototype.forEach.call(tr.children, function (td, i) { if (i && heads[i] && !td.hasAttribute("data-l")) td.setAttribute("data-l", heads[i]); });
+    });
+  };
+
   window.TARIN = T;
 })();

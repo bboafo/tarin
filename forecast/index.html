@@ -5,11 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Forecast · TARIN</title>
 <meta name="description" content="TARIN's forecast of Ghana's headline inflation, frozen and fingerprinted before GSS publishes, and scored against the first figure GSS releases.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TARIN">
+<meta property="og:title" content="Forecast · TARIN">
+<meta property="og:description" content="TARIN's forecast of Ghana's headline inflation, frozen and fingerprinted before GSS publishes, and scored against the first figure GSS releases.">
+<meta property="og:url" content="https://bboafo.github.io/tarin/forecast/">
+<meta property="og:image" content="https://bboafo.github.io/tarin/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<link rel="stylesheet" href="../assets/tarin.css?v=d83ae6c8ff">
+<link rel="stylesheet" href="../assets/tarin.css?v=130c99661e">
 <style>
 :root { --fan-95: rgba(39, 90, 235, 0.10); --fan-80: rgba(39, 90, 235, 0.22); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fan-95: rgba(91, 134, 245, 0.14); --fan-80: rgba(91, 134, 245, 0.30); } }
@@ -77,10 +87,21 @@ td.best { color: var(--ink); font-weight: 600; }
         <span><i class="key-line" style="background:repeating-linear-gradient(90deg,var(--s1) 0 5px,transparent 5px 8px)"></i>Forecast</span>
         <span><i class="key-fan" style="background:var(--fan-80)"></i>80% range</span>
         <span><i class="key-fan" style="background:var(--fan-95)"></i>95% range</span>
+        <span id="lg-v2" hidden><i class="key-line" style="background:repeating-linear-gradient(90deg,var(--s2) 0 5px,transparent 5px 8px)"></i>With the cedi (second forecast)</span>
         <span><i class="key-line" style="background:repeating-linear-gradient(90deg,var(--muted) 0 2px,transparent 2px 5px)"></i>If nothing changed</span>
       </div>
     </div>
     <p class="caption">Year-on-year inflation, national, % — the last year published by GSS, then the forecast. <b>Hover or tap</b> for any month.</p>
+  </section>
+
+  <section class="block" id="v2" hidden>
+    <div class="read">
+      <span class="eyebrow">A second forecast</span>
+      <h2 style="margin-top:6px">The same forecast with the cedi added, scored beside it</h2>
+      <p style="margin-top:10px;color:var(--ink-2)" id="v2-lede"></p>
+    </div>
+    <div class="tbl-wrap"><table class="data" id="t-v2"></table></div>
+    <p class="caption" id="v2-cap"></p>
   </section>
 
   <section class="block">
@@ -113,7 +134,7 @@ td.best { color: var(--ink); font-weight: 600; }
   <section class="block">
     <div class="read">
       <span class="eyebrow">Method</span>
-      <h2 style="margin-top:6px">Four small models, and a rule for picking one</h2>
+      <h2 style="margin-top:6px">Small models, and a rule for picking one</h2>
       <p style="margin-top:10px;color:var(--ink-2)">Inflation h months ahead is the index then over the index a year before it, and that second number is already published. So the models only forecast the monthly price changes between now and the target; the year-on-year rate follows by arithmetic. The models were fixed, and so was the rule that picks one: <span id="rule"></span>.</p>
     </div>
     <div class="models" id="models"></div>
@@ -146,11 +167,11 @@ td.best { color: var(--ink); font-weight: 600; }
   <div class="wrap">
     <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
     <span id="site-status" hidden></span>
-    <span>Data: Ghana Statistical Service. Forecasts: TARIN, not GSS.</span>
+    <span>Data: Ghana Statistical Service and Bank of Ghana. Forecasts: TARIN, not them.</span>
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=1829f2cf33"></script>
+<script src="../assets/tarin.js?v=9756a9e725"></script>
 <script>
 (function () {
   "use strict";
@@ -162,7 +183,8 @@ td.best { color: var(--ink); font-weight: 600; }
     no_change: "Year-on-year inflation stays where it is. The benchmark every forecast has to beat.",
     seasonal: "Prices keep rising at their recent underlying pace (last six months, seasonally adjusted), plus each calendar month's typical deviation, half-weighted because the 2021 basket has only a few years of history.",
     reverting: "As the seasonal model, but the underlying pace drifts back toward its five-year average, at a speed estimated from the data.",
-    ensemble: "The average of the other three."
+    ensemble: "The average of the other three.",
+    with_cedi: "The average of two forecasts: 'pace reverts', and the same pace plus the cedi's moves over the past year (each month's price change set against the change in cedis per dollar in that month and the eleven before, fitted on the last fifteen years). The cedi is assumed not to move from here."
   };
 
   T.json("data/forecast.json").then(function (F) {
@@ -170,12 +192,17 @@ td.best { color: var(--ink); font-weight: 600; }
     var made = L.made_at.slice(0, 10);
     document.getElementById("f-eyebrow").textContent = "Forecast · made " + made + " from data through " + monthY(L.data_through);
     document.getElementById("f-h1").textContent = "Where inflation is heading, " + month(first.period) + " to " + monthY(last.period);
-    document.getElementById("f-lede").textContent = "TARIN expects year-on-year inflation to ease from " + T.fmt(L.last_actual.yoy, 1) + "% in " +
-      month(L.data_through) + " to about " + T.fmt(first.yoy, 1) + "% in " + month(first.period) + ", and to end the year near " +
-      T.fmt(last.yoy, 1) + "%, with an 80% range of " + T.fmt(last.lo80, 1) + " to " + T.fmt(last.hi80, 1) + "%. It was frozen before GSS published any of these months and will be scored against what GSS publishes.";
+    var move = first.yoy > L.last_actual.yoy + 0.05 ? "rise" : first.yoy < L.last_actual.yoy - 0.05 ? "ease" : "hold";
+    var lastP = last.period.slice(5, 7) === "12" ? "to end the year near " : "to be about " + T.fmt(last.yoy, 1) + "% in " + monthY(last.period);
+    document.getElementById("f-lede").textContent = "TARIN expects year-on-year inflation to " +
+      (move === "hold" ? "hold near " + T.fmt(first.yoy, 1) + "% in " + month(first.period)
+                       : move + " from " + T.fmt(L.last_actual.yoy, 1) + "% in " + month(L.data_through) + " to about " + T.fmt(first.yoy, 1) + "% in " + month(first.period)) +
+      ", and " + (last.period.slice(5, 7) === "12" ? lastP + T.fmt(last.yoy, 1) + "%" : lastP) +
+      ", with an 80% range of " + T.fmt(last.lo80, 1) + " to " + T.fmt(last.hi80, 1) + "%. It was frozen before GSS published any of these months and will be scored against what GSS publishes.";
+    var S2 = F.second, p2 = S2 ? S2.points : null;
 
     // month tiles, with the actual once it's in
-    var byP = {}; F.scorecard.forEach(function (s) { if (s.data_through === L.data_through) byP[s.period] = s; });
+    var byP = {}; F.scorecard.forEach(function (s) { if (s.data_through === L.data_through && s.method_version === L.method_version) byP[s.period] = s; });
     document.getElementById("months").innerHTML = pts.map(function (p) {
       var s = byP[p.period] || {};
       var status = s.actual != null
@@ -191,6 +218,8 @@ td.best { color: var(--ink); font-weight: 600; }
     var actual = hist.map(function (h) { return h[1]; }).concat(pts.map(function () { return null; }));
     var fc = labels.map(function (_, i) { return i === nH - 1 ? hist[nH - 1][1] : i >= nH ? pts[i - nH].yoy : null; });
     var nc = labels.map(function (_, i) { return i >= nH - 1 ? L.last_actual.yoy : null; });
+    var fc2 = p2 ? labels.map(function (_, i) { return i === nH - 1 ? hist[nH - 1][1] : i >= nH ? p2[i - nH].yoy : null; }) : null;
+    if (p2) document.getElementById("lg-v2").hidden = false;
     function band(lo, hi) {
       return { lo: labels.map(function (_, i) { return i === nH - 1 ? hist[nH - 1][1] : i >= nH ? pts[i - nH][lo] : null; }),
                hi: labels.map(function (_, i) { return i === nH - 1 ? hist[nH - 1][1] : i >= nH ? pts[i - nH][hi] : null; }) };
@@ -204,7 +233,7 @@ td.best { color: var(--ink); font-weight: 600; }
           { values: nc, color: "var(--muted)", dash: "2 3", width: 1.5, quiet: true },
           { values: actual, color: "var(--s1)", name: "Published" },
           { values: fc, color: "var(--s1)", dash: "5 3", name: "Forecast" }
-        ],
+        ].concat(fc2 ? [{ values: fc2, color: "var(--s2)", dash: "5 3", name: "With the cedi" }] : []),
         fmt: function (v) { return T.fmt(v, 2) + "%"; },
         aria: "Year-on-year inflation, published and forecast, " + T.monthLabel(labels[0]) + " to " + T.monthLabel(labels[labels.length - 1]),
         tipRows: function (i) {
@@ -214,12 +243,39 @@ td.best { color: var(--ink); font-weight: 600; }
                       { name: "80% range", value: T.fmt(p.lo80, 1) + "–" + T.fmt(p.hi80, 1) },
                       { name: "95% range", value: T.fmt(p.lo95, 1) + "–" + T.fmt(p.hi95, 1) },
                       { color: "var(--muted)", name: "If nothing changed", value: T.fmt(L.last_actual.yoy, 2) + "%" }];
+          if (p2) rows.splice(1, 0, { color: "var(--s2)", name: "With the cedi", value: T.fmt(p2[i - nH].yoy, 2) + "%" });
           if (s && s.actual != null) rows.push({ name: "GSS published", value: T.fmt(s.actual, 2) + "%" });
           return rows;
         }
       });
     }
     fan(); T.onResize(fan);
+
+    // the second forecast, and the rule for switching
+    if (S2) {
+      document.getElementById("v2").hidden = false;
+      var bt2 = Object.assign({}, S2.backtest, L.backtest), H4 = [1, 2, 3, 4];
+      var avg = function (m) { return H4.reduce(function (a, h) { return a + bt2[m][h].rmse; }, 0) / 4; };
+      var cm = L.model === "with_cedi" ? S2.model : L.model, wm = "with_cedi";
+      var gain = bt2[wm] && bt2[cm] ? Math.round((1 - avg(wm) / avg(cm)) * 100) : null;
+      var hd = F.headline || {}, isV1 = L.method_version === "1";
+      document.getElementById("v2-lede").textContent = "Since October 2026 TARIN freezes a second forecast beside the headline, from the same data: the average of '" +
+        F.labels[cm] + "' and the same pace plus the cedi's moves over the past year. In the back-test since 2010 it was " +
+        (gain != null ? "about " + Math.abs(gain) + "% " + (gain >= 0 ? "more" : "less") + " accurate" : "about as accurate") +
+        " one to four months ahead, too little to be sure of. So both are frozen and scored, and the headline " + (isV1 ? "stays with the original model unless the rule below says otherwise" : "switched by the rule below") + ".";
+      var pv = {}; pts.forEach(function (p) { pv[p.period] = p; });
+      var v1pts = isV1 ? pts : p2, v2pts = isV1 ? p2 : pts;
+      document.getElementById("t-v2").innerHTML = "<thead><tr><th>Month</th><th class='r'>Original (v1)</th><th class='r'>With the cedi (v2)</th><th class='r'>Difference</th></tr></thead><tbody>" +
+        v1pts.map(function (a, i) {
+          var b = v2pts[i], d = b.yoy - a.yoy;
+          return "<tr><td>" + monthY(a.period) + (isV1 ? "" : "") + "</td><td class='r m'>" + T.fmt(a.yoy, 2) + "%</td><td class='r m'>" + T.fmt(b.yoy, 2) +
+            "%</td><td class='r m'>" + (d >= 0 ? "+" : "−") + T.fmt(Math.abs(d), 2) + "</td></tr>";
+        }).join("") + "</tbody>";
+      var st = hd.pairs_h1 != null ? " So far " + hd.pairs_h1 + " of " + hd.needed_h1 + " one-month-ahead months have been scored for both" +
+        (hd.pairs ? "; mean absolute error " + T.fmt(hd.mae["1"], 2) + " points for v1 and " + T.fmt(hd.mae["2"], 2) + " for v2." : ".") +
+        " The headline is v" + hd.version + "." : "";
+      document.getElementById("v2-cap").textContent = (hd.rule || "") + st;
+    }
 
     // base effects
     var bm = F.base_months;
@@ -241,38 +297,46 @@ td.best { color: var(--ink); font-weight: 600; }
       ["Code", "<code>" + L.code_sha256 + "</code>"],
       ["Input data", "<code>" + L.input_sha256 + "</code>"]
     ];
+    if (S2 && F.second_file) {
+      rows.push(["Second forecast", "<a href='" + T.ROOT + F.second_file.file + "' download>" + F.second_file.file.split("/").pop() + "</a> · " +
+        F.labels[S2.model] + " <span class='muted mono' style='font-size:12px'>(method v" + S2.method_version + ", made " + S2.made_at.slice(0, 10) + ")</span>"]);
+      rows.push(["Its SHA-256", "<code>" + F.second_file.sha256 + "</code>"]);
+    }
     document.getElementById("frozen").innerHTML = rows.map(function (r) { return "<div class='row'><span>" + r[0] + "</span><span>" + r[1] + "</span></div>"; }).join("");
 
     // scorecard
     var sc = F.scorecard;
-    document.getElementById("t-score").innerHTML = "<thead><tr><th>Made</th><th>From data through</th><th>Month</th><th class='r'>Ahead</th><th class='r'>Forecast</th><th class='r'>80% range</th><th class='r'>GSS published</th><th class='r'>Error</th><th>In range</th></tr></thead><tbody>" +
+    document.getElementById("t-score").innerHTML = "<thead><tr><th>Forecast</th><th>Made</th><th>From data through</th><th>Month</th><th class='r'>Ahead</th><th class='r'>Forecast</th><th class='r'>80% range</th><th class='r'>GSS published</th><th class='r'>Error</th><th>In range</th></tr></thead><tbody>" +
       sc.map(function (s) {
         var got = s.actual != null;
-        return "<tr><td class='m'>" + s.made_at.slice(0, 10) + "</td><td class='m'>" + s.data_through + "</td><td class='m'>" + s.period + "</td><td class='r m'>" + s.horizon +
+        return "<tr><td class='m'>v" + (s.method_version || "1") + "</td><td class='m'>" + s.made_at.slice(0, 10) + "</td><td class='m'>" + s.data_through + "</td><td class='m'>" + s.period + "</td><td class='r m'>" + s.horizon +
           "</td><td class='r m'>" + T.fmt(s.yoy, 2) + "</td><td class='r m'>" + T.fmt(s.lo80, 1) + "–" + T.fmt(s.hi80, 1) + "</td><td class='r m'>" + (got ? T.fmt(s.actual, 2) : "–") +
           "</td><td class='r m'>" + (got ? (s.error >= 0 ? "+" : "") + T.fmt(s.error, 2) : "–") + "</td><td>" +
           (got ? "<span class='pill " + (s.in80 ? "ok" : "warn") + "'>" + (s.in80 ? "inside 80%" : s.in95 ? "inside 95%" : "outside") + "</span>" : "<span class='pill idle'>awaiting GSS</span>") + "</td></tr>";
       }).join("") + "</tbody>";
-    var scored = sc.filter(function (s) { return s.actual != null; });
+    var scored = sc.filter(function (s) { return s.actual != null && (s.method_version || "1") === L.method_version; });
     document.getElementById("score-cap").textContent = scored.length
-      ? scored.length + " scored so far. Mean absolute error " + T.fmt(scored.reduce(function (a, s) { return a + Math.abs(s.error); }, 0) / scored.length, 2) + " points; " +
+      ? "Headline forecast (v" + L.method_version + "): " + scored.length + " scored so far. Mean absolute error " + T.fmt(scored.reduce(function (a, s) { return a + Math.abs(s.error); }, 0) / scored.length, 2) + " points; " +
         scored.filter(function (s) { return s.in80; }).length + " of " + scored.length + " inside the 80% range."
       : "Nothing scored yet. The first score comes when GSS publishes " + monthY(first.period) + ", usually in the middle of the following month.";
 
     // models + back-test
-    document.getElementById("rule").textContent = "the lowest back-test error averaged over one to four months ahead, since 2010";
-    var order = ["no_change", "seasonal", "reverting", "ensemble"];
+    document.getElementById("rule").textContent = "the lowest back-test error averaged over one to four months ahead, since 2010" +
+      (S2 ? " (the cedi-aware model, added in October 2026, is not part of that choice; it is scored beside it)" : "");
+    var allm = Object.assign({}, S2 ? S2.all_models : {}, L.all_models);
+    var order = ["no_change", "seasonal", "reverting", "ensemble", "with_cedi"].filter(function (m) { return allm[m]; });
     document.getElementById("models").innerHTML = order.map(function (m) {
-      var chosen = m === L.model;
-      var path = L.all_models[m].map(function (v) { return T.fmt(v, 1); }).join(" → ");
-      return "<div class='card'" + (chosen ? " style='border-color:var(--brand)'" : "") + "><h3>" + F.labels[m] + (chosen ? " <span class='pill ok'>chosen</span>" : "") +
+      var chosen = m === L.model, second = S2 && m === S2.model;
+      var path = allm[m].map(function (v) { return T.fmt(v, 1); }).join(" → ");
+      return "<div class='card'" + (chosen ? " style='border-color:var(--brand)'" : "") + "><h3>" + F.labels[m] +
+        (chosen ? " <span class='pill ok'>headline</span>" : second ? " <span class='pill idle'>second forecast</span>" : "") +
         "</h3><p>" + DESC[m] + "</p><p class='mono' style='font-size:12.5px'>" + path + "%</p></div>";
     }).join("");
-    var bt = L.backtest, H = [1, 2, 3, 4];
+    var bt = Object.assign({}, S2 ? S2.backtest : {}, L.backtest), H = [1, 2, 3, 4];
     var best = {}; H.forEach(function (h) { best[h] = order.reduce(function (a, m) { return bt[m][h].rmse < bt[a][h].rmse ? m : a; }, order[0]); });
     document.getElementById("t-bt").innerHTML = "<thead><tr><th>Model</th>" + H.map(function (h) { return "<th class='r'>" + h + " month" + (h > 1 ? "s" : "") + " ahead</th>"; }).join("") + "</tr></thead><tbody>" +
       order.map(function (m) {
-        return "<tr><td>" + F.labels[m] + (m === L.model ? " <span class='pill ok'>chosen</span>" : "") + "</td>" + H.map(function (h) {
+        return "<tr><td>" + F.labels[m] + (m === L.model ? " <span class='pill ok'>headline</span>" : S2 && m === S2.model ? " <span class='pill idle'>second</span>" : "") + "</td>" + H.map(function (h) {
           var s = bt[m][h];
           return "<td class='r m" + (best[h] === m ? " best" : "") + "'>" + T.fmt(s.rmse, 2) + " <span class='muted'>(" + T.fmt(s.rmse_since_2023, 2) + ")</span></td>";
         }).join("") + "</tr>";

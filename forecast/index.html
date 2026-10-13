@@ -19,7 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<link rel="stylesheet" href="../assets/tarin.css?v=130c99661e">
+<link rel="stylesheet" href="../assets/tarin.css?v=98c18b5686">
+<script>try { var tt = localStorage.getItem("tarin-theme"); if (tt === "dark" || tt === "light") document.documentElement.setAttribute("data-theme", tt); } catch (e) {}</script>
 <style>
 :root { --fan-95: rgba(39, 90, 235, 0.10); --fan-80: rgba(39, 90, 235, 0.22); }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --fan-95: rgba(91, 134, 245, 0.14); --fan-80: rgba(91, 134, 245, 0.30); } }
@@ -64,6 +65,7 @@ td.best { color: var(--ink); font-weight: 600; }
       <a href="../index.html">Home</a>
       <a href="../price-record/index.html">Price record</a>
       <a href="../cedi/index.html">Cedi &amp; prices</a>
+      <a href="../trade/index.html">Trade &amp; industry</a>
       <a href="../explorer/index.html">Data explorer</a>
       <a href="../catalogue/index.html">Catalogue</a>
       <a href="index.html" aria-current="page">Forecast</a>
@@ -78,6 +80,7 @@ td.best { color: var(--ink); font-weight: 600; }
     <h1 id="f-h1">Where inflation is heading</h1>
     <p class="lede" id="f-lede"></p>
   </div>
+  <nav class="toc" aria-label="On this page"><span>On this page</span><a href="#v2">With the cedi</a><a href="#base">Why it moves</a><a href="#frozen-rec">Frozen</a><a href="#score">Scorecard</a><a href="#method">Method</a><a href="#backtest">Back-test</a></nav>
 
   <section class="block">
     <div class="months" id="months"></div>
@@ -104,7 +107,7 @@ td.best { color: var(--ink); font-weight: 600; }
     <p class="caption" id="v2-cap"></p>
   </section>
 
-  <section class="block">
+  <section class="block" id="base">
     <div class="read">
       <span class="eyebrow">Why it moves</span>
       <h2 style="margin-top:6px">Most of the change is last year dropping out</h2>
@@ -113,7 +116,7 @@ td.best { color: var(--ink); font-weight: 600; }
     <div class="base" id="base"></div>
   </section>
 
-  <section class="block">
+  <section class="block" id="frozen-rec">
     <div class="read">
       <span class="eyebrow">Frozen</span>
       <h2 style="margin-top:6px">This forecast can't be changed after the fact</h2>
@@ -122,7 +125,7 @@ td.best { color: var(--ink); font-weight: 600; }
     <div class="frozen card" id="frozen"></div>
   </section>
 
-  <section class="block">
+  <section class="block" id="score">
     <div class="read">
       <span class="eyebrow">Scorecard</span>
       <h2 style="margin-top:6px">Every forecast, against what GSS then published</h2>
@@ -131,7 +134,7 @@ td.best { color: var(--ink); font-weight: 600; }
     <p class="caption" id="score-cap"></p>
   </section>
 
-  <section class="block">
+  <section class="block" id="method">
     <div class="read">
       <span class="eyebrow">Method</span>
       <h2 style="margin-top:6px">Small models, and a rule for picking one</h2>
@@ -140,7 +143,7 @@ td.best { color: var(--ink); font-weight: 600; }
     <div class="models" id="models"></div>
   </section>
 
-  <section class="block">
+  <section class="block" id="backtest">
     <div class="read">
       <span class="eyebrow">Back-test</span>
       <h2 style="margin-top:6px">How each model would have done since 2010</h2>
@@ -171,7 +174,7 @@ td.best { color: var(--ink); font-weight: 600; }
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=9756a9e725"></script>
+<script src="../assets/tarin.js?v=d6756e75d6"></script>
 <script>
 (function () {
   "use strict";

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Trade and industry · TARIN</title>
+<meta name="description" content="What Ghana sells and buys, how much of it is gold, what its exports buy, and how fast the economy and its industry are growing. Rebuilt from GSS and Bank of Ghana data with each update.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TARIN">
+<meta property="og:title" content="Trade and industry · TARIN">
+<meta property="og:description" content="What Ghana sells and buys, how much of it is gold, what its exports buy, and how fast the economy and its industry are growing. Rebuilt from GSS and Bank of Ghana data with each update.">
+<meta property="og:url" content="https://bboafo.github.io/tarin/trade/">
+<meta property="og:image" content="https://bboafo.github.io/tarin/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/tarin.css?v=98c18b5686">
+<script>try { var tt = localStorage.getItem("tarin-theme"); if (tt === "dark" || tt === "light") document.documentElement.setAttribute("data-theme", tt); } catch (e) {}</script>
+<style>
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
+.tiles > div { background: var(--surface); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
+.tiles .v { font-family: var(--f-display); font-weight: 600; font-size: 34px; line-height: 1.05; font-variant-numeric: tabular-nums; color: var(--ink); }
+.tiles .l { font-size: 13.5px; line-height: 1.4; color: var(--ink-2); }
+.bar-cell { min-width: 160px; }
+.bar { display: flex; align-items: center; gap: 8px; }
+.bar i { display: block; height: 10px; border-radius: 0 3px 3px 0; background: var(--s1); min-width: 2px; }
+.bar i.old { background: var(--quiet-line); }
+.bar span { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); white-space: nowrap; }
+.bars-key { display: flex; gap: 16px; font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); }
+.bars-key i { display: inline-block; width: 14px; height: 8px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+@media (max-width: 760px) {
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tiles .v { font-size: 28px; }
+}
+</style>
+</head>
+<body data-root="../" data-page="trade">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../cedi/index.html">Cedi &amp; prices</a>
+      <a href="index.html" aria-current="page">Trade &amp; industry</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../catalogue/index.html">Catalogue</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <span class="eyebrow" id="t-eyebrow">Trade and industry</span>
+    <h1>What Ghana sells, what it buys, and what it makes</h1>
+    <p class="lede" data-text="lede">In 2025 Ghana exported $32.0bn of goods and imported $20.5bn, a surplus of $11.5bn, the largest in the five years GSS's trade table covers. Gold was 64% of exports, up from 35% in 2021. In the twelve months to March 2026 the surplus was $12.3bn. Rebuilt from GSS's figures with each update.</p>
+  </div>
+  <nav class="toc" aria-label="On this page"><span>On this page</span><a href="#flows">Exports and imports</a><a href="#sells">What Ghana sells</a><a href="#tot">Terms of trade</a><a href="#growth">Growth and industry</a><a href="#method">Method</a></nav>
+
+  <section class="block" aria-label="The year in four numbers">
+    <div class="tiles">
+      <div><span class="v" data-text="k-ex">$34.5bn</span><span class="l" data-text="k-ex-l">exports, 12 months to March 2026</span></div>
+      <div><span class="v" data-text="k-im">$22.2bn</span><span class="l" data-text="k-im-l">imports, same months</span></div>
+      <div><span class="v" data-text="k-bal">+$12.3bn</span><span class="l" data-text="k-bal-l">surplus; $5.7bn a year earlier</span></div>
+      <div><span class="v" data-text="k-gold">64%</span><span class="l" data-text="k-gold-l">of 2025's exports were gold</span></div>
+    </div>
+  </section>
+
+  <section class="block" id="flows">
+    <div class="read">
+      <span class="eyebrow">Exports and imports</span>
+      <h2 style="margin:6px 0 10px" data-text="t1-h2">Exports pulled far ahead of imports in 2025</h2>
+      <p data-text="t1-p">From 2021 to 2025 exports grew 116% and imports 15%. Ghana's trade in goods went from a deficit of $3.0bn in 2021 to a surplus of $11.5bn in 2025. The same year the cedi strengthened: a dollar cost 12.56 cedis on average in 2025, against 14.18 in 2024. These figures can't say how much of that the surplus explains: services, investment income and capital flows aren't in them.</p>
+    </div>
+    <div class="chart" id="c-trade">
+      <div class="legend">
+        <span><i class="key-line" style="background:var(--s1)"></i>Exports</span>
+        <span><i class="key-line" style="background:var(--s2)"></i>Imports</span>
+      </div>
+    </div>
+    <p class="caption">Merchandise exports and imports, US dollars, each month. <b>Hover or tap</b> for any month and its balance. Source: GSS StatsBank, trade table.</p>
+  </section>
+
+  <section class="block" id="sells">
+    <div class="read">
+      <span class="eyebrow">What Ghana sells</span>
+      <h2 style="margin:6px 0 10px" data-text="t2-h2">Gold is now 64% of what Ghana sells</h2>
+      <p data-text="t2-p">Gold exports rose from $5.1bn in 2021 to $20.5bn in 2025. Ghana shipped twice as much (103 to 206 tonnes), and each kilogram fetched twice as much ($49.7k to $99.8k). Cocoa earned 78% more even though shipments fell 29%: the price per kilogram went from $2.91 to $7.29. Oil and fuel exports fell from $3.9bn to $2.8bn, with 33% less shipped.</p>
+    </div>
+    <div class="bars-key" id="bars-key"></div>
+    <div class="tbl-wrap"><table class="data stack" id="t-ex"></table></div>
+    <p class="caption" data-text="t2-cap">Merchandise exports by product group, US dollars, whole years 2021 and 2025. Shares are of all exports ($14.8bn and $32.0bn). Source: GSS StatsBank, trade table.</p>
+    <div class="read prose"><p data-text="t2-p2">On the other side of the ledger, Ghana spent $5.2bn importing fuels and oils in 2025 (25% of imports), against $2.7bn in 2021. It sells crude oil and buys refined fuel, so the two lines can move apart.</p></div>
+  </section>
+
+  <section class="block" id="tot">
+    <div class="read">
+      <span class="eyebrow">Terms of trade</span>
+      <h2 style="margin:6px 0 10px" data-text="t3-h2">What Ghana sells has got dearer faster than what it buys</h2>
+      <p data-text="t3-p">GSS's unit value indices divide each trade flow's value by its volume. Set against each other, they show how many imports a unit of exports buys. In the first quarter of 2026 it bought twice as many as in the first quarter of 2021.</p>
+    </div>
+    <div class="chart" id="c-tot"></div>
+    <p class="caption" data-text="t3-cap">Terms of trade: GSS's export unit value index divided by its import unit value index, quarterly, the first quarter of 2021 = 100.</p>
+  </section>
+
+  <section class="block" id="growth">
+    <div class="read">
+      <span class="eyebrow">Growth and industry</span>
+      <h2 style="margin:6px 0 10px" data-text="t4-h2">Growth, month by month</h2>
+      <p data-text="t4-p">GSS's monthly indicator of economic growth put the economy 5.1% larger in May 2026 than a year earlier, against an average of 5.9% through 2025. Services grew 7.2%, industry 4.2% and agriculture 3.6%. Industrial production, a narrower quarterly measure, was +1.9% on a year in the third quarter of 2025: manufacturing +4.3%, mining +0.1%.</p>
+    </div>
+    <div class="chart" id="c-growth">
+      <div class="legend">
+        <span><i class="key-line" style="background:var(--s1)"></i>Services</span>
+        <span><i class="key-line" style="background:var(--s2)"></i>Industry</span>
+        <span><i class="key-line" style="background:var(--s3)"></i>Agriculture</span>
+        <span><i class="key-line" style="background:repeating-linear-gradient(90deg,var(--ink-2) 0 5px,transparent 5px 8px)"></i>Whole economy</span>
+      </div>
+    </div>
+    <p class="caption" data-text="t4-cap">Year-on-year growth of GSS's monthly indicator of economic growth (2023 = 100), by sector. The dashed line is the whole economy. It starts in 2024 because 2023 is the base year, with no year before it to grow from.</p>
+    <h3 style="font-size:16px">Industrial production, change on a year</h3>
+    <div class="tbl-wrap"><table class="data" id="t-iip"></table></div>
+  </section>
+
+  <section class="block" id="method">
+    <div class="read prose">
+      <span class="eyebrow">Method</span>
+      <h2 style="margin:6px 0 10px">Where these numbers come from, and what they leave out</h2>
+      <p data-text="m-data"><b>Trade.</b> GSS's merchandise trade table on StatsBank: exports and imports by product group, in US dollars and kilograms, monthly from January 2021 to March 2026; whole years are the sum of their months. <b>Prices of trade.</b> GSS's export and import unit value indices, quarterly to the first quarter of 2026. <b>Growth.</b> GSS's monthly indicator of economic growth to May 2026, and its index of industrial production to the third quarter of 2025. <b>The cedi.</b> The Bank of Ghana's mid-rate, yearly average. Only values that pass TARIN's checks are used.</p>
+      <p data-text="m-limits"><b>What it leaves out.</b> These are goods crossing the border as customs records them. Services, remittances, the profits foreign mining and oil firms send home, and loans aren't in them, so a goods surplus isn't the same as dollars staying in Ghana; GSS's balance of payments table, which would show those, stopped in 2024. Value per kilogram mixes price with changes in what is shipped (cocoa beans against cocoa butter, say). And StatsBank runs some months behind GSS's releases.</p>
+      <p><b>Downloads.</b> <a href="../data/csv/trade-monthly.csv" download>trade-monthly.csv</a> (exports and imports each month), <a href="../data/csv/trade-exports.csv" download>trade-exports.csv</a> (exports by product group, with tonnes and value per kilogram) and <a href="../data/trade.json" download>trade.json</a> (everything on this page). Every series is also in the <a href="../catalogue/index.html#trade.value-in-us-dollars-export-all-products.m~trade.value-in-us-dollars-import-all-products.m">catalogue</a>, with its checks and source file.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
+    <span id="site-status" hidden></span>
+    <span>Data: Ghana Statistical Service and Bank of Ghana. Analysis: TARIN, not them.</span>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js?v=d6756e75d6"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  var FULL = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  function monthY(p) { return FULL[+p.slice(5, 7) - 1] + " " + p.slice(0, 4); }
+  function bn(v) { return "$" + T.fmt(v, 1) + "bn"; }
+  function mn(v) { return "$" + T.int(Math.round(v)) + "m"; }
+
+  T.json("data/trade.json").then(function (A) {
+    if (A.text) Array.prototype.forEach.call(document.querySelectorAll("[data-text]"), function (el) {
+      var t = A.text[el.getAttribute("data-text")];
+      if (t) el.innerHTML = t;
+    });
+    document.getElementById("t-eyebrow").textContent = "Trade and industry · to " + monthY(A.data.trade_to);
+
+    // exports and imports, each month
+    var M = A.monthly, labels = M.map(function (r) { return r[0]; });
+    function flows() {
+      T.lineChart(document.getElementById("c-trade"), {
+        labels: labels, height: 320, zero: true, unit: "",
+        yFmt: function (v) { return "$" + T.fmt(v / 1000, 1) + "bn"; },
+        series: [
+          { values: M.map(function (r) { return r[1]; }), color: "var(--s1)", name: "Exports", endName: "Exports" },
+          { values: M.map(function (r) { return r[2]; }), color: "var(--s2)", name: "Imports", endName: "Imports" }
+        ],
+        fmt: function (v) { return "$" + T.fmt(v / 1000, 2) + "bn"; },
+        aria: "Ghana's merchandise exports and imports each month, " + T.monthLabel(labels[0]) + " to " + T.monthLabel(labels[labels.length - 1]),
+        tipRows: function (i) {
+          var b = M[i][1] - M[i][2];
+          return [{ color: "var(--s1)", name: "Exports", value: mn(M[i][1]) },
+                  { color: "var(--s2)", name: "Imports", value: mn(M[i][2]) },
+                  { name: b >= 0 ? "Surplus" : "Deficit", value: mn(Math.abs(b)) }];
+        }
+      });
+    }
+    flows(); T.onResize(flows);
+
+    // what Ghana sells: bars for the first and last whole year
+    var E = A.exports_by_group, mx = Math.max.apply(null, E.rows.map(function (r) { return Math.max(r.v0, r.v1); }));
+    document.getElementById("bars-key").innerHTML = "<span><i style='background:var(--quiet-line)'></i>" + E.from + "</span><span><i style='background:var(--s1)'></i>" + E.to + "</span>";
+    var w = function (v) { return Math.max(0.5, 100 * v / mx).toFixed(1) + "%"; };
+    document.getElementById("t-ex").innerHTML = "<thead><tr><th>Product group</th><th class='bar-cell'>Exports, US$ bn</th><th class='r'>Share " + E.from + "</th><th class='r'>Share " + E.to + "</th></tr></thead><tbody>" +
+      E.rows.map(function (r) {
+        return "<tr><td>" + r.short + "</td><td class='bar-cell wide' data-l='Exports, US$ bn'><div class='bar'><i class='old' style='width:" + w(r.v0) + "'></i><span>" + T.fmt(r.v0, 2) + "</span></div>" +
+          "<div class='bar' style='margin-top:3px'><i style='width:" + w(r.v1) + "'></i><span>" + T.fmt(r.v1, 2) + "</span></div></td>" +
+          "<td class='r m' data-l='Share " + E.from + "'>" + T.fmt(r.share0, 1) + "%</td><td class='r m' data-l='Share " + E.to + "'>" + T.fmt(r.share1, 1) + "%</td></tr>";
+      }).join("") + "</tbody>";
+
+    // terms of trade
+    var TT = A.terms_of_trade;
+    function tot() {
+      if (!TT) return;
+      var L = TT.rows.map(function (r) { return r[0]; });
+      T.lineChart(document.getElementById("c-tot"), {
+        labels: L, height: 260, unit: "",
+        series: [{ values: TT.rows.map(function (r) { return r[3]; }), color: "var(--s1)", name: "Terms of trade" }],
+        fmt: function (v) { return T.fmt(v, 0); },
+        aria: "Ghana's terms of trade, quarterly, " + TT.base + " = 100",
+        tipRows: function (i) {
+          var r = TT.rows[i];
+          return [{ color: "var(--s1)", name: "Terms of trade", value: T.fmt(r[3], 0) },
+                  { name: "Export unit value", value: T.fmt(r[1], 1) },
+                  { name: "Import unit value", value: T.fmt(r[2], 1) }];
+        }
+      });
+    }
+    tot(); T.onResize(tot);
+
+    // growth by sector
+    var G = (A.mieg || []).filter(function (r) { return r[1] != null; }), GL = G.map(function (r) { return r[0]; });
+    function growth() {
+      if (!G.length) return;
+      T.lineChart(document.getElementById("c-growth"), {
+        labels: GL, height: 300, zero: true, unit: "%",
+        series: [
+          { values: G.map(function (r) { return r[1]; }), color: "var(--ink-2)", dash: "5 3", name: "Whole economy", width: 1.5 },
+          { values: G.map(function (r) { return r[4]; }), color: "var(--s1)", name: "Services", endName: "Services" },
+          { values: G.map(function (r) { return r[3]; }), color: "var(--s2)", name: "Industry", endName: "Industry" },
+          { values: G.map(function (r) { return r[2]; }), color: "var(--s3)", name: "Agriculture", endName: "Agriculture" }
+        ],
+        fmt: function (v) { return T.fmt(v, 1) + "%"; },
+        aria: "Year-on-year growth of GSS's monthly indicator of economic growth, by sector"
+      });
+    }
+    growth(); T.onResize(growth);
+    var I = A.iip;
+    if (I) {
+      document.getElementById("t-iip").innerHTML = "<thead><tr><th>Sector</th><th class='r'>" + I.quarter.replace("-", " ") + "</th></tr></thead><tbody>" +
+        I.sectors.map(function (s) {
+          return "<tr><td>" + s.name + "</td><td class='r m'>" + (s.yoy == null ? "–" : (s.yoy >= 0 ? "+" : "−") + T.fmt(Math.abs(s.yoy), 1) + "%") + "</td></tr>";
+        }).join("") + "</tbody>";
+    }
+    T.stackLabels(document.getElementById("t-ex"));
+  }).catch(function (e) { T.fail(document.getElementById("c-trade"), e); });
+})();
+</script>
+</body>
+</html>

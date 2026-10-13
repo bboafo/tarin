@@ -19,7 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<link rel="stylesheet" href="../assets/tarin.css?v=130c99661e">
+<link rel="stylesheet" href="../assets/tarin.css?v=98c18b5686">
+<script>try { var tt = localStorage.getItem("tarin-theme"); if (tt === "dark" || tt === "light") document.documentElement.setAttribute("data-theme", tt); } catch (e) {}</script>
 <style>
 .tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; }
 .tiles > div { background: var(--surface); padding: 14px 16px; display: grid; gap: 6px; align-content: start; }
@@ -72,6 +73,7 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
       <a href="../index.html">Home</a>
       <a href="../price-record/index.html">Price record</a>
       <a href="index.html" aria-current="page">Cedi &amp; prices</a>
+      <a href="../trade/index.html">Trade &amp; industry</a>
       <a href="../explorer/index.html">Data explorer</a>
       <a href="../catalogue/index.html">Catalogue</a>
       <a href="../forecast/index.html">Forecast</a>
@@ -96,7 +98,15 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" aria-label="In short" style="padding-top:0">
+    <div class="card inshort" id="inshort" hidden>
+      <span class="eyebrow">In short</span>
+      <ol id="inshort-list"></ol>
+      <nav class="toc" aria-label="On this page" style="padding-top:6px"><span>Also</span><a href="#checks">Does it hold up?</a><a href="#method">How it's measured</a></nav>
+    </div>
+  </section>
+
+  <section class="block" id="lag">
     <div class="read prose">
       <span class="eyebrow">How many months later</span>
       <h2 style="margin:6px 0 10px" data-text="s1-h2">Import inflation follows the cedi, about two months behind</h2>
@@ -125,7 +135,7 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
     <p class="caption" data-text="c2-cap">Correlation between prices' change over a year and the cedi's change over the year ending 0 to 15 months earlier, January 2022 to September 2026. Highest at two months for imported goods and one month for local goods.</p>
   </section>
 
-  <section class="block">
+  <section class="block" id="pass">
     <div class="read prose">
       <span class="eyebrow">How much, how fast</span>
       <h2 style="margin:6px 0 10px" data-text="s2-h2">About half of a fall reaches import prices within a year</h2>
@@ -141,7 +151,7 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
     <p class="caption" data-text="c3-cap">Share of a change in cedis per US dollar that has reached prices, by months since the change, %. Shaded: the 90% range for imported goods. Monthly changes, February 2021 to September 2026 (68 months), with each calendar month's usual change taken out.</p>
   </section>
 
-  <section class="block">
+  <section class="block" id="moves">
     <div class="read prose">
       <span class="eyebrow">Episodes</span>
       <h2 style="margin:6px 0 10px" data-text="s3-h2">The cedi's three big moves since 2022</h2>
@@ -156,7 +166,7 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
     <p class="caption" data-text="t-ep-cap">Prices: change over the twelve months from the start month. Cedis per dollar: monthly averages, at the start and at the cedi's turning point. Predicted: what the model behind the chart above gives for imported goods over the same twelve months, from the cedi's moves plus the usual rise in prices that has nothing to do with the cedi.</p>
   </section>
 
-  <section class="block">
+  <section class="block" id="world">
     <div class="read prose">
       <span class="eyebrow">The cedi or the world?</span>
       <h2 style="margin:6px 0 10px" data-text="w-h2">World fuel and food prices explain only a small part of the 2022 surge</h2>
@@ -202,7 +212,7 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="checks">
     <div class="read prose">
       <span class="eyebrow">Checks on the answer</span>
       <h2 style="margin:6px 0 10px">Does it hold up?</h2>
@@ -216,7 +226,7 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="method">
     <div class="read prose">
       <span class="eyebrow">Method</span>
       <h2 style="margin:6px 0 10px">How it's measured, and what it leaves out</h2>
@@ -236,7 +246,7 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=9756a9e725"></script>
+<script src="../assets/tarin.js?v=d6756e75d6"></script>
 <script>
 (function () {
   "use strict";
@@ -251,6 +261,14 @@ table.data tr.total td { font-weight: 600; color: var(--ink); border-top: 1px so
       if (t) el.innerHTML = t;
     });
     if (C.text && C.text["e-p1"]) document.getElementById("else").hidden = false;   // what else in 2022: once built
+    // in short: each section's (tested, generated) heading, linking to it
+    (function () {
+      var items = ["lag", "pass", "moves", "world", "else"].map(function (id) {
+        var s = document.getElementById(id), h = s && !s.hidden && s.querySelector("h2");
+        return h && h.textContent.trim() ? "<li><a href='#" + id + "'>" + h.textContent.trim().replace(/[.]$/, "") + "</a></li>" : "";
+      }).join("");
+      if (items) { document.getElementById("inshort-list").innerHTML = items; document.getElementById("inshort").hidden = false; }
+    })();
     var X = C.extras || {};
     var S = C.series, months = S.map(function (r) { return r[0]; });
     var imp = S.map(function (r) { return r[3]; }), loc = S.map(function (r) { return r[4]; });

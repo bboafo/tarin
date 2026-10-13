@@ -19,7 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<link rel="stylesheet" href="../assets/tarin.css?v=130c99661e">
+<link rel="stylesheet" href="../assets/tarin.css?v=98c18b5686">
+<script>try { var tt = localStorage.getItem("tarin-theme"); if (tt === "dark" || tt === "light") document.documentElement.setAttribute("data-theme", tt); } catch (e) {}</script>
 <style>
 .story main { font-family: var(--f-display); font-size: 18px; line-height: 1.6; }
 
@@ -134,6 +135,7 @@ th { color: var(--muted); font-weight: 400; }
       <a href="../index.html">Home</a>
       <a href="index.html" aria-current="page">Price record</a>
       <a href="../cedi/index.html">Cedi &amp; prices</a>
+      <a href="../trade/index.html">Trade &amp; industry</a>
       <a href="../explorer/index.html">Data explorer</a>
       <a href="../catalogue/index.html">Catalogue</a>
       <a href="../forecast/index.html">Forecast</a>
@@ -146,12 +148,14 @@ th { color: var(--muted); font-weight: 400; }
 <div class="wrap story-wrap">
 
 <div class="hero">
-  <span class="eyebrow" data-text="hero-eyebrow">Year-on-year inflation, August 2026</span>
+  <span class="eyebrow" data-text="hero-eyebrow">Year-on-year inflation, September 2026</span>
   <div class="figure" data-text="hero-figure">5.0<small>%</small></div>
   <h1 data-text="hero-h1">Back up from the lowest rate since 1999.</h1>
-  <p class="lede" data-text="hero-lede">Prices rose 5.0% in the year to August 2026. In March the rate had fallen to 3.2%, the lowest since August 1999 in the series the Ghana Statistical Service publishes today, three years after it passed 54%. Since then it has turned back up, and the rise is coming from non-food prices.</p>
-  <p class="fresh"><span data-text="hero-fresh">Figures to January 2026 come from GSS's StatsBank database, which hasn't been updated since 5 February 2026. February to August 2026 come from the CPI annex workbooks GSS publishes with each monthly bulletin. Where the two sources overlap, they agree to within rounding.</span></p>
+  <p class="lede" data-text="hero-lede">Prices rose 5.2% in the year to September 2026. In March the rate had fallen to 3.2%, the lowest since August 1999 in the series the Ghana Statistical Service publishes today, three years after it passed 54%. Since then it has turned back up, and the rise is coming from non-food prices.</p>
+  <p class="fresh"><span data-text="hero-fresh">Figures to January 2026 come from GSS's StatsBank database, which hasn't been updated since 5 February 2026. February to September 2026 come from the CPI annex workbooks GSS publishes with each monthly bulletin. Where the two sources overlap, they agree to within rounding.</span></p>
 </div>
+
+<nav class="toc" aria-label="On this page"><span>On this page</span><a href="#record">27 years</a><a href="#turn">The turn</a><a href="#basket">The basket</a><a href="#drivers">2022's drivers</a><a href="#regions">Regions</a><a href="#imports">Imported goods</a><a href="#assurance">Accuracy</a><a href="#notes">About the data</a></nav>
 
 <section id="record">
   <div class="read">
@@ -177,7 +181,7 @@ th { color: var(--muted); font-weight: 400; }
   <div class="read">
     <span class="eyebrow">2026</span>
     <h2 data-text="turn-h2">Food prices calmed; everything else didn't</h2>
-    <p style="margin-top:12px" data-text="turn-p1">Through 2025, food drove inflation down: food prices went from rising 28% a year to under 5%. In 2026 the two halves of the basket split. Food inflation stayed between 2% and 4%, and in August food prices fell 2.6% in a single month. Non-food inflation went the other way, from 3.9% in March to 6.8% in August, and pulled the headline rate back up with it.</p>
+    <p style="margin-top:12px" data-text="turn-p1">Through 2025, food drove inflation down: food prices went from rising 28% a year to under 5%. In 2026 the two halves of the basket split. Food inflation stayed between 2% and 4%, and in August food prices fell 2.6% in a single month. Non-food inflation went the other way, from 3.9% in March to 6.2% in September, and pulled the headline rate back up with it.</p>
   </div>
   <div class="chart" id="c-turn">
     <div class="legend">
@@ -185,7 +189,7 @@ th { color: var(--muted); font-weight: 400; }
       <span><i class="key-line" style="background:var(--s1)"></i>Non-food</span>
     </div>
   </div>
-  <p class="caption" data-text="turn-cap">Year-on-year inflation, national, January 2025 to August 2026. Food carries 42.7% of the basket's weight and non-food 57.3%. Source: GSS CPI annex, August 2026. This chart needs GSS's annex because StatsBank's own non-food series is broken; see the notes.</p>
+  <p class="caption" data-text="turn-cap">Year-on-year inflation, national, January 2025 to September 2026. Food carries 42.7% of the basket's weight and non-food 57.3%. Source: GSS CPI annex, September 2026. This chart needs GSS's annex because StatsBank's own non-food series is broken; see the notes.</p>
 </section>
 
 <section id="basket">
@@ -195,7 +199,7 @@ th { color: var(--muted); font-weight: 400; }
     <p style="margin-top:12px">The index behind these rates tracks a fixed basket of goods and services. Follow it through time and the compounding becomes concrete.</p>
   </div>
   <div class="tiles" id="tiles"></div>
-  <p class="caption" data-text="basket-cap">Ratio of the national consumer price index in August 2026 (268.5) to the January of each start year. Index base: 2021 = 100.</p>
+  <p class="caption" data-text="basket-cap">Ratio of the national consumer price index in September 2026 (271.5) to the January of each start year. Index base: 2021 = 100.</p>
 </section>
 
 <section id="drivers">
@@ -222,7 +226,7 @@ th { color: var(--muted); font-weight: 400; }
     <span class="eyebrow">16 regions, since 2022</span>
     <h2>Sixteen regions, sixteen inflations</h2>
     <p style="margin-top:12px" data-text="regions-p1">The national rate hides a wide spread. In December 2022, prices in Greater Accra were up 66.7% while Volta's rose 35.6%. Six months later the order had flipped: Greater Accra had the lowest rate of all sixteen regions.</p>
-    <p data-text="regions-p2">The 2026 rebound is uneven too. Central Region had the lowest rate in the country in July 2025, at 7.7%. By August 2026 it had the highest, 11.1%, up from 2.4% in February. Ashanti, the second-largest region in the basket, climbed from 3.7% to 8.7% over the same months. Western went the other way: from 5.1% in January to −2.2% in August, after prices there fell 2.8% in a single month. In Bono East, prices in August were 3.3% lower than a year earlier; in Savannah they were flat.</p>
+    <p data-text="regions-p2">In September 2026, Ashanti had the highest rate in the country, 9.8%, up from 5.0% in March. Western had the lowest, −0.5%. Upper East climbed fastest over the six months, from −1.8% to 4.5%. North East went the other way, from 8.6% to 2.8%. In Western and Bono East, prices were lower than a year earlier; in Northern they were flat.</p>
   </div>
   <div class="chips" id="chips" role="group" aria-label="Highlight a region"></div>
   <div class="chart" id="c-regions">
@@ -232,7 +236,7 @@ th { color: var(--muted); font-weight: 400; }
       <span><i class="key-line" style="background:var(--quiet-line)"></i>Other regions</span>
     </div>
   </div>
-  <p class="caption" data-text="regions-cap">Year-on-year inflation, all products. Regional series begin with the 2021 rebase, so the first year-on-year figures are for January 2022. <b>Choose a region</b> to highlight it. January 2022 to January 2026 from StatsBank; February to August 2026 from GSS's annex. Where the two overlap, all 784 regional values agree.</p>
+  <p class="caption" data-text="regions-cap">Year-on-year inflation, all products. Regional series begin with the 2021 rebase, so the first year-on-year figures are for January 2022. <b>Choose a region</b> to highlight it. January 2022 to January 2026 from StatsBank; February to September 2026 from GSS's annex.</p>
   <details>
     <summary>Regions as a table</summary>
     <div class="tbl-wrap"><table id="t-regions"></table></div>
@@ -243,7 +247,7 @@ th { color: var(--muted); font-weight: 400; }
   <div class="read">
     <span class="eyebrow">Where goods come from</span>
     <h2 data-text="imports-h2">Imported goods rose faster, and have fallen further</h2>
-    <p style="margin-top:12px" data-text="imports-p1">Goods Ghana imports are exposed to the exchange rate. When the cedi fell in 2022, imported-goods inflation climbed to a peak of 62.4% in January 2023, eleven points above locally produced goods. As the cedi recovered, it kept falling. In March 2026 imported goods cost 0.6% less than a year earlier, the only time in this record that either group has fallen. By August imported-goods inflation was 2.2%, against 6.1% for local goods.</p>
+    <p style="margin-top:12px" data-text="imports-p1">Goods Ghana imports are exposed to the exchange rate. When the cedi fell in 2022, imported-goods inflation climbed to a peak of 62.4% in January 2023, 11 points above locally produced goods. As the cedi recovered, it kept falling. In March 2026 imported goods cost 0.6% less than a year earlier, the only time in this record that either group has fallen. By September 2026 imported-goods inflation was 2.4%, against 6.4% for local goods.</p>
   </div>
   <div class="chart" id="c-imports">
     <div class="legend">
@@ -251,14 +255,14 @@ th { color: var(--muted); font-weight: 400; }
       <span><i class="key-line" style="background:var(--s2)"></i>Imported goods</span>
     </div>
   </div>
-  <p class="caption" data-text="imports-cap">Year-on-year inflation, national, by source of goods, January 2022 to August 2026. Imported items carry 31.5% of the basket's weight and local items 68.5%. Source: GSS CPI annex, August 2026.</p>
+  <p class="caption" data-text="imports-cap">Year-on-year inflation, national, by source of goods, January 2022 to September 2026. Imported items carry 31.5% of the basket's weight and local items 68.5%. Source: GSS CPI annex, September 2026.</p>
 </section>
 
 <section id="assurance">
   <div class="read">
     <span class="eyebrow">How sure each number is</span>
     <h2>Recent figures check to a tenth of a point; the oldest to three</h2>
-    <p style="margin-top:12px" data-text="assurance-p1">Every rate on this page was checked by recomputing it from the price index and comparing the two. How finely that check can see depends on the index's size. GSS rounds the index to one decimal place, so when it stood at 4 in 1999 the rounding alone hides nearly three percentage points. At 262 today it hides under a tenth of one.</p>
+    <p style="margin-top:12px" data-text="assurance-p1">Every rate on this page was checked by recomputing it from the price index and comparing the two. How finely that check can see depends on the index's size. GSS rounds the index to one decimal place, so when it stood at 4 in 1999 the rounding alone hides nearly three percentage points. At 271 today it hides under a tenth of one.</p>
     <p>The older figures are not wrong. They simply can't be verified as tightly, and this page says so rather than presenting 1999 and 2025 as equally certain.</p>
   </div>
   <div class="chart" id="c-assurance"></div>
@@ -270,7 +274,7 @@ th { color: var(--muted); font-weight: 400; }
   <div class="notes">
     <div>
       <h3>Source</h3>
-      <p data-text="notes-source">Every figure comes from the <a href="https://statsbank.statsghana.gov.gh/" target="_blank" rel="noopener">Ghana Statistical Service StatsBank</a>, table <span class="mono">cpi.px</span>, retrieved through its public API in September 2026, and from the <a href="https://statsghana.gov.gh/highlights/inflation-rate" target="_blank" rel="noopener">monthly CPI annex workbooks</a> for February to August 2026. Each value is stored with the file it came from, a fingerprint of that file and the date it was fetched.</p>
+      <p data-text="notes-source">Every figure comes from the <a href="https://statsbank.statsghana.gov.gh/" target="_blank" rel="noopener">Ghana Statistical Service StatsBank</a>, table <span class="mono">cpi.px</span>, retrieved through its public API, and from the <a href="https://statsghana.gov.gh/highlights/inflation-rate" target="_blank" rel="noopener">monthly CPI annex workbooks</a> for February to September 2026. Each value is stored with the file it came from, a fingerprint of that file and the date it was fetched.</p>
     </div>
     <div>
       <h3>Checks</h3>
@@ -293,7 +297,7 @@ th { color: var(--muted); font-weight: 400; }
 
 <div class="story-foot caption" style="padding-top:24px">
   <span>TARIN · a personal project by Kwadwo Boafo</span>
-  <span data-text="story-foot">Data: Ghana Statistical Service · StatsBank to Jan 2026 · CPI annexes to Aug 2026</span>
+  <span data-text="story-foot">Data: Ghana Statistical Service · StatsBank to Jan 2026 · CPI annexes to Sep 2026</span>
 </div>
 
 </div>
@@ -309,7 +313,7 @@ th { color: var(--muted); font-weight: 400; }
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=9756a9e725"></script>
+<script src="../assets/tarin.js?v=d6756e75d6"></script>
 <script>
 window.TARIN.json("data/price-record.json").then(function (D) {
   "use strict";

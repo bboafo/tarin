@@ -19,7 +19,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<link rel="stylesheet" href="assets/tarin.css?v=130c99661e">
+<link rel="stylesheet" href="assets/tarin.css?v=98c18b5686">
+<script>try { var tt = localStorage.getItem("tarin-theme"); if (tt === "dark" || tt === "light") document.documentElement.setAttribute("data-theme", tt); } catch (e) {}</script>
 <style>
 .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--rule); }
 .hero .hex { position: absolute; inset: 0; pointer-events: none; opacity: 0.55; }
@@ -52,6 +53,7 @@
 .stats span { font-size: 13px; color: var(--ink-2); line-height: 1.4; }
 
 .doors { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.door.wide { grid-column: 1 / -1; }
 @media (max-width: 1080px) { .doors { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .fc-line { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: baseline; border-top: 1px solid var(--grid); padding-top: 10px; font-size: 14px; }
 .fc-line b { font-family: var(--f-mono); font-weight: 500; color: var(--ink); }
@@ -77,6 +79,7 @@
       <a href="index.html" aria-current="page">Home</a>
       <a href="price-record/index.html">Price record</a>
       <a href="cedi/index.html">Cedi &amp; prices</a>
+      <a href="trade/index.html">Trade &amp; industry</a>
       <a href="explorer/index.html">Data explorer</a>
       <a href="catalogue/index.html">Catalogue</a>
       <a href="forecast/index.html">Forecast</a>
@@ -106,6 +109,7 @@
         <a class="btn primary" href="explorer/index.html">Open the data explorer</a>
         <a class="btn" href="price-record/index.html">Read the price record</a>
       </div>
+      <div class="news" id="news" hidden style="margin-top:22px"><span class="eyebrow">What's new</span><ul id="news-list"></ul></div>
     </div>
     <div class="latest card" aria-live="polite">
       <div class="head">
@@ -151,7 +155,7 @@
 
   <section class="block">
     <div class="doors">
-      <a class="door card" href="price-record/index.html">
+      <a class="door card wide" href="price-record/index.html">
         <span class="k">Data story</span>
         <h3>Ghana's Price Record</h3>
         <p>Twenty-seven years of inflation, the 2026 rebound, sixteen regions and imported goods, each chart with its sources.</p>
@@ -161,6 +165,12 @@
         <span class="k">Analysis</span>
         <h3>The cedi and prices</h3>
         <p>How much of a fall in the cedi reaches the prices of imported and local goods, and how many months it takes. Recomputed with each release.</p>
+        <span class="go">Read it →</span>
+      </a>
+      <a class="door card" href="trade/index.html">
+        <span class="k">Analysis</span>
+        <h3>Trade and industry</h3>
+        <p>What Ghana sells and buys, gold's rise to most of its exports, the terms of trade, and growth month by month. Recomputed with each release.</p>
         <span class="go">Read it →</span>
       </a>
       <a class="door card" href="explorer/index.html">
@@ -214,11 +224,20 @@
   </div>
 </footer>
 
-<script src="assets/tarin.js?v=9756a9e725"></script>
+<script src="assets/tarin.js?v=d6756e75d6"></script>
 <script>
 (function () {
   "use strict";
   var T = window.TARIN;
+  T.json("data/news.json").then(function (N) {
+    var items = (N.items || []).slice(0, 3);
+    if (!items.length) return;
+    document.getElementById("news-list").innerHTML = items.map(function (n) {
+      return "<li><span class='d'>" + T.dayLabel(n.date) + "</span>" + n.text.replace(/</g, "&lt;") + "</li>";
+    }).join("");
+    document.getElementById("news").hidden = false;
+  }).catch(function () { /* no news file yet */ });
+
   T.json("data/home.json").then(function (H) {
     var h = H.headline;
     document.getElementById("h-latest").textContent = T.monthLabel(H.latest).replace(/^(\w+)/, function (m) {

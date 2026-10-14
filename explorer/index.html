@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
 <title>Data explorer · TARIN</title>
 <meta name="description" content="Every Ghana CPI series TARIN holds, by source, region, product group and origin, with held values marked and CSV downloads.">
 <meta property="og:type" content="website">
@@ -16,11 +18,9 @@
 <meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
-<link rel="stylesheet" href="../assets/tarin.css?v=98c18b5686">
-<script>try { var tt = localStorage.getItem("tarin-theme"); if (tt === "dark" || tt === "light") document.documentElement.setAttribute("data-theme", tt); } catch (e) {}</script>
+<link rel="preload" href="../assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tarin.css?v=7aa01f5163">
 <style>
 .x-layout { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 24px; padding-block: 28px 12px; align-items: start; }
 .panel { padding: 16px; display: grid; gap: 16px; position: sticky; top: 12px; }
@@ -139,13 +139,30 @@ select { font: inherit; font-size: 14px; color: var(--ink); background: var(--su
 
 <footer class="site">
   <div class="wrap">
-    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
-    <span id="site-status" hidden></span>
-    <span>Data: Ghana Statistical Service and Bank of Ghana. Republished with their provenance.</span>
+    <div class="f-brand">
+      <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+      <p>The checked record of Ghana's data. A personal project by Kwadwo Boafo, Ghana.</p>
+    </div>
+    <nav class="f-nav" aria-label="Pages">
+      <span class="f-label">Pages</span>
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../cedi/index.html">Cedi &amp; prices</a>
+      <a href="../trade/index.html">Trade &amp; industry</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../catalogue/index.html">Catalogue</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+    <div class="f-meta">
+      <span class="f-label">Sources</span>
+      <span>Data: Ghana Statistical Service and Bank of Ghana. Republished with their provenance.</span>
+      <span id="site-status" hidden></span>
+    </div>
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=d6756e75d6"></script>
+<script src="../assets/tarin.js?v=9756a9e725"></script>
 <script>
 (function () {
   "use strict";

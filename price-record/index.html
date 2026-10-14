@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#ffffff">
 <title>Ghana's Price Record · TARIN</title>
 <meta name="description" content="Ghana's consumer price inflation from 1998 to the latest GSS release, with every figure checked against its source.">
 <meta property="og:type" content="website">
@@ -16,114 +18,89 @@
 <meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;1,400&display=swap">
-<link rel="stylesheet" href="../assets/tarin.css?v=98c18b5686">
-<script>try { var tt = localStorage.getItem("tarin-theme"); if (tt === "dark" || tt === "light") document.documentElement.setAttribute("data-theme", tt); } catch (e) {}</script>
+<link rel="preload" href="../assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tarin.css?v=7aa01f5163">
 <style>
-.story main { font-family: var(--f-display); font-size: 18px; line-height: 1.6; }
-
-.story h1, .story h2 { font-weight: 600; }
-.story .notes p, .story .lede { font-family: var(--f-display); }
+/* the price record is long-form: its prose is set in Fraunces */
+.story main { font-size: 18px; line-height: 1.65; }
+.story section .read p, .story .notes p { font-family: var(--f-display); font-variation-settings: "opsz" 14; }
 .read { max-width: 660px; }
-.eyebrow {
-  font-family: var(--f-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand-ink);
-}
 
-
-/* hero */
-.hero { display: grid; gap: 18px; padding-block: 56px 48px; border-bottom: 1px solid var(--rule); }
+/* hero: the navy hex band, with the rate as the headline */
+.hero { position: relative; display: grid; gap: 18px; color: #fff;
+  margin-inline: calc(50% - 50vw); padding: 64px calc(50vw - 50%) 56px;
+  background:
+    radial-gradient(800px 460px at 90% 0%, rgba(160, 226, 240, 0.24), transparent 60%),
+    var(--hex-ice) 0 0 / 37.8px 65.475px,
+    linear-gradient(120deg, var(--navy-deep) 0%, var(--navy) 55%, #2a4fb8 100%); }
+.hero .eyebrow { color: var(--ice-2); }
+.hero .eyebrow::before { background: var(--ice-2); }
 .hero .figure {
-  font-family: var(--f-display); font-weight: 600;
-  font-size: clamp(88px, 18vw, 168px); line-height: 0.9; letter-spacing: -0.03em;
+  font-family: var(--f-display); font-weight: 400; color: #fff;
+  font-size: clamp(96px, 19vw, 188px); line-height: 0.88; letter-spacing: -0.045em; font-variant-numeric: lining-nums;
 }
-.hero .figure small { font-size: 0.42em; letter-spacing: 0; margin-left: 4px; color: var(--ink-2); }
-.hero h1 { font-size: clamp(24px, 3.6vw, 34px); font-weight: 700; line-height: 1.2; max-width: 22ch; }
-.hero .lede { color: var(--ink-2); max-width: 60ch; }
+.hero .figure small { font-size: 0.36em; letter-spacing: 0; margin-left: 6px; color: var(--ice-1); }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 520; line-height: 1.1; max-width: 20ch; color: #fff; }
+.hero .lede { color: #d3def0; max-width: 62ch; font-family: var(--f-body); font-size: 18px; }
 .fresh {
   display: flex; gap: 10px; align-items: flex-start;
-  font-family: var(--f-mono); font-size: 13px; line-height: 1.5; color: var(--ink-2);
-  border-left: 2px solid var(--warn); padding: 2px 0 2px 12px; max-width: 64ch;
+  font-family: var(--f-mono); font-size: 12.5px; line-height: 1.55; color: #b9c8e0;
+  border-left: 2px solid var(--ice-2); padding: 2px 0 2px 14px; max-width: 66ch;
 }
 
-/* sections */
-section { display: grid; gap: 18px; padding-block: 52px; border-bottom: 1px solid var(--rule); }
-section h2 { font-size: clamp(24px, 3.2vw, 30px); font-weight: 700; line-height: 1.2; }
-section .read p + p { margin-top: 14px; }
-.caption { font-family: var(--f-mono); font-size: 12px; color: var(--muted); line-height: 1.5; }
-.caption b { color: var(--ink-2); font-weight: 500; }
-
-/* chart frame */
-.chart { position: relative; background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 12px 10px; }
-.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
-.chart text { font-family: var(--f-mono); font-size: 11px; fill: var(--muted); }
-.chart .lbl { fill: var(--ink-2); font-size: 12px; }
-.chart .lbl-strong { fill: var(--ink); font-size: 12px; font-weight: 500; }
-.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); padding: 0 6px 10px; }
-.legend span { display: inline-flex; align-items: center; gap: 7px; }
-.key-line { width: 16px; height: 2px; border-radius: 1px; display: inline-block; }
-.key-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-.key-band { width: 16px; height: 10px; display: inline-block; background: var(--tol); border-radius: 2px; }
-
-.tip {
-  position: absolute; pointer-events: none; z-index: 5;
-  background: var(--surface); border: 1px solid var(--rule); border-radius: 6px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
-  padding: 8px 10px; font-family: var(--f-mono); font-size: 12px; line-height: 1.45; color: var(--ink-2);
-  min-width: 150px;
-}
-.tip .t-date { color: var(--muted); margin-bottom: 4px; }
-.tip .t-row { display: flex; align-items: center; gap: 8px; justify-content: space-between; }
-.tip .t-row .k { display: inline-flex; align-items: center; gap: 6px; }
-.tip .t-row strong { color: var(--ink); font-weight: 500; }
+/* sections, with the hexagon on the rule between them */
+section { position: relative; display: grid; gap: 20px; padding-block: 56px; scroll-margin-top: 76px; }
+section + section::before { content: ""; position: absolute; top: 0; left: 18px; right: 0; height: 1px; background: var(--rule); }
+section + section::after { content: ""; position: absolute; top: -6px; left: 0; width: 12px; height: 12px;
+  background: linear-gradient(var(--ice-2), var(--brand));
+  -webkit-mask: var(--hex-mark) center / contain no-repeat; mask: var(--hex-mark) center / contain no-repeat; }
+section h2 { font-size: clamp(27px, 3.4vw, 38px); font-weight: 540; line-height: 1.12; max-width: 24ch; }
+section .read p + p { margin-top: 16px; }
+.chart { padding: 18px 14px 10px; }
 
 /* stat tiles */
-.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
-.tile { background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 16px 14px; display: grid; gap: 4px; align-content: start; }
-.tile .v { font-family: var(--f-display); font-weight: 600; font-size: 44px; line-height: 1; letter-spacing: -0.02em; }
-.tile .l { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); line-height: 1.45; }
+.tile { position: relative; overflow: hidden; background: var(--surface); border: 1px solid var(--rule); border-radius: var(--radius); box-shadow: var(--shadow);
+  padding: 20px 16px 14px; display: grid; gap: 6px; align-content: start; }
+.tile::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: linear-gradient(90deg, var(--ice-1), var(--ice-2) 50%, var(--brand)); }
+.tile .v { font-family: var(--f-display); font-weight: 500; font-size: 46px; line-height: 1; letter-spacing: -0.025em; color: var(--navy-deep); }
+.tile .l { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); line-height: 1.5; }
 
 /* region chips */
 .chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .chips button {
   font-family: var(--f-mono); font-size: 12px; color: var(--ink-2);
   background: var(--surface); border: 1px solid var(--rule); border-radius: 999px;
-  padding: 5px 11px; cursor: pointer;
+  padding: 5px 12px; cursor: pointer;
 }
-.chips button:hover { border-color: var(--axis); color: var(--ink); }
-.chips button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.chips button:hover { border-color: var(--brand); color: var(--brand-ink); }
+.chips button[aria-pressed="true"] { background: var(--navy); color: #fff; border-color: var(--navy); }
 
 /* tables */
 details { font-family: var(--f-mono); font-size: 12px; color: var(--ink-2); }
 summary { cursor: pointer; color: var(--muted); padding-block: 4px; }
 .tbl-wrap { overflow-x: auto; margin-top: 8px; }
 table { border-collapse: collapse; font-variant-numeric: tabular-nums; min-width: 360px; }
-th, td { text-align: right; padding: 4px 12px 4px 0; border-bottom: 1px solid var(--grid); white-space: nowrap; }
+th, td { text-align: right; padding: 5px 12px 5px 0; border-bottom: 1px solid var(--grid); white-space: nowrap; }
 th:first-child, td:first-child { text-align: left; }
-th { color: var(--muted); font-weight: 400; }
+th { color: var(--muted); font-weight: 500; border-bottom: 1.5px solid var(--ink); }
 
 /* notes */
-.notes { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
-.notes h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
-.notes p { font-size: 15px; color: var(--ink-2); line-height: 1.55; }
+.notes { display: grid; gap: 26px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.notes h3 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+.notes p { font-size: 15.5px; color: var(--ink-2); line-height: 1.6; }
 .notes p + p { margin-top: 8px; }
 .flag { border-left: 2px solid var(--warn); padding-left: 12px; }
 
-
-@media (max-width: 560px) {
-  .hero { padding-block: 36px 36px; }
-  section { padding-block: 40px; }
+@media (max-width: 600px) {
+  .hero { padding: 40px calc(50vw - 50%) 36px; }
+  section { padding-block: 42px; scroll-margin-top: 16px; }
   .chart { padding: 12px 6px 8px; }
+  .story main { font-size: 17px; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .chips button { transition: background .12s, color .12s, border-color .12s; }
 }
-
 </style>
 </head>
 <body data-root="../" data-page="record" class="story">
@@ -149,7 +126,7 @@ th { color: var(--muted); font-weight: 400; }
 
 <div class="hero">
   <span class="eyebrow" data-text="hero-eyebrow">Year-on-year inflation, September 2026</span>
-  <div class="figure" data-text="hero-figure">5.0<small>%</small></div>
+  <p class="figure" data-text="hero-figure">5.2<small>%</small></p>
   <h1 data-text="hero-h1">Back up from the lowest rate since 1999.</h1>
   <p class="lede" data-text="hero-lede">Prices rose 5.2% in the year to September 2026. In March the rate had fallen to 3.2%, the lowest since August 1999 in the series the Ghana Statistical Service publishes today, three years after it passed 54%. Since then it has turned back up, and the rise is coming from non-food prices.</p>
   <p class="fresh"><span data-text="hero-fresh">Figures to January 2026 come from GSS's StatsBank database, which hasn't been updated since 5 February 2026. February to September 2026 come from the CPI annex workbooks GSS publishes with each monthly bulletin. Where the two sources overlap, they agree to within rounding.</span></p>
@@ -307,13 +284,30 @@ th { color: var(--muted); font-weight: 400; }
 
 <footer class="site">
   <div class="wrap">
-    <span>TARIN · a personal project by Kwadwo Boafo · Ghana</span>
-    <span id="site-status" hidden></span>
-    <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+    <div class="f-brand">
+      <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+      <p>The checked record of Ghana's data. A personal project by Kwadwo Boafo, Ghana.</p>
+    </div>
+    <nav class="f-nav" aria-label="Pages">
+      <span class="f-label">Pages</span>
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../cedi/index.html">Cedi &amp; prices</a>
+      <a href="../trade/index.html">Trade &amp; industry</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../catalogue/index.html">Catalogue</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+    <div class="f-meta">
+      <span class="f-label">Sources</span>
+      <span>Data: Ghana Statistical Service. Republished with its provenance.</span>
+      <span id="site-status" hidden></span>
+    </div>
   </div>
 </footer>
 
-<script src="../assets/tarin.js?v=d6756e75d6"></script>
+<script src="../assets/tarin.js?v=9756a9e725"></script>
 <script>
 window.TARIN.json("data/price-record.json").then(function (D) {
   "use strict";

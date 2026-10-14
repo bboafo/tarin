@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#ffffff">
-<title>TARIN</title>
-<meta name="description" content="Ghana's consumer price data from GSS, archived at the source, checked by fourteen rules, and published with its provenance.">
+<title>TARIN · Know Ghana by its numbers</title>
+<meta name="description" content="Ghana's prices, the cedi, trade and growth, from the Ghana Statistical Service, the Bank of Ghana and the World Bank: archived at the source, checked, and published with their provenance.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TARIN">
-<meta property="og:title" content="TARIN · The checked record of Ghana&#x27;s prices">
-<meta property="og:description" content="Ghana's consumer price data from GSS, archived at the source, checked by fourteen rules, and published with its provenance.">
+<meta property="og:title" content="TARIN · Know Ghana by its numbers">
+<meta property="og:description" content="Ghana's prices, the cedi, trade and growth, from the Ghana Statistical Service, the Bank of Ghana and the World Bank: archived at the source, checked, and published with their provenance.">
 <meta property="og:url" content="https://tarin.bmdghana.com/">
 <meta property="og:image" content="https://tarin.bmdghana.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
+<meta property="og:image:alt" content="TARIN: Know Ghana by its numbers">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -42,6 +42,7 @@
 .hero .news { margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.16); color: #d3def0; }
 .hero .news .eyebrow { color: var(--ice-2); }
 .hero .news li .d { color: var(--ice-2); }
+.hero .ph-text { display: block; padding: 32px 34px 30px; }
 .hero .latest .eyebrow { color: var(--brand-ink); }
 .hero .latest .eyebrow::before { background: var(--brand); }
 .hero .latest { box-shadow: 0 24px 60px rgba(5, 12, 30, 0.35); border: 0; color: var(--ink); }
@@ -82,7 +83,45 @@
 .door.wide::after { width: 30px; height: 30px; top: 26px; right: 28px; }
 @media (prefers-reduced-motion: reduce) { .door { transition: none; } .door:hover { transform: none; } }
 
+/* ---- facts and figures: one slide at a time ---- */
+.facts-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; }
+.facts-ctl { display: flex; align-items: center; gap: 8px; }
+.facts-ctl button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; font: inherit; }
+.facts-ctl button:hover { border-color: var(--brand); color: var(--brand-ink); }
+.facts-ctl button svg { width: 16px; height: 16px; }
+.facts-ctl .count { font-family: var(--f-mono); font-size: 12px; color: var(--muted); min-width: 52px; text-align: center; }
+.facts-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; gap: 16px;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; border-radius: var(--radius); }
+.facts-track::-webkit-scrollbar { display: none; }
+.fact { flex: 0 0 100%; scroll-snap-align: start; display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+  overflow: hidden; min-height: 260px; }
+.fact .fig { position: relative; display: grid; align-content: center; gap: 10px; padding: 34px 34px 30px; color: #fff;
+  background: radial-gradient(420px 260px at 90% 0%, rgba(160, 226, 240, 0.25), transparent 65%),
+    var(--hex-ice) 0 0 / 37.8px 65.475px, linear-gradient(130deg, var(--navy-deep) 0%, var(--navy) 60%, #2a4fb8 100%); }
+.fact .fig .k { font-family: var(--f-mono); font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ice-2); }
+.fact .fig .v { font-family: var(--f-display); font-weight: 450; font-size: clamp(52px, 7vw, 84px); line-height: 0.95;
+  letter-spacing: -0.035em; font-variant-numeric: lining-nums; }
+.fact .fig .v small { font-size: 0.42em; letter-spacing: 0; margin-left: 3px; color: var(--ice-1); }
+.fact .fig .u { font-size: 15px; color: #d3def0; max-width: 30ch; line-height: 1.45; }
+.fact .txt { display: grid; align-content: center; gap: 12px; padding: 30px 34px; }
+.fact .txt h3 { font-family: var(--f-display); font-weight: 540; font-size: clamp(22px, 2.4vw, 28px); line-height: 1.2; letter-spacing: -0.01em; }
+.fact .txt p { color: var(--ink-2); }
+.fact .txt .src { font-family: var(--f-mono); font-size: 12px; color: var(--muted); }
+.fact .txt a.more { font-weight: 600; font-size: 14.5px; text-decoration: none; }
+.fact .txt a.more:hover { text-decoration: underline; }
+.facts-dots { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; }
+.facts-dots button { width: 11px; height: 11px; padding: 0; border: 0; cursor: pointer; background: var(--rule);
+  -webkit-mask: var(--hex-mark) center / contain no-repeat; mask: var(--hex-mark) center / contain no-repeat; }
+.facts-dots button[aria-current="true"] { background: var(--brand); transform: scale(1.25); }
+@media (max-width: 760px) {
+  .fact { grid-template-columns: 1fr; min-height: 0; }
+  .fact .fig { padding: 26px 22px 22px; }
+  .fact .txt { padding: 22px 22px 24px; }
+}
+
 @media (max-width: 860px) {
+  .hero .ph-text { padding: 22px 18px 24px; }
   .hero .wrap { grid-template-columns: 1fr; gap: 32px; padding-block: 44px 40px; }
   .doors { grid-template-columns: 1fr; }
   .door.wide { grid-template-columns: 1fr; padding: 26px 22px 22px; }
@@ -111,10 +150,10 @@
 <main>
 <div class="hero">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">Ghana · consumer prices · 1998 to <span id="h-latest">August 2026</span></span>
-      <h1 style="margin-top:18px">The checked record of <em>Ghana's</em> prices.</h1>
-      <p class="lede">TARIN takes the Ghana Statistical Service's price data from the source, keeps every file it came from, and runs fourteen checks before anything is published. Values that fail stay off the charts, with the reason shown.</p>
+    <div class="ph-text">
+      <span class="eyebrow">Ghana in data · prices to <span id="h-latest">September 2026</span></span>
+      <h1 style="margin-top:18px">Know <em>Ghana</em> by its numbers.</h1>
+      <p class="lede">Prices, the cedi, trade and growth, taken straight from the Ghana Statistical Service, the Bank of Ghana and the World Bank. Every figure keeps the file it came from and passes TARIN's checks before it is published; values that fail stay off the charts, with the reason shown.</p>
       <div class="cta">
         <a class="btn primary" href="explorer/index.html">Open the data explorer</a>
         <a class="btn" href="price-record/index.html">Read the price record</a>
@@ -147,6 +186,24 @@
 </div>
 
 <div class="wrap">
+  <section class="block" id="facts" aria-roledescription="carousel" aria-label="Facts and figures" hidden>
+    <div class="facts-head">
+      <div>
+        <span class="eyebrow">Facts and figures</span>
+        <h2 style="margin-top:6px">Ghana, in the latest numbers</h2>
+      </div>
+      <div class="facts-ctl">
+        <button type="button" id="f-prev" aria-label="Previous fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <span class="count" id="f-count" aria-live="polite"></span>
+        <button type="button" id="f-next" aria-label="Next fact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+        <button type="button" id="f-play" aria-label="Pause the slides"></button>
+      </div>
+    </div>
+    <div class="facts-track" id="f-track" tabindex="0" aria-label="Facts; use the arrow keys"></div>
+    <div class="facts-dots" id="f-dots" role="group" aria-label="Choose a fact"></div>
+    <p class="caption">Each figure is recomputed from TARIN's store whenever a source publishes; the link under it goes to the page with the detail.</p>
+  </section>
+
   <section class="block">
     <div class="read">
       <span class="eyebrow">In the store</span>
@@ -230,7 +287,7 @@
   <div class="wrap">
     <div class="f-brand">
       <a class="brand" href="index.html" aria-label="TARIN home"><img src="assets/logo.svg" alt=""><span class="word">TARIN</span></a>
-      <p>The checked record of Ghana's data. A personal project by Kwadwo Boafo, Ghana.</p>
+      <p>Know Ghana by its numbers: prices, the cedi, trade and growth, checked at the source. A personal project by Kwadwo Boafo, Ghana.</p>
     </div>
     <nav class="f-nav" aria-label="Pages">
       <span class="f-label">Pages</span>
@@ -256,6 +313,134 @@
 (function () {
   "use strict";
   var T = window.TARIN;
+  // ---- facts and figures: built from the same files as the pages they link to
+  (function () {
+    var FULL = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    function month(p) { return FULL[+p.slice(5, 7) - 1] + " " + p.slice(0, 4); }
+    function quarter(q) { return q.slice(5) + " " + q.slice(0, 4); }
+    function bn(v) { return "$" + T.fmt(Math.abs(v), 1) + "bn"; }
+    function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+    var got = function (p) { return T.json(p).catch(function () { return null; }); };
+    Promise.all([got("data/home.json"), got("data/trade.json"), got("data/cedi.json")]).then(function (D) {
+      var H = D[0], R = D[1], C = D[2], F = [];
+      if (H && H.headline) {
+        var h = H.headline, d = h.yoy - h.yoy_prev, prev = T.periodAt(T.monthIndex(H.latest) - 1);
+        F.push({ k: "Inflation", v: T.fmt(h.yoy, 1) + "<small>%</small>", u: "consumer prices, year on year, " + month(H.latest),
+          h: "Prices rose " + T.fmt(h.yoy, 1) + "% in the year to " + month(H.latest) + ".",
+          p: (Math.abs(d) < 0.05 ? "The same rate as in " : (d > 0 ? "Up from " : "Down from ") + T.fmt(h.yoy_prev, 1) + "% in ") + month(prev).split(" ")[0] +
+             ". Food prices rose " + T.fmt(h.food, 1) + "% and everything else " + T.fmt(h.nonfood, 1) + "%.",
+          s: "Ghana Statistical Service, CPI", a: "price-record/index.html", t: "Read the price record" });
+      }
+      if (H && H.forecast) {
+        var f = H.forecast;
+        F.push({ k: "Forecast", v: T.fmt(f.yoy, 1) + "<small>%</small>", u: "expected inflation for " + month(f.period),
+          h: "TARIN expects inflation of about " + T.fmt(f.yoy, 1) + "% in " + month(f.period) + ".",
+          p: "Frozen before GSS publishes, with an 80% range of " + T.fmt(f.lo80, 1) + "–" + T.fmt(f.hi80, 1) + "%, and scored against the figure GSS releases.",
+          s: "TARIN forecast", a: "forecast/index.html", t: "See the forecast" });
+      }
+      var usd = H && H.fx && H.fx.USDGHS;
+      if (usd) {
+        var ch = usd.year ? 100 * (usd.year[1] / usd.rate - 1) : null;
+        F.push({ k: "The cedi", v: "GH¢" + T.fmt(usd.rate, 2), u: "for one US dollar, " + T.dayLabel(usd.date),
+          h: ch == null ? "The Bank of Ghana's interbank rate for the dollar." : Math.abs(ch) < 0.05 ? "The cedi is where it was against the dollar a year ago." :
+             "The cedi is " + T.fmt(Math.abs(ch), 1) + "% " + (ch >= 0 ? "stronger" : "weaker") + " against the dollar than a year ago.",
+          p: "A year earlier a dollar cost GH¢" + (usd.year ? T.fmt(usd.year[1], 2) : "–") + ". TARIN reads the Bank of Ghana's rates twice a day.",
+          s: "Bank of Ghana, interbank mid-rate", a: "cedi/index.html", t: "How the cedi moves prices" });
+      }
+      var pt = C && C.pass_through && C.pass_through.import && C.pass_through.import.path;
+      if (pt && pt[12]) {
+        var lo = C.pass_through.local && C.pass_through.local.path[12];
+        F.push({ k: "Cedi to prices", v: T.fmt(pt[12].share, 0) + "<small>%</small>", u: "of a fall in the cedi reaches imported-goods prices within a year",
+          h: "About " + T.fmt(pt[3].share, 0) + "% of a fall shows up in import prices within three months.",
+          p: "After a year it is about " + T.fmt(pt[12].share, 0) + "%" + (lo ? ", and local goods follow almost as much (" + T.fmt(lo.share, 0) + "%)" : "") + ".",
+          s: "TARIN, from GSS and Bank of Ghana data", a: "cedi/index.html", t: "Read the analysis" });
+      }
+      var E = R && R.exports_by_group, gold = E && E.rows.filter(function (r) { return r.group === "Gold"; })[0];
+      if (gold) {
+        F.push({ k: "Gold", v: T.fmt(gold.share1, 0) + "<small>%</small>", u: "of Ghana's goods exports were gold in " + E.to,
+          h: "Gold earned " + bn(gold.v1) + " of Ghana's " + bn(E.total1) + " in exports in " + E.to + ".",
+          p: "In " + E.from + " it was " + T.fmt(gold.share0, 0) + "% (" + bn(gold.v0) + ").",
+          s: "Ghana Statistical Service, trade statistics", a: "trade/index.html#sells", t: "What Ghana sells" });
+      }
+      var L = R && R.last12, P = R && R.prev12;
+      if (L) {
+        var surplus = L.balance >= 0;
+        F.push({ k: "Trade", v: (surplus ? "+" : "−") + bn(L.balance), u: "goods trade " + (surplus ? "surplus" : "deficit") + ", 12 months to " + month(L.to),
+          h: "Exports of " + bn(L.exports) + " against imports of " + bn(L.imports) + ".",
+          p: P ? "A year earlier the " + (P.balance >= 0 ? "surplus" : "deficit") + " was " + bn(P.balance) + "." : "",
+          s: "Ghana Statistical Service, trade statistics", a: "trade/index.html#flows", t: "Exports and imports" });
+      }
+      var TT = R && R.terms_of_trade, last = TT && TT.rows[TT.rows.length - 1];
+      if (last) {
+        F.push({ k: "Terms of trade", v: T.fmt(last[3] / 100, 1) + "<small>×</small>", u: "imports bought by a unit of exports, " + quarter(last[0]) + " against " + quarter(TT.base),
+          h: last[3] >= 105 ? "What Ghana sells has got dearer faster than what it buys." : last[3] <= 95 ? "What Ghana buys has got dearer faster than what it sells." : "Export and import prices have moved roughly together.",
+          p: "GSS's export unit value index divided by its import unit value index, set to 1 in " + quarter(TT.base) + ".",
+          s: "Ghana Statistical Service, unit value indices", a: "trade/index.html#tot", t: "Terms of trade" });
+      }
+      var M = R && R.mieg && R.mieg[R.mieg.length - 1];
+      if (M) {
+        F.push({ k: "Growth", v: T.fmt(M[1], 1) + "<small>%</small>", u: "economic growth, year on year, " + month(M[0]),
+          h: "The economy was " + T.fmt(Math.abs(M[1]), 1) + "% " + (M[1] >= 0 ? "larger" : "smaller") + " than a year earlier.",
+          p: "Services " + T.fmt(M[4], 1) + "%, industry " + T.fmt(M[3], 1) + "%, agriculture " + T.fmt(M[2], 1) + "%.",
+          s: "Ghana Statistical Service, monthly indicator of economic growth", a: "trade/index.html#growth", t: "Growth and industry" });
+      }
+      if (H && H.totals) {
+        F.push({ k: "The store", v: T.int(H.totals.values), u: "values stored, each traced to its source file",
+          h: T.int(H.totals.held) + " are held back because a check found a problem.",
+          p: "They come from " + T.int(H.totals.files) + " fingerprinted source files; held values stay off the charts, with the reason shown.",
+          s: "TARIN checks", a: "checks/index.html", t: "How it's checked" });
+      }
+      if (F.length < 2) return;
+
+      var sec = document.getElementById("facts"), track = document.getElementById("f-track"), dots = document.getElementById("f-dots");
+      track.innerHTML = F.map(function (f, i) {
+        return "<article class='fact card' role='group' aria-roledescription='slide' aria-label='" + (i + 1) + " of " + F.length + "'>" +
+          "<div class='fig'><span class='k'>" + esc(f.k) + "</span><span class='v'>" + f.v + "</span><span class='u'>" + esc(f.u) + "</span></div>" +
+          "<div class='txt'><h3>" + esc(f.h) + "</h3>" + (f.p ? "<p>" + esc(f.p) + "</p>" : "") +
+          "<span class='src'>Source: " + esc(f.s) + "</span><a class='more' href='" + f.a + "'>" + esc(f.t) + " →</a></div></article>";
+      }).join("");
+      dots.innerHTML = F.map(function (f, i) { return "<button type='button' aria-label='" + esc(f.k) + "'></button>"; }).join("");
+      sec.hidden = false;
+
+      var cur = 0, slides = track.children, timer = null;
+      var still = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var playing = !still, held = false, play = document.getElementById("f-play");
+      var PAUSE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+      var PLAY = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+      function mark(i) {
+        cur = i;
+        document.getElementById("f-count").textContent = (i + 1) + " / " + F.length;
+        Array.prototype.forEach.call(dots.children, function (b, j) { b.setAttribute("aria-current", j === i ? "true" : "false"); });
+      }
+      function go(i) {
+        i = (i + F.length) % F.length;
+        track.scrollTo({ left: slides[i].offsetLeft - track.offsetLeft, behavior: still ? "auto" : "smooth" });
+        mark(i);
+      }
+      function tick() { clearInterval(timer); timer = null; if (playing && !held) timer = setInterval(function () { go(cur + 1); }, 7000); }
+      function showPlay() { play.innerHTML = playing ? PAUSE : PLAY; play.setAttribute("aria-label", playing ? "Pause the slides" : "Play the slides"); }
+      document.getElementById("f-prev").addEventListener("click", function () { go(cur - 1); tick(); });
+      document.getElementById("f-next").addEventListener("click", function () { go(cur + 1); tick(); });
+      play.addEventListener("click", function () { playing = !playing; showPlay(); tick(); });
+      Array.prototype.forEach.call(dots.children, function (b, j) { b.addEventListener("click", function () { go(j); tick(); }); });
+      track.addEventListener("keydown", function (ev) {
+        if (ev.key === "ArrowRight") { go(cur + 1); tick(); ev.preventDefault(); }
+        if (ev.key === "ArrowLeft") { go(cur - 1); tick(); ev.preventDefault(); }
+      });
+      // a swipe or scroll on the track moves the counter with it
+      var st = null;
+      track.addEventListener("scroll", function () {
+        clearTimeout(st);
+        st = setTimeout(function () { var i = Math.round(track.scrollLeft / track.clientWidth); if (i !== cur && slides[i]) { mark(i); tick(); } }, 120);
+      });
+      // pause while the reader is on the slides
+      ["pointerenter", "focusin"].forEach(function (e) { sec.addEventListener(e, function () { held = true; tick(); }); });
+      ["pointerleave", "focusout"].forEach(function (e) { sec.addEventListener(e, function () { held = sec.matches(":hover") || sec.contains(document.activeElement); tick(); }); });
+      document.addEventListener("visibilitychange", function () { held = document.hidden; tick(); });
+      mark(0); showPlay(); tick();
+    });
+  })();
+
   T.json("data/news.json").then(function (N) {
     var items = (N.items || []).slice(0, 3);
     if (!items.length) return;

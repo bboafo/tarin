@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://tarin.bmdghana.com/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="TARIN: the checked record of Ghana's prices">
+<meta property="og:image:alt" content="TARIN: Know Ghana by its numbers">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -34,6 +34,8 @@
     radial-gradient(800px 460px at 90% 0%, rgba(160, 226, 240, 0.24), transparent 60%),
     var(--hex-ice) 0 0 / 37.8px 65.475px,
     linear-gradient(120deg, var(--navy-deep) 0%, var(--navy) 55%, #2a4fb8 100%); }
+.hero .ph-text { gap: 18px; padding: 30px 34px 30px; }
+@media (max-width: 600px) { .hero .ph-text { padding: 22px 18px; } }
 .hero .eyebrow { color: var(--ice-2); }
 .hero .eyebrow::before { background: var(--ice-2); }
 .hero .figure {
@@ -125,11 +127,13 @@ th { color: var(--muted); font-weight: 500; border-bottom: 1.5px solid var(--ink
 <div class="wrap story-wrap">
 
 <div class="hero">
+<div class="ph-text">
   <span class="eyebrow" data-text="hero-eyebrow">Year-on-year inflation, September 2026</span>
   <p class="figure" data-text="hero-figure">5.2<small>%</small></p>
   <h1 data-text="hero-h1">Back up from the lowest rate since 1999.</h1>
   <p class="lede" data-text="hero-lede">Prices rose 5.2% in the year to September 2026. In March the rate had fallen to 3.2%, the lowest since August 1999 in the series the Ghana Statistical Service publishes today, three years after it passed 54%. Since then it has turned back up, and the rise is coming from non-food prices.</p>
   <p class="fresh"><span data-text="hero-fresh">Figures to January 2026 come from GSS's StatsBank database, which hasn't been updated since 5 February 2026. February to September 2026 come from the CPI annex workbooks GSS publishes with each monthly bulletin. Where the two sources overlap, they agree to within rounding.</span></p>
+</div>
 </div>
 
 <nav class="toc" aria-label="On this page"><span>On this page</span><a href="#record">27 years</a><a href="#turn">The turn</a><a href="#basket">The basket</a><a href="#drivers">2022's drivers</a><a href="#regions">Regions</a><a href="#imports">Imported goods</a><a href="#assurance">Accuracy</a><a href="#notes">About the data</a></nav>
@@ -286,7 +290,7 @@ th { color: var(--muted); font-weight: 500; border-bottom: 1.5px solid var(--ink
   <div class="wrap">
     <div class="f-brand">
       <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
-      <p>The checked record of Ghana's data. A personal project by Kwadwo Boafo, Ghana.</p>
+      <p>Know Ghana by its numbers: prices, the cedi, trade and growth, checked at the source. A personal project by Kwadwo Boafo, Ghana.</p>
     </div>
     <nav class="f-nav" aria-label="Pages">
       <span class="f-label">Pages</span>

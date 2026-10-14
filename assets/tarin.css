@@ -134,6 +134,11 @@ nav.main a[aria-current="page"]::after {
     linear-gradient(120deg, var(--navy-deep) 0%, var(--navy) 55%, #2a4fb8 100%);
   border-bottom: 0;
 }
+/* the text on a band sits on a translucent navy panel, so the hex pattern doesn't fight it */
+.ph-text { display: grid; gap: 14px; justify-self: start; align-content: start; max-width: min(100%, 900px);
+  padding: 26px 30px 28px; border-radius: 16px; border: 1px solid rgba(191, 218, 247, 0.16);
+  background: rgba(10, 20, 44, 0.62); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+  box-shadow: 0 18px 50px rgba(5, 12, 30, 0.22); }
 .page-head .eyebrow { color: var(--ice-2); }
 .page-head .eyebrow::before { background: var(--ice-2); }
 .page-head h1 { font-size: clamp(32px, 4.6vw, 52px); line-height: 1.06; max-width: 22ch; color: #fff; font-weight: 520; }
@@ -298,6 +303,7 @@ nav.toc a:hover { border-color: var(--brand); color: var(--brand-ink); backgroun
   .brand .word { font-size: 19px; }
   .page-head { padding: 36px calc(50vw - 50%) 32px !important; }
   .page-head .lede { font-size: 16.5px; }
+  .ph-text { padding: 20px 18px 22px; border-radius: 12px; margin-inline: -4px; }
   section.block { padding-block: 38px; scroll-margin-top: 16px; }
   .tiles { gap: 10px; }
   .tiles > div { padding: 16px 14px 12px; }

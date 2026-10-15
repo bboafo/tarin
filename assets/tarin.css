@@ -225,15 +225,23 @@ footer.site {
   margin-top: 40px; color: var(--band-muted);
   background: var(--hex-ice) 0 0 / 37.8px 65.475px, linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 70%);
 }
-footer.site .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1.4fr); gap: 28px 40px;
+footer.site .wrap { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr) minmax(0, 0.9fr) minmax(0, 1.3fr); gap: 28px 36px;
   padding-block: 44px 36px; font-size: 13.5px; line-height: 1.6; }
 footer.site a { color: var(--ice-1); text-decoration-color: rgba(191, 218, 247, 0.35); }
 footer.site a:hover { color: #fff; }
 footer.site .f-brand { display: grid; gap: 12px; align-content: start; }
 footer.site .f-brand .brand { color: #fff; }
 footer.site .f-brand p { max-width: 34ch; }
+footer.site .f-copy { font-family: var(--f-mono); font-size: 12px; color: var(--band-muted); }
+.brand .by { font-family: var(--f-mono); font-size: 10.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--muted); border-left: 1px solid var(--rule); padding-left: 11px; margin-left: 1px; line-height: 1.2; }
 footer.site .f-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px; align-content: start; }
 footer.site .f-nav a { text-decoration: none; }
+footer.site .f-contact { display: grid; gap: 5px; align-content: start; }
+footer.site .f-contact a { text-decoration: none; }
+footer.site .f-contact a:hover { text-decoration: underline; }
+footer.site .f-contact span { color: var(--band-muted); }
+footer.site .f-social { margin-top: 4px; }
 footer.site .f-meta { display: grid; gap: 10px; align-content: start; font-family: var(--f-mono); font-size: 12px; }
 footer.site .f-label { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ice-2); grid-column: 1 / -1; margin-bottom: 2px; }
 
@@ -269,9 +277,8 @@ nav.toc a:hover { border-color: var(--brand); color: var(--brand-ink); backgroun
 .btn.primary { background: var(--brand); border-color: var(--brand); color: #fff; }
 .btn.primary:hover { background: #1f4fd6; color: #fff; }
 
-@media (max-width: 960px) {
+@media (max-width: 1080px) {
   footer.site .wrap { grid-template-columns: 1fr 1fr; }
-  footer.site .f-meta { grid-column: 1 / -1; }
 }
 @media (max-width: 860px) {
   .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }

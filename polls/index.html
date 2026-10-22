@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="author" content="BMD Ghana Limited">
+<meta name="theme-color" content="#ffffff">
+<title>Opinion polls · TARIN</title>
+<meta name="description" content="Every published national poll on the Ghanaian president's job approval, with who ran it, when, how many people were asked, and where each figure was read. Checked and kept up to date by TARIN.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TARIN">
+<meta property="og:title" content="Opinion polls · TARIN">
+<meta property="og:description" content="Every published national poll on the Ghanaian president's job approval, with who ran it, when, how many people were asked, and where each figure was read. Checked and kept up to date by TARIN.">
+<meta property="og:url" content="https://tarin.bmdghana.com/polls/">
+<meta property="og:image" content="https://tarin.bmdghana.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TARIN: Know Ghana by its numbers">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../assets/fonts/instrument-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tarin.css?v=983185bf84">
+<style>
+.ctl { display: flex; justify-content: flex-end; align-items: center; gap: 10px; flex-wrap: wrap; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 999px; overflow: hidden; background: var(--surface); }
+.seg button { font: inherit; font-size: 13px; color: var(--ink-2); background: none; border: 0; padding: 7px 13px; cursor: pointer; border-right: 1px solid var(--rule); }
+.seg button:last-child { border-right: 0; }
+.seg button[aria-pressed="true"] { background: var(--navy); color: #fff; }
+.prose p { color: var(--ink-2); }
+.prose p + p { margin-top: 12px; }
+.prose b { color: var(--ink); font-weight: 600; }
+ul.rules { margin: 10px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+ul.rules li { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 10px; font-size: 15px; color: var(--ink-2); }
+ul.rules li code { font-weight: 600; color: var(--navy); }
+ul.rules li .st { display: block; margin-top: 2px; }
+table.data td .sub { display: block; font-family: var(--f-mono); font-size: 11.5px; color: var(--muted); }
+table.data td.v { font-family: var(--f-mono); font-size: 13.5px; white-space: nowrap; }
+table.data td.v b { color: var(--ink); font-weight: 600; }
+#c-polls .pt { cursor: pointer; }
+</style>
+</head>
+<body data-root="../" data-page="polls">
+
+<header class="band">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="TARIN home, a BMD Ghana project"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span><span class="by">by BMD</span></a>
+    <nav class="main" aria-label="Main">
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../cedi/index.html">Cedi &amp; prices</a>
+      <a href="../trade/index.html">Trade &amp; industry</a>
+      <a href="index.html" aria-current="page">Polls</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../catalogue/index.html">Catalogue</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="page-head">
+    <div class="ph-text">
+    <span class="eyebrow" data-text="eyebrow">Opinion polls</span>
+    <h1>What Ghanaians think of the president's performance</h1>
+    <p class="lede" data-text="lede">Every published national poll on the president's job approval that TARIN can trace, with who ran it, when, how many people were asked and where each figure was read.</p>
+    </div>
+  </div>
+  <nav class="toc" aria-label="On this page"><span>On this page</span><a href="#chart">Poll by poll</a><a href="#differ">Why polls differ</a><a href="#table">Every poll</a><a href="#method">Method</a></nav>
+
+  <section class="block" aria-label="The latest in four numbers">
+    <div class="tiles">
+      <div><span class="v" data-text="tile-0-v">–</span><span class="l" data-text="tile-0-l"></span></div>
+      <div><span class="v" data-text="tile-1-v">–</span><span class="l" data-text="tile-1-l"></span></div>
+      <div><span class="v" data-text="tile-2-v">–</span><span class="l" data-text="tile-2-l"></span></div>
+      <div><span class="v" data-text="tile-3-v">–</span><span class="l" data-text="tile-3-l"></span></div>
+    </div>
+  </section>
+
+  <section class="block" id="chart">
+    <div class="read">
+      <span class="eyebrow">Job approval</span>
+      <h2 style="margin-top:6px" data-text="c-h2">Approval, poll by poll</h2>
+      <p style="margin-top:10px;color:var(--ink-2)" data-text="c-p">Each point is one poll.</p>
+    </div>
+    <div class="ctl">
+      <div class="seg" role="group" aria-label="What to show" id="c-measure">
+        <button type="button" data-m="approve" aria-pressed="true">Approve</button><button type="button" data-m="disapprove" aria-pressed="false">Disapprove</button><button type="button" data-m="net" aria-pressed="false">Net</button><button type="button" data-m="right" aria-pressed="false">Right direction</button>
+      </div>
+    </div>
+    <div class="chart" id="c-polls"><div class="legend" id="c-legend"></div></div>
+    <p class="caption" id="c-cap">Share of respondents, %. Hover or tap a point for the poll's details. Hollow points: fieldwork dates not published, placed at the release date.</p>
+  </section>
+
+  <section class="block" id="differ">
+    <div class="read">
+      <span class="eyebrow">Why polls differ</span>
+      <h2 style="margin-top:6px" data-text="d-h2">When the pollsters polled at the same time</h2>
+      <p style="margin-top:10px;color:var(--ink-2)" data-text="d-p"></p>
+      <p style="margin-top:12px;color:var(--ink-2)">The pollsters measure in different ways. Global InfoAnalytics' Mussa Dankwah has put the gap down to timing, sample size and weighting: his firm interviewed more than 1,500 people in the Ashanti Region alone, against about 1,000 nationwide for the IEA, and weights its sample by registered voters (<a href="https://rainbowradioonline.com/2026/06/22/timing-methodology-and-sample-size-account-for-differences-in-global-infoanalytics-and-iea-ratings/?amp=1">Rainbow Radio</a>). In the IEA's May survey, people who disapproved most often named the economy (30.9%) and electricity supply (29.9%), during the power cuts of May 2026 (<a href="https://www.graphic.com.gh/news/politics/iea-poll-mahamas-approval-rating-falls-from-68-to-58-9-still-enjoys-majority-support.html">Graphic Online</a>).</p>
+      <p style="margin-top:12px;color:var(--ink-2)">TARIN can't say which is nearer the truth, so it shows every poll as published, never an average of pollsters that ask different people in different ways.</p>
+    </div>
+  </section>
+
+  <section class="block" id="table">
+    <div class="read">
+      <span class="eyebrow">Every poll</span>
+      <h2 style="margin-top:6px">Every poll TARIN has found, newest first</h2>
+    </div>
+    <div class="tbl-wrap">
+      <table class="data stack" id="t-polls">
+        <thead><tr><th>Poll</th><th>Fieldwork</th><th>Published</th><th class="r">Sample</th><th>Mode</th><th class="r">Margin</th><th class="r">Approve</th><th class="r">Disapprove</th><th class="r">No opinion</th><th class="r">Right direction</th><th>Source</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <p class="caption">A dash means the source doesn't give the figure; TARIN never fills it in. Margins are as the pollster states them, at its stated confidence level. "Right direction": the share who say the country is heading in the right direction.</p>
+  </section>
+
+  <section class="block" id="method">
+    <div class="read prose">
+      <span class="eyebrow">Method</span>
+      <h2 style="margin-top:6px">How the polls are collected, and what this page leaves out</h2>
+      <p style="margin-top:10px" data-text="m-src">Where the figures come from.</p>
+      <p><b>What counts.</b> National polls of adults or voters in Ghana that ask about the president's job performance and say who ran them and when the results came out. Party-run polls, online straw polls and anything read from social media are left out.</p>
+      <p><b>The checks.</b> Every poll goes through five rules before it is shown:</p>
+      <ul class="rules" id="p-rules"></ul>
+      <p><b>Downloads.</b> <a href="../data/csv/polls-approval.csv" download>polls-approval.csv</a> (every poll, one row each) and <a href="../data/polls.json" download>polls.json</a> (everything on this page, with each source link).</p>
+      <p><b>Missed one?</b> If you know of a national poll that isn't here, tell us through <a href="https://bmdghana.com/contact">BMD's contact form</a>, with a link to where it was published.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="f-brand">
+      <a class="brand" href="../index.html" aria-label="TARIN home"><img src="../assets/logo.svg" alt=""><span class="word">TARIN</span></a>
+      <p>Know Ghana by its numbers: prices, the cedi, trade and growth, checked at the source.</p>
+      <p>A project of <a href="https://bmdghana.com/">BMD Ghana Limited</a>.</p>
+      <a class="f-bmd" href="https://bmdghana.com/" aria-label="BMD Analytics, bmdghana.com"><img src="../assets/bmd-analytics.svg" alt="BMD Analytics" width="132" height="55"></a>
+      <p class="f-copy">© 2026 BMD Ghana Limited</p>
+    </div>
+    <nav class="f-nav" aria-label="Pages">
+      <span class="f-label">Pages</span>
+      <a href="../index.html">Home</a>
+      <a href="../price-record/index.html">Price record</a>
+      <a href="../cedi/index.html">Cedi &amp; prices</a>
+      <a href="../trade/index.html">Trade &amp; industry</a>
+      <a href="../polls/index.html">Polls</a>
+      <a href="../explorer/index.html">Data explorer</a>
+      <a href="../catalogue/index.html">Catalogue</a>
+      <a href="../forecast/index.html">Forecast</a>
+      <a href="../checks/index.html">How it's checked</a>
+    </nav>
+    <div class="f-contact">
+      <span class="f-label">Contact BMD</span>
+      <a href="tel:+233546020610">+233 54 602 0610</a>
+      <a href="https://wa.me/817091278070" rel="noopener">WhatsApp +81 70 9127 8070</a>
+      <a href="https://bmdghana.com/contact" rel="noopener">Contact form</a>
+      <span>Oxford Street, Konongo,<br>Ashanti Region, Ghana</span>
+      <span class="f-social"><a href="https://x.com/BMDGhana" rel="noopener">X</a> · <a href="https://www.facebook.com/bmdghana/" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/bmdghana/" rel="noopener">Instagram</a></span>
+    </div>
+    <div class="f-meta">
+      <span class="f-label">Sources</span>
+      <span>Polls: Global InfoAnalytics and the Institute of Economic Affairs, as published by them or reported in the press. Compiled by TARIN.</span>
+      <span id="site-status" hidden></span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/tarin.js?v=9756a9e725"></script>
+<script>
+(function () {
+  "use strict";
+  var T = window.TARIN;
+  var SHORT = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var COLORS = ["var(--s1)", "var(--s2)", "var(--s3)"];
+  var NAMES = { "Institute of Economic Affairs": "IEA" };
+  function nm(p) { return NAMES[p] || p; }
+  function num(v) { return v == null ? "–" : (Math.round(v) === v ? String(v) : T.fmt(v, 1)); }
+  function pc(v) { return v == null ? "–" : num(v) + "%"; }
+  function day(s) { var d = s.split("-"); return +d[2] + " " + SHORT[+d[1] - 1] + " " + d[0]; }
+  function span(p) {
+    var s = p.fieldwork[0], e = p.fieldwork[1];
+    if (!s || !e) return "not published";
+    if (s.length === 7) return SHORT[+s.slice(5, 7) - 1] + " " + s.slice(0, 4);
+    var a = s.split("-"), b = e.split("-");
+    if (a[0] !== b[0]) return day(s) + " – " + day(e);
+    if (a[1] !== b[1]) return +a[2] + " " + SHORT[+a[1] - 1] + " – " + day(e);
+    return +a[2] + "–" + day(e);
+  }
+  function esc(t) { return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+  function val(p, m) { return m === "net" ? p.net : p[m]; }
+
+  T.json("data/polls.json").then(function (D) {
+    if (D.text) Object.keys(D.text).forEach(function (k) {
+      var el = document.querySelector('[data-text="' + k + '"]'); if (el) el.innerHTML = D.text[k];
+    });
+    var polls = D.polls.filter(function (p) { return !p.held; });
+    var who = D.pollsters.map(function (x) { return x.name; });
+    var color = {}; who.forEach(function (n, i) { color[n] = COLORS[i % COLORS.length]; });
+
+    // ---- chart: one point per poll, lines join a pollster's polls, nothing averaged
+    var host = document.getElementById("c-polls"), measure = "approve";
+    var LABEL = { approve: "Approve", disapprove: "Disapprove", net: "Net (approve − disapprove)", right: "Right direction" };
+    document.getElementById("c-legend").innerHTML = who.map(function (n, i) {
+      return "<span><i class='key-dot' style='background:" + color[n] + (i % 2 ? ";border-radius:2px" : "") + "'></i>" + esc(n) + "</span>";
+    }).join("") + "<span><i class='key-dot' style='background:var(--surface);border:2px solid var(--ink-2);box-sizing:border-box'></i>Fieldwork dates not published</span>";
+    var t0 = Date.parse(polls[0].at), t1 = Date.parse(polls[polls.length - 1].at);
+    function draw() {
+      var old = host.querySelector("svg"); if (old) old.remove();
+      var oldTip = host.querySelector(".tip"); if (oldTip) oldTip.remove();
+      var W = T.plotWidth(host), H = W < 520 ? 260 : 320;
+      var longest = Math.max.apply(null, who.map(function (n) { return nm(n).length; })) + 7;
+      var narrow = W < 560;
+      var m = { t: 14, r: narrow ? 52 : Math.min(W * 0.32, 12 + longest * 7.4), b: 28, l: 40 };
+      var pts = polls.filter(function (p) { return val(p, measure) != null; });
+      var vs = pts.map(function (p) { return val(p, measure); });
+      var nt = T.niceTicks(Math.min.apply(null, vs) - 4, Math.max.apply(null, vs) + 4, 5);
+      var pad = 25 * 864e5, a = t0 - pad, b = t1 + pad;
+      var x = function (t) { return m.l + (t - a) / (b - a) * (W - m.l - m.r); };
+      var y = function (v) { return m.t + (nt.hi - v) / (nt.hi - nt.lo) * (H - m.t - m.b); };
+      var svg = T.el("svg", { viewBox: "0 0 " + W + " " + H, width: W, height: H, role: "img",
+        "aria-label": LABEL[measure] + " by poll, " + polls.length + " polls" });
+      host.appendChild(svg);
+      nt.ticks.forEach(function (v) {
+        svg.appendChild(T.el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v) }, "stroke:" + (v === 0 ? "var(--axis)" : "var(--grid)") + ";stroke-width:1"));
+        T.text(svg, m.l - 6, y(v) + 4, num(v) + (measure === "net" ? "" : "%"), null, "end");
+      });
+      // month ticks: one per quarter
+      var d = new Date(a); d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+      while (d.getTime() < b) {
+        if (d.getUTCMonth() % (narrow ? 6 : 3) === 0) {
+          var tx = x(d.getTime());
+          svg.appendChild(T.el("line", { x1: tx, x2: tx, y1: H - m.b, y2: H - m.b + 4 }, "stroke:var(--axis)"));
+          T.text(svg, tx, H - m.b + 17, SHORT[d.getUTCMonth()] + " " + String(d.getUTCFullYear()).slice(2), null, "middle");
+        }
+        d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+      }
+      svg.appendChild(T.el("line", { x1: m.l, x2: W - m.r, y1: H - m.b, y2: H - m.b }, "stroke:var(--axis)"));
+      var marks = [];
+      who.forEach(function (n, wi) {
+        var mine = pts.filter(function (p) { return p.pollster === n; });
+        if (!mine.length) return;
+        if (mine.length > 1) {
+          var dd = mine.map(function (p, i) { return (i ? "L" : "M") + x(Date.parse(p.at)).toFixed(1) + "," + y(val(p, measure)).toFixed(1); }).join("");
+          svg.appendChild(T.el("path", { d: dd }, "fill:none;stroke:" + color[n] + ";stroke-width:2;stroke-linejoin:round;opacity:0.85"));
+        }
+        mine.forEach(function (p) {
+          var cx = x(Date.parse(p.at)), cy = y(val(p, measure)), hollow = p.at_basis !== "fieldwork";
+          var st = "fill:" + (hollow ? "var(--surface)" : color[n]) + ";stroke:" + (hollow ? color[n] : "var(--surface)") + ";stroke-width:2";
+          var mk = wi % 2 ? T.el("rect", { x: cx - 5.5, y: cy - 5.5, width: 11, height: 11, rx: 2, "class": "pt" }, st)
+                          : T.el("circle", { cx: cx, cy: cy, r: 6, "class": "pt" }, st);
+          svg.appendChild(mk);
+          marks.push({ p: p, x: cx, y: cy });
+        });
+        var last = mine[mine.length - 1];
+        var lt = T.text(svg, x(Date.parse(last.at)) + 10, y(val(last, measure)) + 4, (narrow ? "" : nm(n) + " ") + (measure === "net" ? (last.net > 0 ? "+" : "") + num(last.net) : pc(val(last, measure))), "lbl-strong");
+      });
+      // nudge end labels apart if they collide
+      var labels = svg.querySelectorAll("text.lbl-strong");
+      if (labels.length === 2) {
+        var y0 = +labels[0].getAttribute("y"), y1 = +labels[1].getAttribute("y");
+        if (Math.abs(y0 - y1) < 14) { var mid = (y0 + y1) / 2, up = y0 < y1 ? 0 : 1;
+          labels[up].setAttribute("y", mid - 8); labels[1 - up].setAttribute("y", mid + 8); }
+      }
+      var tip = T.tip(host), cur = marks.length - 1;
+      var ring = T.el("circle", { r: 10 }, "fill:none;stroke:var(--ink);stroke-width:1.5;display:none"); svg.appendChild(ring);
+      function show(i) {
+        cur = Math.max(0, Math.min(marks.length - 1, i));
+        var k = marks[cur], p = k.p;
+        ring.setAttribute("cx", k.x); ring.setAttribute("cy", k.y); ring.style.display = "";
+        var rows = [{ color: color[p.pollster], name: LABEL[measure], value: measure === "net" ? ((p.net > 0 ? "+" : "") + num(p.net) + " pts") : pc(val(p, measure)) }];
+        if (measure !== "approve") rows.push({ name: "Approve", value: pc(p.approve) });
+        rows.push({ name: "Fieldwork", value: span(p) });
+        rows.push({ name: "Published", value: day(p.published) });
+        rows.push({ name: "Sample", value: p.sample ? T.int(p.sample) : "not published" });
+        T.fillTip(tip, p.pollster, rows, p.at_basis !== "fieldwork" ? "Placed at the release date: fieldwork dates not published." : null);
+        T.placeTip(host, svg, W, tip, k.x, k.y);
+      }
+      var hit = T.el("rect", { x: 0, y: 0, width: W, height: H, tabindex: 0, "aria-label": "Polls; use the arrow keys" }, "fill:transparent;outline:none");
+      svg.appendChild(hit);
+      hit.addEventListener("pointermove", function (ev) {
+        var r = svg.getBoundingClientRect(), k = W / r.width, px = (ev.clientX - r.left) * k, py = (ev.clientY - r.top) * k, best = -1, bd = 1e9;
+        marks.forEach(function (mk, i) { var dd = Math.hypot(mk.x - px, mk.y - py); if (dd < bd) { bd = dd; best = i; } });
+        if (best >= 0 && bd < 60) show(best); else { tip.hidden = true; ring.style.display = "none"; }
+      });
+      hit.addEventListener("pointerleave", function () { tip.hidden = true; ring.style.display = "none"; });
+      hit.addEventListener("focus", function () { show(cur); });
+      hit.addEventListener("blur", function () { tip.hidden = true; ring.style.display = "none"; });
+      hit.addEventListener("keydown", function (ev) {
+        if (ev.key === "ArrowRight") { show(cur + 1); ev.preventDefault(); }
+        if (ev.key === "ArrowLeft") { show(cur - 1); ev.preventDefault(); }
+      });
+    }
+    draw(); T.onResize(draw);
+    Array.prototype.forEach.call(document.querySelectorAll("#c-measure button"), function (btn) {
+      btn.addEventListener("click", function () {
+        measure = btn.getAttribute("data-m");
+        Array.prototype.forEach.call(document.querySelectorAll("#c-measure button"), function (b) { b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+        draw();
+      });
+    });
+
+    // ---- table, newest first
+    var tb = document.querySelector("#t-polls tbody");
+    tb.innerHTML = D.polls.slice().reverse().map(function (p) {
+      var moe = p.moe ? "±" + p.moe + (p.confidence ? "<span class='sub'>" + p.confidence + "% conf.</span>" : "") : "–";
+      return "<tr>" +
+        "<td><b style='color:var(--ink);font-weight:600'>" + esc(p.pollster) + "</b><span class='sub'>" + esc(p.name) + "</span>" + (p.held ? " <span class='pill hold'>held</span>" : "") + "</td>" +
+        "<td>" + esc(span(p)) + "</td><td>" + esc(day(p.published)) + "</td>" +
+        "<td class='v r'>" + (p.sample ? T.int(p.sample) : "–") + "</td>" +
+        "<td>" + esc(p.mode || "–") + "</td>" +
+        "<td class='v r'>" + moe + "</td>" +
+        "<td class='v r'><b>" + pc(p.approve) + "</b></td><td class='v r'>" + pc(p.disapprove) + "</td><td class='v r'>" + pc(p.no_opinion) + "</td>" +
+        "<td class='v r'>" + pc(p.right) + "</td>" +
+        "<td><a href='" + esc(p.url) + "' rel='noopener'>" + (p.source_type === "pollster report" ? "Pollster's report" : "News report") + "</a>" +
+        (p.notes ? "<span class='sub' style='font-family:var(--f-body);font-size:12.5px'>" + esc(p.notes) + "</span>" : "") + "</td></tr>";
+    }).join("");
+    T.stackLabels(document.getElementById("t-polls"));
+
+    // ---- the five rules, with what they found
+    document.getElementById("p-rules").innerHTML = Object.keys(D.rules).map(function (k) {
+      var hits = D.checks.filter(function (c) { return c.rule === k; });
+      var st = hits.length ? hits.map(function (c) { return "<span class='pill " + (c.level === "hold" ? "hold" : "warn") + "'>" + esc(c.id) + ": " + esc(c.why) + "</span>"; }).join(" ")
+                           : "<span class='pill ok'>passes for all " + D.polls.length + " polls</span>";
+      return "<li><code>" + k + "</code><span>" + esc(D.rules[k]) + "<span class='st'>" + st + "</span></span></li>";
+    }).join("");
+  }).catch(function (e) { T.fail(document.getElementById("c-polls"), e); });
+})();
+</script>
+</body>
+</html>

@@ -122,6 +122,7 @@
      cfg.band     {lo:[], hi:[]} optional shaded band
      cfg.tipRows(i) optional; default lists each non-quiet series
      cfg.fmt(v)   value formatter for tips and end labels
+     cfg.margin   {l, r} optional fixed side margins, so charts stacked on one time axis line up
      cfg.xLabel(p, i) optional: label positions yourself (an axis that isn't time, e.g. "months
                   after"); return null to leave a position unlabelled. cfg.xTitle names that axis.
                   Give such charts a cfg.titleFmt too, for the tooltip's heading. */
@@ -150,6 +151,7 @@
       cfg.series.forEach(function (s) { if (!s.quiet && s.endName) longest = Math.max(longest, (s.endName + " " + fmt(-88.8)).length); });
       m.r = Math.min(W * 0.35, 18 + longest * 7);
     }
+    if (cfg.margin) { if (cfg.margin.l != null) m.l = cfg.margin.l; if (cfg.margin.r != null) m.r = cfg.margin.r; }   // line up stacked charts
     var hasHeld = cfg.series.some(function (s) { return s.held && Object.keys(s.held).length; });
     if (hasHeld) m.b += 8;
     if (cfg.xTitle) m.b += 16;

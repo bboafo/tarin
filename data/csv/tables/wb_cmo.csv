@@ -14416,7 +14416,7 @@ wb_cmo.price-energy-crude-oil-brent.m,monthly,Price,Energy,"Crude oil, Brent",20
 wb_cmo.price-energy-crude-oil-brent.m,monthly,Price,Energy,"Crude oil, Brent",2026-06,85.4,85.4,ok,,
 wb_cmo.price-energy-crude-oil-brent.m,monthly,Price,Energy,"Crude oil, Brent",2026-07,83.4,83.4,ok,,
 wb_cmo.price-energy-crude-oil-brent.m,monthly,Price,Energy,"Crude oil, Brent",2026-08,90.9,90.9,ok,,
-wb_cmo.price-energy-crude-oil-brent.m,monthly,Price,Energy,"Crude oil, Brent",2026-09,116.8,116.8,ok,,
+wb_cmo.price-energy-crude-oil-brent.m,monthly,Price,Energy,"Crude oil, Brent",2026-09,116.8,116.8,warn,W3_imf_brent,
 wb_cmo.price-energy-crude-oil-dubai.m,monthly,Price,Energy,"Crude oil, Dubai",1960-01,1.6,1.6,ok,,
 wb_cmo.price-energy-crude-oil-dubai.m,monthly,Price,Energy,"Crude oil, Dubai",1960-02,1.6,1.6,ok,,
 wb_cmo.price-energy-crude-oil-dubai.m,monthly,Price,Energy,"Crude oil, Dubai",1960-03,1.6,1.6,ok,,

@@ -1,0 +1,294 @@
+{
+ "what": "Ghana headline CPI inflation, year-on-year %, national",
+ "made_at": "2026-11-05T00:10:50+00:00",
+ "data_through": "2026-10",
+ "target": "2027-02",
+ "model": "with_cedi",
+ "model_label": "Pace reverts, plus the cedi",
+ "method_version": "2",
+ "volatility_now": 0.359,
+ "rule": "fixed in advance: the average of 'pace reverts' and the same pace plus the cedi's moves over the past year; the cedi is assumed not to move after the last month of data",
+ "points": [
+  {
+   "period": "2026-11",
+   "horizon": 1,
+   "yoy": 5.774,
+   "index": 274.326,
+   "lo80": 5.115,
+   "hi80": 6.273,
+   "lo95": 4.803,
+   "hi95": 6.998
+  },
+  {
+   "period": "2026-12",
+   "horizon": 2,
+   "yoy": 5.371,
+   "index": 275.774,
+   "lo80": 4.249,
+   "hi80": 6.184,
+   "lo95": 3.756,
+   "hi95": 8.13
+  },
+  {
+   "period": "2027-01",
+   "horizon": 3,
+   "yoy": 5.615,
+   "index": 277.029,
+   "lo80": 4.219,
+   "hi80": 6.803,
+   "lo95": 3.618,
+   "hi95": 9.203
+  },
+  {
+   "period": "2027-02",
+   "horizon": 4,
+   "yoy": 5.303,
+   "index": 278.466,
+   "lo80": 3.562,
+   "hi80": 6.71,
+   "lo95": 2.514,
+   "hi95": 9.756
+  }
+ ],
+ "all_models": {
+  "no_change": [
+   5.517,
+   5.517,
+   5.517,
+   5.517
+  ],
+  "seasonal": [
+   5.55,
+   4.957,
+   4.977,
+   4.408
+  ],
+  "reverting": [
+   5.58,
+   5.047,
+   5.156,
+   4.703
+  ],
+  "ensemble": [
+   5.549,
+   5.174,
+   5.217,
+   4.876
+  ],
+  "with_cedi": [
+   5.774,
+   5.371,
+   5.615,
+   5.303
+  ]
+ },
+ "last_actual": {
+  "period": "2026-10",
+  "yoy": 5.517,
+  "index": 271.149
+ },
+ "backtest": {
+  "no_change": {
+   "1": {
+    "n": 201,
+    "mae": 0.897,
+    "rmse": 1.604,
+    "rmse_since_2023": 2.363,
+    "bias": -0.047
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.624,
+    "rmse": 2.843,
+    "rmse_since_2023": 4.186,
+    "bias": -0.091
+   },
+   "3": {
+    "n": 199,
+    "mae": 2.283,
+    "rmse": 3.915,
+    "rmse_since_2023": 5.557,
+    "bias": -0.135
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.859,
+    "rmse": 4.865,
+    "rmse_since_2023": 6.698,
+    "bias": -0.171
+   }
+  },
+  "seasonal": {
+   "1": {
+    "n": 201,
+    "mae": 0.793,
+    "rmse": 1.284,
+    "rmse_since_2023": 1.69,
+    "bias": -0.036
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.411,
+    "rmse": 2.17,
+    "rmse_since_2023": 2.874,
+    "bias": -0.069
+   },
+   "3": {
+    "n": 199,
+    "mae": 1.939,
+    "rmse": 2.917,
+    "rmse_since_2023": 3.544,
+    "bias": -0.106
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.461,
+    "rmse": 3.593,
+    "rmse_since_2023": 4.121,
+    "bias": -0.144
+   }
+  },
+  "reverting": {
+   "1": {
+    "n": 201,
+    "mae": 0.786,
+    "rmse": 1.28,
+    "rmse_since_2023": 1.681,
+    "bias": -0.04
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.394,
+    "rmse": 2.155,
+    "rmse_since_2023": 2.848,
+    "bias": -0.079
+   },
+   "3": {
+    "n": 199,
+    "mae": 1.914,
+    "rmse": 2.885,
+    "rmse_since_2023": 3.515,
+    "bias": -0.125
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.419,
+    "rmse": 3.535,
+    "rmse_since_2023": 4.093,
+    "bias": -0.173
+   }
+  },
+  "ensemble": {
+   "1": {
+    "n": 201,
+    "mae": 0.72,
+    "rmse": 1.26,
+    "rmse_since_2023": 1.761,
+    "bias": -0.041
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.263,
+    "rmse": 2.175,
+    "rmse_since_2023": 3.09,
+    "bias": -0.08
+   },
+   "3": {
+    "n": 199,
+    "mae": 1.771,
+    "rmse": 2.954,
+    "rmse_since_2023": 3.934,
+    "bias": -0.122
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.254,
+    "rmse": 3.653,
+    "rmse_since_2023": 4.651,
+    "bias": -0.163
+   }
+  },
+  "with_cedi": {
+   "1": {
+    "n": 201,
+    "mae": 0.768,
+    "rmse": 1.217,
+    "rmse_since_2023": 1.565,
+    "bias": -0.03
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.332,
+    "rmse": 2.033,
+    "rmse_since_2023": 2.506,
+    "bias": -0.04
+   },
+   "3": {
+    "n": 199,
+    "mae": 1.816,
+    "rmse": 2.708,
+    "rmse_since_2023": 3.042,
+    "bias": 0.008
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.316,
+    "rmse": 3.353,
+    "rmse_since_2023": 3.46,
+    "bias": 0.065
+   }
+  }
+ },
+ "calibration_since_2021": {
+  "1": {
+   "n": 69,
+   "in80": 0.681,
+   "in95": 0.899
+  },
+  "2": {
+   "n": 68,
+   "in80": 0.706,
+   "in95": 0.824
+  },
+  "3": {
+   "n": 67,
+   "in80": 0.701,
+   "in95": 0.791
+  },
+  "4": {
+   "n": 66,
+   "in80": 0.652,
+   "in95": 0.818
+  }
+ },
+ "code_sha256": "5821949558a54cab5dffda1d418545c46acd32aff11dda0da082117046a5ad81",
+ "input_sha256": "ff9cf46f52fb8feaa794f308d17aab70502761655fd3061fb502a4ea47ae68b5",
+ "cedi": {
+  "source": "Bank of Ghana interbank mid-rate, US dollar, monthly average",
+  "through": "2026-10",
+  "window_months": 180,
+  "blocks_months_back": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    5
+   ],
+   [
+    6,
+    11
+   ]
+  ]
+ },
+ "switch_rule": "Fixed on 12 October 2026, before any month had been scored for both: the headline stays with the forecast picked by the original rule (v1) until both have been scored, from the same data, on at least 6 months one month ahead. From then on the headline is whichever has the lower mean absolute error over every month and horizon both have been scored on, checked again at each release."
+}

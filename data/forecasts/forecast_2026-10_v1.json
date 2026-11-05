@@ -1,0 +1,230 @@
+{
+ "what": "Ghana headline CPI inflation, year-on-year %, national",
+ "made_at": "2026-11-05T00:10:44+00:00",
+ "data_through": "2026-10",
+ "target": "2027-02",
+ "model": "reverting",
+ "model_label": "Seasonal, pace reverts",
+ "method_version": "1",
+ "volatility_now": 0.359,
+ "rule": "lowest back-test RMSE averaged over horizons 1-4, origins since 2010-01",
+ "points": [
+  {
+   "period": "2026-11",
+   "horizon": 1,
+   "yoy": 5.58,
+   "index": 273.824,
+   "lo80": 5.019,
+   "hi80": 6.14,
+   "lo95": 4.51,
+   "hi95": 6.892
+  },
+  {
+   "period": "2026-12",
+   "horizon": 2,
+   "yoy": 5.047,
+   "index": 274.926,
+   "lo80": 4.016,
+   "hi80": 6.1,
+   "lo95": 3.241,
+   "hi95": 7.596
+  },
+  {
+   "period": "2027-01",
+   "horizon": 3,
+   "yoy": 5.156,
+   "index": 275.827,
+   "lo80": 3.834,
+   "hi80": 6.456,
+   "lo95": 2.642,
+   "hi95": 8.521
+  },
+  {
+   "period": "2027-02",
+   "horizon": 4,
+   "yoy": 4.703,
+   "index": 276.878,
+   "lo80": 3.009,
+   "hi80": 6.253,
+   "lo95": 1.925,
+   "hi95": 9.609
+  }
+ ],
+ "all_models": {
+  "no_change": [
+   5.517,
+   5.517,
+   5.517,
+   5.517
+  ],
+  "seasonal": [
+   5.55,
+   4.957,
+   4.977,
+   4.408
+  ],
+  "reverting": [
+   5.58,
+   5.047,
+   5.156,
+   4.703
+  ],
+  "ensemble": [
+   5.549,
+   5.174,
+   5.217,
+   4.876
+  ]
+ },
+ "last_actual": {
+  "period": "2026-10",
+  "yoy": 5.517,
+  "index": 271.149
+ },
+ "backtest": {
+  "no_change": {
+   "1": {
+    "n": 201,
+    "mae": 0.897,
+    "rmse": 1.604,
+    "rmse_since_2023": 2.363,
+    "bias": -0.047
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.624,
+    "rmse": 2.843,
+    "rmse_since_2023": 4.186,
+    "bias": -0.091
+   },
+   "3": {
+    "n": 199,
+    "mae": 2.283,
+    "rmse": 3.915,
+    "rmse_since_2023": 5.557,
+    "bias": -0.135
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.859,
+    "rmse": 4.865,
+    "rmse_since_2023": 6.698,
+    "bias": -0.171
+   }
+  },
+  "seasonal": {
+   "1": {
+    "n": 201,
+    "mae": 0.793,
+    "rmse": 1.284,
+    "rmse_since_2023": 1.69,
+    "bias": -0.036
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.411,
+    "rmse": 2.17,
+    "rmse_since_2023": 2.874,
+    "bias": -0.069
+   },
+   "3": {
+    "n": 199,
+    "mae": 1.939,
+    "rmse": 2.917,
+    "rmse_since_2023": 3.544,
+    "bias": -0.106
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.461,
+    "rmse": 3.593,
+    "rmse_since_2023": 4.121,
+    "bias": -0.144
+   }
+  },
+  "reverting": {
+   "1": {
+    "n": 201,
+    "mae": 0.786,
+    "rmse": 1.28,
+    "rmse_since_2023": 1.681,
+    "bias": -0.04
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.394,
+    "rmse": 2.155,
+    "rmse_since_2023": 2.848,
+    "bias": -0.079
+   },
+   "3": {
+    "n": 199,
+    "mae": 1.914,
+    "rmse": 2.885,
+    "rmse_since_2023": 3.515,
+    "bias": -0.125
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.419,
+    "rmse": 3.535,
+    "rmse_since_2023": 4.093,
+    "bias": -0.173
+   }
+  },
+  "ensemble": {
+   "1": {
+    "n": 201,
+    "mae": 0.72,
+    "rmse": 1.26,
+    "rmse_since_2023": 1.761,
+    "bias": -0.041
+   },
+   "2": {
+    "n": 200,
+    "mae": 1.263,
+    "rmse": 2.175,
+    "rmse_since_2023": 3.09,
+    "bias": -0.08
+   },
+   "3": {
+    "n": 199,
+    "mae": 1.771,
+    "rmse": 2.954,
+    "rmse_since_2023": 3.934,
+    "bias": -0.122
+   },
+   "4": {
+    "n": 198,
+    "mae": 2.254,
+    "rmse": 3.653,
+    "rmse_since_2023": 4.651,
+    "bias": -0.163
+   }
+  }
+ },
+ "calibration_since_2021": {
+  "1": {
+   "n": 69,
+   "in80": 0.696,
+   "in95": 0.884
+  },
+  "2": {
+   "n": 68,
+   "in80": 0.765,
+   "in95": 0.794
+  },
+  "3": {
+   "n": 67,
+   "in80": 0.731,
+   "in95": 0.791
+  },
+  "4": {
+   "n": 66,
+   "in80": 0.758,
+   "in95": 0.788
+  }
+ },
+ "code_sha256": "5821949558a54cab5dffda1d418545c46acd32aff11dda0da082117046a5ad81",
+ "input_sha256": "572dd2a7abf927ba8f16afb37ecfc2e50727d730c660eecfda4fe24df93c556b"
+}

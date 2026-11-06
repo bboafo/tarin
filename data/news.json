@@ -1,6 +1,10 @@
 {
  "items": [
   {
+   "date": "2026-11-06",
+   "text": "StatsBank tables updated: ppi"
+  },
+  {
    "date": "2026-11-05",
    "text": "GSS's October 2026 CPI, checked and published"
   },
@@ -43,10 +47,6 @@
   {
    "date": "2026-10-05",
    "text": "World Bank commodity prices: the cedi or the world?"
-  },
-  {
-   "date": "2026-10-04",
-   "text": "New page: the cedi and prices"
   }
  ]
 }

@@ -12,7 +12,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and nar
 gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2023-07,240.6579,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2023-08,241.1977,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2023-09,243.3665,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,247.8749,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,247.8749,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2023-11,252.1113,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2023-12,266.2473,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Alcoholic beverages, tobacco and narcotics",All sources,2024-01,267.8817,ok,
@@ -120,7 +120,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,202
 gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2023-07,160.8973,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2023-08,163.7302,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2023-09,166.744,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2023-10,171.5788,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2023-10,171.5788,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2023-11,177.5478,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2023-12,183.6257,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Clothing and footwear,All sources,2024-01,188.0604,ok,
@@ -170,7 +170,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-0
 gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-07,157.5515,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-08,168.5301,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-09,168.5301,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-10,175.3611,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-10,175.3611,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-11,183.2053,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2023-12,183.2053,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Education services,All sources,2024-01,183.2053,ok,
@@ -220,7 +220,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All 
 gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2023-07,238.0728,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2023-08,242.5223,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2023-09,252.2629,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2023-10,254.0528,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2023-10,254.0528,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2023-11,258.3801,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2023-12,267.2379,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Food and non-alcoholic beverages,All sources,2024-01,275.5559,ok,
@@ -270,7 +270,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and
 gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2023-07,236.5684,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2023-08,237.9595,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2023-09,239.344,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,242.0254,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,242.0254,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2023-11,245.7199,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2023-12,247.1992,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Furnishings, household equipment and routine household maintenance",All sources,2024-01,251.0026,ok,
@@ -320,7 +320,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-06,189.364,ok
 gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-07,193.052,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-08,196.576,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-09,201.1733,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-10,202.4262,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-10,202.4262,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-11,205.8351,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2023-12,207.5725,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Health,All sources,2024-01,210.8104,ok,
@@ -370,7 +370,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and
 gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2023-07,182.6059,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2023-08,186.8861,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2023-09,195.4648,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2023-10,189.1359,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2023-10,189.1359,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2023-11,194.908,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2023-12,220.6878,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Housing, water, electricity, gas and other fuels",All sources,2024-01,228.9392,ok,
@@ -420,7 +420,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sou
 gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2023-07,113.8133,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2023-08,113.8133,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2023-09,114.2179,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2023-10,114.2179,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2023-10,114.2179,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2023-11,114.2179,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2023-12,114.2179,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Information and communication,All sources,2024-01,114.2179,ok,
@@ -470,7 +470,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All 
 gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2023-07,100.0,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2023-08,100.0,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2023-09,113.7097,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2023-10,113.7097,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2023-10,113.7097,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2023-11,113.7097,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2023-12,113.7097,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Insurance and financial services,All sources,2024-01,113.7097,ok,
@@ -520,7 +520,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and
 gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2023-07,217.5789,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2023-08,221.9853,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2023-09,225.0258,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,225.5605,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,225.5605,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2023-11,228.1888,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2023-12,230.7984,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Personal care, social protection and miscellaneous goods and services",All sources,2024-01,235.8517,ok,
@@ -570,7 +570,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All s
 gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2023-07,220.8859,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2023-08,226.2299,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2023-09,231.6173,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2023-10,232.0907,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2023-10,232.0907,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2023-11,237.1094,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2023-12,239.3166,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,"Recreation, sport and culture",All sources,2024-01,245.6641,ok,
@@ -620,7 +620,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation service
 gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2023-07,132.8374,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2023-08,136.0523,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2023-09,141.1715,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2023-10,145.0306,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2023-10,145.0306,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2023-11,148.6805,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2023-12,155.4692,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Restaurants and accommodation services,All sources,2024-01,155.4692,ok,
@@ -670,7 +670,7 @@ gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-06,222.559
 gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-07,223.409,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-08,223.9811,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-09,227.586,ok,
-gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-10,230.379,ok,
+gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-10,230.379,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-11,229.7721,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2023-12,229.6251,ok,
 gss.cpi.annex,Consumer Price Index,Eastern,Transport,All sources,2024-01,231.7554,ok,

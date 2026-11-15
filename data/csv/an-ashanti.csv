@@ -12,7 +12,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and nar
 gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-07,176.4272,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-08,179.9047,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-09,183.9001,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,184.1239,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,184.1239,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-11,185.9536,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-12,189.436,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Alcoholic beverages, tobacco and narcotics",All sources,2024-01,194.4834,ok,
@@ -120,7 +120,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,202
 gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2023-07,164.2879,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2023-08,163.1772,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2023-09,163.7696,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2023-10,165.1105,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2023-10,165.1105,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2023-11,168.3131,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2023-12,170.9949,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Clothing and footwear,All sources,2024-01,175.0688,ok,
@@ -170,7 +170,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-0
 gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-07,132.3037,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-08,109.8419,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-09,109.0011,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-10,108.0658,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-10,108.0658,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-11,109.0721,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2023-12,109.1136,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Education services,All sources,2024-01,118.4299,ok,
@@ -220,7 +220,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All 
 gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2023-07,198.4244,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2023-08,197.8415,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2023-09,198.7513,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2023-10,198.5797,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2023-10,198.5797,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2023-11,199.308,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2023-12,200.1714,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Food and non-alcoholic beverages,All sources,2024-01,203.3881,ok,
@@ -270,7 +270,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and
 gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2023-07,203.6972,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2023-08,201.2868,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2023-09,201.894,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,203.1887,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,203.1887,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2023-11,204.5705,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2023-12,205.9868,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Furnishings, household equipment and routine household maintenance",All sources,2024-01,210.1052,ok,
@@ -320,7 +320,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-06,141.5852,o
 gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-07,146.6023,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-08,143.6595,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-09,142.2583,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-10,143.009,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-10,143.009,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-11,145.2328,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2023-12,146.729,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Health,All sources,2024-01,154.2322,ok,
@@ -370,7 +370,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and
 gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2023-07,166.2285,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2023-08,165.3506,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2023-09,165.434,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2023-10,180.5648,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2023-10,180.5648,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2023-11,204.7674,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2023-12,206.3667,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Housing, water, electricity, gas and other fuels",All sources,2024-01,225.0319,ok,
@@ -420,7 +420,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sou
 gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2023-07,126.8379,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2023-08,126.1818,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2023-09,126.2912,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2023-10,126.6222,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2023-10,126.6222,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2023-11,126.7294,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2023-12,126.9889,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Information and communication,All sources,2024-01,127.4144,ok,
@@ -470,7 +470,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All 
 gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2023-07,98.5052,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2023-08,98.5052,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2023-09,98.5052,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2023-10,98.5052,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2023-10,98.5052,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2023-11,98.5052,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2023-12,98.5052,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Insurance and financial services,All sources,2024-01,99.9202,ok,
@@ -520,7 +520,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and
 gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-07,199.6763,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-08,195.2013,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-09,195.0621,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,195.0081,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,195.0081,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-11,196.2642,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-12,199.4113,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Personal care, social protection and miscellaneous goods and services",All sources,2024-01,206.6486,ok,
@@ -570,7 +570,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All s
 gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2023-07,175.6101,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2023-08,171.9773,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2023-09,174.6772,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2023-10,176.6398,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2023-10,176.6398,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2023-11,179.9854,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2023-12,181.6552,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,"Recreation, sport and culture",All sources,2024-01,185.6889,ok,
@@ -620,7 +620,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation service
 gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2023-07,140.8005,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2023-08,134.1451,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2023-09,137.0822,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2023-10,138.5934,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2023-10,138.5934,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2023-11,139.9402,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2023-12,139.9402,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Restaurants and accommodation services,All sources,2024-01,142.7822,ok,
@@ -670,7 +670,7 @@ gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-06,173.555
 gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-07,177.4737,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-08,170.4828,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-09,171.2876,ok,
-gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-10,172.9251,ok,
+gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-10,172.9251,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-11,173.8111,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2023-12,174.2412,ok,
 gss.cpi.annex,Consumer Price Index,Ashanti,Transport,All sources,2024-01,177.8663,ok,

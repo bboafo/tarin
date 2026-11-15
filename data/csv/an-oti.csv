@@ -12,7 +12,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcoti
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-07,186.3822,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-08,187.6153,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-09,188.7934,ok,
-gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,193.8544,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,193.8544,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-11,194.1005,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2023-12,194.2511,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Alcoholic beverages, tobacco and narcotics",All sources,2024-01,197.6854,ok,
@@ -120,7 +120,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-06
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-07,153.3042,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-08,152.6905,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-09,153.4968,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-10,156.0222,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-10,156.0222,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-11,158.9249,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2023-12,159.0789,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Clothing and footwear,All sources,2024-01,159.5121,ok,
@@ -170,7 +170,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-06,11
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-07,117.319,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-08,117.319,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-09,117.319,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-10,117.319,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-10,117.319,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-11,117.319,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2023-12,117.319,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Education services,All sources,2024-01,117.319,ok,
@@ -220,7 +220,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sour
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2023-07,207.8659,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2023-08,203.9424,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2023-09,207.4838,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2023-10,207.9598,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2023-10,207.9598,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2023-11,208.5225,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2023-12,209.3616,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Food and non-alcoholic beverages,All sources,2024-01,209.6187,ok,
@@ -270,7 +270,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and rou
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2023-07,193.3179,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2023-08,190.7906,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2023-09,192.9198,ok,
-gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,194.7328,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,194.7328,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2023-11,195.9398,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2023-12,196.2753,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Furnishings, household equipment and routine household maintenance",All sources,2024-01,197.4167,ok,
@@ -320,7 +320,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-06,164.6061,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-07,174.7801,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-08,173.5037,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-09,174.2269,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-10,173.7188,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-10,173.7188,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-11,176.4846,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2023-12,179.3938,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Health,All sources,2024-01,186.4195,ok,
@@ -370,7 +370,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and oth
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2023-07,175.6028,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2023-08,178.229,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2023-09,174.9108,ok,
-gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2023-10,177.1405,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2023-10,177.1405,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2023-11,180.0445,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2023-12,179.3284,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Housing, water, electricity, gas and other fuels",All sources,2024-01,170.9902,ok,
@@ -420,7 +420,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2023-07,117.4037,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2023-08,117.2821,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2023-09,117.3766,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2023-10,117.4733,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2023-10,117.4733,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2023-11,117.4733,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2023-12,117.4733,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Information and communication,All sources,2024-01,117.5393,ok,
@@ -470,7 +470,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sour
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2023-07,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2023-08,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2023-09,132.1583,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2023-10,132.1583,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2023-10,132.1583,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2023-11,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2023-12,132.1583,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Insurance and financial services,All sources,2024-01,132.1583,ok,
@@ -520,7 +520,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and mis
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-07,202.4783,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-08,197.2462,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-09,199.5107,ok,
-gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,199.8158,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,199.8158,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-11,200.1331,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2023-12,201.5458,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Personal care, social protection and miscellaneous goods and services",All sources,2024-01,203.4006,ok,
@@ -570,7 +570,7 @@ gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sourc
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2023-07,168.4937,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2023-08,168.5499,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2023-09,169.6494,ok,
-gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2023-10,169.8631,ok,
+gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2023-10,169.8631,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2023-11,171.6176,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2023-12,172.4571,ok,
 gss.cpi.annex,Consumer Price Index,Oti,"Recreation, sport and culture",All sources,2024-01,172.6959,ok,
@@ -620,7 +620,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,Al
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2023-07,134.7978,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2023-08,134.7978,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2023-09,139.4195,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2023-10,139.4195,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2023-10,139.4195,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2023-11,140.0314,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2023-12,140.0314,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Restaurants and accommodation services,All sources,2024-01,141.3287,ok,
@@ -670,7 +670,7 @@ gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-06,211.214,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-07,212.8701,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-08,213.9995,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-09,214.5018,ok,
-gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-10,214.183,ok,
+gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-10,214.183,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-11,214.6158,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2023-12,214.1415,ok,
 gss.cpi.annex,Consumer Price Index,Oti,Transport,All sources,2024-01,213.4014,ok,

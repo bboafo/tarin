@@ -12,7 +12,7 @@ gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcot
 gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2023-07,161.7216,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2023-08,164.4704,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2023-09,164.0248,ok,
-gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,162.632,ok,
+gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,162.632,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2023-11,164.783,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2023-12,171.1839,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Alcoholic beverages, tobacco and narcotics",All sources,2024-01,180.9194,ok,
@@ -120,7 +120,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-0
 gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-07,180.5004,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-08,186.7699,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-09,193.6243,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-10,194.1874,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-10,194.1874,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-11,200.3815,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2023-12,204.266,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Clothing and footwear,All sources,2024-01,205.5913,ok,
@@ -170,7 +170,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-06,1
 gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-07,151.0104,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-08,154.5443,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-09,154.5443,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-10,166.7522,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-10,166.7522,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-11,173.673,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2023-12,174.5754,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Education services,All sources,2024-01,174.5754,ok,
@@ -220,7 +220,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sou
 gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2023-07,237.2933,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2023-08,236.9149,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2023-09,237.2005,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2023-10,236.4226,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2023-10,236.4226,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2023-11,240.4132,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2023-12,239.8349,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Food and non-alcoholic beverages,All sources,2024-01,241.9969,ok,
@@ -270,7 +270,7 @@ gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and ro
 gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2023-07,215.1857,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2023-08,220.1092,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2023-09,230.7726,ok,
-gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,233.321,ok,
+gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,233.321,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2023-11,236.3715,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2023-12,238.3839,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Furnishings, household equipment and routine household maintenance",All sources,2024-01,235.3965,ok,
@@ -320,7 +320,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-06,169.16,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-07,179.1929,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-08,182.5018,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-09,188.0085,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-10,186.3281,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-10,186.3281,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-11,188.1342,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2023-12,186.8778,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Health,All sources,2024-01,186.5474,ok,
@@ -370,7 +370,7 @@ gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and ot
 gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2023-07,150.7647,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2023-08,150.0042,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2023-09,157.1575,ok,
-gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2023-10,163.6958,ok,
+gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2023-10,163.6958,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2023-11,169.6646,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2023-12,173.2251,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Housing, water, electricity, gas and other fuels",All sources,2024-01,173.3437,ok,
@@ -420,7 +420,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All source
 gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2023-07,115.8143,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2023-08,115.4534,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2023-09,115.6738,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2023-10,115.4414,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2023-10,115.4414,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2023-11,116.5834,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2023-12,118.6428,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Information and communication,All sources,2024-01,119.9008,ok,
@@ -470,7 +470,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sou
 gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2023-07,108.6439,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2023-08,114.2627,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2023-09,114.2627,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2023-10,114.9261,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2023-10,114.9261,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2023-11,117.0252,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2023-12,117.0252,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Insurance and financial services,All sources,2024-01,117.0252,ok,
@@ -520,7 +520,7 @@ gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and mi
 gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2023-07,213.2352,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2023-08,216.3298,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2023-09,224.0364,ok,
-gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,225.0904,ok,
+gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,225.0904,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2023-11,229.5538,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2023-12,231.3224,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Personal care, social protection and miscellaneous goods and services",All sources,2024-01,233.4029,ok,
@@ -570,7 +570,7 @@ gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sour
 gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2023-07,214.8049,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2023-08,219.6282,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2023-09,220.4044,ok,
-gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2023-10,220.4325,ok,
+gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2023-10,220.4325,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2023-11,221.0041,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2023-12,220.5179,ok,
 gss.cpi.annex,Consumer Price Index,Bono,"Recreation, sport and culture",All sources,2024-01,219.6713,ok,
@@ -620,7 +620,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,A
 gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2023-07,122.2185,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2023-08,140.0101,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2023-09,153.2277,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2023-10,153.2277,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2023-10,153.2277,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2023-11,153.2277,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2023-12,187.1664,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Restaurants and accommodation services,All sources,2024-01,215.7487,ok,
@@ -670,7 +670,7 @@ gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-06,193.4963,o
 gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-07,195.0126,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-08,196.4735,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-09,200.551,ok,
-gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-10,200.5931,ok,
+gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-10,200.5931,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-11,199.8885,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2023-12,206.6895,ok,
 gss.cpi.annex,Consumer Price Index,Bono,Transport,All sources,2024-01,205.7155,ok,

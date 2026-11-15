@@ -12,7 +12,7 @@ gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco a
 gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2023-07,199.7762,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2023-08,200.1863,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2023-09,210.3032,ok,
-gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,210.426,ok,
+gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2023-10,210.426,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2023-11,212.2437,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2023-12,216.3507,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Alcoholic beverages, tobacco and narcotics",All sources,2024-01,218.2699,ok,
@@ -120,7 +120,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sourc
 gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2023-07,175.1404,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2023-08,173.3931,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2023-09,179.3469,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2023-10,178.3471,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2023-10,178.3471,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2023-11,181.6257,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2023-12,184.3445,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Clothing and footwear,All sources,2024-01,186.3963,ok,
@@ -170,7 +170,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,
 gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2023-07,115.6924,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2023-08,112.7602,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2023-09,115.0176,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2023-10,116.4212,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2023-10,116.4212,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2023-11,122.2816,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2023-12,124.9565,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Education services,All sources,2024-01,124.9565,ok,
@@ -220,7 +220,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverage
 gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2023-07,226.8374,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2023-08,216.0881,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2023-09,220.2068,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2023-10,222.0307,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2023-10,222.0307,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2023-11,222.1132,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2023-12,229.6882,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Food and non-alcoholic beverages,All sources,2024-01,231.6887,ok,
@@ -270,7 +270,7 @@ gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipme
 gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2023-07,221.4248,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2023-08,212.4307,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2023-09,215.3701,ok,
-gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,213.4213,ok,
+gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2023-10,213.4213,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2023-11,212.9117,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2023-12,215.8687,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Furnishings, household equipment and routine household maintenance",All sources,2024-01,218.8653,ok,
@@ -320,7 +320,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-06,172.
 gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-07,173.8118,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-08,175.0072,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-09,184.4064,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-10,186.8389,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-10,186.8389,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-11,192.1907,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2023-12,193.1562,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Health,All sources,2024-01,198.8699,ok,
@@ -370,7 +370,7 @@ gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, g
 gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2023-07,157.6732,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2023-08,155.0078,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2023-09,164.7683,ok,
-gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2023-10,166.2271,ok,
+gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2023-10,166.2271,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2023-11,166.7924,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2023-12,169.1773,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Housing, water, electricity, gas and other fuels",All sources,2024-01,170.4957,ok,
@@ -420,7 +420,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Information and communication,A
 gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2023-07,215.4026,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2023-08,210.3156,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2023-09,217.7521,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2023-10,234.741,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2023-10,234.741,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2023-11,242.257,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2023-12,241.2111,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Information and communication,All sources,2024-01,260.1148,ok,
@@ -470,7 +470,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial service
 gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2023-07,107.6264,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2023-08,108.3675,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2023-09,108.7566,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2023-10,117.6357,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2023-10,117.6357,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2023-11,126.3563,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2023-12,126.9994,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Insurance and financial services,All sources,2024-01,113.1388,ok,
@@ -520,7 +520,7 @@ gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protecti
 gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2023-07,207.6231,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2023-08,208.6834,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2023-09,215.2839,ok,
-gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,215.4769,ok,
+gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2023-10,215.4769,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2023-11,218.0683,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2023-12,221.1772,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Personal care, social protection and miscellaneous goods and services",All sources,2024-01,223.4999,ok,
@@ -570,7 +570,7 @@ gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture"
 gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2023-07,201.5979,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2023-08,205.1243,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2023-09,206.7607,ok,
-gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2023-10,207.4528,ok,
+gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2023-10,207.4528,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2023-11,210.0714,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2023-12,210.8332,ok,
 gss.cpi.annex,Consumer Price Index,Western North,"Recreation, sport and culture",All sources,2024-01,214.4747,ok,
@@ -620,7 +620,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation s
 gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2023-07,168.0928,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2023-08,160.0157,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2023-09,164.5799,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2023-10,166.513,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2023-10,166.513,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2023-11,173.2929,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2023-12,173.2929,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Restaurants and accommodation services,All sources,2024-01,173.2929,ok,
@@ -670,7 +670,7 @@ gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-06,1
 gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-07,188.8882,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-08,189.5133,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-09,196.0737,ok,
-gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-10,196.8855,ok,
+gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-10,196.8855,warn,annex3_vs_annex4
 gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-11,196.7859,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2023-12,196.1982,ok,
 gss.cpi.annex,Consumer Price Index,Western North,Transport,All sources,2024-01,196.3388,ok,

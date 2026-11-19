@@ -1,6 +1,10 @@
 {
  "items": [
   {
+   "date": "2026-11-19",
+   "text": "StatsBank tables updated: ppi"
+  },
+  {
    "date": "2026-11-15",
    "text": "312 regional figures flagged: GSS changed a total without changing them"
   },
@@ -43,10 +47,6 @@
   {
    "date": "2026-10-09",
    "text": "World diesel prices; 2022 broken down by CPI group; a new regional check"
-  },
-  {
-   "date": "2026-10-09",
-   "text": "GSS's September 2026 CPI, checked and published"
   }
  ]
 }
